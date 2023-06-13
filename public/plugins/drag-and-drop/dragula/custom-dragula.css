@@ -1,0 +1,68 @@
+/*
+	===============================
+			@Import	Function
+	===============================
+*/
+/*
+	===============================
+			@Import	Mixins
+	===============================
+*/
+
+/*
+ * note that styling gu-mirror directly is a bad practice because it's too generic.
+ * you're better off giving the draggable elements a unique class and styling that directly!
+ */
+.dragula > div, .gu-mirror {
+    /* margin: 10px;
+    padding: 10px; */
+    transition: opacity 0.4s ease-in-out; 
+}
+
+.dragula > div {
+    cursor: move;
+    cursor: grab;
+    cursor: -moz-grab;
+    cursor: -webkit-grab; 
+    background-color: #fff;
+    transition: background-color .5s;
+}
+
+.dragula > div:hover  {
+    background-color: rgba(50, 182, 165, 0.3);
+}
+
+.gu-mirror {
+    cursor: grabbing;
+    cursor: -moz-grabbing;
+    cursor: -webkit-grabbing; 
+}
+
+.dragula .ex-moved {
+    background-color: #e74c3c; 
+}
+
+.dragula.ex-over {
+    background-color: rgba(255, 255, 255, 0.3); 
+}
+
+#left-lovehandles > div, #right-lovehandles > div {
+    cursor: initial; 
+}
+
+.parent.ex-1 .dragula {
+    padding: 15px; 
+}
+.parent.ex-1 .dragula .media {
+    background-color: #fff;
+    border-radius: 6px;
+    border: 1px solid #e0e6ed;
+    padding: 14px 26px; 
+}
+
+body.gu-unselectable .media.el-drag-ex-1 {
+    background-color: #fff;
+    border-radius: 6px;
+    border: 1px solid #e0e6ed;
+    padding: 14px 26px; 
+}
