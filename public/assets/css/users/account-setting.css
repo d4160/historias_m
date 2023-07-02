@@ -13,12 +13,6 @@
   -moz-box-shadow: 0 4px 6px 0 rgba(85, 85, 85, 0.0901961), 0 1px 20px 0 rgba(0, 0, 0, 0.08), 0px 1px 11px 0px rgba(0, 0, 0, 0.06);
   box-shadow: 0 4px 6px 0 rgba(85, 85, 85, 0.0901961), 0 1px 20px 0 rgba(0, 0, 0, 0.08), 0px 1px 11px 0px rgba(0, 0, 0, 0.06); }
 
-body.minimal .section {
-  border: 1px solid rgba(92, 26, 195, 0.14);
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
-  box-shadow: none; }
-
 .layout-spacing {
   padding-bottom: 25px; }
 
@@ -57,10 +51,10 @@ body.minimal .section {
     .general-info .info .upload p {
       font-size: 14px;
       font-weight: 600;
-      color: #22A0B9; }
+      color: #1b55e2; }
       .general-info .info .upload p i {
         font-size: 22px;
-        color: #22A0B9;
+        color: #1b55e2;
         vertical-align: middle; }
   .general-info .info label {
     color: #888ea8;
@@ -166,7 +160,7 @@ body.minimal .section {
     border: none; }
 
 .input-group .input-group-prepend .input-group-text svg {
-  color: #22A0B9; }
+  color: #1b55e2; }
 
 .social .info input {
   border-radius: 0.25rem !important; }
@@ -209,14 +203,14 @@ body.minimal .section {
       background: #ffffff;
       padding: 3px 8px;
       border-radius: 5px;
-      color: #22A0B9;
+      color: #1b55e2;
       border: 1px solid #e0e6ed; }
   .skill .custom-progress.top-right .range-count, .skill .custom-progress.bottom-right .range-count {
     text-align: right; }
   .skill .progress-range-counter::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
-    background: #22A0B9;
+    background: #1b55e2;
     cursor: pointer;
     height: 16px;
     width: 16px;
@@ -227,14 +221,14 @@ body.minimal .section {
     -webkit-transform: scale(1.2);
     transform: scale(1.2); }
   .skill .progress-range-counter:focus::-webkit-slider-thumb {
-    background: #22A0B9;
+    background: #1b55e2;
     cursor: pointer;
     height: 16px;
     width: 16px;
     margin-top: -4px;
     box-shadow: none; }
   .skill .progress-range-counter::-moz-range-thumb {
-    background: #22A0B9;
+    background: #1b55e2;
     cursor: pointer;
     height: 16px;
     width: 16px;
@@ -282,9 +276,6 @@ body.minimal .section {
     Footer
 */
 .account-settings-footer {
-  position: fixed;
-  bottom: 0;
-  width: calc(100% - 190px);
   background: #191e3a;
   padding: 12px 20px;
   -webkit-box-shadow: -2px -9px 20px rgba(126, 142, 177, 0.12);
@@ -297,15 +288,10 @@ body.minimal .section {
     display: flex;
     justify-content: space-between; }
 
-.sidebar-closed .account-settings-footer {
-  width: calc(100% - 40px); }
-
 @media (max-width: 991px) {
   .account-settings-container .account-content {
     width: 100%;
-    padding: 0; }
-  .account-settings-footer {
-    width: calc(100% - 40px); } }
+    padding: 0; } }
 
 @media (max-width: 767px) {
   .general-info .info .upload {

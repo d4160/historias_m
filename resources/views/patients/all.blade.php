@@ -1,4 +1,4 @@
-<x-layouts.admin title="DMI - Listado de pacientes" bodyTitle="Listado de pacientes">
+<x-layouts.admin title="Listado de pacientes" bodyTitle="Listado de pacientes">
     <x-slot name="styles">
         <link rel="stylesheet" type="text/css" href="{{ asset('plugins/table/datatable/datatables.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/forms/theme-checkbox-radio.css') }}">
@@ -6,14 +6,21 @@
         <link rel="stylesheet" type="text/css" href="{{ asset('plugins/table/datatable/custom_dt_custom.css') }}">
     </x-slot>
 
+    @include('patients.import_csv')
+
     <div class="row layout-top-spacing layout-spacing">
         <div class="col-lg-12">
             <div class="statbox widget box box-shadow">
                 <div class="widget-header">
                     <div class="row">
-                        <div class="col-xl-12 col-md-12 col-sm-12 col-12">
+                        <div class="col-2">
                             <a href="{{ route('patients.create') }}" class="mt-3 ml-3 btn btn-success">Agregar Nuevo</a>
                         </div>
+                        <div class="col-2">
+                            <button type="button" data-toggle="modal" data-target="#paciente_import_csv"
+                                class="mt-3 ml-3 btn btn-success" style="margin-bottom: 10px;">Importar CSV</button>
+                        </div>
+
                     </div>
                 </div>
                 <div class="widget-content widget-content-area">
@@ -25,7 +32,7 @@
                                     <th>Nª documento</th>
                                     <th>Nombres</th>
                                     <th>Apellidos</th>
-                                    <th class="text-center">Nº resultados</th>
+                                    <th class="text-center">Nº Historias</th>
                                     <th class="text-center">Acción</th>
                                 </tr>
                             </thead>
@@ -36,15 +43,16 @@
                                     <td>{{ $patient->num_document }}</td>
                                     <td>{{ $patient->first_names }}</td>
                                     <td>{{ $patient->last_names }}</td>
-                                    <td class="text-center"><span class="shadow-none badge badge-primary" style="font-size: 17px; font-weight: normal;">{{ $patient->results()->count() }}</span></td>
+                                    <td class="text-center"><span class="shadow-none badge badge-primary" style="font-size: 17px; font-weight: normal;">{{ $patient->patient()->historias()->count() }}</span></td>
+                                    {{--  {{ $patient->results()->count() }}  --}}
                                     <td class="text-center">
                                         <ul class="table-controls">
-                                            <li><a href="{{ route('patients.edit', $patient->id) }}" class="bs-tooltip" data-toggle="tooltip" data-placement="top" title="" data-original-title="Editar"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="p-1 mb-1 feather feather-edit-2 br-6"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></a></li>
+                                            <li><a href="{{ route('patients.edit', $patient->patientId()) }}" class="bs-tooltip" data-toggle="tooltip" data-placement="top" title="" data-original-title="Editar"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="p-1 mb-1 feather feather-edit-2 br-6"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></a></li>
 
                                             <li>
                                                 <form method="POST" id="delete_{{ $patient->id }}_form" action="{{ route('patients.destroy', $patient->id) }}" style="display: inline-block">
                                                     @csrf
-                                                    <a href="javascript:void(0);" class="bs-tooltip patient_remove confirm" 
+                                                    <a href="javascript:void(0);" class="bs-tooltip patient_remove confirm"
                                                                             form_id="delete_{{ $patient->id }}_form"
                                                                             patient_full_name="{{ $patient->full_name }}"
                                                                             data-container="body" data-html="true" data-toggle="tooltip" data-placement="top" title="" data-original-title="Eliminar">

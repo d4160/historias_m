@@ -8,6 +8,9 @@
 			@Import	Mixins
 	===============================
 */
+.main-container {
+  min-height: auto; }
+
 .layout-px-spacing {
   min-height: auto !important; }
 
@@ -63,10 +66,6 @@
     background: transparent;
     border: 2px solid #888ea8; }
 
-body.minimal .mail-box-container {
-  border: 1px solid #e0e6ed !important;
-  box-shadow: none; }
-
 .mail-box-container {
   position: relative;
   display: flex;
@@ -74,8 +73,7 @@ body.minimal .mail-box-container {
   background: #fff;
   -webkit-box-shadow: 0 4px 6px 0 rgba(85, 85, 85, 0.08), 0 1px 20px 0 rgba(0, 0, 0, 0.07), 0px 1px 11px 0px rgba(0, 0, 0, 0.07);
   -moz-box-shadow: 0 4px 6px 0 rgba(85, 85, 85, 0.08), 0 1px 20px 0 rgba(0, 0, 0, 0.07), 0px 1px 11px 0px rgba(0, 0, 0, 0.07);
-  box-shadow: 0 4px 6px 0 rgba(85, 85, 85, 0.08), 0 1px 20px 0 rgba(0, 0, 0, 0.07), 0px 1px 11px 0px rgba(0, 0, 0, 0.07);
-  margin-bottom: 10px; }
+  box-shadow: 0 4px 6px 0 rgba(85, 85, 85, 0.08), 0 1px 20px 0 rgba(0, 0, 0, 0.07), 0px 1px 11px 0px rgba(0, 0, 0, 0.07); }
 
 .mail-overlay {
   display: none;
@@ -96,7 +94,7 @@ body.minimal .mail-box-container {
   max-width: 240px;
   border-right: 1px solid #e0e6ed; }
   .tab-title svg.feather-clipboard {
-    color: #22A0B9;
+    color: #1b55e2;
     fill: rgba(27, 85, 226, 0.239216);
     margin-bottom: 13px; }
   .tab-title h5 {
@@ -113,7 +111,7 @@ body.minimal .mail-box-container {
     color: #fff;
     bottom: 32px;
     left: 17%;
-    background-color: #22A0B9; }
+    background-color: #1b55e2; }
     .tab-title #addTask svg {
       margin-right: 5px; }
   .tab-title.mail-menu-show {
@@ -127,17 +125,17 @@ body.minimal .mail-box-container {
   .tab-title .todoList-sidebar-scroll {
     position: relative;
     width: 100%;
-    height: calc(100vh - 384px); }
+    height: calc(100vh - 377px); }
   .tab-title .nav-pills .nav-link.active {
     background-color: transparent;
-    color: #22A0B9;
-    color: #22A0B9;
+    color: #1b55e2;
+    color: #1b55e2;
     background: #ebedf2;
     border-top-right-radius: 30px;
     border-bottom-right-radius: 30px;
     padding: 10px 12px 10px 14px; }
     .tab-title .nav-pills .nav-link.active svg {
-      color: #22A0B9;
+      color: #1b55e2;
       fill: rgba(27, 85, 226, 0.239216); }
   .tab-title .nav-pills a.nav-link {
     position: relative;
@@ -162,11 +160,11 @@ body.minimal .mail-box-container {
     padding: 0 !important;
     font-size: 15px;
     top: 11px;
-    color: #22A0B9 !important; }
+    color: #1b55e2 !important; }
   .tab-title .nav-pills a.nav-link:hover {
-    color: #22A0B9; }
+    color: #1b55e2; }
     .tab-title .nav-pills a.nav-link:hover svg {
-      color: #22A0B9;
+      color: #1b55e2;
       fill: rgba(27, 85, 226, 0.239216); }
   .tab-title .nav-pills a.nav-link svg {
     color: #888ea8;
@@ -220,7 +218,7 @@ body.minimal .mail-box-container {
   margin: auto;
   width: 100%;
   overflow: auto;
-  height: calc(100vh - 258px); }
+  height: calc(100vh - 242px); }
 
 .todo-inbox .todo-item {
   cursor: pointer;
@@ -256,7 +254,7 @@ body.minimal .mail-box-container {
     overflow: hidden !important;
     text-overflow: ellipsis !important;
     white-space: nowrap !important;
-    max-width: calc(100vw - 730px); }
+    max-width: calc(100vw - 760px); }
   .todo-inbox .todo-item .todo-item-inner:hover .todo-text {
     -webkit-transform: translateY(0) scale(1.01);
     transform: translateY(0) scale(1.01); }
@@ -344,7 +342,7 @@ body.minimal .mail-box-container {
     background: #fff;
     border-radius: 5px;
     opacity: 1;
-    color: #22A0B9;
+    color: #1b55e2;
     box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.2);
     cursor: pointer;
     transition: .600s; }
@@ -386,7 +384,7 @@ body.minimal .mail-box-container {
 
 #todoShowListItem .modal-footer .btn[data-dismiss="modal"] {
   background-color: #fff;
-  color: #22A0B9;
+  color: #1b55e2;
   font-weight: 700;
   border: 1px solid #e8e8e8;
   padding: 10px 25px; }
@@ -399,7 +397,7 @@ body.minimal .mail-box-container {
   align-self: center;
   font-size: 19px;
   margin-right: 14px;
-  color: #22A0B9;
+  color: #1b55e2;
   font-weight: 600; }
 
 .compose-box .compose-content form #taskdescription {
@@ -419,15 +417,15 @@ body.minimal .mail-box-container {
   padding-top: 0; }
   #addTaskModal .modal-footer .btn[data-dismiss="modal"] {
     background-color: #fff;
-    color: #22A0B9;
+    color: #1b55e2;
     font-weight: 700;
     border: 1px solid #e8e8e8;
     padding: 10px 25px; }
   #addTaskModal .modal-footer .btn.add-tsk {
-    background-color: #22A0B9;
+    background-color: #1b55e2;
     color: #fff;
     font-weight: 600;
-    border: 1px solid #22A0B9;
+    border: 1px solid #1b55e2;
     padding: 10px 25px; }
   #addTaskModal .modal-footer .btn.edit-tsk {
     background-color: #8dbf42;

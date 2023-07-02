@@ -20,7 +20,7 @@ class CreateUserRolesTable extends Migration
             $table->timestamps();
         });
 
-        $this->postCreate('Super Usuario', 'Administrador', 'Paciente');
+        $this->postCreate('Super Usuario', 'Administrador', 'Doctor', 'Asistente administrativo', 'Paciente');
     }
 
     private function postCreate(string ...$roles)  {

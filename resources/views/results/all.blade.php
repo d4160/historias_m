@@ -2,7 +2,7 @@
     $user = Auth::user();
 @endphp
 
-<x-layouts.admin title="DMI - Resultados de paciente" bodyTitle="Paciente: {{ $user->first_names . ' ' . $user->last_names }}">
+<x-layouts.admin title="Reumainnova - Resultados de paciente" bodyTitle="Paciente: {{ $user->first_names . ' ' . $user->last_names }}">
     <x-slot name="styles">
         <link rel="stylesheet" type="text/css" href="{{ asset('plugins/table/datatable/datatables.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/forms/theme-checkbox-radio.css') }}">

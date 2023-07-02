@@ -232,7 +232,7 @@ try {
               opacity: 0.7,
           }
       },
-      colors: ['#3a9bd4', '#ffbb44'],
+      colors: ['#5c1ac3', '#ffbb44'],
       plotOptions: {
           bar: {
               horizontal: false,
@@ -367,7 +367,7 @@ try {
       yaxis: {
         min: 0
       },
-      colors: ['#22A0B9'],
+      colors: ['#1b55e2'],
       tooltip: {
         x: {
           show: false,
@@ -731,7 +731,7 @@ var options1 = {
             }
           },
           customSVG: {
-              SVG: '<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="#22A0B9" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="feather feather-circle"><circle cx="12" cy="12" r="10"></circle></svg>',
+              SVG: '<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="#1b55e2" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="feather feather-circle"><circle cx="12" cy="12" r="10"></circle></svg>',
               cssClass: undefined,
               offsetX: -8,
               offsetY: 5
@@ -756,7 +756,7 @@ var options1 = {
       },
     }
   },
-  colors: ['#22A0B9', '#e7515a'],
+  colors: ['#1b55e2', '#e7515a'],
   dataLabels: {
       enabled: false
   },
@@ -929,7 +929,7 @@ var options = {
         type: 'donut',
         width: 380
     },
-    colors: ['#22A0B9', '#009688', '#e7515a', '#e2a03f'],
+    colors: ['#5c1ac3', '#e2a03f', '#e7515a', '#e2a03f'],
     dataLabels: {
       enabled: false
     },

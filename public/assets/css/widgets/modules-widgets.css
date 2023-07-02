@@ -29,18 +29,11 @@
   -moz-box-shadow: 0 4px 6px 0 rgba(85, 85, 85, 0.08), 0 1px 20px 0 rgba(0, 0, 0, 0.07), 0px 1px 11px 0px rgba(0, 0, 0, 0.07);
   box-shadow: 0 4px 6px 0 rgba(85, 85, 85, 0.08), 0 1px 20px 0 rgba(0, 0, 0, 0.07), 0px 1px 11px 0px rgba(0, 0, 0, 0.07); }
 
-body.minimal .widget {
-  border: 1px solid #e0e6ed !important;
-  box-shadow: none; }
-
 /*
     ==================
         Notification
     ==================
 */
-body.minimal .widget-card-four {
-  padding: 25px 32px; }
-
 .widget-card-four {
   padding: 25px 32px;
   background: #fff; }
@@ -56,10 +49,10 @@ body.minimal .widget-card-four {
   .widget-card-four .w-info p {
     font-weight: 600;
     margin-bottom: 0;
-    color: #3a9bd4;
+    color: #5c1ac3;
     font-size: 16px; }
   .widget-card-four .w-icon {
-    color: #3a9bd4;
+    color: #5c1ac3;
     background-color: #dccff7;
     height: 45px;
     display: inline-flex;
@@ -195,7 +188,7 @@ body.minimal .widget-card-four {
       border-bottom-width: 0;
       border-radius: 0; }
   .widget-activity-two .timeline-line .item-timeline.timeline-new .t-dot:before {
-    background: #22A0B9;
+    background: #1b55e2;
     border-color: #c2d5ff; }
   .widget-activity-two .timeline-line .item-timeline:last-child .t-dot:after {
     display: none; }
@@ -233,7 +226,7 @@ body.minimal .widget-card-four {
     font-size: 15px;
     padding: 0;
     background: transparent;
-    color: #22A0B9;
+    color: #1b55e2;
     border: none; }
 
 /*
@@ -274,7 +267,7 @@ body.minimal .widget-card-four {
   .widget.widget-activity-three .timeline-line .item-timeline .t-dot {
     position: relative; }
     .widget.widget-activity-three .timeline-line .item-timeline .t-dot div {
-      background: #22A0B9;
+      background: #1b55e2;
       border-radius: 50%;
       padding: 5px;
       margin-right: 11px;
@@ -283,8 +276,8 @@ body.minimal .widget-card-four {
       justify-content: center;
       width: 36px; }
       .widget.widget-activity-three .timeline-line .item-timeline .t-dot div.t-primary {
-        background-color: #22A0B9;
-        box-shadow: 0 10px 20px -10px #22A0B9; }
+        background-color: #1b55e2;
+        box-shadow: 0 10px 20px -10px #1b55e2; }
       .widget.widget-activity-three .timeline-line .item-timeline .t-dot div.t-success {
         background-color: #009688;
         box-shadow: 0 10px 20px -10px #009688; }
@@ -330,7 +323,7 @@ body.minimal .widget-card-four {
       transform: none; }
     .widget.widget-activity-three .timeline-line .item-timeline .t-content div.tags .badge-primary {
       background-color: #c2d5ff;
-      color: #22A0B9; }
+      color: #1b55e2; }
     .widget.widget-activity-three .timeline-line .item-timeline .t-content div.tags .badge-success {
       background-color: #e6ffbf;
       color: #009688; }
@@ -385,8 +378,8 @@ body.minimal .widget-card-four {
   .widget-one_hybrid.widget-followers {
     background: #c2d5ff; }
     .widget-one_hybrid.widget-followers .widget-heading .w-icon {
-      color: #22A0B9;
-      border: 1px solid #22A0B9; }
+      color: #1b55e2;
+      border: 1px solid #1b55e2; }
   .widget-one_hybrid.widget-referral {
     background: #ffe1e2; }
     .widget-one_hybrid.widget-referral .widget-heading .w-icon {
@@ -408,9 +401,6 @@ body.minimal .widget-card-four {
         Balance
     ==================
 */
-body.minimal .widget-account-invoice-two {
-  padding: 22px 19px; }
-
 .widget-account-invoice-two {
   padding: 22px 19px;
   background: #e2a03f;
@@ -451,9 +441,6 @@ body.minimal .widget-account-invoice-two {
         Statistics
     ==================
 */
-body.minimal .widget-card-one {
-  padding: 20px 0; }
-
 .widget-card-one {
   background: #fff;
   padding: 20px 0;
@@ -494,7 +481,7 @@ body.minimal .widget-card-one {
   .widget-card-one .widget-content .w-action {
     padding: 0 20px; }
     .widget-card-one .widget-content .w-action svg {
-      color: #22A0B9;
+      color: #1b55e2;
       fill: #c2d5ff; }
     .widget-card-one .widget-content .w-action span {
       vertical-align: sub;
@@ -507,9 +494,6 @@ body.minimal .widget-card-one {
         Visitors by Browser
     ===========================
 */
-body.minimal .widget-four {
-  padding: 20px; }
-
 .widget-four {
   position: relative;
   background: #fff;
@@ -550,7 +534,7 @@ body.minimal .widget-four {
     .widget-four .widget-content .browser-list:nth-child(3) .w-icon {
       background: #ffeccb; }
     .widget-four .widget-content .browser-list:nth-child(1) .w-icon svg {
-      color: #22A0B9; }
+      color: #1b55e2; }
     .widget-four .widget-content .browser-list:nth-child(2) .w-icon svg {
       color: #e7515a; }
     .widget-four .widget-content .browser-list:nth-child(3) .w-icon svg {
@@ -595,9 +579,6 @@ body.minimal .widget-four {
         Dev Summit
     ==================
 */
-body.minimal .widget-card-two {
-  padding: 20px 0px; }
-
 .widget-card-two {
   background: #fff;
   padding: 20px 0px; }
@@ -642,7 +623,7 @@ body.minimal .widget-card-two {
     .widget-card-two .card-bottom-section a {
       display: block;
       margin-top: 18px;
-      background: #22A0B9;
+      background: #1b55e2;
       color: #fff;
       padding: 10px 10px;
       transform: none;
@@ -652,16 +633,13 @@ body.minimal .widget-card-two {
       font-weight: 600;
       letter-spacing: 1px; }
       .widget-card-two .card-bottom-section a.btn:hover, .widget-card-two .card-bottom-section a.btn:focus {
-        border-color: #22A0B9; }
+        border-color: #1b55e2; }
 
 /*
     =====================
         Task Indicator
     =====================
 */
-body.minimal .widget-five {
-  padding: 28px 0 0 0; }
-
 .widget-five {
   background: #fff;
   padding: 28px 0 0 0;
@@ -703,7 +681,7 @@ body.minimal .widget-five {
     .widget-five .w-content div .task-left {
       margin-bottom: 0;
       font-size: 30px;
-      color: #22A0B9;
+      color: #1b55e2;
       background: #c2d5ff;
       font-weight: 600;
       border-radius: 50%;
@@ -761,10 +739,6 @@ body.minimal .widget-five {
         Total Sales
     ==================
 */
-body.minimal .widget-two {
-  border: 1px solid #e0e6ed !important;
-  box-shadow: none; }
-
 .widget-two {
   position: relative;
   background: #fff;
@@ -848,7 +822,7 @@ body.minimal .widget-two {
 */
 .widget-one {
   position: relative;
-  background: #22A0B9;
+  background: #1b55e2;
   padding: 0;
   border-radius: 8px;
   height: 100%;
@@ -875,7 +849,7 @@ body.minimal .widget-two {
       margin-right: 14px; }
     .widget-one .w-numeric-value svg {
       display: block;
-      color: #22A0B9;
+      color: #1b55e2;
       width: 20px;
       height: 20px; }
     .widget-one .w-numeric-value .w-value {
@@ -895,10 +869,6 @@ body.minimal .widget-two {
         Order Summary
     ====================
 */
-body.minimal .widget-three {
-  border: 1px solid #e0e6ed !important;
-  box-shadow: none; }
-
 .widget-three {
   position: relative;
   background: #fff;
@@ -942,7 +912,7 @@ body.minimal .widget-three {
     .widget-three .widget-content .summary-list:nth-child(3) .w-icon {
       background: #ffeccb; }
     .widget-three .widget-content .summary-list:nth-child(1) .w-icon svg {
-      color: #3a9bd4; }
+      color: #5c1ac3; }
     .widget-three .widget-content .summary-list:nth-child(2) .w-icon svg {
       color: #009688; }
     .widget-three .widget-content .summary-list:nth-child(3) .w-icon svg {
@@ -998,7 +968,7 @@ body.minimal .widget-three {
     letter-spacing: 1px;
     font-weight: 600;
     padding: 5px 7px;
-    background: #22A0B9;
+    background: #1b55e2;
     color: #fff;
     border-radius: 4px; }
 
@@ -1168,7 +1138,7 @@ body.minimal .widget-three {
       border-bottom-width: 0;
       border-radius: 0; }
   .widget-activity-one .timeline-line .item-timeline.timeline-new .t-dot:before {
-    background: #22A0B9;
+    background: #1b55e2;
     border-color: #c2d5ff; }
   .widget-activity-one .timeline-line .item-timeline:last-child .t-dot:after {
     display: none; }
@@ -1212,7 +1182,7 @@ body.minimal .widget-three {
     background: transparent;
     box-shadow: none;
     padding: 0;
-    color: #22A0B9;
+    color: #1b55e2;
     font-weight: 700;
     letter-spacing: 1px;
     border: none;
@@ -1279,7 +1249,7 @@ body.minimal .widget-three {
         border-bottom-width: 0;
         border-radius: 0; }
     .widget-activity-four .timeline-line .item-timeline.timeline-primary .t-dot:before {
-      background-color: #22A0B9;
+      background-color: #1b55e2;
       border-color: #a4bdf7; }
     .widget-activity-four .timeline-line .item-timeline.timeline-success .t-dot:before {
       background-color: #009688;
@@ -1291,7 +1261,7 @@ body.minimal .widget-three {
       background-color: #3b3f5c;
       border-color: #9fa3bb; }
     .widget-activity-four .timeline-line .item-timeline.timeline-secondary .t-dot:before {
-      background: #22A0B9;
+      background: #1b55e2;
       border-color: #c2d5ff; }
     .widget-activity-four .timeline-line .item-timeline.timeline-warning .t-dot:before {
       background-color: #e2a03f;
@@ -1347,7 +1317,7 @@ body.minimal .widget-three {
       background: transparent;
       box-shadow: none;
       padding: 0;
-      color: #22A0B9;
+      color: #1b55e2;
       font-weight: 600;
       letter-spacing: 0.5px;
       border: none;
@@ -1373,7 +1343,7 @@ body.minimal .widget-three {
   font-size: 20px;
   letter-spacing: 1px;
   margin-bottom: 10px;
-  color: #22A0B9; }
+  color: #1b55e2; }
 
 .widget-account-invoice-one .invoice-box .acc-amount {
   text-align: center;
@@ -1455,7 +1425,7 @@ body.minimal .widget-three {
         border-bottom-right-radius: 6px;
         border-top-right-radius: 6px; }
       .widget-table-two .table > thead > tr > th .th-content {
-        color: #22A0B9;
+        color: #1b55e2;
         font-weight: 600;
         font-size: 14px;
         letter-spacing: 1px; }
@@ -1560,7 +1530,7 @@ body.minimal .widget-three {
         border-bottom-right-radius: 6px;
         border-top-right-radius: 6px; }
       .widget-table-three .table > thead > tr > th .th-content {
-        color: #22A0B9;
+        color: #1b55e2;
         font-weight: 600;
         font-size: 14px;
         letter-spacing: 1px; }
@@ -1615,8 +1585,8 @@ body.minimal .widget-three {
       padding: 2px 5px;
       border-radius: 6px; }
     .widget-table-three .table .td-content .tag-primary {
-      color: #22A0B9;
-      border: 1px dashed #22A0B9;
+      color: #1b55e2;
+      border: 1px dashed #1b55e2;
       background: #c2d5ff; }
     .widget-table-three .table .td-content .tag-success {
       color: #009688;

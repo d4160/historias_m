@@ -16,9 +16,6 @@
 .layout-spacing {
   padding-bottom: 25px; }
 
-body.minimal .widget-content-area {
-  border: 1px solid rgba(92, 26, 195, 0.14); }
-
 /* 
 ===================
     User Profile
@@ -32,7 +29,7 @@ body.minimal .widget-content-area {
     display: flex;
     justify-content: center;
     align-self: center;
-    background-color: #22A0B9;
+    background-color: #1b55e2;
     background: linear-gradient(to right, #0081ff 0%, #0045ff 100%);
     border-radius: 50%;
     box-shadow: 0 10px 15px rgba(0, 69, 255, 0.2); }
@@ -54,7 +51,7 @@ body.minimal .widget-content-area {
       content: "";
       height: 2px;
       width: 55px;
-      background: #22A0B9;
+      background: #1b55e2;
       border-radius: 50%;
       bottom: 9px;
       left: 15px; }
@@ -67,7 +64,7 @@ body.minimal .widget-content-area {
       font-size: 20px;
       font-weight: 600;
       margin-top: 22px;
-      color: #22A0B9; }
+      color: #1b55e2; }
   .user-profile .widget-content-area .user-info-list ul.contacts-block {
     border: none;
     max-width: 217px;
@@ -79,7 +76,7 @@ body.minimal .widget-content-area {
       .user-profile .widget-content-area .user-info-list ul.contacts-block li a {
         font-weight: 600;
         font-size: 15px;
-        color: #22A0B9; }
+        color: #1b55e2; }
     .user-profile .widget-content-area .user-info-list ul.contacts-block svg {
       width: 21px;
       margin-right: 15px;
@@ -87,7 +84,7 @@ body.minimal .widget-content-area {
       vertical-align: middle;
       fill: rgba(0, 23, 55, 0.08); }
     .user-profile .widget-content-area .user-info-list ul.contacts-block li:hover svg {
-      color: #22A0B9;
+      color: #1b55e2;
       fill: rgba(27, 85, 226, 0.239216); }
     .user-profile .widget-content-area .user-info-list ul.contacts-block ul.list-inline {
       margin: 27px auto; }
@@ -101,7 +98,7 @@ body.minimal .widget-content-area {
         align-self: center; }
       .user-profile .widget-content-area .user-info-list ul.contacts-block ul.list-inline svg {
         margin-right: 0;
-        color: #22A0B9;
+        color: #1b55e2;
         width: 19px;
         align-self: center; }
 
@@ -123,7 +120,7 @@ body.minimal .widget-content-area {
       content: "";
       height: 2px;
       width: 47px;
-      background: #22A0B9;
+      background: #1b55e2;
       border-radius: 50%;
       bottom: -2px;
       left: 15px; }
@@ -137,7 +134,7 @@ body.minimal .widget-content-area {
     box-shadow: 1px 3px 20px 3px #f1f2f3;
     margin-bottom: 31px; }
     .skills .widget-content-area .progress .progress-bar {
-      background-color: #22A0B9;
+      background-color: #1b55e2;
       background: linear-gradient(to right, #0081ff 0%, #0045ff 100%);
       border-radius: 1rem;
       box-shadow: 0 2px 4px rgba(0, 69, 255, 0.15), 0 8px 16px rgba(0, 69, 255, 0.2);
@@ -170,7 +167,7 @@ body.minimal .widget-content-area {
       content: "";
       height: 2px;
       width: 30px;
-      background: #22A0B9;
+      background: #1b55e2;
       border-radius: 50%;
       bottom: -2px;
       left: 15px; }
@@ -194,7 +191,7 @@ body.minimal .widget-content-area {
       width: 30px;
       height: 30px;
       margin-right: 21px;
-      color: #22A0B9; }
+      color: #1b55e2; }
     .bio .widget-content-area .b-skills h5 {
       margin-bottom: 10px;
       font-size: 16px; }
@@ -219,7 +216,7 @@ body.minimal .widget-content-area {
       content: "";
       height: 2px;
       width: 97px;
-      background: #22A0B9;
+      background: #1b55e2;
       border-radius: 50%;
       bottom: -2px;
       left: 15px; }
@@ -227,7 +224,7 @@ body.minimal .widget-content-area {
     display: flex; }
     .education .widget-content-area .timeline-alter .item-timeline .t-dot {
       position: relative;
-      border-color: #22A0B9;
+      border-color: #1b55e2;
       padding: 10px; }
       .education .widget-content-area .timeline-alter .item-timeline .t-dot:before {
         content: '';
@@ -314,7 +311,7 @@ body.minimal .widget-content-area {
       content: "";
       height: 2px;
       width: 173px;
-      background: #22A0B9;
+      background: #1b55e2;
       border-radius: 50%;
       bottom: -2px;
       left: 15px; }
@@ -322,7 +319,7 @@ body.minimal .widget-content-area {
     display: flex; }
     .work-experience .widget-content-area .timeline-alter .item-timeline .t-dot {
       position: relative;
-      border-color: #22A0B9;
+      border-color: #1b55e2;
       padding: 10px; }
       .work-experience .widget-content-area .timeline-alter .item-timeline .t-dot:before {
         content: '';

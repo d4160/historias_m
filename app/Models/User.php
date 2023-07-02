@@ -21,9 +21,20 @@ class User extends Authenticatable
         'user_role_id',
         'num_document',
         'first_names',
-        'last_names',
+        'last_name1',
+        'last_name2',
+        'fecha_nacimiento',
+        'edad',
+        'procedencia_dep',
+        'procedencia_prov',
+        'procedencia_dis',
+        'direccion',
+        'estado_civil',
+        'ocupacion',
+        'otros',
+        'specific_role_id',
         'email',
-        'password',
+        'password'
     ];
 
     /**
@@ -49,15 +60,27 @@ class User extends Authenticatable
         return $this->belongsTo('App\Models\UserRole');
     }
 
-    public function results() {
-        return $this->hasMany('App\Models\OnlineResult')->orderBy('created_at', 'desc');
+    public function getFullNameAttribute() {
+        return ucfirst($this->first_names) . ' ' . ucfirst($this->last_name1) . ' ' . ucfirst($this->last_name2);
     }
 
-    public function getFullNameAttribute() {
-        return ucfirst($this->first_names) . ' ' . ucfirst($this->last_names);
+    public function getLastNamesAttribute() {
+        return ucfirst($this->last_name1) . ' ' . ucfirst($this->last_name2);
     }
 
     public function isAdmin() {
-        return $this->user_role_id === 1 || $this->user_role_id === 2 ? true : false;
+        return $this->user_role_id > 0 && $this->user_role_id < 5 ? true : false;
+    }
+
+    public function isPatient() {
+        return $this->user_role_id === 5 ? true : false;
+    }
+
+    public function patientId() {
+        return Paciente::find($this->specific_role_id)->id;
+    }
+
+    public function patient() {
+        return Paciente::find($this->specific_role_id);
     }
 }

@@ -8,6 +8,9 @@
 			@Import	Mixins
 	===============================
 */
+.main-container {
+  min-height: auto; }
+
 .layout-px-spacing {
   min-height: auto !important; }
 
@@ -21,18 +24,12 @@
   -webkit-transform: translate(-50%, 0);
   transform: translate(-50%, 0); }
 
-body.minimal .chat-system {
-  border: 1px solid #e0e6ed !important;
-  box-shadow: none;
-  border-radius: 5px; }
-
 .chat-system {
   display: flex;
   -webkit-box-shadow: 0 4px 6px 0 rgba(85, 85, 85, 0.08), 0 1px 20px 0 rgba(0, 0, 0, 0.07), 0px 1px 11px 0px rgba(0, 0, 0, 0.07);
   -moz-box-shadow: 0 4px 6px 0 rgba(85, 85, 85, 0.08), 0 1px 20px 0 rgba(0, 0, 0, 0.07), 0px 1px 11px 0px rgba(0, 0, 0, 0.07);
   box-shadow: 0 4px 6px 0 rgba(85, 85, 85, 0.08), 0 1px 20px 0 rgba(0, 0, 0, 0.07), 0px 1px 11px 0px rgba(0, 0, 0, 0.07);
-  height: calc(100vh - 213px);
-  margin-bottom: 10px; }
+  height: calc(100vh - 197px); }
   .chat-system .hamburger {
     display: none; }
   .chat-system .user-list-box {
@@ -72,7 +69,7 @@ body.minimal .chat-system {
       margin: auto;
       width: 100%;
       overflow: auto;
-      height: calc(100vh - 287px); }
+      height: calc(100vh - 270px); }
       .chat-system .user-list-box .people .person {
         position: relative;
         width: 100%;
@@ -124,7 +121,7 @@ body.minimal .chat-system {
   box-shadow: 0px 0px 15px 1px rgba(113, 106, 202, 0.2); }
 
 .chat-system .user-list-box .people .person:hover .user-info .f-body .meta-info .user-name, .chat-system .user-list-box .people .person:hover .user-info .f-body .meta-info .user-meta-time {
-  color: #22A0B9; }
+  color: #1b55e2; }
 
 .chat-system .user-list-box .people .person.active:after, .chat-system .user-list-box .people .person:hover:after {
   display: none; }
@@ -136,7 +133,7 @@ body.minimal .chat-system {
   background-image: url(../../img/bg.png);
   border-bottom-right-radius: 6px;
   border-top-right-radius: 6px;
-  height: calc(100vh - 214px); }
+  height: calc(100vh - 197px); }
   .chat-system .chat-box .chat-not-selected {
     display: flex;
     height: 100%;
@@ -159,11 +156,11 @@ body.minimal .chat-system {
     display: none;
     position: absolute;
     width: 100%;
-    height: calc(100vh - 213px);
+    height: calc(100vh - 197px);
     z-index: 4 !important;
     opacity: 0;
     transition: all 0.5s ease-in-out;
-    background-color: #22A0B9;
+    background-color: #1b55e2;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 1000'%3E%3Cg %3E%3Ccircle fill='%232b50ed' cx='50' cy='0' r='50'/%3E%3Cg fill='%233154ea' %3E%3Ccircle cx='0' cy='50' r='50'/%3E%3Ccircle cx='100' cy='50' r='50'/%3E%3C/g%3E%3Ccircle fill='%233658e8' cx='50' cy='100' r='50'/%3E%3Cg fill='%233c5be5' %3E%3Ccircle cx='0' cy='150' r='50'/%3E%3Ccircle cx='100' cy='150' r='50'/%3E%3C/g%3E%3Ccircle fill='%23415fe2' cx='50' cy='200' r='50'/%3E%3Cg fill='%234662df' %3E%3Ccircle cx='0' cy='250' r='50'/%3E%3Ccircle cx='100' cy='250' r='50'/%3E%3C/g%3E%3Ccircle fill='%234b66dc' cx='50' cy='300' r='50'/%3E%3Cg fill='%235069d9' %3E%3Ccircle cx='0' cy='350' r='50'/%3E%3Ccircle cx='100' cy='350' r='50'/%3E%3C/g%3E%3Ccircle fill='%23546cd5' cx='50' cy='400' r='50'/%3E%3Cg fill='%23596fd2' %3E%3Ccircle cx='0' cy='450' r='50'/%3E%3Ccircle cx='100' cy='450' r='50'/%3E%3C/g%3E%3Ccircle fill='%235e72cf' cx='50' cy='500' r='50'/%3E%3Cg fill='%236275cb' %3E%3Ccircle cx='0' cy='550' r='50'/%3E%3Ccircle cx='100' cy='550' r='50'/%3E%3C/g%3E%3Ccircle fill='%236678c8' cx='50' cy='600' r='50'/%3E%3Cg fill='%236b7bc4' %3E%3Ccircle cx='0' cy='650' r='50'/%3E%3Ccircle cx='100' cy='650' r='50'/%3E%3C/g%3E%3Ccircle fill='%236f7ec0' cx='50' cy='700' r='50'/%3E%3Cg fill='%237381bc' %3E%3Ccircle cx='0' cy='750' r='50'/%3E%3Ccircle cx='100' cy='750' r='50'/%3E%3C/g%3E%3Ccircle fill='%237783b8' cx='50' cy='800' r='50'/%3E%3Cg fill='%237c86b4' %3E%3Ccircle cx='0' cy='850' r='50'/%3E%3Ccircle cx='100' cy='850' r='50'/%3E%3C/g%3E%3Ccircle fill='%238089b0' cx='50' cy='900' r='50'/%3E%3Cg fill='%23848bac' %3E%3Ccircle cx='0' cy='950' r='50'/%3E%3Ccircle cx='100' cy='950' r='50'/%3E%3C/g%3E%3Ccircle fill='%23888ea8' cx='50' cy='1000' r='50'/%3E%3C/g%3E%3C/svg%3E");
     background-attachment: fixed;
     background-size: contain; }
@@ -241,11 +238,11 @@ body.minimal .chat-system {
     display: none;
     position: absolute;
     width: 100%;
-    height: calc(100vh - 213px);
+    height: calc(100vh - 197px);
     z-index: 4 !important;
     opacity: 0;
     transition: all 0.5s ease-in-out;
-    background-color: #22A0B9;
+    background-color: #1b55e2;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 1000'%3E%3Cg %3E%3Ccircle fill='%232b50ed' cx='50' cy='0' r='50'/%3E%3Cg fill='%233154ea' %3E%3Ccircle cx='0' cy='50' r='50'/%3E%3Ccircle cx='100' cy='50' r='50'/%3E%3C/g%3E%3Ccircle fill='%233658e8' cx='50' cy='100' r='50'/%3E%3Cg fill='%233c5be5' %3E%3Ccircle cx='0' cy='150' r='50'/%3E%3Ccircle cx='100' cy='150' r='50'/%3E%3C/g%3E%3Ccircle fill='%23415fe2' cx='50' cy='200' r='50'/%3E%3Cg fill='%234662df' %3E%3Ccircle cx='0' cy='250' r='50'/%3E%3Ccircle cx='100' cy='250' r='50'/%3E%3C/g%3E%3Ccircle fill='%234b66dc' cx='50' cy='300' r='50'/%3E%3Cg fill='%235069d9' %3E%3Ccircle cx='0' cy='350' r='50'/%3E%3Ccircle cx='100' cy='350' r='50'/%3E%3C/g%3E%3Ccircle fill='%23546cd5' cx='50' cy='400' r='50'/%3E%3Cg fill='%23596fd2' %3E%3Ccircle cx='0' cy='450' r='50'/%3E%3Ccircle cx='100' cy='450' r='50'/%3E%3C/g%3E%3Ccircle fill='%235e72cf' cx='50' cy='500' r='50'/%3E%3Cg fill='%236275cb' %3E%3Ccircle cx='0' cy='550' r='50'/%3E%3Ccircle cx='100' cy='550' r='50'/%3E%3C/g%3E%3Ccircle fill='%236678c8' cx='50' cy='600' r='50'/%3E%3Cg fill='%236b7bc4' %3E%3Ccircle cx='0' cy='650' r='50'/%3E%3Ccircle cx='100' cy='650' r='50'/%3E%3C/g%3E%3Ccircle fill='%236f7ec0' cx='50' cy='700' r='50'/%3E%3Cg fill='%237381bc' %3E%3Ccircle cx='0' cy='750' r='50'/%3E%3Ccircle cx='100' cy='750' r='50'/%3E%3C/g%3E%3Ccircle fill='%237783b8' cx='50' cy='800' r='50'/%3E%3Cg fill='%237c86b4' %3E%3Ccircle cx='0' cy='850' r='50'/%3E%3Ccircle cx='100' cy='850' r='50'/%3E%3C/g%3E%3Ccircle fill='%238089b0' cx='50' cy='900' r='50'/%3E%3Cg fill='%23848bac' %3E%3Ccircle cx='0' cy='950' r='50'/%3E%3Ccircle cx='100' cy='950' r='50'/%3E%3C/g%3E%3Ccircle fill='%23888ea8' cx='50' cy='1000' r='50'/%3E%3C/g%3E%3C/svg%3E");
     background-attachment: fixed;
     background-size: contain; }
@@ -365,7 +362,7 @@ body.minimal .chat-system {
         height: 20px;
         fill: rgba(0, 23, 55, 0.08); }
         .chat-system .chat-box .chat-box-inner .chat-meta-user.chat-active .chat-action-btn svg:hover {
-          color: #22A0B9;
+          color: #1b55e2;
           fill: rgba(27, 85, 226, 0.239216); }
         .chat-system .chat-box .chat-box-inner .chat-meta-user.chat-active .chat-action-btn svg:not(:last-child) {
           margin-right: 9px; }
@@ -392,13 +389,13 @@ body.minimal .chat-system {
           .chat-system .chat-box .chat-box-inner .chat-meta-user.chat-active .chat-action-btn .dropdown-menu a.dropdown-item.active, .chat-system .chat-box .chat-box-inner .chat-meta-user.chat-active .chat-action-btn .dropdown-menu a.dropdown-item:active {
             background-color: transparent; }
           .chat-system .chat-box .chat-box-inner .chat-meta-user.chat-active .chat-action-btn .dropdown-menu a:hover svg {
-            color: #22A0B9;
+            color: #1b55e2;
             fill: rgba(27, 85, 226, 0.239216); }
     .chat-system .chat-box .chat-box-inner .chat-conversation-box {
       position: relative;
       margin: auto;
       width: 100%;
-      height: calc(100% - 80px);
+      height: calc(100% - 79px);
       overflow: auto; }
       .chat-system .chat-box .chat-box-inner .chat-conversation-box .chat {
         position: relative;
@@ -520,7 +517,7 @@ body.minimal .chat-system {
       transform: rotate(29deg) skew(-35deg); }
     .chat-system .chat-box .bubble.you {
       float: left;
-      color: #22A0B9;
+      color: #1b55e2;
       background-color: #f6f6f6;
       -webkit-align-self: flex-start;
       align-self: flex-start;
@@ -535,7 +532,7 @@ body.minimal .chat-system {
     .chat-system .chat-box .bubble.me {
       float: right;
       color: #fff;
-      background-color: #22A0B9;
+      background-color: #1b55e2;
       -webkit-align-self: flex-end;
       align-self: flex-end;
       -moz-animation-name: slideFromRight;
@@ -545,7 +542,7 @@ body.minimal .chat-system {
       box-shadow: 0px 2px 4px rgba(126, 142, 177, 0.12); }
       .chat-system .chat-box .bubble.me:before {
         right: -3px;
-        background-color: #22A0B9; }
+        background-color: #1b55e2; }
   .chat-system .chat-box .conversation-start {
     position: relative;
     width: 100%;

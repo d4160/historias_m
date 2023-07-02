@@ -1,5 +1,5 @@
-<x-layouts.auth title="DMI - Resultados en línea - Login">
-    <h1 class="">Resultados en línea <a href="https://dmiperu.com/"><span class="brand-name">DMI</span></a></h1>
+<x-layouts.auth title="Historias Clínicas - Login">
+    <h1 class="">Historias Clínicas <a href="url"><span class="brand-name"></span></a></h1>
 
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />

@@ -60,7 +60,7 @@
 
                         {{ $slot }}
 
-                        <p class="terms-conditions">© {{ date('Y') }} Todos los derechos reservados. <br> <a href="https://dmiperu.com/">DMI</a>, Diagnóstico Médico por Imágenes.
+                        <p class="terms-conditions">© {{ date('Y') }} Todos los derechos reservados. <br> <a href="url"></a>.
                             {{--  <a href="javascript:void(0);">Cookie Preferences</a>, <a href="javascript:void(0);">Privacy</a>, and <a href="javascript:void(0);">Terms</a>.  --}}
                         </p>
                     </div>

@@ -74,7 +74,7 @@
             <ul class="flex-row navbar-item">
                 <li class="nav-item theme-logo">
                     <a href="/">
-                        <img src="{{ asset('assets/img/logo.png') }}" class="navbar-logo" alt="logo" style="height: auto; width: 112px">
+                        <img src="{{ asset('assets/img/logo2.png') }}" class="navbar-logo" alt="logo" style="height: auto; width: 112px">
                     </a>
                 </li>
             </ul>
@@ -111,7 +111,13 @@
                                             @case(2)
                                                 Administrador
                                                 @break
-                                            @case(2)
+                                            @case(3)
+                                                Doctor
+                                                @break
+                                            @case(4)
+                                                Asistente administrativo
+                                                @break
+                                            @case(5)
                                                 Paciente
                                                 @break
                                             @default
@@ -163,8 +169,8 @@
 
             <nav id="compactSidebar">
                 <ul class="menu-categories">
-                    
-                    @if ($user->user_role_id === 1 || $user->user_role_id === 2)
+
+                    @if ($user->user_role_id > 0 && $user->user_role_id < 5)
                         <li class="menu active" >
                             <a href="#menu1" data-active="false" class="menu-toggle">
                                 <div class="base-menu">
@@ -176,7 +182,7 @@
                             </a>
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-left"><polyline points="15 18 9 12 15 6"></polyline></svg>
                         </li>
-                    @elseif ($user->user_role_id === 3)
+                    @elseif ($user->user_role_id === 5)
                         <li class="menu">
                             <a href="#menu2" data-active="true" class="menu-toggle">
                                 <div class="base-menu">
@@ -340,7 +346,7 @@
             </div>
             <div class="footer-wrapper">
                 <div class="footer-section f-section-1">
-                    <p class="">Copyright © {{ date('Y') }} <a href="https://dmiperu.com/">DMI</a>, Todos los derechos reservados.</p>
+                    <p class="">Copyright © {{ date('Y') }} <a href="https://reumainnova.com"></a>, Todos los derechos reservados.</p>
                 </div>
             </div>
         </div>
@@ -362,6 +368,21 @@
     </script>
     <script src="{{ asset('assets/js/custom.js') }}"></script>
     {{-- <!-- END GLOBAL MANDATORY SCRIPTS --> --}}
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function (event) {
+            var scrollpos = sessionStorage.getItem('scrollpos');
+            if (scrollpos) {
+                window.scrollTo(0, scrollpos);
+                sessionStorage.removeItem('scrollpos');
+            }
+        });
+
+        window.addEventListener("beforeunload", function (e) {
+            sessionStorage.setItem('scrollpos', window.scrollY);
+        });
+    </script>
+
 
     {{-- <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM SCRIPTS --> --}}
 
