@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Support\Arr;
 
 class User extends Authenticatable
 {
@@ -82,5 +83,22 @@ class User extends Authenticatable
 
     public function patient() {
         return Paciente::find($this->specific_role_id);
+    }
+
+    public function examenesAuxiliares() {
+        $historias = Paciente::find($this->specific_role_id)->historias;
+        $exams = [];
+
+        foreach($historias as $h) {
+            foreach($h->examenesAuxiliares as $e) {
+                $exams = Arr::add($exams, $e->id, $e);
+            }
+        }
+
+        return collect($exams)->sortBy('updated_at')->reverse()->toArray();;
+    }
+
+    public function provincia() {
+        return $this->belongsTo('App\Models\Provincia', 'procedencia_prov', 'codigo_prov');
     }
 }

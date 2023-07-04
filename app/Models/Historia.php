@@ -40,8 +40,8 @@ class Historia extends Model
         return $this->belongsTo('App\Models\ExamenRegional');
     }
 
-    public function examenesAuxiliares() {
-        return $this->hasMany('App\Models\ExamenAuxiliar');
+    public function examenesAuxiliares($order = 'desc') {
+        return $this->hasMany('App\Models\ExamenAuxiliar')->orderBy('created_at', $order);
     }
 
     public function impresionDiagnostica() {

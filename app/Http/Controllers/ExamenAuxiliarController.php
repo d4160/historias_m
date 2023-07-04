@@ -62,33 +62,15 @@ class ExamenAuxiliarController extends Controller
         // dd($request);
 
         $request->validate([
-            'lab_edit_titulo' => ['required', 'string', 'max:255'],
-            'lab_edit_file' => ['mimes:pdf,png,jpg,jpeg,doc,docx', 'max:2048']
+            'edit_titulo' => ['required', 'string', 'max:255'],
+            'edit_file' => ['mimes:pdf,png,jpg,jpeg,doc,docx', 'max:2048']
         ]);
 
-        $folder = '';
+        $folder = 'examenes_auxiliares';
 
         $exam_aux = ExamenAuxiliar::find($id);
 
-        switch($exam_aux->tipo) {
-            case 1:
-                $folder = 'examenes_auxiliares/laboratorios';
-                break;
-            case 2:
-                $folder = 'examenes_auxiliares/imagenes';
-                break;
-            case 3:
-                $folder = 'examenes_auxiliares/otros';
-                break;
-            case 4:
-                $folder = 'examenes_auxiliares/procedimientos';
-                break;
-            case 5:
-                $folder = 'examenes_auxiliares/interconsultas';
-                break;
-        }
-
-        if ($request->file('lab_edit_file')) {
+        if ($request->file('edit_file')) {
 
             //dd($request->file('lab_edit_file'));
 
@@ -99,20 +81,20 @@ class ExamenAuxiliarController extends Controller
                 //dd('File does not exists: ' . 'storage/' . public_path($exam_aux->url));
             }
 
-            $fileName = time().'_'.str_replace('+', '_', $request->lab_edit_file->getClientOriginalName());
-            $filePath = $request->file('lab_edit_file')->storeAs($folder, $fileName, 'public');
+            $fileName = time().'_'.str_replace('+', '_', $request->edit_file->getClientOriginalName());
+            $filePath = $request->file('edit_file')->storeAs($folder, $fileName, 'public');
 
             $exam_aux->url = '' . $filePath;
         }
-        else if ($request->file('lab_edit_file2')) {
-            $fileName = time().'_'.str_replace('+', '_', $request->lab_edit_file2->getClientOriginalName());
-            $filePath = $request->file('lab_edit_file2')->storeAs($folder, $fileName, 'public');
+        else if ($request->file('edit_file2')) {
+            $fileName = time().'_'.str_replace('+', '_', $request->edit_file2->getClientOriginalName());
+            $filePath = $request->file('edit_file2')->storeAs($folder, $fileName, 'public');
 
             $exam_aux->url = '' . $filePath;
         }
 
-        $exam_aux->titulo = $request->lab_edit_titulo;
-        $exam_aux->descripcion = $request->lab_edit_descripcion;
+        $exam_aux->titulo = $request->edit_titulo;
+        $exam_aux->descripcion = $request->edit_descripcion;
         $exam_aux->save();
 
         return back();

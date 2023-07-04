@@ -16,7 +16,7 @@
         </div>
         <div class="col">
             <label for="talla">Talla (m)</label>
-            <input id="talla" name="talla" min="0.0" type="number" step="0.1" class="mb-2 form-control" placeholder="" value="{{ old('talla') }}" required>
+            <input id="talla" name="talla" min="0.0" type="number" step="0.01" class="mb-2 form-control" placeholder="" value="{{ old('talla') }}" required>
             @error('talla') <div class="invalid-feedback" style="display: block;">{{ $message }}</div> @enderror
         </div>
     </div>

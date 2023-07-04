@@ -104,19 +104,16 @@ class CitaController extends Controller
 
     public function update(Request $request, $id)
     {
-        $cita = Historia::find($id);
+        $historia = Historia::find($id);
 
         $request->validate([
-            'sede' => ['required'], // 'confirmed'
-            'fecha_hora' => ['required', 'date']
         ]);
 
-        $cita->sede = $request->sede;
-        $cita->fecha_hora = $request->fecha_hora;
+        $historia->proxima_cita = $request->proxima_cita;
 
-        $cita->save();
+        $historia->save();
 
-        return redirect(route('citas.edit', $cita->id));
+        return back();
     }
 
     /**
@@ -127,9 +124,9 @@ class CitaController extends Controller
      */
     public function destroy($id)
     {
-        $cita = Historia::findOrFail($id);
+        $historia = Historia::findOrFail($id);
 
-        foreach($cita->examenAuxiliares as $eAux) {
+        foreach($historia->examenesAuxiliares as $eAux) {
             if(File::exists(public_path('storage/' . $eAux->url))){
                 File::delete(public_path('storage/' . $eAux->url));
             }else{
@@ -137,9 +134,9 @@ class CitaController extends Controller
             }
         }
 
-        // $cita->results()->delete();
+        // $historia->results()->delete();
 
-        $cita->delete();
+        $historia->delete();
 
         return back();
     }
@@ -238,5 +235,22 @@ class CitaController extends Controller
         $instance->save();
 
         return Redirect::back();
+    }
+
+    public function print($id)
+    {
+        $historia = Historia::find($id);
+
+        $examenesAuxiliares = $historia->examenesAuxiliares('asc')->get();
+        $examsString = '';
+        foreach ($examenesAuxiliares as $exam) {
+            $examsString .= '' . ($exam->descripcion ? ('<b>' . $exam->titulo . '</b>: ' . $exam->descripcion) : ('<b>' . $exam->titulo . '</b>')) . '; ';
+        }
+
+        return view('citas.print', [
+            'historia' => $historia,
+            'user' => $historia->paciente->user,
+            'examenClinico' => $historia->examenClinico,
+            'examsString' => $examsString]);
     }
 }

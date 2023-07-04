@@ -13,13 +13,13 @@
             <div class="statbox widget box box-shadow">
                 <div class="widget-header">
                     <div class="row">
-                        <div class="col-2">
-                            <a href="{{ route('patients.create') }}" class="mt-3 ml-3 btn btn-success">Agregar Nuevo</a>
+                        <div class="col">
+                            <a href="{{ route('patients.create') }}" class="mt-3 ml-3 btn btn-success">Registrar Nuevo Paciente</a>
                         </div>
-                        <div class="col-2">
+                        {{--  <div class="col-2">
                             <button type="button" data-toggle="modal" data-target="#paciente_import_csv"
                                 class="mt-3 ml-3 btn btn-success" style="margin-bottom: 10px;">Importar CSV</button>
-                        </div>
+                        </div>  --}}
 
                     </div>
                 </div>
@@ -95,7 +95,9 @@
                     "sInfo": "Mostrando página _PAGE_ de _PAGES_",
                     "sSearch": '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>',
                     "sSearchPlaceholder": "Buscar...",
-                "sLengthMenu": "Mostrar :  _MENU_",
+                    "sLengthMenu": "Mostrar :  _MENU_",
+                    "sEmptyTable": "No hay datos disponibles en la tabla",
+                    "sInfoEmpty": "Mostrando 0 a 0 de 0 entradas",
                 },
                 "lengthMenu": [5, 10, 20, 50],
                 "pageLength": 5

@@ -2,7 +2,7 @@
     $user = Auth::user();
 @endphp
 
-<x-layouts.admin title="Reumainnova - Resultados de paciente" bodyTitle="Paciente: {{ $user->first_names . ' ' . $user->last_names }}">
+<x-layouts.admin title="Resultados de paciente" bodyTitle="Paciente: {{ $user->full_name }}">
     <x-slot name="styles">
         <link rel="stylesheet" type="text/css" href="{{ asset('plugins/table/datatable/datatables.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/forms/theme-checkbox-radio.css') }}">
@@ -18,7 +18,7 @@
 
                     <div class="row">
                         <div class="col-xl-12 col-md-12 col-sm-12 col-12">
-                            <h4>Listado de resultados</h4>
+                            <h4>Mis Exámenes Auxiliares</h4>
                         </div>
                     </div>
                 </div>
@@ -28,23 +28,34 @@
                             {{--  table-hover  --}}
                             <thead>
                                 <tr>
-                                    <th class="checkbox-column"> Id </th>
+                                    <th>ID</th>
+                                    <th>Nro. de H.C.</th>
                                     <th>Título</th>
                                     <th>Descripción</th>
-                                    <th>Fecha</th>
+                                    <th>Fecha y hora de subida</th>
                                     <th class="text-center">Acción</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($user->results as $result)
+                                @foreach ($user->examenesAuxiliares() as $result)
                                 <tr>
-                                    <td class="checkbox-column"> {{ $result->id }} </td>
-                                    <td>{{ $result->title }}</td>
-                                    <td>{{ $result->description }}</td>
-                                    <td>{{ $result->created_at }}</td>
+                                    <td>{{ $result['id'] }}</td>
+                                    <td>@php(printf("%06d", $result['historia_id']))</td>
+                                    <td>{{ $result['titulo'] }}</td>
+                                    <td>{{ $result['descripcion'] }}</td>
+                                    @if ($result['url'])
+                                    <td>{{ \Carbon\Carbon::parse($result['updated_at'])
+                                        ->timezone(config('app.timezone'))
+                                        ->toDateTimeString() }}
+                                    </td>
+                                    @else
+                                    <td>Todavía no subido</td>
+                                    @endif
                                     <td class="text-center">
                                         <ul class="table-controls">
-                                            <li><a href="{{ URL::to('/') . '/storage/' . $result->url }}" target="_blank" class="bs-tooltip" data-toggle="tooltip" data-placement="top" title="" data-original-title="Descargar"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-download"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg></a></li>
+                                            @if ($result['url'])
+                                            <li><a href="{{ URL::to('/') . '/storage/' . $result['url'] }}" target="_blank" class="bs-tooltip" data-toggle="tooltip" data-placement="top" title="" data-original-title="Descargar"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-download"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg></a></li>
+                                            @endif
                                         </ul>
                                     </td>
                                 </tr>
@@ -75,7 +86,9 @@
                     "sInfo": "Mostrando página _PAGE_ de _PAGES_",
                     "sSearch": '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>',
                     "sSearchPlaceholder": "Buscar...",
-                "sLengthMenu": "Mostrar :  _MENU_",
+                    "sLengthMenu": "Mostrar :  _MENU_",
+                    "sEmptyTable": "No hay datos disponibles en la tabla",
+                    "sInfoEmpty": "Mostrando 0 a 0 de 0 entradas",
                 },
                 "lengthMenu": [5, 10, 20, 50],
                 "pageLength": 5

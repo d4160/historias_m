@@ -34,8 +34,8 @@
 @parent
 <script>
 
-    $('#btnGuardarAnamnesis').click(() => {
-        console.log('button click');
+    $('#btnGuardarAnamnesis').click((e) => {
+        e.preventDefault();
         $('#btnGuardarAnamnesis').prop('disabled',true);
         // $(this).css('color', 'black');
         // this.style.setProperty( 'color', 'black', 'important' );

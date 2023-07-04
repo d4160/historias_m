@@ -34,7 +34,8 @@
 @parent
 <script>
 
-    $('#btnGuardarImpresionDiagnostica').click(() => {
+    $('#btnGuardarImpresionDiagnostica').click((e) => {
+        e.preventDefault();
         $('#btnGuardarImpresionDiagnostica').prop('disabled',true);
         $('#btnGuardarImpresionDiagnostica').html('Guardando...');
         $('#formImpresionDiagnostica').submit();

@@ -34,7 +34,8 @@
 @parent
 <script>
 
-    $('#btnGuardarTratamiento').click(() => {
+    $('#btnGuardarTratamiento').click((e) => {
+        e.preventDefault();
         $('#btnGuardarTratamiento').prop('disabled',true);
         $('#btnGuardarTratamiento').html('Guardando...');
         $('#formTratamiento').submit();

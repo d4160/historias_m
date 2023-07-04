@@ -34,7 +34,8 @@
 @parent
 <script>
 
-    $('#btnGuardarAntecedentes').click(() => {
+    $('#btnGuardarAntecedentes').click((e) => {
+        e.preventDefault();
         $('#btnGuardarAntecedentes').prop('disabled',true);
         // $(this).css('color', 'black');
         // this.style.setProperty( 'color', 'black', 'important' );

@@ -2,7 +2,7 @@
 
 <div class="form-group">
     <label for="examen_regional">Descripción</label>
-    <textarea id="examen_regional" name="examen_regional" type="text" class="mb-2 form-control" placeholder="" rows="5">{{ old('examen_regional') }}</textarea>
+    <textarea id="examen_regional" name="examen_regional" type="text" class="mb-2 form-control" placeholder="" rows="8">{{ old('examen_regional') }}</textarea>
     @error('examen_regional') <div class="invalid-feedback" style="display: block;">{{ $message }}</div> @enderror
 </div>
 

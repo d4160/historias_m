@@ -155,9 +155,9 @@ class PatientController extends Controller
         $u = User::findOrFail($id);
         $p = Paciente::find($u->specific_role_id);
 
-        foreach($p->citas as $cita) {
+        foreach($p->historias as $historia) {
 
-            foreach($cita->examenAuxiliares as $eAux) {
+            foreach($historia->examenesAuxiliares as $eAux) {
                 if(File::exists(public_path('storage/' . $eAux->url))){
                     File::delete(public_path('storage/' . $eAux->url));
                 }else{

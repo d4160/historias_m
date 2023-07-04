@@ -18,6 +18,7 @@
     @include('historias.examen_regional_edit')
     @include('historias.impresion_diagnostica_edit')
     @include('historias.tratamiento_edit')
+    @include('historias.edit')
 
     <div class="row layout-top-spacing layout-spacing">
         <div class="col-lg-12">
@@ -76,7 +77,7 @@
                         <div class="mb-4 row">
                             <div class="col">
                                 <label style="font-weight: bold; color: darkgray; font-size: 17px;" for="otros">Otros</label>
-                                <textarea id="otros" name="otros" type="text" class="form-control" placeholder="">{{ old('otros') }}</textarea>
+                                <textarea id="otros" name="otros" type="text" class="form-control" placeholder="">{{ $patient->otros }}</textarea>
                             </div>
                         </div>
 
@@ -386,15 +387,34 @@
                                     <td>{{ $historia->proxima_cita }}</td>
                                     <td class="text-center">
                                         <ul class="table-controls">
+                                            <li><span><a class="bs-tooltip" target="_blank" data-toggle="tooltip" data-placement="top" title="" data-original-title="Imprimir" href="{{ route('citas.print', $historia->id)}}"><svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+                                            width="64.000000pt" height="64.000000pt" viewBox="0 0 64.000000 64.000000"
+                                            preserveAspectRatio="xMidYMid meet" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="p-1 mb-1 feather feather-edit-2 br-6">
 
-                                            <li><span><a href="{{  route('citas.edit', $historia->id) }}" class="bs-tooltip" data-toggle="tooltip" data-placement="top" title="" data-original-title="Editar"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="p-1 mb-1 feather feather-edit-2 br-6"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></a></li>
+                                            <g transform="translate(0.000000,64.000000) scale(0.100000,-0.100000)" fill="#000000">
+                                            <path d="M132 614 c-15 -11 -22 -25 -22 -50 0 -30 -3 -34 -26 -34 -28 0 -65
+                                            -16 -76 -34 -4 -6 -8 -70 -8 -143 0 -130 0 -132 26 -152 15 -12 40 -21 55 -21
+                                            l29 0 0 -69 c0 -100 2 -101 210 -101 208 0 210 1 210 101 l0 69 29 0 c15 0 40
+                                            9 55 21 26 20 26 22 26 152 0 73 -4 137 -8 143 -11 18 -48 34 -76 34 -23 0
+                                            -26 4 -26 34 0 60 -20 66 -210 66 -134 0 -170 -3 -188 -16z m356 -61 l3 -23
+                                            -170 0 c-159 0 -171 1 -171 18 0 10 3 22 7 26 4 3 79 5 167 4 158 -3 161 -3
+                                            164 -25z m102 -198 l0 -125 -30 0 c-27 0 -30 3 -30 29 0 57 -13 61 -210 61
+                                            -197 0 -210 -4 -210 -61 0 -26 -3 -29 -30 -29 l-30 0 0 125 0 125 270 0 270 0
+                                            0 -125z m-105 -185 l0 -105 -165 0 -165 0 -3 94 c-1 52 0 101 2 108 4 11 39
+                                            13 168 11 l163 -3 0 -105z"/>
+                                            <path d="M437 433 c-3 -5 -2 -15 2 -22 12 -18 96 -11 96 9 0 11 -13 16 -47 18
+                                            -25 2 -49 -1 -51 -5z"/>
+                                            </g>
+                                            </svg></a></li>
+
+                                            <li><span data-toggle="modal" data-target="#historiaModal"><a class="bs-tooltip" data-toggle="tooltip" data-placement="top" title="" data-original-title="Editar" onclick="OpenHCModal(historia_{{ $historia->id }}_id, '{{ $historia->id }}', '{{ route('citas.update', $historia->id) }}', '{{ $historia->proxima_cita }}')"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="p-1 mb-1 feather feather-edit-2 br-6"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></a></li>
 
                                             <li>
                                                 <form method="POST" id="delete_{{ $historia->id }}_form" action="{{ route('citas.destroy', $historia->id) }}" style="display: inline-block">
                                                     @csrf
                                                     <a href="javascript:void(0);" class="bs-tooltip historia_remove confirm"
                                                             form_id="delete_{{ $historia->id }}_form"
-                                                            patient_full_name="{{ $patient->full_name }}"
+                                                            hc_number="@php(printf("%06d", $historia->id))"
                                                             data-container="body" data-html="true" data-toggle="tooltip" data-placement="top" title="" data-original-title="Eliminar">
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="p-1 mb-1 feather feather-trash br-6"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
                                                     </a>
@@ -423,7 +443,7 @@
         <script>
 
             $(function () {
-                RegisterNuevaHistoriaEvents();
+                RegisterHistoriaEvents();
 
                 var f1 = flatpickr(document.getElementById('fecha_nacimiento'), {
                     maxDate: GetTodayDate()
@@ -471,7 +491,9 @@
                     "sInfo": "Mostrando página _PAGE_ de _PAGES_",
                     "sSearch": '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>',
                     "sSearchPlaceholder": "Buscar...",
-                "sLengthMenu": "Mostrar :  _MENU_",
+                    "sLengthMenu": "Mostrar :  _MENU_",
+                    "sEmptyTable": "No hay datos disponibles en la tabla",
+                    "sInfoEmpty": "Mostrando 0 a 0 de 0 entradas",
                 },
                 "lengthMenu": [5, 10, 20, 50],
                 "pageLength": 5
@@ -479,7 +501,7 @@
 
             multiCheck(c2);
 
-            function RegisterNuevaHistoriaEvents() {
+            function RegisterHistoriaEvents() {
                 $('.historia_nuevo.confirm').on('click', function () {
                     let form_id = $(this).attr('form_id');
                     let patient_full_name = $(this).attr('patient_full_name');
@@ -489,6 +511,24 @@
                         showCancelButton: 1,
                         cancelButtonText: "Cancelar",
                         confirmButtonText: 'Continuar',
+                        padding: '2em'
+                    }).then(function(result) {
+                        if (result.value) {
+                            let form = $(`#${form_id}`);
+                            form.submit();
+                        }
+                    });
+                });
+
+                $('.historia_remove.confirm').on('click', function () {
+                    let form_id = $(this).attr('form_id');
+                    let hc_number = $(this).attr('hc_number');
+                    swal({
+                        title: `¿Está seguro(a) de eliminar la Historia Clínica ${hc_number} ?`,
+                        type: 'warning',
+                        showCancelButton: 1,
+                        cancelButtonText: "Cancelar",
+                        confirmButtonText: 'Eliminar',
                         padding: '2em'
                     }).then(function(result) {
                         if (result.value) {
@@ -545,6 +585,15 @@
                 if (id) {
                     $('#tratamiento_modal_id').val(id).change();
                 }
+            }
+
+            function OpenHCModal(historiaTdNumber, id, route, proximaCita) {
+                let hcFormatted = historiaTdNumber.innerText;
+                $('#hc_number').html(hcFormatted);
+                
+                $('#formHC').attr('action', route); 
+                $('#hc_modal_id').val(id); 
+                $('#proxima_cita').val(proximaCita);
             }
         </script>
 

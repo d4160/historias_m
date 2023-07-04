@@ -23,6 +23,10 @@
                             <label for="hc" class="font-weight-bold">Historia Clínica</label>
                             <input id="hc" name="hc" type="text" class="form-control" placeholder="" value="@php(printf("%06d", $historia->id))" disabled>
                         </div>
+                        <div class="col">
+                            <label for="hc" class="font-weight-bold">Fecha y Hora de H.C.</label>
+                            <input id="hc" name="hc" type="text" class="form-control" placeholder="" value="{{ $historia->created_at }}" disabled>
+                        </div>
                     </div>
 
                     <div class="row mx-1">
@@ -67,12 +71,12 @@
                                             <li><a href="{{ Storage::url($exam->url) }}" target="_blank" class="bs-tooltip" data-toggle="tooltip" data-placement="top" title="" data-original-title="Descargar"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-download"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg></a></li>
                                             @endif
 
-                                            <li><span data-toggle="modal" data-target="#examEditModal"><a href="javascript:void(0);" class="bs-tooltip" data-toggle="tooltip" data-placement="top" title="" data-original-title="Editar" onclick="$('#lab_titulo').text('{{ addslashes($exam->titulo) }}'); $('#edit_titulo').val('{{ old('edit_titulo', addslashes($exam->titulo)) }}'); $('#edit_descripcion').val(`{{ old('edit_descripcion', addslashes($exam->descripcion)) }}`); $('#edit_form').prop('action', '{{ route('examen_auxiliares.update', $exam->id) }}'); $('#edit_file_url').text('{{ addslashes(substr($exam->url, 8)) }}'); $('#edit_file_download').attr('href', '{{ Storage::url(addslashes($exam->url)) }}');if('{{ addslashes($exam->url) }}' == ''){ $('#replace_file').hide();$('#put_file').show(); }else{ $('#replace_file').show();$('#put_file').hide(); } "><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="p-1 mb-1 feather feather-edit-2 br-6"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></a></li>
+                                            <li><span data-toggle="modal" data-target="#examEditModal"><a href="javascript:void(0);" class="bs-tooltip" data-toggle="tooltip" data-placement="top" title="" data-original-title="Editar" onclick="$('#exam_edit_form').attr('action', '{{ route('examen_auxiliares.update', $exam->id) }}'); $('#exam_edit_id').val('{{ $exam->id }}'); $('#exam_edit_titulo').text('{{ addslashes($exam->titulo) }}'); $('#edit_titulo').val('{{ addslashes($exam->titulo) }}'); $('#edit_descripcion').val(`{{ old('edit_descripcion', addslashes($exam->descripcion)) }}`); $('#edit_form').prop('action', '{{ route('examen_auxiliares.update', $exam->id) }}'); $('#edit_file_url').text('{{ addslashes(substr($exam->url, 31)) }}'); $('#edit_file_download').attr('href', '{{ Storage::url(addslashes($exam->url)) }}');if('{{ addslashes($exam->url) }}' == ''){ $('#replace_file').hide();$('#put_file').show(); }else{ $('#replace_file').show();$('#put_file').hide(); } "><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="p-1 mb-1 feather feather-edit-2 br-6"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></a></li>
 
-                                            <li><form id="delete_lab_{{ $exam->id }}_form" method="POST" action="{{ route('examen_auxiliares.destroy', $exam->id) }}" style="display: inline-block">
+                                            <li><form id="delete_exam_{{ $exam->id }}_form" method="POST" action="{{ route('examen_auxiliares.destroy', $exam->id) }}" style="display: inline-block">
                                                 @csrf
-                                                <a href="javascript:void(0);" class="bs-tooltip lab_remove confirm"
-                                                                        form_id="delete_lab_{{ $exam->id }}_form"
+                                                <a href="javascript:void(0);" class="bs-tooltip exam_remove confirm"
+                                                                        form_id="delete_exam_{{ $exam->id }}_form"
                                                                         exam_aux_title="{{ addslashes($exam->titulo) }}"
                                                                         data-container="body" data-html="true" data-toggle="tooltip" data-placement="top" title="" data-original-title="Eliminar">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="p-1 mb-1 feather feather-trash br-6"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
@@ -97,7 +101,7 @@
         <script>
 
             $(function () {
-                RegisterDeletePatientEvents();
+                RegisterDeleteExamEvents();
             });
 
             c2 = $('#exam_table').DataTable({
@@ -112,11 +116,11 @@
                 "oLanguage": {
                     "oPaginate": { "sPrevious": '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>', "sNext": '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>' },
                     "sInfo": "Mostrando página _PAGE_ de _PAGES_",
-                    "sInfoEmpty": "Mostrando 0 a 0 de 0 entradas",
                     "sSearch": '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>',
                     "sSearchPlaceholder": "Buscar...",
-                "sLengthMenu": "Mostrar :  _MENU_",
-                "sEmptyTable": "No hay datos disponibles en la tabla"
+                    "sLengthMenu": "Mostrar :  _MENU_",
+                    "sEmptyTable": "No hay datos disponibles en la tabla",
+                    "sInfoEmpty": "Mostrando 0 a 0 de 0 entradas",
                 },
                 "lengthMenu": [5, 10, 20, 50],
                 "pageLength": 5
@@ -124,12 +128,12 @@
 
             multiCheck(c2);
 
-            function RegisterDeletePatientEvents() {
-                $('.patient_remove.confirm').on('click', function () {
+            function RegisterDeleteExamEvents() {
+                $('.exam_remove.confirm').on('click', function () {
                     let form_id = $(this).attr('form_id');
-                    let patient_full_name = $(this).attr('patient_full_name');
+                    let exam_aux_title = $(this).attr('exam_aux_title');
                     swal({
-                        title: `¿Está seguro de eliminar al paciente '${patient_full_name}' del registro del sistema?`,
+                        title: `¿Está seguro de eliminar el examen auxiliar '${exam_aux_title}' del registro del sistema?`,
                         type: 'warning',
                         showCancelButton: true,
                         cancelButtonText: "Cancelar",

@@ -34,7 +34,8 @@
 @parent
 <script>
 
-    $('#btnGuardarExamenRegional').click(() => {
+    $('#btnGuardarExamenRegional').click((e) => {
+        e.preventDefault();
         $('#btnGuardarExamenRegional').prop('disabled',true);
         $('#btnGuardarExamenRegional').html('Guardando...');
         $('#formExamenRegional').submit();

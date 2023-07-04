@@ -19,7 +19,7 @@ body {
   overflow-x: hidden;
   overflow-y: auto;
   letter-spacing: 0.0312rem;
-  font-family: 'Quicksand', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   max-width: 1600px;
   margin: 0 auto; }
 
@@ -175,7 +175,7 @@ code {
 .layout-px-spacing {
   padding: 0 32px !important; }
 
-/* 
+/*
 =====================
     Navigation Bar
 =====================
@@ -779,7 +779,7 @@ code {
 /*
     ====================
         More Dropdown
-    ====================    
+    ====================
 */
 /*
     Footer

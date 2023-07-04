@@ -34,7 +34,8 @@
 @parent
 <script>
 
-    $('#btnGuardarExamenClinico').click(() => {
+    $('#btnGuardarExamenClinico').click((e) => {
+        e.preventDefault();
         $('#btnGuardarExamenClinico').prop('disabled',true);
         $('#btnGuardarExamenClinico').html('Guardando...');
         $('#formExamenClinico').submit();

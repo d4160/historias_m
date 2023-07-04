@@ -81,6 +81,9 @@ Route::post('citas/updateImpresionDiagnostica', [CitaController::class, 'updateI
 Route::post('citas/updateTratamiento', [CitaController::class, 'updateTratamiento'])
     ->middleware(['auth', 'role'])->name('citas.update_tratamiento');
 
+Route::get('historia/imprimir/{id}', [CitaController::class, 'print'])
+    ->middleware(['auth', 'role'])->name('citas.print');
+
 Route::get('examenesAuxiliares/{historia_id}', [ExamenAuxiliarController::class, 'index'])
     ->middleware(['auth', 'role'])->name('examenes_auxiliares.index');
 

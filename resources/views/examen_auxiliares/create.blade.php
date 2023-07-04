@@ -7,7 +7,7 @@
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></button>
             </div>
             <div class="modal-body">
-                <form method="POST" class="mt-0" action="{{ route('examen_auxiliares.store') }}" enctype="multipart/form-data">
+                <form method="POST" id="formExam" class="mt-0" action="{{ route('examen_auxiliares.store') }}" enctype="multipart/form-data">
                     @csrf
 
                     <input type="hidden" id="exam_modal_historia_id" name="historia_id" value="{{ old('historia_id') }}">
@@ -21,14 +21,14 @@
                         <textarea class="mb-2 form-control" id="descripcion" name="descripcion" rows="2">{{ old('descripcion') }}</textarea>
                         @error('descripcion') <div class="invalid-feedback" style="display: block;">{{ $message }}</div> @enderror
                     </div>
-                    <div class="form-group">
+                    <div class="form-group mb-4">
                         <label for="file">Archivo</label>
                         <input type="file" class="form-control-file" id="file" name="file">
                         @error('file') <div class="invalid-feedback" style="display: block;">{{ $message }}</div> @enderror
                     </div>
 
                     {{--  onclick="this.form.submit(); this.disabled = true; this.innerText='Guardando...'"  --}}
-                    <button type="submit" class="mt-2 mb-2 btn btn-primary btn-block btn_submit2">Guardar</button>
+                    <button type="submit" id="btnGuardarExam" class="mt-2 mb-2 btn btn-primary btn-block btn_submit2">Guardar</button>
                 </form>
             </div>
         </div>
@@ -38,6 +38,16 @@
 @section('scripts')
 @parent
 <script>
+
+    $('#btnGuardarExam').click((e) => {
+        e.preventDefault();
+        $('#btnGuardarExam').prop('disabled',true);
+        // $(this).css('color', 'black');
+        // this.style.setProperty( 'color', 'black', 'important' );
+        $('#btnGuardarExam').html('Guardando...');
+        $('#formExam').submit();
+    });
+
     @if($errors->has('titulo') || $errors->has('descripcion') || $errors->has('file'))
 
         $(function() {
