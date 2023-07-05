@@ -50,7 +50,7 @@
                     </div>
 
                     <div class="fxt-transformY-50 fxt-transition-delay-2">
-                        <h1 style="color: #2762AB; font-family: Monserrat, sans; font-size: 34px;">Resultados del paciente</h1>
+                        <h1 style="color: #2762AB; font-family: Montserrat, sans; font-size: 34px;">Resultados del paciente</h1>
                     </div>
 
                     <form method="POST" action="{{ route('login') }}" class="mt-5">

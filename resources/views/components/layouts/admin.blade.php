@@ -178,7 +178,7 @@
             <div class="layout-px-spacing">
 
                 <div class="page-header">
-                    <div class="page-title">
+                    <div class="page-title mt-4">
                         <h3>{{ $bodyTitle }}</h3>
                     </div>
                 </div>

@@ -11,7 +11,7 @@ var sline = {
       show: false,
     }
   },
-  // colors: ['#54969C'],
+  // colors: ['#2762AB'],
   dataLabels: {
     enabled: false
   },
@@ -55,7 +55,7 @@ var sLineArea = {
           show: false,
         }
     },
-    // colors: ['#54969C', '#888ea8'],
+    // colors: ['#2762AB', '#888ea8'],
     dataLabels: {
         enabled: false
     },
@@ -72,7 +72,7 @@ var sLineArea = {
 
     xaxis: {
         type: 'datetime',
-        categories: ["2018-09-19T00:00:00", "2018-09-19T01:30:00", "2018-09-19T02:30:00", "2018-09-19T03:30:00", "2018-09-19T04:30:00", "2018-09-19T05:30:00", "2018-09-19T06:30:00"],                
+        categories: ["2018-09-19T00:00:00", "2018-09-19T01:30:00", "2018-09-19T02:30:00", "2018-09-19T03:30:00", "2018-09-19T04:30:00", "2018-09-19T05:30:00", "2018-09-19T06:30:00"],
     },
     tooltip: {
         x: {
@@ -102,10 +102,10 @@ var sCol = {
         bar: {
             horizontal: false,
             columnWidth: '55%',
-            endingShape: 'rounded'  
+            endingShape: 'rounded'
         },
     },
-    // colors: ['#888ea8', '#54969C'],
+    // colors: ['#888ea8', '#2762AB'],
     dataLabels: {
         enabled: false
     },
@@ -161,7 +161,7 @@ var sColStacked = {
           show: false,
         }
     },
-    // colors: ['#54969C', '#888ea8', '#acb0c3', '#d3d3d3'],
+    // colors: ['#2762AB', '#888ea8', '#acb0c3', '#d3d3d3'],
     responsive: [{
         breakpoint: 480,
         options: {
@@ -220,7 +220,7 @@ var sBar = {
           show: false,
         }
     },
-    // colors: ['#54969C'],
+    // colors: ['#2762AB'],
     plotOptions: {
         bar: {
             horizontal: true,
@@ -255,7 +255,7 @@ var options = {
       show: false,
     }
   },
-  // colors: ['#54969C', '#888ea8'],
+  // colors: ['#2762AB', '#888ea8'],
   series: [{
     name: 'Website Blog',
     type: 'column',
@@ -308,7 +308,7 @@ var donutChart = {
           show: false,
         }
     },
-    // colors: ['#54969C', '#888ea8', '#acb0c3', '#d3d3d3'],
+    // colors: ['#2762AB', '#888ea8', '#acb0c3', '#d3d3d3'],
     series: [44, 55, 41, 17],
     responsive: [{
         breakpoint: 480,
@@ -341,7 +341,7 @@ var radialChart = {
           show: false,
         }
     },
-    // colors: ['#54969C', '#888ea8', '#acb0c3', '#d3d3d3'],
+    // colors: ['#2762AB', '#888ea8', '#acb0c3', '#d3d3d3'],
     plotOptions: {
         radialBar: {
             dataLabels: {
@@ -363,7 +363,7 @@ var radialChart = {
         }
     },
     series: [44, 55, 67, 83],
-    labels: ['Apples', 'Oranges', 'Bananas', 'Berries'],    
+    labels: ['Apples', 'Oranges', 'Bananas', 'Berries'],
 }
 
 var chart = new ApexCharts(

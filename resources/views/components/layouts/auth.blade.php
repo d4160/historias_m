@@ -16,7 +16,7 @@
 	<!-- Flaticon CSS -->
 	<link rel="stylesheet" href="{{ asset('login-assets/font/flaticon.css') }}">
 	<!-- Google Web Fonts -->
-	<link href="https://fonts.googleapis.com/css?family=Monserrat:300,400,500,700&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,700&display=swap" rel="stylesheet">
 	<!-- Custom CSS -->
 	<link rel="stylesheet" href="{{ asset('login-assets/style.css') }} ">
 

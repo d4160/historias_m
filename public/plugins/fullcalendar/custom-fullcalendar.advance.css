@@ -36,7 +36,7 @@
 
 .popover-primary .arrow:after, .popover-primary .arrow:before {
   display: none;
-  border-top-color: #54969C; }
+  border-top-color: #2762AB; }
 
 .popover-primary .popover-header {
   background-color: #515365;
@@ -84,7 +84,7 @@
     height: 10px;
     width: 10px; }
   .labels .label.label-primary:before {
-    background: #54969C; }
+    background: #2762AB; }
   .labels .label.label-warning:before {
     background: #e2a03f; }
   .labels .label.label-success:before {
@@ -93,7 +93,7 @@
     background: #e7515a; }
 
 .radio-primary span.new-control-indicator {
-  border: 2px solid #54969C; }
+  border: 2px solid #2762AB; }
 
 .radio-warning span.new-control-indicator {
   border: 2px solid #e2a03f; }
@@ -215,10 +215,10 @@ input[readonly] {
   box-shadow: none; }
 
 #addEventsModal .modal-footer #add-e {
-  background-color: #54969C;
+  background-color: #2762AB;
   color: #fff;
   font-weight: 600;
-  border: 1px solid #54969C;
+  border: 1px solid #2762AB;
   padding: 10px 25px; }
 
 #addEventsModal .modal-footer #edit-event {
@@ -230,13 +230,13 @@ input[readonly] {
 
 #addEventsModal .modal-footer [data-dismiss="modal"] {
   background-color: #fff;
-  color: #54969C;
+  color: #2762AB;
   font-weight: 700;
   border: 1px solid #e8e8e8;
   padding: 10px 25px; }
 
 td.fc-today.fc-state-highlight span {
-  background: #54969C;
+  background: #2762AB;
   border-radius: 50%;
   color: #fff;
   display: inline-block !important;
@@ -254,7 +254,7 @@ td.fc-today.fc-state-highlight span {
   border-radius: 50%; }
 
 .fc-day-grid-event.bg-primary .fc-content:before {
-  background: #54969C; }
+  background: #2762AB; }
 
 .fc-day-grid-event.bg-success .fc-content:before {
   background: #8dbf42; }
