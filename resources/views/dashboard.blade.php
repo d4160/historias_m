@@ -1,12 +1,12 @@
-<x-layouts.admin title="Historias Clínicas" bodyTitle="Historias Clínicas">
+<x-layouts.admin title="Resultados en línea" bodyTitle="Resultados en línea">
 
     @php
         $user = Auth::user();
     @endphp
 
     <div class="ml-3 layout-top-spacing">
-        <h6>Hola {{ $user->full_name }},</h6>
-        <p>Bienvenid@ al sistema de Historias Clínicas.</p>
+        <h6>Hola, {{ $user->full_name }},</h6>
+        <p>Bienvenido(a) a Mis Resultados en Línea.</p>
         <br>
         @php
             $user = Auth::user();

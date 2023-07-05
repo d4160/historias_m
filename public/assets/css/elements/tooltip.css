@@ -31,7 +31,7 @@
 */
 /*		Tooltip Inner 	*/
 .tooltip-primary .tooltip-inner {
-  color: #1b55e2;
+  color: #2762AB;
   background-color: #c2d5ff; }
 
 .tooltip-success .tooltip-inner {
@@ -51,7 +51,7 @@
   background-color: #ffeccb; }
 
 .tooltip-secondary .tooltip-inner {
-  color: #5c1ac3;
+  color: #EE8903;
   background-color: #dccff7; }
 
 .tooltip-dark .tooltip-inner {

@@ -40,13 +40,13 @@ body.maintanence {
   font-size: 24px;
   font-weight: 600;
   margin-bottom: 0;
-  color: #1b55e2; }
+  color: #2762AB; }
 
 .maintanence a.btn {
   width: 134px;
   padding: 6px;
   font-size: 17px;
-  background-image: linear-gradient(135deg, #1b55e2 0%, #5c1ac3 100%);
+  background-image: linear-gradient(135deg, #2762AB 0%, #EE8903 100%);
   border: none;
   letter-spacing: 2px; }
 

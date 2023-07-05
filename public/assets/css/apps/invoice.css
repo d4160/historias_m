@@ -189,7 +189,7 @@
     .invoice-inbox .invoice-action svg:not(:last-child) {
       margin-right: 15px; }
     .invoice-inbox .invoice-action svg:hover {
-      color: #1b55e2;
+      color: #2762AB;
       fill: rgba(27, 85, 226, 0.239216); }
   .invoice-inbox #ct {
     display: none; }
@@ -221,7 +221,7 @@
         width: 42px;
         height: 42px;
         margin-right: 10px;
-        color: #1b55e2;
+        color: #2762AB;
         fill: rgba(27, 85, 226, 0.239216); }
     .invoice .content-section .inv--head-section .inv-brand-name {
       font-size: 23px;
@@ -236,7 +236,7 @@
     font-weight: 700;
     margin-bottom: 2px;
     font-size: 13px;
-    color: #1b55e2; }
+    color: #2762AB; }
   .invoice .content-section .inv--detail-section .inv-detail-title {
     font-weight: 700;
     margin-bottom: 0;
@@ -257,7 +257,7 @@
     .invoice .content-section .inv--detail-section .inv-list-number .inv-number {
       font-weight: 700;
       font-size: 13px;
-      color: #1b55e2; }
+      color: #2762AB; }
   .invoice .content-section .inv--detail-section .inv-created-date, .invoice .content-section .inv--detail-section .inv-due-date {
     margin-bottom: 2px; }
     .invoice .content-section .inv--detail-section .inv-created-date .inv-title, .invoice .content-section .inv--detail-section .inv-due-date .inv-title {
@@ -276,7 +276,7 @@
       background: #ebedf2; }
     .invoice .content-section .inv--product-table-section th {
       border: none;
-      color: #1b55e2; }
+      color: #2762AB; }
     .invoice .content-section .inv--product-table-section td {
       border-top: 1px solid #e0e6ed;
       color: #515365;
@@ -286,7 +286,7 @@
     font-weight: 600;
     margin-bottom: 52px; }
     .invoice .content-section .inv--payment-info .inv-title {
-      color: #1b55e2;
+      color: #2762AB;
       font-weight: 600;
       margin-bottom: 15px; }
     .invoice .content-section .inv--payment-info .inv-subtitle {

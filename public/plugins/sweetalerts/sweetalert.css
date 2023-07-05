@@ -436,7 +436,7 @@ body.swal2-iosfix {
     transform: rotate(-45deg); }
   .swal2-icon.swal2-success [class^='swal2-success-line'] {
     height: 5px;
-    background-color: #25d5e4 !important;
+    background-color: #EE8903 !important;
     display: block;
     border-radius: 2px;
     position: absolute;
@@ -475,7 +475,7 @@ body.swal2-iosfix {
     .swal2-progresssteps .swal2-progresscircle:last-child {
       margin-right: 0; }
     .swal2-progresssteps .swal2-progresscircle.swal2-activeprogressstep {
-      background: #25d5e4 !important; }
+      background: #EE8903 !important; }
       .swal2-progresssteps .swal2-progresscircle.swal2-activeprogressstep ~ .swal2-progresscircle, .swal2-progresssteps .swal2-progresscircle.swal2-activeprogressstep ~ .swal2-progressline {
         background: #ebedf2 !important; }
   .swal2-progresssteps .swal2-progressline {

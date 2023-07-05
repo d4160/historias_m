@@ -11,6 +11,8 @@
  * Copyright 2012,2013 Lu Wang <coolwanglu@gmail.com>
  * https://github.com/pdf2htmlEX/pdf2htmlEX/blob/master/share/LICENSE
  */#sidebar{position:absolute;top:0;left:0;bottom:0;width:250px;padding:0;margin:0;overflow:auto}#page-container{position:absolute;top:0;left:0;margin:0;padding:0;border:0}@media screen{#sidebar.opened+#page-container{left:250px}#page-container{bottom:0;right:0;overflow:auto}.loading-indicator{display:none}.loading-indicator.active{display:block;position:absolute;width:64px;height:64px;top:50%;left:50%;margin-top:-32px;margin-left:-32px}.loading-indicator img{position:absolute;top:0;left:0;bottom:0;right:0}}@media print{@page{margin:0}html{margin:0}body{margin:0;-webkit-print-color-adjust:exact}#sidebar{display:none}#page-container{width:auto;height:auto;overflow:visible;background-color:transparent}.d{display:none}}.pf{position:relative;background-color:white;overflow:hidden;margin:0;border:0}.pc{position:absolute;border:0;padding:0;margin:0;top:0;left:0;width:100%;height:100%;overflow:hidden;display:block;transform-origin:0 0;-ms-transform-origin:0 0;-webkit-transform-origin:0 0}.pc.opened{display:block}.bf{position:absolute;border:0;margin:0;top:0;bottom:0;width:100%;height:100%;-ms-user-select:none;-moz-user-select:none;-webkit-user-select:none;user-select:none}.bi{position:absolute;border:0;margin:0;-ms-user-select:none;-moz-user-select:none;-webkit-user-select:none;user-select:none}@media print{.pf{margin:0;box-shadow:none;page-break-after:always;page-break-inside:avoid}@-moz-document url-prefix(){.pf{overflow:visible;border:1px solid #fff}.pc{overflow:visible}}}.c{position:absolute;border:0;padding:0;margin:0;overflow:hidden;display:block}.t{position:absolute;white-space:pre;font-size:1px;transform-origin:0 100%;-ms-transform-origin:0 100%;-webkit-transform-origin:0 100%;unicode-bidi:bidi-override;-moz-font-feature-settings:"liga" 0}.t:after{content:''}.t:before{content:'';display:inline-block}.t span{position:relative;unicode-bidi:bidi-override}._{display:inline-block;color:transparent;z-index:-1}::selection{background:rgba(127,255,255,0.4)}::-moz-selection{background:rgba(127,255,255,0.4)}.pi{display:none}.d{position:absolute;transform-origin:0 100%;-ms-transform-origin:0 100%;-webkit-transform-origin:0 100%}.it{border:0;background-color:rgba(255,255,255,0.0)}.ir:hover{cursor:pointer}</style>
+
+<link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap" rel="stylesheet">
 <style type="text/css">
 /*!
  * Fancy styles for pdf2htmlEX
@@ -140,7 +142,7 @@
 
     div.abs {
         position: absolute;
-        {{--  font-family: OpenSans, sans;  --}}
+        font-family: Poppins, sans;
     }
 </style>
 
@@ -241,7 +243,7 @@ pdf2htmlEX.defaultViewer = new pdf2htmlEX.Viewer({});
 
     <div class="t m0 x1 h2 y9 ff1 fs0 fc0 sc0 ls0 ws0">A<span class="_ _0"></span>N<span class="_ _0"></span>T<span class="_ _0"></span>E<span class="_ _0"></span>C<span class="_ _0"></span>E<span class="_ _0"></span>D<span class="_ _0"></span>E<span class="_ _0"></span>N<span class="_ _0"></span>T<span class="_ _0"></span>E<span class="_ _0"></span>S
 
-        <div class="abs" style="top: 184%;left: -0.1%;font-size: 78%;margin-right: -570%;line-height: 2;white-space: normal;"><span >{{ $historia->antecedente->antecedentes }}</span></div>
+        <div class="abs" style="top: 184%;left: -0.1%;font-size: 82%;margin-right: -570%;line-height: 2;white-space: normal;"><span >{{ $historia->antecedente->antecedentes }}</span></div>
 
     </div>
 
@@ -257,36 +259,36 @@ pdf2htmlEX.defaultViewer = new pdf2htmlEX.Viewer({});
     </div>
 
     <div class="t m0 x1 h2 yc ff1 fs0 fc0 sc0 ls0 ws0">O<span class="_ _0"></span>R<span class="_ _0"></span>I<span class="_ _0"></span>N<span class="_ _0"></span>A<span class="_ _b"> </span>F<span class="_ _0"></span>U<span class="_ _0"></span>R
-    
+
         <div class="abs" style="top: 143%;left: 0%;"><span>{{ $examenClinico->orina }}</span></div>
         <div class="abs" style="top: 143%;left: 86.6%;"><span>{{ $examenClinico->fur }}</span></div>
     </div>
 
     <div class="t m0 x2 h2 yd ff1 fs0 fc0 sc0 ls0 ws0">O<span class="_ _0"></span>T<span class="_ _0"></span>R<span class="_ _0"></span>O<span class="_ _0"></span>S
-        
+
         <div class="abs" style="top: 143%;left: 5.5%;"><span>{{ $examenClinico->otros }}</span></div>
     </div>
 
     <div class="t m0 x4 h4 ye ff2 fs2 fc1 sc0 ls0 ws0">H<span class="_ _3"></span>I<span class="_ _3"></span>S<span class="_ _0"></span>T<span class="_ _3"></span>O<span class="_ _3"></span>R<span class="_ _0"></span>I<span class="_ _3"></span>A<span class="_ _3"></span> <span class="_ _0"></span>C<span class="_ _3"></span>L<span class="_ _3"></span>Í<span class="_ _0"></span>N<span class="_ _3"></span>I<span class="_ _3"></span>C<span class="_ _0"></span>A</div>
 
     <div class="t m0 x5 h3 yf ff2 fs1 fc1 sc0 ls0 ws0">E<span class="_ _3"></span>XA<span class="_ _3"></span>ME<span class="_ _3"></span>N<span class="_ _0"></span> <span class="_ _0"></span>R<span class="_ _0"></span>E<span class="_ _3"></span>GI<span class="_ _3"></span>ON<span class="_ _3"></span>A<span class="_ _0"></span>L
-    
-        <div class="abs" style="top: 173%;left: -0.1%;font-size: 78%;margin-right: -390%;line-height: 2;white-space: normal;color: rgb(1,45,111);"><span >{{ $historia->examenRegional->examen_regional }}</span></div>
+
+        <div class="abs" style="top: 173%;left: -0.1%;font-size: 82%;margin-right: -390%;line-height: 2;white-space: normal;color: rgb(1,45,111);"><span >{{ $historia->examenRegional->examen_regional }}</span></div>
     </div>
 
     <div class="t m0 x6 h3 y10 ff2 fs1 fc1 sc0 ls0 ws0">E<span class="_ _3"></span>XÁ<span class="_ _3"></span>ME<span class="_ _3"></span>N<span class="_ _0"></span>E<span class="_ _0"></span>S<span class="_ _0"></span> <span class="_ _3"></span>AU<span class="_ _3"></span>XI<span class="_ _3"></span>L<span class="_ _0"></span>I<span class="_ _0"></span>A<span class="_ _0"></span>R<span class="_ _3"></span>ES
-    
-        <div class="abs" style="top: 173%;left: -0.1%;font-size: 78%;margin-right: -311%;line-height: 2;white-space: normal;color: rgb(1,45,111);"><span >{!! $examsString !!}</span></div>
+
+        <div class="abs" style="top: 173%;left: -0.1%;font-size: 82%;margin-right: -311%;line-height: 2;white-space: normal;color: rgb(1,45,111);"><span >{!! $examsString !!}</span></div>
     </div>
 
     <div class="t m0 x6 h3 y11 ff2 fs1 fc1 sc0 ls0 ws0">I<span class="_ _3"></span>MP<span class="_ _3"></span>RE<span class="_ _3"></span>S<span class="_ _0"></span>I<span class="_ _0"></span>Ó<span class="_ _0"></span>N<span class="_ _3"></span> D<span class="_ _3"></span>IA<span class="_ _3"></span>G<span class="_ _0"></span>N<span class="_ _0"></span>Ó<span class="_ _0"></span>S<span class="_ _3"></span>TI<span class="_ _3"></span>CA
-    
-        <div class="abs" style="top: 173%;left: -0.1%;font-size: 78%;margin-right: -261%;line-height: 2;white-space: normal;color: rgb(1,45,111);"><span >{{ $historia->impresionDiagnostica->impresion_diagnostica }}</span></div>
+
+        <div class="abs" style="top: 173%;left: -0.1%;font-size: 82%;margin-right: -261%;line-height: 2;white-space: normal;color: rgb(1,45,111);"><span >{{ $historia->impresionDiagnostica->impresion_diagnostica }}</span></div>
     </div>
 
     <div class="t m0 x6 h3 y12 ff2 fs1 fc1 sc0 ls0 ws0">T<span class="_ _3"></span>RA<span class="_ _3"></span>TA<span class="_ _3"></span>M<span class="_ _0"></span>I<span class="_ _0"></span>E<span class="_ _0"></span>N<span class="_ _3"></span>TO
-    
-        <div class="abs" style="top: 173%;left: -0.1%;font-size: 78%;margin-right: -544%;line-height: 2;white-space: normal;color: rgb(1,45,111);"><span >{{ $historia->tratamiento->tratamiento }}</span></div>
+
+        <div class="abs" style="top: 173%;left: -0.1%;font-size: 82%;margin-right: -544%;line-height: 2;white-space: normal;color: rgb(1,45,111);"><span >{{ $historia->tratamiento->tratamiento }}</span></div>
     </div>
 
 

@@ -1,56 +1,74 @@
-<x-guest-layout>
-    <x-auth-card>
-        <x-slot name="logo">
-            <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-            </a>
-        </x-slot>
+<x-layouts.auth title="Historias Clínicas - Login">
+    <h1 class="">Historias Clínicas <a href="url"><span class="brand-name"></span></a></h1>
 
-        <!-- Session Status -->
-        <x-auth-session-status class="mb-4" :status="session('status')" />
+    <!-- Session Status -->
+    <x-auth-session-status class="mb-4" :status="session('status')" />
 
-        <!-- Validation Errors -->
-        <x-auth-validation-errors class="mb-4" :errors="$errors" />
+    <!-- Validation Errors -->
+    <x-auth-validation-errors class="mb-4" :errors="$errors" />
 
-        <form method="POST" action="{{ route('login') }}">
-            @csrf
+    <form method="POST" class="text-left" action="{{ route('login') }}" id="login-form">
 
-            <!-- Email Address -->
-            <div>
-                <x-label for="email" :value="__('Email')" />
+        @csrf
+        <!--Email-->
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="text" id="num_document" name="num_document" :value="old('num_document')" required>
+            <label class="mdl-textfield__label" for="num_document">Nº de documento</label>
+            <span class="mdl-textfield__error">Ingrese un documento válido</span>
+        </div>
+            <br/>
+            <br/>
+        <!--Password-->
+        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input pattern=".{8,}" class="mdl-textfield__input" type="password" id="password" name="password" required autocomplete="current-password">
+            <label class="mdl-textfield__label" for="password">{{ __('Password') }}</label>
+            <span class="mdl-textfield__error">Mínimo 8 caracteres</span>
+        </div>
 
-                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
-            </div>
+        <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="toggle-password">
+            <input type="checkbox" id="toggle-password" class="mdl-checkbox__input" name="toggle-password" checked>
+            <span class="keep-text mdl-checkbox__label">Mostrar contraseña</span>
+        </label>
 
-            <!-- Password -->
-            <div class="mt-4">
-                <x-label for="password" :value="__('Password')" />
+        <br/>
 
-                <x-input id="password" class="block mt-1 w-full"
-                                type="password"
-                                name="password"
-                                required autocomplete="current-password" />
-            </div>
+        @if (Route::has('password.request'))
+        <p class="forgot-text"><a href="{{ route('password.request') }}">{{ __('Forgot your password?') }}</a></p>
+        @endif
 
-            <!-- Remember Me -->
-            <div class="block mt-4">
-                <label for="remember_me" class="inline-flex items-center">
-                    <input id="remember_me" type="checkbox" class="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" name="remember">
-                    <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
-                </label>
-            </div>
+        <!--CheckBox-->
+        <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="remember_me">
+            <input type="checkbox" id="remember_me" class="mdl-checkbox__input" name="remember" checked>
+            <span class="keep-text mdl-checkbox__label">{{ __('Remember me') }}</span>
+        </label>
 
-            <div class="flex items-center justify-end mt-4">
-                @if (Route::has('password.request'))
-                    <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
-                        {{ __('Forgot your password?') }}
-                    </a>
-                @endif
+    </form>
 
-                <x-button class="ml-3">
-                    {{ __('Log in') }}
-                </x-button>
-            </div>
-        </form>
-    </x-auth-card>
-</x-guest-layout>
+    <button class="sign-in-btn mdl-button mdl-js-ripple-effect mdl-js-button mdl-button--raised mdl-button--colored" type="submit" id="btnSubmit">
+            {{ __('Login') }}
+        </button><!--/button-->
+
+    <x-slot name="scripts">
+        <script>
+            $('#toggle-password').change((e) => {
+                if ($('#toggle-password').is(':checked')) {
+                    $('#password').get(0).type = 'type';
+                }
+                else {
+                    $('#password').get(0).type = 'password';
+                }
+            });
+
+            $('#btnSubmit').click(function(e){
+                e.preventDefault();
+                if($('#login-form').reportValidity()){
+                    $(this).prop('disabled',true);
+                    // $(this).css('color', 'black');
+                    // this.style.setProperty( 'color', 'black', 'important' );
+                    $(this).html('Cargando...');
+                    $('#login-form').submit();
+                }
+            });
+        </script>
+    </x-slot>
+</x-layouts.auth>

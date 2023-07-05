@@ -1,88 +1,60 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<!doctype html>
+<html class="no-js" lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
-    <title>{{ $title }}</title>
-    <link rel="icon" type="image/x-icon" href="{{ asset('assets/img/favicon.png') }}"/>
-    <!-- BEGIN GLOBAL MANDATORY STYLES -->
-    {{--  <link href="https://fonts.googleapis.com/css?family=Quicksand:400,500,600,700&display=swap" rel="stylesheet">  --}}
-
-    <style>
-        @font-face {
-            font-family: 'Mont';
-            src: url('{{ asset("assets/fonts/Mont-Regular.woff") }}');
-            font-weight: normal;
-            font-style: normal;
-        }
-
-        @font-face {
-            font-family: 'Mont';
-            src: url('{{ asset("assets/fonts/Mont-Bold.woff") }}');
-            font-weight: bold;
-            font-style: normal;
-        }
-
-        @font-face {
-            font-family: 'Mont';
-            src: url('{{ asset("assets/fonts/Mont-RegularItalic.woff") }}');
-            font-weight: normal;
-            font-style: italic;
-        }
-
-        @font-face {
-            font-family: 'Mont';
-            src: url('{{ asset("assets/fonts/Mont-BoldItalic.woff") }}');
-            font-weight: bold;
-            font-style: italic;
-        }
-    </style>
-
-    <link href="{{ asset('bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset('assets/css/plugins.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset('assets/css/structure.css') }}" rel="stylesheet" type="text/css" class="structure" />
-    <link href="{{ asset('assets/css/authentication/form-1.css') }}" rel="stylesheet" type="text/css" />
-    <!-- END GLOBAL MANDATORY STYLES -->
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/forms/theme-checkbox-radio.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/forms/switches.css') }}">
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title>{{ $title }}</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('login-assets/img/favicon.png') }}"/>
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="{{ asset('login-assets/css/bootstrap.min.css') }}">
+	<!-- Fontawesome CSS -->
+	<link rel="stylesheet" href="{{ asset('login-assets/css/fontawesome-all.min.css') }}">
+	<!-- Flaticon CSS -->
+	<link rel="stylesheet" href="{{ asset('login-assets/font/flaticon.css') }}">
+	<!-- Google Web Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Monserrat:300,400,500,700&display=swap" rel="stylesheet">
+	<!-- Custom CSS -->
+	<link rel="stylesheet" href="{{ asset('login-assets/style.css') }} ">
 
     {{  $styles ?? '' }}
 </head>
-<body class="form">
 
-
-    <div class="form-container">
-        <div class="form-form">
-            <div class="form-form-wrap">
-                <div class="form-container">
-                    <div class="form-content">
-
-                        {{ $slot }}
-
-                        <p class="terms-conditions">© {{ date('Y') }} Todos los derechos reservados. <br> <a href="url"></a>.
-                            {{--  <a href="javascript:void(0);">Cookie Preferences</a>, <a href="javascript:void(0);">Privacy</a>, and <a href="javascript:void(0);">Terms</a>.  --}}
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="form-image">
-            <div class="l-image">
-            </div>
+<body>
+	<!--[if lt IE 8]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <div id="preloader" class="preloader">
+        <div class='inner'>
+            <div class='line1'></div>
+            <div class='line2'></div>
+            <div class='line3'></div>
         </div>
     </div>
+	<section class="fxt-template-animation fxt-template-layout4">
+		<div class="container-fluid">
+			{{ $slot }}
 
 
-    <!-- BEGIN GLOBAL MANDATORY SCRIPTS -->
-    <script src="{{ asset('assets/js/libs/jquery-3.1.1.min.js') }}"></script>
-    <script src="{{ asset('bootstrap/js/popper.min.js') }}"></script>
-    <script src="{{ asset('bootstrap/js/bootstrap.min.js') }}"></script>
-
-    <!-- END GLOBAL MANDATORY SCRIPTS -->
-    <script src="{{ asset('assets/js/authentication/form-1.js') }}"></script>
+                {{--  <a href="javascript:void(0);">Cookie Preferences</a>, <a href="javascript:void(0);">Privacy</a>, and <a href="javascript:void(0);">Terms</a>.  --}}
+            </p>
+		</div>
+	</section>
+	<!-- jquery-->
+	<script src="{{ asset('login-assets/js/jquery-3.5.0.min.js') }}"></script>
+	<!-- Bootstrap js -->
+	<script src="{{ asset('login-assets/js/bootstrap.min.js') }}"></script>
+	<!-- Imagesloaded js -->
+	<script src="{{ asset('login-assets/js/imagesloaded.pkgd.min.js') }}"></script>
+	<!-- Validator js -->
+	<script src="{{ asset('login-assets/js/validator.min.js') }}"></script>
+	<!-- Custom Js -->
+	<script src="{{ asset('login-assets/js/main.js') }}"></script>
 
     {{  $scripts ?? '' }}
-
 </body>
+
 </html>

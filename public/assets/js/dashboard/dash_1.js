@@ -195,7 +195,7 @@ var options1 = {
             }
           },
           customSVG: {
-              SVG: '<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="#1b55e2" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="feather feather-circle"><circle cx="12" cy="12" r="10"></circle></svg>',
+              SVG: '<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="#2762AB" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="feather feather-circle"><circle cx="12" cy="12" r="10"></circle></svg>',
               cssClass: undefined,
               offsetX: -8,
               offsetY: 5
@@ -220,7 +220,7 @@ var options1 = {
       },
     }
   },
-  colors: ['#1b55e2', '#e7515a'],
+  colors: ['#2762AB', '#e7515a'],
   dataLabels: {
       enabled: false
   },
@@ -393,7 +393,7 @@ var options = {
         type: 'donut',
         width: 380
     },
-    colors: ['#5c1ac3', '#e2a03f', '#e7515a', '#e2a03f'],
+    colors: ['#EE8903', '#e2a03f', '#e7515a', '#e2a03f'],
     dataLabels: {
       enabled: false
     },

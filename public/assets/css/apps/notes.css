@@ -101,7 +101,7 @@
     padding: 4px 7px;
     height: 24px;
     width: 23px;
-    color: #1b55e2;
+    color: #2762AB;
     font-weight: 600; }
 
 .tab-title .nav-pills.group-list .nav-item a {
@@ -130,7 +130,7 @@
     border: 1px solid #e2a03f; }
   .tab-title .nav-pills.group-list .nav-item a.g-dot-success:before {
     background: #dccff7;
-    border: 1px solid #5c1ac3; }
+    border: 1px solid #EE8903; }
 
 .tab-title .nav-pills .nav-item .dropdown-menu {
   box-shadow: 0px 0px 15px 1px rgba(113, 106, 202, 0.2);
@@ -143,7 +143,7 @@
   padding: 8px 18px; }
   .tab-title li.mail-labels a.dropdown-item:hover {
     background-color: #fff;
-    color: #1b55e2; }
+    color: #2762AB; }
 
 .tab-title li.mail-labels .label:after {
   position: absolute;
@@ -165,7 +165,7 @@
     text-align: right;
     margin-bottom: 43px; }
     .note-container .switch .active-view {
-      color: #1b55e2;
+      color: #2762AB;
       fill: rgba(27, 85, 226, 0.239216); }
     .note-container .switch .view-list, .note-container .switch .view-grid {
       padding: 10px;
@@ -261,7 +261,7 @@
           border: 2px solid #e2a03f; }
         .note-container.note-grid .note-item .note-inner-content .note-footer .tags .g-dot-social {
           background: #dccff7;
-          border: 2px solid #5c1ac3; }
+          border: 2px solid #EE8903; }
         .note-container.note-grid .note-item .note-inner-content .note-footer .tags .g-dot-important {
           background: #ffe1e2;
           border: 2px solid #e7515a; }
@@ -298,7 +298,7 @@
           border: 1px solid #e2a03f; }
         .note-container.note-grid .note-item .note-inner-content .note-footer .tags-selector .dropdown-menu a.g-dot-social:before {
           background: #dccff7;
-          border: 1px solid #5c1ac3; }
+          border: 1px solid #EE8903; }
     .note-container.note-grid .note-item .note-inner-content .note-footer .nav-link {
       padding: 0; }
       .note-container.note-grid .note-item .note-inner-content .note-footer .nav-link span {
@@ -329,7 +329,7 @@
     border-top: none; }
     .modal-content .modal-footer [data-dismiss="modal"] {
       background-color: #fff;
-      color: #1b55e2;
+      color: #2762AB;
       font-weight: 700;
       border: 1px solid #e8e8e8;
       padding: 10px 25px; }
@@ -338,10 +338,10 @@
       width: 18px;
       vertical-align: bottom; }
     .modal-content .modal-footer #btn-n-add {
-      background-color: #1b55e2;
+      background-color: #2762AB;
       color: #fff;
       font-weight: 600;
-      border: 1px solid #1b55e2;
+      border: 1px solid #2762AB;
       padding: 10px 25px; }
     .modal-content .modal-footer #btn-n-save {
       font-weight: 600;

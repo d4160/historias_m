@@ -32,8 +32,8 @@
 /*Default Alerts*/
 .alert-primary {
   color: #fff;
-  background-color: #1b55e2;
-  border-color: #1b55e2; }
+  background-color: #2762AB;
+  border-color: #2762AB; }
 
 .alert-warning {
   color: #fff;
@@ -62,7 +62,7 @@
 
 /*Outline Alerts*/
 .alert-outline-primary {
-  border-color: #1b55e2;
+  border-color: #2762AB;
   border-radius: 5px; }
 
 .alert-outline-warning {
@@ -96,11 +96,11 @@
 
 /*      Light Alert         */
 .alert-light-primary {
-  color: #1b55e2;
+  color: #2762AB;
   background-color: #c2d5ff;
-  border-color: #1b55e2; }
+  border-color: #2762AB; }
   .alert-light-primary svg.close {
-    color: #1b55e2; }
+    color: #2762AB; }
 
 .alert-light-warning {
   color: #e2a03f;
@@ -153,8 +153,8 @@
 /* Custom Alerts */
 /* Default */
 .custom-alert-1 {
-  background-color: #5c1ac3;
-  border-color: #5c1ac3;
+  background-color: #EE8903;
+  border-color: #EE8903;
   border-radius: 5px;
   color: #fff; }
   .custom-alert-1 .alert-icon {

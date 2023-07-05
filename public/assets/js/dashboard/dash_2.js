@@ -251,7 +251,7 @@ try {
               opacity: 0.7,
           }
       },
-      colors: ['#5c1ac3', '#ffbb44'],
+      colors: ['#EE8903', '#ffbb44'],
       plotOptions: {
           bar: {
               horizontal: false,
@@ -340,7 +340,7 @@ try {
       yaxis: {
         min: 0
       },
-      colors: ['#1b55e2'],
+      colors: ['#2762AB'],
       tooltip: {
         x: {
           show: false,

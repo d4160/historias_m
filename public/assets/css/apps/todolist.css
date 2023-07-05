@@ -94,7 +94,7 @@
   max-width: 240px;
   border-right: 1px solid #e0e6ed; }
   .tab-title svg.feather-clipboard {
-    color: #1b55e2;
+    color: #2762AB;
     fill: rgba(27, 85, 226, 0.239216);
     margin-bottom: 13px; }
   .tab-title h5 {
@@ -111,7 +111,7 @@
     color: #fff;
     bottom: 32px;
     left: 17%;
-    background-color: #1b55e2; }
+    background-color: #2762AB; }
     .tab-title #addTask svg {
       margin-right: 5px; }
   .tab-title.mail-menu-show {
@@ -128,14 +128,14 @@
     height: calc(100vh - 377px); }
   .tab-title .nav-pills .nav-link.active {
     background-color: transparent;
-    color: #1b55e2;
-    color: #1b55e2;
+    color: #2762AB;
+    color: #2762AB;
     background: #ebedf2;
     border-top-right-radius: 30px;
     border-bottom-right-radius: 30px;
     padding: 10px 12px 10px 14px; }
     .tab-title .nav-pills .nav-link.active svg {
-      color: #1b55e2;
+      color: #2762AB;
       fill: rgba(27, 85, 226, 0.239216); }
   .tab-title .nav-pills a.nav-link {
     position: relative;
@@ -160,11 +160,11 @@
     padding: 0 !important;
     font-size: 15px;
     top: 11px;
-    color: #1b55e2 !important; }
+    color: #2762AB !important; }
   .tab-title .nav-pills a.nav-link:hover {
-    color: #1b55e2; }
+    color: #2762AB; }
     .tab-title .nav-pills a.nav-link:hover svg {
-      color: #1b55e2;
+      color: #2762AB;
       fill: rgba(27, 85, 226, 0.239216); }
   .tab-title .nav-pills a.nav-link svg {
     color: #888ea8;
@@ -342,7 +342,7 @@
     background: #fff;
     border-radius: 5px;
     opacity: 1;
-    color: #1b55e2;
+    color: #2762AB;
     box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.2);
     cursor: pointer;
     transition: .600s; }
@@ -384,7 +384,7 @@
 
 #todoShowListItem .modal-footer .btn[data-dismiss="modal"] {
   background-color: #fff;
-  color: #1b55e2;
+  color: #2762AB;
   font-weight: 700;
   border: 1px solid #e8e8e8;
   padding: 10px 25px; }
@@ -397,7 +397,7 @@
   align-self: center;
   font-size: 19px;
   margin-right: 14px;
-  color: #1b55e2;
+  color: #2762AB;
   font-weight: 600; }
 
 .compose-box .compose-content form #taskdescription {
@@ -417,15 +417,15 @@
   padding-top: 0; }
   #addTaskModal .modal-footer .btn[data-dismiss="modal"] {
     background-color: #fff;
-    color: #1b55e2;
+    color: #2762AB;
     font-weight: 700;
     border: 1px solid #e8e8e8;
     padding: 10px 25px; }
   #addTaskModal .modal-footer .btn.add-tsk {
-    background-color: #1b55e2;
+    background-color: #2762AB;
     color: #fff;
     font-weight: 600;
-    border: 1px solid #1b55e2;
+    border: 1px solid #2762AB;
     padding: 10px 25px; }
   #addTaskModal .modal-footer .btn.edit-tsk {
     background-color: #8dbf42;

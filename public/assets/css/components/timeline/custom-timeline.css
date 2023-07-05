@@ -25,14 +25,14 @@
     position: relative;
     font-size: 19px;
     font-weight: 600;
-    color: #1b55e2;
+    color: #2762AB;
     margin-bottom: 28px; }
     .timeline-simple p.timeline-title:before {
       position: absolute;
       content: "";
       height: 2px;
       width: 70px;
-      background: #1b55e2;
+      background: #2762AB;
       border-radius: 50px;
       bottom: -2px;
       left: 15px; }
@@ -80,14 +80,14 @@
       font-size: 20px;
       font-weight: 700;
       margin-bottom: 0;
-      color: #1b55e2; }
+      color: #2762AB; }
     .timeline-simple .timeline-list .timeline-post-content svg {
       color: #888ea8;
       vertical-align: text-bottom;
       width: 21px;
       height: 21px; }
     .timeline-simple .timeline-list .timeline-post-content:hover svg {
-      color: #1b55e2;
+      color: #2762AB;
       fill: rgba(27, 85, 226, 0.239216); }
     .timeline-simple .timeline-list .timeline-post-content h6 {
       display: inline-block;
@@ -355,7 +355,7 @@
       align-self: center;
       justify-content: center;
       margin-bottom: 0;
-      color: #1b55e2;
+      color: #2762AB;
       font-weight: 700;
       font-size: 18px;
       z-index: 7;
@@ -381,7 +381,7 @@
       color: #3b3f5c;
       font-weight: 600; }
       .timeline-alter .item-timeline .t-text p a {
-        color: #1b55e2;
+        color: #2762AB;
         font-weight: 600; }
 
 /*
@@ -428,7 +428,7 @@
       border-bottom-width: 0;
       border-radius: 0; }
     .timeline-line .item-timeline .t-dot.t-dot-primary:before {
-      border-color: #1b55e2; }
+      border-color: #2762AB; }
     .timeline-line .item-timeline .t-dot.t-dot-success:before {
       border-color: #8dbf42; }
     .timeline-line .item-timeline .t-dot.t-dot-warning:before {
@@ -440,7 +440,7 @@
     .timeline-line .item-timeline .t-dot.t-dot-dark:before {
       border-color: #3b3f5c; }
     .timeline-line .item-timeline .t-dot.t-dot-primary:after {
-      border-color: #1b55e2; }
+      border-color: #2762AB; }
     .timeline-line .item-timeline .t-dot.t-dot-success:after {
       border-color: #8dbf42; }
     .timeline-line .item-timeline .t-dot.t-dot-warning:after {
@@ -471,7 +471,7 @@
       color: #3b3f5c;
       font-weight: 600; }
       .timeline-line .item-timeline .t-text p a {
-        color: #1b55e2;
+        color: #2762AB;
         font-weight: 600; }
   .timeline-line .item-timeline .t-time {
     margin: 0;

@@ -22,7 +22,7 @@ $(function(){
 
 	$('#continents-map').vectorMap({
 	  map: 'continents_mill',
-		  backgroundColor: '#25d5e4',
+		  backgroundColor: '#EE8903',
 		  regionStyle: {
 			  initial: {
 				  fill: '#fff'
@@ -62,7 +62,7 @@ $(function(){
 
 	$('#south-america-map').vectorMap({
 	  map: 'south_america_mill',
-		  backgroundColor: '#25d5e4',
+		  backgroundColor: '#EE8903',
 		  regionStyle: {
 			  initial: {
 				  fill: '#fff'
