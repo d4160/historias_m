@@ -87,6 +87,9 @@ Route::get('historia/imprimir/{id}', [CitaController::class, 'print'])
 Route::get('examenesAuxiliares/{historia_id}', [ExamenAuxiliarController::class, 'index'])
     ->middleware(['auth', 'role'])->name('examenes_auxiliares.index');
 
+Route::get('tratamientos/{historia_id}', [TratamientoController::class, 'index'])
+    ->middleware(['auth', 'role'])->name('tratamientos.index');
+
 Route::post('enfermedadActuales/guardar/{id}', [EnfermedadActualController::class, 'save'])
     ->middleware(['auth', 'role'])->name('enfermedad_actuales.save');
 
@@ -105,9 +108,6 @@ Route::post('diagnosticos/guardarP/{id}', [DiagnosticoController::class, 'saveP'
 Route::post('diagnosticos/guardarD/{id}', [DiagnosticoController::class, 'saveD'])
     ->middleware(['auth', 'role'])->name('diagnosticos.save_d');
 
-Route::post('tratamientos/guardar/{id}', [TratamientoController::class, 'save'])
-    ->middleware(['auth', 'role'])->name('tratamientos.save');
-
 Route::post('medicamentos/guardar/{id}/cita/{cita_id}', [TratamientoDetalleController::class, 'store'])
     ->middleware(['auth', 'role'])->name('medicamentos.store');
 
@@ -125,6 +125,15 @@ Route::post('examenAuxiliares/actualizar/{id}', [ExamenAuxiliarController::class
 
 Route::post('examenAuxiliares/eliminar/{id}', [ExamenAuxiliarController::class, 'destroy'])
     ->middleware(['auth', 'role'])->name('examen_auxiliares.destroy');
+
+Route::post('tratamientos/guardar', [TratamientoController::class, 'store'])
+    ->middleware(['auth', 'role'])->name('tratamientos.store');
+
+Route::post('tratamientos/actualizar/{id}', [TratamientoController::class, 'update'])
+    ->middleware(['auth', 'role'])->name('tratamientos.update');
+
+Route::post('tratamientos/eliminar/{id}', [TratamientoController::class, 'destroy'])
+    ->middleware(['auth', 'role'])->name('tratamientos.destroy');
 
 Route::post('resultados/guardar', [ClinicStoryController::class, 'store'])
     ->middleware(['auth', 'role'])->name('results.store');

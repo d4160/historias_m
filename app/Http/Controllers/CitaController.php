@@ -74,16 +74,11 @@ class CitaController extends Controller
             'historia_id' => $historia->id
         ]);
 
-        $tratamiento = Tratamiento::create([
-            'historia_id' => $historia->id
-        ]);
-
         $historia->anamnesis_id = $anamnesis->id;
         $historia->antecedente_id = $antecedente->id;
         $historia->examen_clinico_id = $examenClinico->id;
         $historia->examen_regional_id = $examenRegional->id;
         $historia->impresion_diagnostica_id = $impresionDiagnostica->id;
-        $historia->tratamiento_id = $tratamiento->id;
         $historia->save();
 
         return redirect(route('patients.edit', $id));
@@ -247,10 +242,18 @@ class CitaController extends Controller
             $examsString .= '' . ($exam->descripcion ? ('<b>' . $exam->titulo . '</b>: ' . $exam->descripcion) : ('<b>' . $exam->titulo . '</b>')) . '; ';
         }
 
+        $tratamientos = $historia->tratamientos('asc')->get();
+        $tratsString = '';
+        foreach ($tratamientos as $trat) {
+            $tratsString .= '' . ($trat->descripcion ? ('<b>' . $trat->tratamiento . '</b>: ' . $trat->descripcion) : ('<b>' . $trat->tratamiento . '</b>')) . '; ';
+        }
+
         return view('citas.print', [
             'historia' => $historia,
             'user' => $historia->paciente->user,
             'examenClinico' => $historia->examenClinico,
-            'examsString' => $examsString]);
+            'examsString' => $examsString,
+            'tratsString' => $tratsString
+        ]);
     }
 }

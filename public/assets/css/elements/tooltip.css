@@ -35,7 +35,7 @@
   background-color: #c2d5ff; }
 
 .tooltip-success .tooltip-inner {
-  color: #8dbf42;
+  color: #05F2DB;
   background-color: #e6ffbf; }
 
 .tooltip-info .tooltip-inner {
@@ -43,7 +43,7 @@
   background-color: #bae7ff; }
 
 .tooltip-danger .tooltip-inner {
-  color: #e7515a;
+  color: #EE8903;
   background-color: #ffe1e2; }
 
 .tooltip-warning .tooltip-inner {
@@ -56,7 +56,7 @@
 
 .tooltip-dark .tooltip-inner {
   color: #3b3f5c;
-  background-color: #acb0c3; }
+  background-color: #595b69; }
 
 /*		Tooltip arrow 		*/
 .tooltip-primary .arrow:before {
@@ -78,4 +78,4 @@
   border-top-color: #dccff7; }
 
 .tooltip-dark .arrow:before {
-  border-top-color: #acb0c3; }
+  border-top-color: #595b69; }

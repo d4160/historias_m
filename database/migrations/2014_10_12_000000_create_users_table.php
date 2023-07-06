@@ -57,7 +57,7 @@ class CreateUsersTable extends Migration
             'first_names' => 'Laboratorio',
             'last_names' => '',
             'email' => 'laboratorio@gmail.com',
-            'password' => bcrypt('laboratorio')
+            'password' => bcrypt('UpPZc*PRT#d$D7')
         ]));
 
         $this->postCreate(array([
@@ -66,7 +66,7 @@ class CreateUsersTable extends Migration
             'first_names' => 'Ecografía',
             'last_names' => '',
             'email' => 'ecografia@gmail.com',
-            'password' => bcrypt('ecografia')
+            'password' => bcrypt('UpPZc*PRT#d$D7')
         ]));
 
         $this->postCreate(array([
@@ -75,7 +75,7 @@ class CreateUsersTable extends Migration
             'first_names' => 'Admisión',
             'last_names' => '',
             'email' => 'admision@gmail.com',
-            'password' => bcrypt('admision')
+            'password' => bcrypt('UpPZc*PRT#d$D7')
         ]));
 
         $this->postCreate(array([
@@ -84,7 +84,7 @@ class CreateUsersTable extends Migration
             'first_names' => 'Rayos X',
             'last_names' => '',
             'email' => 'rayosx@gmail.com',
-            'password' => bcrypt('rayosx')
+            'password' => bcrypt('UpPZc*PRT#d$D7')
         ]));
 
         $this->postCreate(array([
@@ -93,7 +93,7 @@ class CreateUsersTable extends Migration
             'first_names' => 'Tomografía',
             'last_names' => '',
             'email' => 'tomografia@gmail.com',
-            'password' => bcrypt('tomografia')
+            'password' => bcrypt('UpPZc*PRT#d$D7')
         ]));
 
         $this->postCreate(array([
@@ -102,7 +102,7 @@ class CreateUsersTable extends Migration
             'first_names' => 'Staff Médico',
             'last_names' => '',
             'email' => 'staffmedico@gmail.com',
-            'password' => bcrypt('staffmedico')
+            'password' => bcrypt('UpPZc*PRT#d$D7')
         ]));
     }
 

@@ -161,7 +161,7 @@ var sColStacked = {
           show: false,
         }
     },
-    // colors: ['#2762AB', '#888ea8', '#acb0c3', '#d3d3d3'],
+    // colors: ['#2762AB', '#888ea8', '#595b69', '#d3d3d3'],
     responsive: [{
         breakpoint: 480,
         options: {
@@ -308,7 +308,7 @@ var donutChart = {
           show: false,
         }
     },
-    // colors: ['#2762AB', '#888ea8', '#acb0c3', '#d3d3d3'],
+    // colors: ['#2762AB', '#888ea8', '#595b69', '#d3d3d3'],
     series: [44, 55, 41, 17],
     responsive: [{
         breakpoint: 480,
@@ -341,7 +341,7 @@ var radialChart = {
           show: false,
         }
     },
-    // colors: ['#2762AB', '#888ea8', '#acb0c3', '#d3d3d3'],
+    // colors: ['#2762AB', '#888ea8', '#595b69', '#d3d3d3'],
     plotOptions: {
         radialBar: {
             dataLabels: {

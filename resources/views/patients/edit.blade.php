@@ -33,7 +33,7 @@
                     <form class="m-3 mt-4 mb-4" method="POST" action="{{ route('patients.update', $patient_id) }}">
                         @csrf
 
-                        <span style="font-weight: bold; color: darkgray; font-size: 17px;">Datos Personales</span>
+                        <span style="font-weight: bold; color: #7b7e8c; font-size: 17px;">Datos Personales</span>
 
                         <div class="mb-4 row">
                             <div class="col">
@@ -76,7 +76,7 @@
 
                         <div class="mb-4 row">
                             <div class="col">
-                                <label style="font-weight: bold; color: darkgray; font-size: 17px;" for="otros">Otros</label>
+                                <label style="font-weight: bold; color: #7b7e8c; font-size: 17px;" for="otros">Otros</label>
                                 <textarea id="otros" name="otros" type="text" class="form-control" placeholder="">{{ $patient->otros }}</textarea>
                             </div>
                         </div>
@@ -351,7 +351,7 @@
                                             </g>
                                             </svg></a></li>
 
-                                            <li><span data-toggle="modal" data-target="#tratamientoModal"><a class="bs-tooltip" data-toggle="tooltip" data-placement="top" title="" data-original-title="Tratamiento" onclick="OpenTratamientoModal(historia_{{ $historia->id }}_id, {{ $historia->tratamiento_id }})"><svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+                                            <li><span><a class="bs-tooltip" data-toggle="tooltip" data-placement="top" title="" data-original-title="Tratamientos" href="{{ route('tratamientos.index', $historia->id)}}"><svg version="1.0" xmlns="http://www.w3.org/2000/svg"
                                             width="64.000000pt" height="64.000000pt" viewBox="0 0 64.000000 64.000000"
                                             preserveAspectRatio="xMidYMid meet" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="p-1 mb-1 feather feather-edit-2 br-6">
 

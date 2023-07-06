@@ -247,7 +247,7 @@
   .todo-inbox .todo-item .todo-item-inner p.todo-text {
     font-size: 14px;
     margin-bottom: 0;
-    color: #acb0c3;
+    color: #595b69;
     font-weight: 600;
     -webkit-transition: all 0.35s ease;
     transition: all 0.35s ease;
@@ -274,7 +274,7 @@
     .todo-inbox .todo-item .todo-item-inner .priority-dropdown .dropdown-toggle {
       font-size: 20px; }
       .todo-inbox .todo-item .todo-item-inner .priority-dropdown .dropdown-toggle.danger svg {
-        color: #e7515a;
+        color: #EE8903;
         fill: rgba(231, 81, 90, 0.19); }
       .todo-inbox .todo-item .todo-item-inner .priority-dropdown .dropdown-toggle.warning svg {
         color: #e2a03f;
@@ -292,7 +292,7 @@
         margin-right: 7px;
         vertical-align: middle; }
       .todo-inbox .todo-item .todo-item-inner .priority-dropdown .dropdown-menu a.danger svg {
-        color: #e7515a; }
+        color: #EE8903; }
       .todo-inbox .todo-item .todo-item-inner .priority-dropdown .dropdown-menu a.warning svg {
         color: #e2a03f; }
       .todo-inbox .todo-item .todo-item-inner .priority-dropdown .dropdown-menu a.primary svg {
@@ -405,7 +405,7 @@
 
 .compose-box .compose-content form .validation-text {
   display: none;
-  color: #e7515a;
+  color: #EE8903;
   font-weight: 600;
   text-align: left;
   margin-top: 6px;
@@ -428,7 +428,7 @@
     border: 1px solid #2762AB;
     padding: 10px 25px; }
   #addTaskModal .modal-footer .btn.edit-tsk {
-    background-color: #8dbf42;
+    background-color: #05F2DB;
     color: #fff;
     font-weight: 600;
     padding: 10px 25px; }

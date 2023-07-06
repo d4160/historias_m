@@ -47,11 +47,11 @@
 
 .table-success > td, .table-success > th {
   background-color: #cbfdf3;
-  color: #8dbf42; }
+  color: #05F2DB; }
 
 .table-danger > td, .table-danger > th {
   background-color: #ffe1e2;
-  color: #e7515a; }
+  color: #EE8903; }
 
 .table-warning > td, .table-warning > th {
   background-color: #fdefd5;
@@ -66,6 +66,6 @@
   color: #888ea8; }
 
 .table-dark > td, .table-dark > th {
-  background-color: #acb0c3;
+  background-color: #595b69;
   color: #515365;
   border-color: #fff !important; }

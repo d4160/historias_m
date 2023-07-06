@@ -146,7 +146,7 @@ $('#default-message').on('click', function() {
         css: {
             border: 0,
             padding: 0,
-            color: '#e7515a',
+            color: '#EE8903',
             backgroundColor: 'transparent'
         }
     });

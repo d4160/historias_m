@@ -21,8 +21,8 @@
     border-bottom: 7px solid #2762AB; }
   .loader.multi-loader {
     border-bottom: 7px solid #e2a03f;
-    border-right: 7px solid #8dbf42;
-    border-left: 7px solid #e7515a; }
+    border-right: 7px solid #05F2DB;
+    border-left: 7px solid #EE8903; }
 
 /* Safari */
 @-webkit-keyframes spin {

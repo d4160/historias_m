@@ -34,7 +34,7 @@
             <div class='line3'></div>
         </div>
     </div>
-	<section class="fxt-template-animation fxt-template-layout4">
+	<section class="fxt-template-animation fxt-template-layout4" style="overflow: visible;">
 		<div class="container-fluid">
 			{{ $slot }}
 

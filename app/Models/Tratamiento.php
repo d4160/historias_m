@@ -11,7 +11,9 @@ class Tratamiento extends Model
 
     protected $fillable = [
         'historia_id',
-        'tratamiento'
+        'tratamiento',
+        'descripcion',
+        'url'
     ];
 
     public function historia() {

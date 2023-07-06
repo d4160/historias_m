@@ -159,7 +159,7 @@ div.dataTables_wrapper div.dataTables_paginate ul.pagination {
 .page-item.disabled .page-link {
   background: #f1f2f3; }
   .page-item.disabled .page-link svg {
-    color: #acb0c3; }
+    color: #595b69; }
 
 .page-item:first-child .page-link, .page-item:last-child .page-link {
   border-radius: 50%;
@@ -185,7 +185,7 @@ div.dataTables_wrapper div.dataTables_paginate ul.pagination {
   cursor: pointer; }
 
 .table-hover:not(.table-dark) tbody tr:hover .table-cancel {
-  color: #e7515a; }
+  color: #EE8903; }
 
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
   /* IE10+ CSS styles go here */

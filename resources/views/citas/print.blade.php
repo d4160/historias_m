@@ -201,11 +201,11 @@ pdf2htmlEX.defaultViewer = new pdf2htmlEX.Viewer({});
 
     <div class="t m0 x1 h2 y1 ff1 fs0 fc0 sc0 ls0 ws0">F<span class="_ _0"></span>E<span class="_ _0"></span>C<span class="_ _0"></span>H<span class="_ _0"></span>A<span class="_ _0"></span>: <span class="_ _1"> </span>N<span class="_ _0"></span>R<span class="_ _0"></span>O<span class="_ _0"></span>.<span class="_ _0"></span> <span class="_ _0"></span>D<span class="_ _0"></span>E<span class="_ _0"></span> <span class="_ _0"></span>H<span class="_ _0"></span>.<span class="_ _0"></span>C<span class="_ _0"></span>.<span class="_ _2"></span>H<span class="_ _0"></span>O<span class="_ _0"></span>R<span class="_ _0"></span>A<span class="_ _0"></span>:
 
-        <div class="abs" style="top: 0%;left: 18%;"><span>{{ explode(' ', $historia->created_at)[0] }}</span></div>
+        <div class="abs" style="top: 17%;left: 18%;"><span>{{ explode(' ', $historia->created_at)[0] }}</span></div>
 
-        <div class="abs" style="top: 0%;left: 103%;"><span>{{ explode(' ', $historia->created_at)[1] }}</span></div>
+        <div class="abs" style="top: 17%;left: 103%;"><span>{{ explode(' ', $historia->created_at)[1] }}</span></div>
 
-        <div class="abs" style="top: 0%;left: 188%;"><span>@php(printf("%06d", $historia->id))</span></div>
+        <div class="abs" style="top: 17%;left: 188%;"><span>@php(printf("%06d", $historia->id))</span></div>
     </div>
 
     <div class="t m0 x1 h3 y2 ff2 fs1 fc1 sc0 ls0 ws0">D<span class="_ _0"></span>A<span class="_ _0"></span>T<span class="_ _0"></span>O<span class="_ _0"></span>S<span class="_ _0"></span> <span class="_ _0"></span>P<span class="_ _0"></span>E<span class="_ _0"></span>R<span class="_ _3"></span>S<span class="_ _3"></span>ON<span class="_ _3"></span>AL<span class="_ _3"></span>E<span class="_ _0"></span>S</div>
@@ -288,7 +288,7 @@ pdf2htmlEX.defaultViewer = new pdf2htmlEX.Viewer({});
 
     <div class="t m0 x6 h3 y12 ff2 fs1 fc1 sc0 ls0 ws0">T<span class="_ _3"></span>RA<span class="_ _3"></span>TA<span class="_ _3"></span>M<span class="_ _0"></span>I<span class="_ _0"></span>E<span class="_ _0"></span>N<span class="_ _3"></span>TO
 
-        <div class="abs" style="top: 173%;left: -0.1%;font-size: 82%;margin-right: -544%;line-height: 2;white-space: normal;color: rgb(1,45,111);"><span >{{ $historia->tratamiento->tratamiento }}</span></div>
+        <div class="abs" style="top: 173%;left: -0.1%;font-size: 82%;margin-right: -544%;line-height: 2;white-space: normal;color: rgb(1,45,111);"><span >{!! $tratsString !!}</span></div>
     </div>
 
 

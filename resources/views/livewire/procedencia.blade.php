@@ -1,4 +1,4 @@
-<span style="font-weight: bold; color: darkgray; font-size: 17px;">Procedencia</span>
+<span style="font-weight: bold; color: #7b7e8c; font-size: 17px;">Procedencia</span>
 
 <div class="mb-4 row">
     <div class="col">

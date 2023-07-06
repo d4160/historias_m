@@ -228,7 +228,7 @@ try {
               top: 1,
               left: 1,
               blur: 2,
-              color: '#acb0c3',
+              color: '#595b69',
               opacity: 0.7,
           }
       },
@@ -409,7 +409,7 @@ try {
       yaxis: {
         min: 0
       },
-      colors: ['#e7515a'],
+      colors: ['#EE8903'],
       tooltip: {
         x: {
           show: false,
@@ -454,7 +454,7 @@ try {
       yaxis: {
         min: 0
       },
-      colors: ['#8dbf42'],
+      colors: ['#05F2DB'],
       tooltip: {
         x: {
           show: false,
@@ -747,7 +747,7 @@ var options1 = {
             }
           },
           customSVG: {
-              SVG: '<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="#e7515a" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="feather feather-circle"><circle cx="12" cy="12" r="10"></circle></svg>',
+              SVG: '<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="#EE8903" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="feather feather-circle"><circle cx="12" cy="12" r="10"></circle></svg>',
               cssClass: undefined,
               offsetX: -8,
               offsetY: 5
@@ -756,7 +756,7 @@ var options1 = {
       },
     }
   },
-  colors: ['#2762AB', '#e7515a'],
+  colors: ['#2762AB', '#EE8903'],
   dataLabels: {
       enabled: false
   },
@@ -929,7 +929,7 @@ var options = {
         type: 'donut',
         width: 380
     },
-    colors: ['#EE8903', '#e2a03f', '#e7515a', '#e2a03f'],
+    colors: ['#EE8903', '#e2a03f', '#EE8903', '#e2a03f'],
     dataLabels: {
       enabled: false
     },

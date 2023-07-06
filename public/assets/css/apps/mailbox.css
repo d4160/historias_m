@@ -36,11 +36,11 @@
 
 .g-dot-success:before {
   border: none;
-  background: #8dbf42; }
+  background: #05F2DB; }
 
 .g-dot-danger:before {
   border: none;
-  background: #e7515a; }
+  background: #EE8903; }
 
 .mail-content-container.mailInbox [data-original-title="Restore"], .mail-content-container.sentmail [data-original-title="Restore"], .mail-content-container.important [data-original-title="Restore"], .mail-content-container.spam [data-original-title="Restore"] {
   display: none; }
@@ -239,7 +239,7 @@
     align-self: center;
     width: 17px;
     height: 17px;
-    fill: #acb0c3; }
+    fill: #595b69; }
 
 .tab-title .nav-pills.group-list .nav-item a {
   position: relative;
@@ -255,9 +255,9 @@
   .tab-title .nav-pills.group-list .nav-item a.g-dot-warning.active:before {
     background: #e2a03f; }
   .tab-title .nav-pills.group-list .nav-item a.g-dot-success.active:before {
-    background: #8dbf42; }
+    background: #05F2DB; }
   .tab-title .nav-pills.group-list .nav-item a.g-dot-danger.active:before {
-    background: #e7515a; }
+    background: #EE8903; }
   .tab-title .nav-pills.group-list .nav-item a[class*="g-dot-"]:before {
     position: absolute;
     padding: 3px;
@@ -613,7 +613,7 @@
   .mailbox-inbox .mail-content-container .action-btns a {
     margin-right: 20px; }
   .mailbox-inbox .mail-content-container .action-btns svg {
-    color: #acb0c3;
+    color: #595b69;
     font-weight: 600; }
     .mailbox-inbox .mail-content-container .action-btns svg.restore {
       position: relative; }
@@ -621,7 +621,7 @@
         content: '';
         height: 28px;
         width: 2px;
-        background: #acb0c3;
+        background: #595b69;
         position: absolute;
         border-radius: 50px;
         left: 9px;
@@ -715,7 +715,7 @@
   border-radius: 6px; }
   .compose-box .compose-content form .validation-text {
     display: none;
-    color: #e7515a;
+    color: #EE8903;
     font-weight: 600;
     text-align: left;
     margin-top: 6px;

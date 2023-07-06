@@ -282,8 +282,8 @@
         background-color: #009688;
         box-shadow: 0 10px 20px -10px #009688; }
       .widget.widget-activity-three .timeline-line .item-timeline .t-dot div.t-danger {
-        background-color: #e7515a;
-        box-shadow: 0 10px 20px -10px #e7515a; }
+        background-color: #EE8903;
+        box-shadow: 0 10px 20px -10px #EE8903; }
       .widget.widget-activity-three .timeline-line .item-timeline .t-dot div.t-warning {
         background-color: #e2a03f;
         box-shadow: 0 10px 20px -10px #e2a03f; }
@@ -383,8 +383,8 @@
   .widget-one_hybrid.widget-referral {
     background: #ffe1e2; }
     .widget-one_hybrid.widget-referral .widget-heading .w-icon {
-      color: #e7515a;
-      border: 1px solid #e7515a; }
+      color: #EE8903;
+      border: 1px solid #EE8903; }
   .widget-one_hybrid.widget-social {
     background: #bae7ff; }
     .widget-one_hybrid.widget-social .widget-heading .w-icon {
@@ -393,8 +393,8 @@
   .widget-one_hybrid.widget-engagement {
     background: #e6ffbf; }
     .widget-one_hybrid.widget-engagement .widget-heading .w-icon {
-      color: #8dbf42;
-      border: 1px solid #8dbf42; }
+      color: #05F2DB;
+      border: 1px solid #05F2DB; }
 
 /*
     ==================
@@ -536,7 +536,7 @@
     .widget-four .widget-content .browser-list:nth-child(1) .w-icon svg {
       color: #2762AB; }
     .widget-four .widget-content .browser-list:nth-child(2) .w-icon svg {
-      color: #e7515a; }
+      color: #EE8903; }
     .widget-four .widget-content .browser-list:nth-child(3) .w-icon svg {
       color: #e2a03f; }
     .widget-four .widget-content .w-browser-details {
@@ -700,11 +700,11 @@
       margin-bottom: 4px;
       color: #009688; }
     .widget-five .w-content div .task-hight-priority {
-      color: #acb0c3;
+      color: #595b69;
       font-weight: 500;
       margin-bottom: 0; }
       .widget-five .w-content div .task-hight-priority span {
-        color: #e7515a;
+        color: #EE8903;
         font-weight: 700; }
 
 /*
@@ -1033,7 +1033,7 @@
           width: 100%;
           height: 100%;
           background-color: #ffe1e2;
-          color: #e7515a; }
+          color: #EE8903; }
       .widget-table-one .transactions-list .t-item .t-icon .icon {
         position: relative;
         display: inline-block;
@@ -1073,7 +1073,7 @@
       .widget-table-one .transactions-list .t-item .t-rate.rate-inc p, .widget-table-one .transactions-list .t-item .t-rate.rate-inc svg {
         color: #009688; }
       .widget-table-one .transactions-list .t-item .t-rate.rate-dec p, .widget-table-one .transactions-list .t-item .t-rate.rate-dec svg {
-        color: #e7515a; }
+        color: #EE8903; }
 
 /*
     ========================
@@ -1087,7 +1087,7 @@
   border: none;
   height: auto;
   box-shadow: none;
-  color: #acb0c3;
+  color: #595b69;
   font-weight: 600;
   letter-spacing: 2px;
   margin: 0 0 0 auto;
@@ -1171,7 +1171,7 @@
     max-width: 80px;
     font-size: 13px;
     font-weight: 600;
-    color: #acb0c3;
+    color: #595b69;
     padding: 10px 0;
     letter-spacing: 1px; }
 
@@ -1255,7 +1255,7 @@
       background-color: #009688;
       border-color: #9ad2cd; }
     .widget-activity-four .timeline-line .item-timeline.timeline-danger .t-dot:before {
-      background-color: #e7515a;
+      background-color: #EE8903;
       border-color: #f1acb0; }
     .widget-activity-four .timeline-line .item-timeline.timeline-dark .t-dot:before {
       background-color: #3b3f5c;
@@ -1308,7 +1308,7 @@
       max-width: 80px;
       font-size: 13px;
       font-weight: 600;
-      color: #acb0c3;
+      color: #595b69;
       letter-spacing: 1px; }
   .widget-activity-four .tm-action-btn {
     text-align: center;
@@ -1593,8 +1593,8 @@
       border: 1px dashed #009688;
       background: #e6ffbf; }
     .widget-table-three .table .td-content .tag-danger {
-      color: #e7515a;
-      border: 1px dashed #e7515a;
+      color: #EE8903;
+      border: 1px dashed #EE8903;
       background: #ffe1e2; }
     .widget-table-three .table .td-content a {
       padding: 0;

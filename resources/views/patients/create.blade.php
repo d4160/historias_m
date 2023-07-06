@@ -21,7 +21,7 @@
                     <form class="m-3 mt-4 mb-4" method="POST" action="{{ route('patients.store') }}">
                         @csrf
 
-                        <span style="font-weight: bold; color: darkgray; font-size: 17px;">Datos Personales</span>
+                        <span style="font-weight: bold; color: #7b7e8c; font-size: 17px;">Datos Personales</span>
 
                         <div class="mb-4 row">
                             <div class="col">
@@ -64,7 +64,7 @@
 
                         <div class="mb-4 row">
                             <div class="col">
-                                <label style="font-weight: bold; color: darkgray; font-size: 17px;" for="otros">Otros</label>
+                                <label style="font-weight: bold; color: #7b7e8c; font-size: 17px;" for="otros">Otros</label>
                                 <textarea id="otros" name="otros" type="text" class="form-control" placeholder="">{{ old('otros') }}</textarea>
                             </div>
                         </div>

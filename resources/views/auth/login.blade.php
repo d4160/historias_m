@@ -50,7 +50,7 @@
                     </div>
 
                     <div class="fxt-transformY-50 fxt-transition-delay-2">
-                        <h1 style="color: #2762AB; font-family: Montserrat, sans; font-size: 34px;">Resultados del paciente</h1>
+                        <h1 style="color: #2762AB; font-family: Montserrat, sans; font-size: 33px;">Resultados del paciente</h1>
                     </div>
 
                     <form method="POST" action="{{ route('login') }}" class="mt-5">
@@ -77,7 +77,7 @@
                             </div>
                         </div>
                         <div class="form-group">
-                            <button type="submit" id="btnSubmit" class="fxt-btn-fill" style="font-family: Monserrat, sans; background-color: #EE8903;">{{ __('Login') }}</button>
+                            <button type="submit" id="btnSubmit" class="fxt-btn-fill" style="font-family: Montserrat, sans; background-color: #EE8903;">{{ __('Login') }}</button>
                         </div>
                     </form>
 

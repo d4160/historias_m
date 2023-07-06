@@ -88,9 +88,9 @@
   .labels .label.label-warning:before {
     background: #e2a03f; }
   .labels .label.label-success:before {
-    background: #8dbf42; }
+    background: #05F2DB; }
   .labels .label.label-danger:before {
-    background: #e7515a; }
+    background: #EE8903; }
 
 .radio-primary span.new-control-indicator {
   border: 2px solid #2762AB; }
@@ -99,10 +99,10 @@
   border: 2px solid #e2a03f; }
 
 .radio-success span.new-control-indicator {
-  border: 2px solid #8dbf42; }
+  border: 2px solid #05F2DB; }
 
 .radio-danger span.new-control-indicator {
-  border: 2px solid #e7515a; }
+  border: 2px solid #EE8903; }
 
 .fc-button-group {
   border-radius: 6px; }
@@ -184,14 +184,14 @@ a.bg-primary:hover, a.bg-success:hover, a.bg-warning:hover, a.bg-danger:hover {
       margin-bottom: 5px;
       font-size: 14px;
       font-weight: 600;
-      color: #acb0c3; }
+      color: #595b69; }
     #addEventsModal form .event-badge {
       margin-top: 16px; }
       #addEventsModal form .event-badge p {
         margin-bottom: 10px;
         font-size: 14px;
         font-weight: 600;
-        color: #acb0c3; }
+        color: #595b69; }
     #addEventsModal form input {
       margin-bottom: 25px; }
     #addEventsModal form .form-group {
@@ -257,13 +257,13 @@ td.fc-today.fc-state-highlight span {
   background: #2762AB; }
 
 .fc-day-grid-event.bg-success .fc-content:before {
-  background: #8dbf42; }
+  background: #05F2DB; }
 
 .fc-day-grid-event.bg-warning .fc-content:before {
   background: #e2a03f; }
 
 .fc-day-grid-event.bg-danger .fc-content:before {
-  background: #e7515a; }
+  background: #EE8903; }
 
 .animated {
   -webkit-animation-duration: .500s;

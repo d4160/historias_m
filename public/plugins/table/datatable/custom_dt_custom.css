@@ -69,8 +69,8 @@ table.dataTable {
   border: 2px dashed #e2a03f; }
 
 .style-2 .badge-danger {
-  color: #e7515a;
-  border: 2px dashed #e7515a; }
+  color: #EE8903;
+  border: 2px dashed #EE8903; }
 
 /*Style. 3*/
 .style-3 .new-control.new-checkbox .new-control-indicator {
@@ -101,8 +101,8 @@ table.dataTable {
   border: 2px dashed #e2a03f; }
 
 .style-3 .badge-danger {
-  color: #e7515a;
-  border: 2px dashed #e7515a; }
+  color: #EE8903;
+  border: 2px dashed #EE8903; }
 
 .style-3 .table-controls {
   padding: 0; }
@@ -118,7 +118,7 @@ table.dataTable {
       cursor: pointer; }
 
 .style-3.table-hover:not(.table-dark) tbody tr:hover .table-controls li svg {
-  color: #e7515a;
+  color: #EE8903;
   fill: rgba(231, 81, 90, 0.219608); }
 
 .style-3.table-hover:not(.table-dark) tbody tr:hover td:first-child {

@@ -30,7 +30,7 @@
   color: #515365; }
 
 .nav-tabs li a.disabled {
-  color: #acb0c3 !important; }
+  color: #595b69 !important; }
 
 .nav-pills .nav-item:not(:last-child) {
   margin-right: 5px; }
@@ -44,7 +44,7 @@
   background-color: #e95f2b; }
 
 .nav-pills li a.disabled {
-  color: #acb0c3 !important; }
+  color: #595b69 !important; }
 
 h4 {
   font-size: 1.125rem; }
@@ -441,11 +441,11 @@ h4 {
     .vertical-border-pill .nav-pills .nav-link.active {
       position: relative;
       color: #fff;
-      background-color: #8dbf42; }
+      background-color: #05F2DB; }
   .vertical-border-pill .nav-pills .show > .nav-link {
     position: relative;
     color: #fff;
-    background-color: #8dbf42; }
+    background-color: #05F2DB; }
 
 /*
     Border Top Tab

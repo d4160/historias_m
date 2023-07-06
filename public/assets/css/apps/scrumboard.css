@@ -56,7 +56,7 @@
     -webkit-box-shadow: 2px 5px 17px 0 rgba(31, 45, 61, 0.1);
     box-shadow: 2px 5px 17px 0 rgba(31, 45, 61, 0.1); }
     #addListModal .compose-box .list-title input::-webkit-input-placeholder, #addListModal .compose-box .list-title input::-ms-input-placeholder, #addListModal .compose-box .list-title input::-moz-placeholder {
-      color: #acb0c3;
+      color: #595b69;
       font-weight: 600; }
 
 #addListModal .modal-footer {
@@ -206,7 +206,7 @@
       border-radius: 50%; }
     #deleteConformation .modal-content .modal-header svg {
       width: 20px;
-      color: #e7515a;
+      color: #EE8903;
       fill: rgba(231, 81, 90, 0.37); }
     #deleteConformation .modal-content .modal-header .modal-title {
       color: #3b3f5c;
@@ -225,7 +225,7 @@
     border: none; }
     #deleteConformation .modal-content .modal-footer [data-dismiss="modal"] {
       background-color: #fff;
-      color: #e7515a;
+      color: #EE8903;
       font-weight: 700;
       border: 1px solid #e8e8e8;
       padding: 10px 25px; }
@@ -321,7 +321,7 @@
       color: #2762AB;
       fill: rgba(27, 85, 226, 0.239216); }
   .scrumboard .task-header svg.feather-trash-2 {
-    color: #e7515a;
+    color: #EE8903;
     margin-right: 6px;
     vertical-align: middle;
     width: 18px;
@@ -380,7 +380,7 @@
             color: #2762AB;
             fill: rgba(27, 85, 226, 0.239216); }
         .scrumboard .card .card-body .task-body .task-bottom div.tb-section-2 svg.feather-trash-2 {
-          color: #e7515a;
+          color: #EE8903;
           margin-right: 6px;
           vertical-align: middle;
           width: 18px;

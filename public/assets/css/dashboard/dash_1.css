@@ -348,7 +348,7 @@
     width: 100%;
     height: 100%;
     background-color: #ffe1e2;
-    color: #e7515a;
+    color: #EE8903;
 }
 .widget-table-one .transactions-list .t-item .t-icon .icon {
     position: relative;
@@ -401,10 +401,10 @@
     color: #009688;
 }
 .widget-table-one .transactions-list .t-item .t-rate.rate-dec p {
-    color: #e7515a;
+    color: #EE8903;
 }
 .widget-table-one .transactions-list .t-item .t-rate.rate-dec svg {
-    color: #e7515a;
+    color: #EE8903;
 }
 
 
@@ -476,7 +476,7 @@
 
 }
 .widget-activity-four .timeline-line .item-timeline.timeline-danger .t-dot:before {
-    background-color: #e7515a;
+    background-color: #EE8903;
     border-color: rgb(241, 172, 176);
 }
 .widget-activity-four .timeline-line .item-timeline.timeline-dark .t-dot:before {
@@ -541,7 +541,7 @@
     max-width: 80px;
     font-size: 13px;
     font-weight: 600; 
-    color: #acb0c3;
+    color: #595b69;
     letter-spacing: 1px;
 }
 .widget-activity-four .tm-action-btn {
@@ -910,8 +910,8 @@
     background: #e6ffbf;
 }
 .widget-table-three .table .td-content .tag-danger {
-    color: #e7515a;
-    border: 1px dashed #e7515a;
+    color: #EE8903;
+    border: 1px dashed #EE8903;
     background: #ffe1e2;
 }
 .widget-table-three .table .td-content a {

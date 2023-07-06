@@ -47,7 +47,7 @@
         content: "\f169";
         position: absolute;
         left: 11px;
-        color: #acb0c3;
+        color: #595b69;
         top: 25px;
         left: 30px; }
     .chat-system .user-list-box input {
@@ -233,7 +233,7 @@
               left: 20px;
               top: 6px; }
           .chat-system .chat-box .overlay-phone-call > div .calling-options svg.cancel-call {
-            background-color: #e7515a; }
+            background-color: #EE8903; }
   .chat-system .chat-box .overlay-video-call {
     display: none;
     position: absolute;
@@ -325,7 +325,7 @@
               left: 20px;
               top: 6px; }
           .chat-system .chat-box .overlay-video-call > div .calling-options svg.cancel-call {
-            background-color: #e7515a; }
+            background-color: #EE8903; }
   .chat-system .chat-box .chat-box-inner {
     height: auto; }
     .chat-system .chat-box .chat-box-inner .chat-meta-user {

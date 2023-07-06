@@ -2,43 +2,115 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Cita;
 use App\Models\Tratamiento;
+use App\Models\Historia;
 use Illuminate\Http\Request;
 
 class TratamientoController extends Controller
 {
-    public function save(Request $request, $id){
-        $c = Cita::find($id);
-        $t = $c->tratamiento;
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index($historia_id)
+    {
+        $historia = Historia::find($historia_id);
+        $patient = $historia->paciente;
 
-        if ($t){
-            $t->tra_med_hig_dieteticas = $request->tra_med_hig_dieteticas;
-            $t->tra_med_preventivos = $request->tra_med_preventivos;
-            $t->tra_trans_lugar = $request->tra_trans_lugar;
-            $t->tra_trans_hora = $request->tra_trans_hora;
-            $t->tra_des_med_periodo = $request->tra_des_med_periodo;
-            $t->tra_des_med_dias = $request->tra_des_med_dias;
-            $t->tra_fec_pro_cita = $request->tra_fec_pro_cita;
+        return view('tratamientos.all', ['historia' => $historia, 
+            'patient' => $patient->user, 'patient_id' => $patient->id
+        ]);
+    }
 
-            $t->save();
+    public function store(Request $request)
+    {
+        $request->validate([
+            'historia_id' => ['required', 'exists:historias,id'],
+            'titulo' => ['required', 'string', 'max:255'],
+            'file' => ['mimes:pdf,png,jpg,jpeg,doc,docx,xls,xlsx,zip,rar', 'max:10240']
+        ]);
+
+        $folder = 'tratamientos';
+
+        if ($request->file('file')) {
+            $fileName = time().'_'.str_replace('+', '_', $request->file->getClientOriginalName());
+            $filePath = $request->file('file')->storeAs($folder, $fileName, 'public');
+
+            Tratamiento::create([
+                'historia_id' => $request->historia_id,
+                'tratamiento' => $request->titulo,
+                'descripcion' => $request->descripcion,
+                'url' => '' . $filePath
+            ]);
         }
         else {
-            $t = Tratamiento::create([
-                'cita_id' => $id,
-                'tra_med_hig_dieteticas' => $request->tra_med_hig_dieteticas,
-                'tra_med_preventivos' => $request->tra_med_preventivos,
-                'tra_trans_lugar' => $request->tra_trans_lugar,
-                'tra_trans_hora' => $request->tra_trans_hora,
-                'tra_des_med_periodo' => $request->tra_des_med_periodo,
-                'tra_des_med_dias' => $request->tra_des_med_dias,
-                'tra_fec_pro_cita' => $request->tra_fec_pro_cita
+            Tratamiento::create([
+                'historia_id' => $request->historia_id,
+                'tratamiento' => $request->titulo,
+                'descripcion' => $request->descripcion
             ]);
-
-            $c->tratamiento_id = $t->id;
-            $c->save();
         }
 
-        return redirect(route('citas.edit', $id));
+        return back();
+    }
+
+    public function update(Request $request, $id)
+    {
+        // dd($request);
+
+        $request->validate([
+            'edit_titulo' => ['required', 'string', 'max:255'],
+            'edit_file' => ['mimes:pdf,png,jpg,jpeg,doc,docx', 'max:2048']
+        ]);
+
+        $folder = 'tratamientos';
+
+        $tratamiento = Tratamiento::find($id);
+
+        if ($request->file('edit_file')) {
+
+            //dd($request->file('lab_edit_file'));
+
+            if(File::exists(public_path('storage/' . $tratamiento->url))) {
+                File::delete(public_path('storage/' . $tratamiento->url));
+            }
+            else {
+                //dd('File does not exists: ' . 'storage/' . public_path($tratamiento->url));
+            }
+
+            $fileName = time().'_'.str_replace('+', '_', $request->edit_file->getClientOriginalName());
+            $filePath = $request->file('edit_file')->storeAs($folder, $fileName, 'public');
+
+            $tratamiento->url = '' . $filePath;
+        }
+        else if ($request->file('edit_file2')) {
+            $fileName = time().'_'.str_replace('+', '_', $request->edit_file2->getClientOriginalName());
+            $filePath = $request->file('edit_file2')->storeAs($folder, $fileName, 'public');
+
+            $tratamiento->url = '' . $filePath;
+        }
+
+        $tratamiento->tratamiento = $request->edit_titulo;
+        $tratamiento->descripcion = $request->edit_descripcion;
+        $tratamiento->save();
+
+        return back();
+    }
+
+    public function destroy($id)
+    {
+        $result = Tratamiento::findOrFail($id);
+
+        if(File::exists(public_path('storage/' . $result->url))) {
+            File::delete(public_path('storage/' . $result->url));
+        }
+        else {
+            // dd('File does not exists.' . 'storage/' . public_path($result->url));
+        }
+
+        $result->delete();
+
+        return back();
     }
 }

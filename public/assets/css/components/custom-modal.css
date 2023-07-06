@@ -25,7 +25,7 @@
       letter-spacing: 1px; }
     .modal-content .modal-header svg {
       width: 17px;
-      color: #acb0c3; }
+      color: #595b69; }
   .modal-content .modal-body {
     padding: 26px 26px; }
     .modal-content .modal-body a:not(.btn) {
@@ -224,11 +224,11 @@
     .login-modal .modal-body .social a.social-fb svg, .register-modal .modal-body .social a.social-fb svg {
       color: #2762AB; }
     .login-modal .modal-body .social a.social-github svg, .register-modal .modal-body .social a.social-github svg {
-      color: #e7515a; }
+      color: #EE8903; }
     .login-modal .modal-body .social a.social-fb .brand-name, .register-modal .modal-body .social a.social-fb .brand-name {
       color: #2762AB; }
     .login-modal .modal-body .social a.social-github .brand-name, .register-modal .modal-body .social a.social-github .brand-name {
-      color: #e7515a; }
+      color: #EE8903; }
 
 /*
     Register

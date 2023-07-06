@@ -16,7 +16,6 @@ class Historia extends Model
         'examen_clinico_id',
         'examen_regional_id',
         'impresion_diagnostica_id',
-        'tratamiento_id',
         'proxima_cita'
     ];
 
@@ -48,7 +47,11 @@ class Historia extends Model
         return $this->belongsTo('App\Models\ImpresionDiagnostica');
     }
 
-    public function tratamiento() {
-        return $this->belongsTo('App\Models\Tratamiento');
+    public function tratamientos($order = 'desc') {
+        return $this->hasMany('App\Models\Tratamiento')->orderBy('created_at', $order);
     }
+
+    // public function tratamiento() {
+    //     return $this->belongsTo('App\Models\Tratamiento');
+    // }
 }

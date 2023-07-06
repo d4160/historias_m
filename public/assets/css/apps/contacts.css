@@ -28,7 +28,7 @@
   .filtered-list-search form > div svg {
     position: absolute;
     right: 11px;
-    color: #acb0c3;
+    color: #595b69;
     height: 36px;
     width: 19px;
     top: 4px; }
@@ -106,7 +106,7 @@
 
 .searchable-container .add-contact-box .add-contact-content .contact-name .validation-text, .searchable-container .add-contact-box .add-contact-content .contact-email .validation-text, .searchable-container .add-contact-box .add-contact-content .contact-occupation .validation-text, .searchable-container .add-contact-box .add-contact-content .contact-phone .validation-text, .searchable-container .add-contact-box .add-contact-content .contact-location .validation-text {
   display: none;
-  color: #e7515a;
+  color: #EE8903;
   font-weight: 600;
   text-align: left;
   margin-top: 6px;
@@ -121,7 +121,7 @@
   font-weight: 600; }
 
 .searchable-container .add-contact-box .add-contact-content .contact-name #c-name::-webkit-input-placeholder, .searchable-container .add-contact-box .add-contact-content .contact-email #c-email::-webkit-input-placeholder, .searchable-container .add-contact-box .add-contact-content .contact-occupation #c-occupation::-webkit-input-placeholder, .searchable-container .add-contact-box .add-contact-content .contact-phone #c-phone::-webkit-input-placeholder, .searchable-container .add-contact-box .add-contact-content .contact-location #c-location::-webkit-input-placeholder, .searchable-container .add-contact-box .add-contact-content .contact-name #c-name::-ms-input-placeholder, .searchable-container .add-contact-box .add-contact-content .contact-email #c-email::-ms-input-placeholder, .searchable-container .add-contact-box .add-contact-content .contact-occupation #c-occupation::-ms-input-placeholder, .searchable-container .add-contact-box .add-contact-content .contact-phone #c-phone::-ms-input-placeholder, .searchable-container .add-contact-box .add-contact-content .contact-location #c-location::-ms-input-placeholder, .searchable-container .add-contact-box .add-contact-content .contact-name #c-name::-moz-input-placeholder, .searchable-container .add-contact-box .add-contact-content .contact-email #c-email::-moz-input-placeholder, .searchable-container .add-contact-box .add-contact-content .contact-occupation #c-occupation::-moz-input-placeholder, .searchable-container .add-contact-box .add-contact-content .contact-phone #c-phone::-moz-input-placeholder, .searchable-container .add-contact-box .add-contact-content .contact-location #c-location::-moz-input-placeholder {
-  color: #acb0c3;
+  color: #595b69;
   font-weight: 600; }
 
 .searchable-container .add-contact-box .add-contact-content .contact-name, .searchable-container .add-contact-box .add-contact-content .contact-email, .searchable-container .add-contact-box .add-contact-content .contact-occupation, .searchable-container .add-contact-box .add-contact-content .contact-phone {
@@ -244,7 +244,7 @@
 
 .searchable-container .searchable-items.list .items .action-btn {
   font-weight: 600;
-  color: #acb0c3; }
+  color: #595b69; }
   .searchable-container .searchable-items.list .items .action-btn .delete-multiple {
     margin-right: 5px;
     cursor: pointer;
@@ -354,7 +354,7 @@
       margin-right: 10px; }
   .searchable-container .searchable-items.grid .items .action-btn {
     font-weight: 600;
-    color: #acb0c3;
+    color: #595b69;
     text-align: center;
     margin: 20px 0; }
     .searchable-container .searchable-items.grid .items .action-btn .edit, .searchable-container .searchable-items.grid .items .action-btn .delete {

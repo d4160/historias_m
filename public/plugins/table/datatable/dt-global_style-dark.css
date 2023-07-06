@@ -95,7 +95,7 @@ table.dataTable {
 div.dataTables_wrapper div.dataTables_info {
   padding-top: 0.85em;
   white-space: normal;
-  color: #acb0c3;
+  color: #595b69;
   font-weight: 600;
   border: 1px solid rgba(136, 142, 168, 0.313725);
   display: inline-block;
@@ -156,7 +156,7 @@ div.dataTables_wrapper div.dataTables_paginate ul.pagination {
   margin: 3px 0; }
 
 .page-item.disabled .page-link {
-  background: #acb0c3; }
+  background: #595b69; }
   .page-item.disabled .page-link svg {
     color: #3b3f5c; }
 
@@ -166,7 +166,7 @@ div.dataTables_wrapper div.dataTables_paginate ul.pagination {
   .page-item:first-child .page-link:hover, .page-item:last-child .page-link:hover {
     border-radius: 50%;
     padding: 5px 9px;
-    background: #acb0c3;
+    background: #595b69;
     color: #3b3f5c; }
   .page-item:first-child .page-link svg, .page-item:last-child .page-link svg {
     width: 17px; }
@@ -190,7 +190,7 @@ div.dataTables_wrapper div.dataTables_paginate ul.pagination {
   cursor: pointer; }
 
 .table-hover:not(.table-dark) tbody tr:hover .table-cancel {
-  color: #e7515a; }
+  color: #EE8903; }
 
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
   /* IE10+ CSS styles go here */

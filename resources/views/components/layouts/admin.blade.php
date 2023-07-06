@@ -192,7 +192,7 @@
             </div>
             <div class="footer-wrapper">
                 <div class="footer-section f-section-1">
-                    <p class="">Copyright © {{ date('Y') }} <a href="/"></a>, Todos los derechos reservados.</p>
+                    <p class="">Copyright © {{ date('Y') }} <a href="/">Yabaja</a>, Todos los derechos reservados.</p>
                 </div>
             </div>
         </div>

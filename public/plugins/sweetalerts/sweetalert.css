@@ -184,7 +184,7 @@ body.swal2-iosfix {
   transition: border-color box-shadow .3s; }
 
 .swal2-modal .swal2-input.swal2-inputerror, .swal2-modal .swal2-file.swal2-inputerror, .swal2-modal .swal2-textarea.swal2-inputerror {
-  border-color: #e7515a !important;
+  border-color: #EE8903 !important;
   -webkit-box-shadow: 0 0 2px #f27474 !important;
   box-shadow: 0 0 2px #f27474 !important; }
 
@@ -282,7 +282,7 @@ body.swal2-iosfix {
     margin: 0 6px 0 0; }
 
 .swal2-modal .swal2-checkbox {
-  color: #e7515a; }
+  color: #EE8903; }
   .swal2-modal .swal2-checkbox input, .swal2-modal .swal2-checkbox span {
     vertical-align: middle;
     outline: none; }
@@ -303,7 +303,7 @@ body.swal2-iosfix {
     width: 24px;
     height: 24px;
     border-radius: 50%;
-    color: #e7515a;
+    color: #EE8903;
     line-height: 28px;
     text-align: center;
     margin-right: 12px;
@@ -331,7 +331,7 @@ body.swal2-iosfix {
   -ms-user-select: none;
   user-select: none; }
   .swal2-icon.swal2-error {
-    border-color: #e7515a !important;
+    border-color: #EE8903 !important;
     border: 5px solid #f1f2f3 !important;
     box-shadow: 0px 3px 25px 0px rgba(113, 106, 202, 0.2); }
     .swal2-icon.swal2-error .swal2-x-mark {
@@ -341,7 +341,7 @@ body.swal2-iosfix {
       position: absolute;
       height: 5px;
       width: 47px;
-      background-color: #e7515a !important;
+      background-color: #EE8903 !important;
       display: block;
       top: 37px;
       border-radius: 2px; }

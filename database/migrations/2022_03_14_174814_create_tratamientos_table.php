@@ -16,7 +16,9 @@ class CreateTratamientosTable extends Migration
         Schema::create('tratamientos', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('historia_id');
-            $table->text('tratamiento')->nullable();
+            $table->string('tratamiento');
+            $table->string('descripcion', 1000)->nullable();
+            $table->string('url', 512)->nullable();
 
             $table->timestamps();
 

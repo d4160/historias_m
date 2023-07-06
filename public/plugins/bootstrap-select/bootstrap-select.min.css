@@ -68,11 +68,11 @@ select.bs-select-hidden, select.selectpicker {
   .bootstrap-select.show .dropdown-toggle.btn-outline-info {
     border: 1px solid #2196f3 !important; }
   .bootstrap-select.show .dropdown-toggle.btn-outline-success {
-    border: 1px solid #8dbf42 !important; }
+    border: 1px solid #05F2DB !important; }
   .bootstrap-select.show .dropdown-toggle.btn-outline-warning {
     border: 1px solid #e2a03f !important; }
   .bootstrap-select.show .dropdown-toggle.btn-outline-danger {
-    border: 1px solid #e7515a !important; }
+    border: 1px solid #EE8903 !important; }
 
 .bootstrap-select.form-control {
   margin-bottom: 0;
@@ -347,10 +347,10 @@ select.bs-select-hidden, select.selectpicker {
   color: #e2a03f !important; }
 
 .btn-outline-success:hover {
-  color: #8dbf42 !important; }
+  color: #05F2DB !important; }
 
 .btn-outline-danger:hover {
-  color: #e7515a !important; }
+  color: #EE8903 !important; }
 
 .bootstrap-select.btn-group > .dropdown-toggle.btn-outline-primary, .bootstrap-select.btn-group > .dropdown-toggle.btn-outline-success, .bootstrap-select.btn-group > .dropdown-toggle.btn-outline-info, .bootstrap-select.btn-group > .dropdown-toggle.btn-outline-danger, .bootstrap-select.btn-group > .dropdown-toggle.btn-outline-warning {
   background-color: transparent; }
@@ -365,11 +365,11 @@ select.bs-select-hidden, select.selectpicker {
 
 .btn-outline-success:not(:disabled):not(.disabled).active, .btn-outline-success:not(:disabled):not(.disabled):active {
   background-color: transparent;
-  color: #8dbf42 !important; }
+  color: #05F2DB !important; }
 
 .show > .btn-outline-success.dropdown-toggle {
   background-color: transparent;
-  color: #8dbf42 !important; }
+  color: #05F2DB !important; }
 
 .btn-outline-info:not(:disabled):not(.disabled).active, .btn-outline-info:not(:disabled):not(.disabled):active {
   background-color: transparent;
@@ -381,11 +381,11 @@ select.bs-select-hidden, select.selectpicker {
 
 .btn-outline-danger:not(:disabled):not(.disabled).active, .btn-outline-danger:not(:disabled):not(.disabled):active {
   background-color: transparent;
-  color: #e7515a !important; }
+  color: #EE8903 !important; }
 
 .show > .btn-outline-danger.dropdown-toggle {
   background-color: transparent;
-  color: #e7515a !important; }
+  color: #EE8903 !important; }
 
 .btn-outline-warning:not(:disabled):not(.disabled).active, .btn-outline-warning:not(:disabled):not(.disabled):active {
   background-color: transparent;
@@ -399,13 +399,13 @@ select.bs-select-hidden, select.selectpicker {
   border-top-color: #2762AB; }
 
 .btn.btn-outline-success .caret {
-  border-top-color: #8dbf42; }
+  border-top-color: #05F2DB; }
 
 .btn.btn-outline-info .caret {
   border-top-color: #2196f3; }
 
 .btn.btn-outline-danger .caret {
-  border-top-color: #e7515a; }
+  border-top-color: #EE8903; }
 
 .btn.btn-outline-warning .caret {
   border-top-color: #e2a03f; }
