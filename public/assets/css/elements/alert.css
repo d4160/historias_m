@@ -42,8 +42,8 @@
 
 .alert-success {
   color: #fff;
-  background-color: #05F2DB;
-  border-color: #05F2DB; }
+  background-color: #4CA9D1;
+  border-color: #4CA9D1; }
 
 .alert-info {
   color: #fff;
@@ -70,7 +70,7 @@
   border-radius: 5px; }
 
 .alert-outline-success {
-  border-color: #05F2DB;
+  border-color: #4CA9D1;
   border-radius: 5px; }
 
 .alert-outline-info {
@@ -110,11 +110,11 @@
     color: #e2a03f; }
 
 .alert-light-success {
-  color: #05F2DB;
+  color: #4CA9D1;
   background-color: #e6ffbf;
-  border-color: #05F2DB; }
+  border-color: #4CA9D1; }
   .alert-light-success svg.close {
-    color: #05F2DB; }
+    color: #4CA9D1; }
 
 .alert-light-info {
   color: #2196f3;

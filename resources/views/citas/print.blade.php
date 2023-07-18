@@ -5,6 +5,8 @@
 <meta charset="utf-8"/>
 <meta name="generator" content="pdf2htmlEX"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+<!-- Favicon -->
+<link rel="shortcut icon" type="image/x-icon" href="{{ asset('login-assets/img/favicon.png') }}"/>
 <style type="text/css">
 /*!
  * Base CSS for pdf2htmlEX

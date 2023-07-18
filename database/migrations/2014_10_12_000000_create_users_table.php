@@ -21,8 +21,8 @@ class CreateUsersTable extends Migration
             $table->string('first_names')->nullable();
             $table->string('last_name1')->nullable();
             $table->string('last_name2')->nullable();
-            $table->date('fecha_nacimiento')->nullable();
-            $table->integer('edad')->default(18);
+            $table->string('fecha_nacimiento')->nullable();
+            $table->string('edad')->nullable(); //default('');
             /* dividir procedencia en3: dep, prov, dis */
             $table->string('procedencia_dep', 2)->nullable();
             $table->string('procedencia_prov', 4)->nullable();
@@ -30,6 +30,9 @@ class CreateUsersTable extends Migration
             $table->string('direccion')->nullable();
             $table->enum('estado_civil', array('S (Soltero)','C (Casado)', 'Co (Conviviente)', 'D (Divorciado)', 'V (Viudo)'))->default('S (Soltero)');
             $table->string('ocupacion')->nullable();
+            $table->string('celular')->nullable();
+            $table->string('refiere')->nullable();
+            $table->string('medico_tratante')->nullable();
             $table->text('otros')->nullable();
             $table->unsignedBigInteger('specific_role_id')->nullable();
             $table->string('email')->unique()->nullable();
@@ -43,67 +46,40 @@ class CreateUsersTable extends Migration
 
         $this->postCreate(array([
             'user_role_id' => '1',
-            'num_document' => '48238255',
-            'first_names' => 'Diego',
+            'num_document' => 'dfernandez',
+            'first_names' => 'Diego Alejandro',
             'last_name1' => 'Fernandez',
             'last_name2' => 'Rivera',
             'email' => 'diego.ale.fernandez.rivera@gmail.com',
-            'password' => bcrypt('48238255')
+            'password' => bcrypt('dfernandez')
         ]));
 
         $this->postCreate(array([
-            'user_role_id' => '2',
-            'num_document' => 'laboratorio',
-            'first_names' => 'Laboratorio',
-            'last_names' => '',
-            'email' => 'laboratorio@gmail.com',
-            'password' => bcrypt('UpPZc*PRT#d$D7')
+            'user_role_id' => '1',
+            'num_document' => 'macuna',
+            'first_names' => 'María Isabel',
+            'last_name1' => 'Acuña',
+            'last_name2' => 'Perez',
+            'password' => bcrypt('macuna')
         ]));
 
         $this->postCreate(array([
-            'user_role_id' => '2',
-            'num_document' => 'ecografia',
-            'first_names' => 'Ecografía',
-            'last_names' => '',
-            'email' => 'ecografia@gmail.com',
-            'password' => bcrypt('UpPZc*PRT#d$D7')
+            'user_role_id' => '1',
+            'num_document' => 'dmechan',
+            'first_names' => 'Daysy',
+            'last_name1' => 'Mechan',
+            'last_name2' => '',
+            'password' => bcrypt('dmechan')
         ]));
 
-        $this->postCreate(array([
-            'user_role_id' => '2',
-            'num_document' => 'admision',
-            'first_names' => 'Admisión',
-            'last_names' => '',
-            'email' => 'admision@gmail.com',
-            'password' => bcrypt('UpPZc*PRT#d$D7')
-        ]));
-
-        $this->postCreate(array([
-            'user_role_id' => '2',
-            'num_document' => 'rayosx',
-            'first_names' => 'Rayos X',
-            'last_names' => '',
-            'email' => 'rayosx@gmail.com',
-            'password' => bcrypt('UpPZc*PRT#d$D7')
-        ]));
-
-        $this->postCreate(array([
-            'user_role_id' => '2',
-            'num_document' => 'tomografia',
-            'first_names' => 'Tomografía',
-            'last_names' => '',
-            'email' => 'tomografia@gmail.com',
-            'password' => bcrypt('UpPZc*PRT#d$D7')
-        ]));
-
-        $this->postCreate(array([
-            'user_role_id' => '2',
-            'num_document' => 'staffmedico',
-            'first_names' => 'Staff Médico',
-            'last_names' => '',
-            'email' => 'staffmedico@gmail.com',
-            'password' => bcrypt('UpPZc*PRT#d$D7')
-        ]));
+        // $this->postCreate(array([
+        //     'user_role_id' => '2',
+        //     'num_document' => 'btito',
+        //     'first_names' => 'BRENDA FATIMA',
+        //     'last_names' => 'TITO LEIVA',
+        //     'email' => '',
+        //     'password' => bcrypt('70117381')
+        // ]));
     }
 
     private function postCreate(array $users)  {

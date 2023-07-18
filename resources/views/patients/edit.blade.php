@@ -6,6 +6,7 @@
         <link rel="stylesheet" type="text/css" href="{{ asset('plugins/table/datatable/custom_dt_custom.css') }}">
         <link href="{{ asset('plugins/flatpickr/flatpickr.css') }}" rel="stylesheet" type="text/css">
         <link href="{{ asset('assets/css/components/tabs-accordian/custom-accordions.css') }}" rel="stylesheet" type="text/css">
+        <link href="{{ asset('plugins/notification/snackbar/snackbar.min.css') }}" rel="stylesheet" type="text/css" />
 
         @livewireStyles
     </x-slot>
@@ -30,54 +31,73 @@
                         <div>{{ $errors }}</div>
                     @endif
 
-                    <form class="m-3 mt-4 mb-4" method="POST" action="{{ route('patients.update', $patient_id) }}">
+                    <form class="m-3 mt-4 mb-4" method="POST" action="{{ route('patients.update', $patient->id) }}">
                         @csrf
 
                         <span style="font-weight: bold; color: #7b7e8c; font-size: 17px;">Datos Personales</span>
 
-                        <div class="mb-4 row">
+                        <div class="mb-4 mt-2 row">
                             <div class="col">
-                                <label for="num_document">DNI o CE</label>
-                                <input id="num_document" name="num_document" type="text" class="form-control" placeholder="77777777" value="{{ $patient->num_document }}" required autofocus minlength="8" maxlength="11">
+                                <label for="created_at">Fecha de registro *</label>
+                                <input id="created_at" name="created_at" value="{{ $user->created_at }}" class="form-control" type="text" placeholder="">
+                                {{--  readonly="readonly"  --}}
+                            </div>
+
+                            <livewire:documento :value="$user->num_document" :p_id="$user->id"/>
+
+                            <div class="col">
+                                <label for="first_names">Nombres *</label>
+                                <input id="first_names" name="first_names" type="text" class="form-control" placeholder="" value="{{ $user->first_names }}" required>
                             </div>
                             <div class="col">
-                                <label for="first_names">Nombres</label>
-                                <input id="first_names" name="first_names" type="text" class="form-control" placeholder="" value="{{ $patient->first_names }}" required>
+                                <label for="last_name1">Apellido Paterno *</label>
+                                <input id="last_name1" name="last_name1" type="text" class="form-control" placeholder="" value="{{ $user->last_name1 }}" required>
                             </div>
                             <div class="col">
-                                <label for="last_name1">Apellido Paterno</label>
-                                <input id="last_name1" name="last_name1" type="text" class="form-control" placeholder="" value="{{ $patient->last_name1 }}" required>
-                            </div>
-                            <div class="col">
-                                <label for="last_name2">Apellido Materno</label>
-                                <input id="last_name2" name="last_name2" type="text" class="form-control" placeholder="" value="{{ $patient->last_name2 }}" required>
+                                <label for="last_name2">Apellido Materno *</label>
+                                <input id="last_name2" name="last_name2" type="text" class="form-control" placeholder="" value="{{ $user->last_name2 }}" required>
                             </div>
                         </div>
-                        <div class="mb-4 row">
+                        <div class=" mt-2 row">
                             <div class="col">
                                 <label for="fecha_nacimiento">Fecha de nacimiento</label>
-                                <input id="fecha_nacimiento" name="fecha_nacimiento" value="{{ $patient->fecha_nacimiento }}" class="form-control" type="text" placeholder="" readonly="readonly" required>
+                                <input id="fecha_nacimiento" name="fecha_nacimiento" value="{{ $user->fecha_nacimiento }}" class="form-control" type="text" placeholder="">
                             </div>
                             <div class="col">
-                                <label for="edad">Edad</label>
-                                <input id="edad" name="edad" type="text" class="form-control" placeholder="" value="{{ $patient->edad }}" readonly>
+                                <label for="edad">Edad *</label>
+                                <input id="edad" name="edad" type="text" class="form-control" placeholder="" value="{{ $user->edad }}" required>
                             </div>
                             <div class="col">
                                 <label for="estado_civil">Estado Civil</label>
-                                {{ Form::select('estado_civil', ['S (Soltero)' => 'S (Soltero)', 'C (Casado)' => 'C (Casado)', 'Co (Conviviente)' => 'Co (Conviviente)', 'D (Divorciado)' => 'D (Divorciado)', 'V (Viudo)' => 'V (Viudo)'], $patient->estado_civil, ['id' => 'estado_civil', 'class' => 'form-control', 'required' => 'required']) }}
+                                {{ Form::select('estado_civil', ['S (Soltero)' => 'S (Soltero)', 'C (Casado)' => 'C (Casado)', 'Co (Conviviente)' => 'Co (Conviviente)', 'D (Divorciado)' => 'D (Divorciado)', 'V (Viudo)' => 'V (Viudo)'], $user->estado_civil, ['id' => 'estado_civil', 'class' => 'form-control', 'required' => 'required']) }}
                             </div>
                             <div class="col">
                                 <label for="ocupacion">Ocupación</label>
-                                <input id="ocupacion" name="ocupacion" type="text" class="form-control" placeholder="" value="{{ $patient->ocupacion }}" required>
+                                <input id="ocupacion" name="ocupacion" type="text" class="form-control" placeholder="" value="{{ $user->ocupacion }}">
                             </div>
                         </div>
 
-                        <livewire:procedencia :patient="$patient"/>
+                        <livewire:procedencia :patient="$user"/>
 
-                        <div class="mb-4 row">
+                        <span style="font-weight: bold; color: #7b7e8c; font-size: 17px;">Otros Datos</span>
+
+                        <div class="mb-4 mt-2 row">
+                            <div class="col">
+                                <label for="celular">Celular</label>
+                                <input id="celular" name="celular" value="{{ $user->celular }}" class="form-control" type="text" placeholder="">
+                                {{--  readonly="readonly"  --}}
+                            </div>
+                            <div class="col">
+                                <label for="refiere">Refiere</label>
+                                <input id="refiere" name="refiere" type="text" class="form-control" placeholder="" value="{{ $user->refiere }}">
+                            </div>
+                            <div class="col">
+                                <label for="proxima_cita_pac">Próxima Cita</label>
+                                <input id="proxima_cita_pac" name="proxima_cita_pac" value="{{ $patient->proxima_cita }}" class="form-control" type="text" placeholder="" readonly="readonly">
+                            </div>
                             <div class="col">
                                 <label style="font-weight: bold; color: #7b7e8c; font-size: 17px;" for="otros">Otros</label>
-                                <textarea id="otros" name="otros" type="text" class="form-control" placeholder="">{{ $patient->otros }}</textarea>
+                                <textarea id="otros" name="otros" type="text" class="form-control" placeholder="">{{ $user->otros }}</textarea>
                             </div>
                         </div>
 
@@ -93,11 +113,11 @@
         <div class="page-title">
             <h3>Historia Clínica</h3>
         </div>
-        <form method="POST" id="historia_nuevo_form" action="{{ route('citas.store', $patient_id) }}" style="display: inline-block">
+        <form method="POST" id="historia_nuevo_form" action="{{ route('citas.store', $patient->id) }}" style="display: inline-block">
             @csrf
             <a href="javascript:void(0);" class="ml-3 btn btn-success historia_nuevo confirm" 
                                     form_id="historia_nuevo_form"
-                                    patient_full_name="{{ $patient->full_name }}">
+                                    patient_full_name="{{ $user->full_name }}">
                 Nueva Historia
             </a>
         </form>
@@ -407,6 +427,8 @@
                                             </g>
                                             </svg></a></li>
 
+                                            {{--  <li><span><a class="bs-tooltip" target="_blank" data-toggle="tooltip" data-placement="top" title="" data-original-title="Descargar PDF" href="{{ route('citas.pdf', $historia->id)}}"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-download"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg></a></li>  --}}
+
                                             <li><span data-toggle="modal" data-target="#historiaModal"><a class="bs-tooltip" data-toggle="tooltip" data-placement="top" title="" data-original-title="Editar" onclick="OpenHCModal(historia_{{ $historia->id }}_id, '{{ $historia->id }}', '{{ route('citas.update', $historia->id) }}', '{{ $historia->proxima_cita }}')"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="p-1 mb-1 feather feather-edit-2 br-6"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></a></li>
 
                                             <li>
@@ -440,18 +462,25 @@
         <script src="{{ asset('plugins/input-mask/input-mask.js') }}"></script>
         <script src="{{ asset('assets/js/date-util.js') }}"></script>
         <script src="{{ asset('assets/js/components/ui-accordions.js') }}"></script>
+        <script src="{{ asset('plugins/notification/snackbar/snackbar.min.js') }} "></script>
         <script>
 
             $(function () {
                 RegisterHistoriaEvents();
 
-                var f1 = flatpickr(document.getElementById('fecha_nacimiento'), {
+                let f1 = flatpickr(document.getElementById('created_at'), {
                     maxDate: GetTodayDate()
                 });
 
-                CalculateAge('#fecha_nacimiento', '#edad');
+                var f2 = flatpickr(document.getElementById('proxima_cita_pac'), {
+                    minDate: GetTodayDate(1)
+                });
 
-                $("#email").inputmask(
+                {{--  $("#fecha_nacimiento").inputmask("9999/99/99");
+
+                CalculateAge('#fecha_nacimiento', '#edad');  --}}
+
+                {{--  $("#email").inputmask(
                     {
                         mask:"*{1,31}[.*{1,31}][.*{1,31}][.*{1,31}]@*{1,31}[.*{2,6}][.*{1,2}]",
                         greedy:!1,onBeforePaste:function(m,a){return(m=m.toLowerCase()).replace("mailto:","")},
@@ -463,7 +492,17 @@
                             }
                         }
                     }
-                );
+                );  --}}
+
+                @if ($notification)
+                    Snackbar.show({
+                        text: '{{ $notification }}',
+                        actionTextColor: '#fff',
+                        backgroundColor: '#8dbf42',
+                        actionText: 'OK'
+                    });
+                @endif
+
             });
 
             $('.btnSubmit').click(function(e){

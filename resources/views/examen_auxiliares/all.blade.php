@@ -4,6 +4,7 @@
         <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/forms/theme-checkbox-radio.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('plugins/table/datatable/dt-global_style.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('plugins/table/datatable/custom_dt_custom.css') }}">
+        <link href="{{ asset('plugins/flatpickr/flatpickr.css') }}" rel="stylesheet" type="text/css">
     </x-slot>
 
     @include('examen_auxiliares.create')
@@ -71,7 +72,7 @@
                                             <li><a href="{{ Storage::url($exam->url) }}" target="_blank" class="bs-tooltip" data-toggle="tooltip" data-placement="top" title="" data-original-title="Descargar"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-download"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg></a></li>
                                             @endif
 
-                                            <li><span data-toggle="modal" data-target="#examEditModal"><a href="javascript:void(0);" class="bs-tooltip" data-toggle="tooltip" data-placement="top" title="" data-original-title="Editar" onclick="$('#exam_edit_form').attr('action', '{{ route('examen_auxiliares.update', $exam->id) }}'); $('#exam_edit_id').val('{{ $exam->id }}'); $('#exam_edit_titulo').text('{{ addslashes($exam->titulo) }}'); $('#edit_titulo').val('{{ addslashes($exam->titulo) }}'); $('#edit_descripcion').val(`{{ old('edit_descripcion', addslashes($exam->descripcion)) }}`); $('#edit_form').prop('action', '{{ route('examen_auxiliares.update', $exam->id) }}'); $('#edit_file_url').text('{{ addslashes(substr($exam->url, 31)) }}'); $('#edit_file_download').attr('href', '{{ Storage::url(addslashes($exam->url)) }}');if('{{ addslashes($exam->url) }}' == ''){ $('#replace_file').hide();$('#put_file').show(); }else{ $('#replace_file').show();$('#put_file').hide(); } "><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="p-1 mb-1 feather feather-edit-2 br-6"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></a></li>
+                                            <li><span data-toggle="modal" data-target="#examEditModal"><a href="javascript:void(0);" class="bs-tooltip" data-toggle="tooltip" data-placement="top" title="" data-original-title="Editar" onclick="$('#exam_edit_form').attr('action', '{{ route('examen_auxiliares.update', $exam->id) }}'); $('#exam_edit_id').val('{{ $exam->id }}'); $('#exam_edit_titulo').text('{{ addslashes($exam->titulo) }}'); $('#edit_titulo').val('{{ addslashes($exam->titulo) }}'); $('#edit_descripcion').val(`{{ old('edit_descripcion', addslashes($exam->descripcion)) }}`); $('#edit_form').prop('action', '{{ route('examen_auxiliares.update', $exam->id) }}'); $('#edit_file_url').text('{{ addslashes(substr($exam->url, 31)) }}'); $('#edit_file_download').attr('href', '{{ Storage::url(addslashes($exam->url)) }}');if('{{ addslashes($exam->url) }}' == ''){ $('#replace_file').hide();$('#put_file').show(); }else{ $('#replace_file').show();$('#put_file').hide(); } $('#created_at_edit').val('{{ substr($exam->created_at, 0, 16) }}');"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="p-1 mb-1 feather feather-edit-2 br-6"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></a></li>
 
                                             <li><form id="delete_exam_{{ $exam->id }}_form" method="POST" action="{{ route('examen_auxiliares.destroy', $exam->id) }}" style="display: inline-block">
                                                 @csrf
@@ -98,6 +99,9 @@
     <x-slot name="scripts">
         <script src="{{ asset('plugins/table/datatable/datatables.js') }}"></script>
         <script src="{{ asset('plugins/sweetalerts/sweetalert2.min.js') }}"></script>
+        <script src="{{ asset('plugins/flatpickr/flatpickr.js') }}"></script>
+        <script src="{{ asset('assets/js/date-util.js') }}"></script>
+        <script src="https://npmcdn.com/flatpickr/dist/l10n/es.js"></script>
         <script>
 
             $(function () {

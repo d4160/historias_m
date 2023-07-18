@@ -6,8 +6,8 @@
         <link rel="stylesheet" type="text/css" href="{{ asset('plugins/table/datatable/custom_dt_custom.css') }}">
     </x-slot>
 
-    @include('examen_auxiliares.create')
-    @include('examen_auxiliares.edit');
+    @include('tratamientos.create')
+    @include('tratamientos.edit');
 
     <div class="row layout-top-spacing layout-spacing">
         <div class="col-lg-12">

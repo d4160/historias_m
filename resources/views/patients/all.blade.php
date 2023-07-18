@@ -33,6 +33,8 @@
                                     <th>Nombres</th>
                                     <th>Apellidos</th>
                                     <th class="text-center">Nº Historias</th>
+                                    <th class="text-center">Fecha de Registro</th>
+                                    <th class="text-center">Próxima Cita</th>
                                     <th class="text-center">Acción</th>
                                 </tr>
                             </thead>
@@ -44,6 +46,8 @@
                                     <td>{{ $patient->first_names }}</td>
                                     <td>{{ $patient->last_names }}</td>
                                     <td class="text-center"><span class="shadow-none badge badge-primary" style="font-size: 17px; font-weight: normal;">{{ $patient->patient()->historias()->count() }}</span></td>
+                                    <td class="text-center">{{ explode(' ', $patient->created_at)[0] }}</td>
+                                    <td class="text-center">{{ $patient->patient()->proxima_cita }}</td>
                                     {{--  {{ $patient->results()->count() }}  --}}
                                     <td class="text-center">
                                         <ul class="table-controls">

@@ -12,9 +12,20 @@
 
                     <input type="hidden" id="exam_modal_historia_id" name="historia_id" value="{{ old('historia_id') }}">
                     <div class="form-group">
-                        <label for="titulo">Título</label>
-                        <input id="titulo" type="text" class="mb-2 form-control" name="titulo" placeholder="" required value="{{ old('titulo') }}">
+                        <label for="titulo">Título *</label>
+                        {{ Form::select('titulo', ['Tomografía' => 'Tomografía', 'Rayos X' => 'Rayos X', 'Laboratorio' => 'Laboratorio', 'Ecografía' => 'Ecografía', 'Resonancia Magnética' => 'Resonancia Magnética'], old('titulo'), ['id' => 'titulo', 'class' => 'mb-2 form-control', 'required' => 'required']) }}
                         @error('titulo') <div class="invalid-feedback" style="display: block;">{{ $message }}</div> @enderror
+                    </div>
+                    <div class="form-group">
+                        <label for="created_at">Fecha y hora de subida</label>
+                        <div class="d-flex">
+                            <input id="created_at" name="created_at" value="{{ old('created_at') }}" class="form-control" type="text" placeholder="" data-input>
+                            <button type="button" class="btn" id="created_now">Ahora</button>
+                        </div>
+                        {{--  readonly="readonly"  --}}
+                        {{--  <a class="input-button" title="toggle" data-toggle>
+                            <i class="icon-calendar"></i>
+                        </a>  --}}
                     </div>
                     <div class="form-group">
                         <label for="descripcion">Descripción</label>
@@ -38,6 +49,21 @@
 @section('scripts')
 @parent
 <script>
+
+    $(() => {
+        let createdExam = flatpickr(document.getElementById('created_at'), {
+            maxDate: GetTodayDate(1),
+            enableTime: true,
+            minuteIncrement: 1,
+            defaultDate: GetTodayDateTime()  
+            //locale: 'es'
+            //defaultDate: GetTodayDateTime()
+        });
+
+        $('#created_now').click(() => {
+            createdExam.setDate(GetTodayDateTime());
+        });
+    });
 
     $('#btnGuardarExam').click((e) => {
         e.preventDefault();

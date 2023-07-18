@@ -33,6 +33,9 @@ class User extends Authenticatable
         'estado_civil',
         'ocupacion',
         'otros',
+        'celular',
+        'refiere',
+        'medico_tratante',
         'specific_role_id',
         'email',
         'password'
