@@ -1,6 +1,6 @@
 <span style="font-weight: bold; color: #7b7e8c; font-size: 17px;">Procedencia</span>
 
-<div class="mb-4 row">
+<div class="mb-4 mt-2 row">
     <div class="col">
         <label for="procedencia_dep">Departamento</label>
         <select id="procedencia_dep" name="procedencia_dep" class="form-control">
@@ -28,11 +28,10 @@
 
     <div class="col-4">
         <label for="direccion">Dirección</label>
-        <input id="direccion" name="direccion" type="text" class="form-control" placeholder="" value="{{ $patient ? $patient->direccion : old('direccion') }}" required>
+        <input id="direccion" name="direccion" type="text" class="form-control" placeholder="" value="{{ $patient ? $patient->direccion : old('direccion') }}">
     </div>
 </div>
 
-@push('scripts')
 <script>
     $('#procedencia_dep').change(() => {
         $('#procedencia_prov').empty();
@@ -65,6 +64,5 @@
     });
 
 </script>
-@endpush
 
 

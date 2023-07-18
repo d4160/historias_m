@@ -88,7 +88,7 @@
   .labels .label.label-warning:before {
     background: #e2a03f; }
   .labels .label.label-success:before {
-    background: #05F2DB; }
+    background: #4CA9D1; }
   .labels .label.label-danger:before {
     background: #EE8903; }
 
@@ -99,7 +99,7 @@
   border: 2px solid #e2a03f; }
 
 .radio-success span.new-control-indicator {
-  border: 2px solid #05F2DB; }
+  border: 2px solid #4CA9D1; }
 
 .radio-danger span.new-control-indicator {
   border: 2px solid #EE8903; }
@@ -257,7 +257,7 @@ td.fc-today.fc-state-highlight span {
   background: #2762AB; }
 
 .fc-day-grid-event.bg-success .fc-content:before {
-  background: #05F2DB; }
+  background: #4CA9D1; }
 
 .fc-day-grid-event.bg-warning .fc-content:before {
   background: #e2a03f; }

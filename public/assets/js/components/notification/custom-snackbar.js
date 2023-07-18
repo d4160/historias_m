@@ -120,7 +120,7 @@ $('.snackbar-bg-success').click(function() {
     Snackbar.show({
         text: 'Success',
         actionTextColor: '#fff',
-        backgroundColor: '#05F2DB'
+        backgroundColor: '#4CA9D1'
     });
 });
 

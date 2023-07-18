@@ -68,7 +68,7 @@ select.bs-select-hidden, select.selectpicker {
   .bootstrap-select.show .dropdown-toggle.btn-outline-info {
     border: 1px solid #2196f3 !important; }
   .bootstrap-select.show .dropdown-toggle.btn-outline-success {
-    border: 1px solid #05F2DB !important; }
+    border: 1px solid #4CA9D1 !important; }
   .bootstrap-select.show .dropdown-toggle.btn-outline-warning {
     border: 1px solid #e2a03f !important; }
   .bootstrap-select.show .dropdown-toggle.btn-outline-danger {
@@ -347,7 +347,7 @@ select.bs-select-hidden, select.selectpicker {
   color: #e2a03f !important; }
 
 .btn-outline-success:hover {
-  color: #05F2DB !important; }
+  color: #4CA9D1 !important; }
 
 .btn-outline-danger:hover {
   color: #EE8903 !important; }
@@ -365,11 +365,11 @@ select.bs-select-hidden, select.selectpicker {
 
 .btn-outline-success:not(:disabled):not(.disabled).active, .btn-outline-success:not(:disabled):not(.disabled):active {
   background-color: transparent;
-  color: #05F2DB !important; }
+  color: #4CA9D1 !important; }
 
 .show > .btn-outline-success.dropdown-toggle {
   background-color: transparent;
-  color: #05F2DB !important; }
+  color: #4CA9D1 !important; }
 
 .btn-outline-info:not(:disabled):not(.disabled).active, .btn-outline-info:not(:disabled):not(.disabled):active {
   background-color: transparent;
@@ -399,7 +399,7 @@ select.bs-select-hidden, select.selectpicker {
   border-top-color: #2762AB; }
 
 .btn.btn-outline-success .caret {
-  border-top-color: #05F2DB; }
+  border-top-color: #4CA9D1; }
 
 .btn.btn-outline-info .caret {
   border-top-color: #2196f3; }

@@ -3,6 +3,7 @@
 use App\Http\Controllers\AntecedenteController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PatientController;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ClinicStoryController;
 use App\Http\Controllers\CitaController;
 use App\Http\Controllers\DiagnosticoController;
@@ -24,6 +25,7 @@ use App\Http\Controllers\TratamientoDetalleController;
 |
 */
 
+// Pacientes
 Route::get('pacientes', [PatientController::class, 'index'])
     ->middleware(['auth', 'role'])->name('patients.all');
 
@@ -33,7 +35,7 @@ Route::get('pacientes/nuevo', [PatientController::class, 'create'])
 Route::post('pacientes/guardar', [PatientController::class, 'store'])
     ->middleware(['auth', 'role'])->name('patients.store');
 
-Route::get('pacientes/{id}', [PatientController::class, 'edit'])
+Route::get('pacientes/{id}/{notification?}', [PatientController::class, 'edit'])
     ->middleware(['auth', 'role'])->name('patients.edit');
 
 Route::post('pacientes/actualizar/{id}', [PatientController::class, 'update'])
@@ -44,6 +46,30 @@ Route::post('pacientes/eliminar/{id}', [PatientController::class, 'destroy'])
 
 Route::post('pacientes/importar', [PatientController::class, 'import'])
     ->middleware(['auth', 'role'])->name('patients.import');
+
+// Administradores
+Route::get('admins', [AdminController::class, 'index'])
+    ->middleware(['auth', 'role'])->name('admins.all');
+
+Route::get('admins/nuevo', [AdminController::class, 'create'])
+    ->middleware(['auth', 'role'])->name('admins.create');
+
+Route::post('admins/guardar', [AdminController::class, 'store'])
+    ->middleware(['auth', 'role'])->name('admins.store');
+
+Route::get('admins/{id}', [AdminController::class, 'edit'])
+    ->middleware(['auth', 'role'])->name('admins.edit');
+
+Route::post('admins/actualizar/{id}', [AdminController::class, 'update'])
+    ->middleware(['auth', 'role'])->name('admins.update');
+
+Route::post('admins/eliminar/{id}', [AdminController::class, 'destroy'])
+    ->middleware(['auth', 'role'])->name('admins.destroy');
+
+Route::post('admins/importar', [AdminController::class, 'import'])
+    ->middleware(['auth', 'role'])->name('admins.import');
+
+// Historias
 
 Route::post('antecedentes/guardar/{id}', [AntecedenteController::class, 'save'])
     ->middleware(['auth', 'role'])->name('antecedentes.save');
@@ -83,6 +109,9 @@ Route::post('citas/updateTratamiento', [CitaController::class, 'updateTratamient
 
 Route::get('historia/imprimir/{id}', [CitaController::class, 'print'])
     ->middleware(['auth', 'role'])->name('citas.print');
+
+Route::get('historia/pdf/{id}', [CitaController::class, 'download'])
+    ->middleware(['auth', 'role'])->name('citas.pdf');
 
 Route::get('examenesAuxiliares/{historia_id}', [ExamenAuxiliarController::class, 'index'])
     ->middleware(['auth', 'role'])->name('examenes_auxiliares.index');

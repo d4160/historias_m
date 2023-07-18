@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\ExamenAuxiliar;
+use App\Models\Auditoria;
 use App\Models\Historia;
 use Illuminate\Support\Facades\File;
 use Illuminate\Http\Request;
@@ -17,12 +18,19 @@ class ExamenAuxiliarController extends Controller
     public function index($historia_id)
     {
         $historia = Historia::find($historia_id);
-        $patient = $historia->paciente;
-        $examenesAuxiliares = $historia->examenesAuxiliares;
 
-        return view('examen_auxiliares.all', ['historia' => $historia, 
-            'patient' => $patient->user, 'patient_id' => $patient->id
-        ]);
+        if ($historia) {
+            $patient = $historia->paciente;
+            $examenesAuxiliares = $historia->examenesAuxiliares;
+
+            return view('examen_auxiliares.all', ['historia' => $historia, 
+                'patient' => $patient->user, 'patient_id' => $patient->id
+            ]);
+        }
+        else {
+
+            return redirect(route('patients.all'));
+        }
     }
 
     public function store(Request $request)
@@ -39,20 +47,35 @@ class ExamenAuxiliarController extends Controller
             $fileName = time().'_'.str_replace('+', '_', $request->file->getClientOriginalName());
             $filePath = $request->file('file')->storeAs($folder, $fileName, 'public');
 
-            ExamenAuxiliar::create([
+            $exam = ExamenAuxiliar::create([
                 'historia_id' => $request->historia_id,
                 'titulo' => $request->titulo,
                 'descripcion' => $request->descripcion,
                 'url' => '' . $filePath
             ]);
+
         }
         else {
-            ExamenAuxiliar::create([
+            $exam = ExamenAuxiliar::create([
                 'historia_id' => $request->historia_id,
                 'titulo' => $request->titulo,
                 'descripcion' => $request->descripcion
             ]);
         }
+
+        if ($request->created_at) {
+            $exam->created_at = $request->created_at;
+            $exam->save();
+        }
+
+        $my_user = \Auth::user();
+        Auditoria::create([
+            'tabla' => 'examenes_auxiliares',
+            'accion' => 'create',
+            'user_id' => $my_user->id,
+            'tabla_id' => $exam->id,
+            'detalles' => "Asistente:$my_user->full_name; titulo:$exam->titulo"
+        ]);
 
         return back();
     }
@@ -93,8 +116,20 @@ class ExamenAuxiliarController extends Controller
             $exam_aux->url = '' . $filePath;
         }
 
+        $my_user = \Auth::user();
+        Auditoria::create([
+            'tabla' => 'examenes_auxiliares',
+            'accion' => 'update',
+            'user_id' => $my_user->id,
+            'tabla_id' => $id,
+            'detalles' => "Asistente:$my_user->full_name; old_titulo:$exam_aux->titulo,new_titulo:$request->edit_titulo"
+        ]);
+
         $exam_aux->titulo = $request->edit_titulo;
         $exam_aux->descripcion = $request->edit_descripcion;
+        if ($request->created_at_edit) {
+            $exam_aux->created_at = $request->created_at_edit;
+        }
         $exam_aux->save();
 
         return back();
@@ -110,6 +145,15 @@ class ExamenAuxiliarController extends Controller
         else {
             // dd('File does not exists.' . 'storage/' . public_path($result->url));
         }
+
+        $my_user = \Auth::user();
+        Auditoria::create([
+            'tabla' => 'examenes_auxiliares',
+            'accion' => 'delete',
+            'user_id' => $my_user->id,
+            'tabla_id' => $id,
+            'detalles' => "Asistente:$my_user->full_name; titulo:$result->titulo"
+        ]);
 
         $result->delete();
 

@@ -13,9 +13,20 @@
 
                     <input type="hidden" name="exam_edit_id" id="exam_edit_id" value="{{ old('exam_edit_id') }}">
                     <div class="form-group">
-                        <label for="edit_titulo">Título</label>
-                        <input id="edit_titulo" type="text" class="mb-2 form-control" name="edit_titulo" placeholder="" value="{{ old('edit_titulo') }}" required>
+                        <label for="edit_titulo">Título *</label>
+                        {{ Form::select('edit_titulo', ['Tomografía' => 'Tomografía', 'Rayos X' => 'Rayos X', 'Laboratorio' => 'Laboratorio', 'Ecografía' => 'Ecografía', 'Resonancia Magnética' => 'Resonancia Magnética'], old('edit_titulo'), ['id' => 'edit_titulo', 'class' => 'mb-2 form-control', 'required' => 'required']) }}
                         @error('edit_titulo') <div class="invalid-feedback" style="display: block;">{{ $message }}</div> @enderror
+                    </div>
+                    <div class="form-group">
+                        <label for="created_at_edit">Fecha y hora de subida</label>
+                        <div class="d-flex">
+                            <input id="created_at_edit" name="created_at_edit" value="{{ old('created_at_edit') }}" class="form-control" type="text" placeholder="" data-input>
+                            <button type="button" class="btn" id="created_now_edit">Ahora</button>
+                        </div>
+                        {{--  readonly="readonly"  --}}
+                        {{--  <a class="input-button" title="toggle" data-toggle>
+                            <i class="icon-calendar"></i>
+                        </a>  --}}
                     </div>
                     <div class="form-group">
                         <label for="edit_descripcion">Descripción</label>
@@ -46,6 +57,24 @@
 @parent
 
 <script>
+
+    $(() => {
+        let createdExam = flatpickr(document.getElementById('created_at_edit'), {
+            maxDate: GetTodayDate(),
+            enableTime: true,
+            minuteIncrement: 1
+            //locale: 'es'
+            //defaultDate: GetTodayDateTime()
+        });
+
+        $('#created_at_edit').val(GetTodayDateTime());
+        //createdExam.setDate(GetTodayDateTime(), false);
+
+        $('#created_now_edit').click(() => {
+            $('#created_at_edit').val(GetTodayDateTime());
+            //createdExam.setDate(GetTodayDateTime(), false);
+        });
+    });
 
     $('#btnGuardarEditExam').click((e) => {
         e.preventDefault();

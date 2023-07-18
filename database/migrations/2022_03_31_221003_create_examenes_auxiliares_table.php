@@ -16,7 +16,7 @@ class CreateExamenesAuxiliaresTable extends Migration
         Schema::create('examenes_auxiliares', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('historia_id');
-            $table->string('titulo');
+            $table->enum('titulo', array('Tomografía','Rayos X', 'Laboratorio', 'Ecografía'))->default('Laboratorio');
             $table->string('descripcion', 1000)->nullable();
             $table->string('url', 512)->nullable();
             $table->timestamps();

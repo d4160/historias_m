@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Cita;
-use App\Models\Funcion;
+use App\Models\Auditoria;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Paciente;
@@ -21,7 +21,7 @@ class PatientController extends Controller
      */
     public function index()
     {
-        $patients = User::where('user_role_id', 5)->get();
+        $patients = User::where('user_role_id', 5)->orderBy('created_at', 'desc')->get();
         return view('patients.all', ['patients' => $patients]);
     }
 
@@ -61,13 +61,20 @@ class PatientController extends Controller
             'fecha_nacimiento' => $request->fecha_nacimiento,
             'edad' => $request->edad,
             'procedencia_dep' => $request->procedencia_dep,
-            'procedencia_prov' => $request->procedencia_prov,
-            'procedencia_dis' => $request->procedencia_dis,
+            'procedencia_prov' => strlen($request->procedencia_prov) > 4 ? '1201' : $request->procedencia_prov,
+            'procedencia_dis' => strlen($request->procedencia_dis) > 6 ? '120101' : $request->procedencia_dis,
             'direccion' => $request->direccion,
             'ocupacion' => $request->ocupacion,
+            'celular' => $request->celular,
+            'refiere' => $request->refiere,
+            'medico_tratante' => $request->medico_tratante,
             'otros' => $request->otros,
             'password' => Hash::make($request->num_document),
+            'created_at' => $request->created_at
         ]);
+
+        $user->created_at = $request->created_at;
+        $user->save();
 
         $patient = Paciente::create([
             'user_id' => $user->id
@@ -76,7 +83,16 @@ class PatientController extends Controller
         $user->specific_role_id = $patient->id;
         $user->save();
 
-        return redirect(route('patients.edit', $patient->id));
+        $my_user = \Auth::user();
+        Auditoria::create([
+            'tabla' => 'pacientes',
+            'accion' => 'create',
+            'user_id' => $my_user->id,
+            'tabla_id' => $patient->id,
+            'detalles' => "Asistente:$my_user->full_name; num_document:$user->num_document, full_name:$user->full_name"
+        ]);
+
+        return redirect(route('patients.edit', [ 'id' => $patient->id, 'notification' => 'Paciente%20registrado%20correctamente']));
     }
 
     /**
@@ -96,11 +112,11 @@ class PatientController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($id, $notification = '')
     {
         $patient = Paciente::find($id);
         if ($patient) {
-            return view('patients.edit', ['patient' => $patient->user, 'patient_id' => $id, 'historias' => $patient->historias]);
+            return view('patients.edit', ['user' => $patient->user, 'patient' => $patient, 'historias' => $patient->historias, 'notification' => $notification]);
         }
         else {
             return redirect(route('patients.all'));
@@ -116,32 +132,50 @@ class PatientController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $patient = Paciente::find($id)->user;
+        $patient = Paciente::find($id);
+        $user = $patient->user;
 
         $request->validate([
             'first_names' => ['required', 'string', 'max:255'],
             'last_name1' => ['required', 'string', 'max:255'],
             'last_name2' => ['required', 'string', 'max:255'],
-            'num_document' => ['required', 'string', 'max:11', 'unique:users,num_document,'.$patient->id], // 'confirmed'
+            'num_document' => ['required', 'string', 'max:11', 'unique:users,num_document,'.$user->id], // 'confirmed'
         ]);
 
-        $patient->num_document = $request->num_document;
-        $patient->first_names = $request->first_names;
-        $patient->last_name1 = $request->last_name1;
-        $patient->last_name2 = $request->last_name2;
-        $patient->estado_civil = $request->estado_civil;
-        $patient->fecha_nacimiento = $request->fecha_nacimiento;
-        $patient->edad = $request->edad;
-        $patient->procedencia_dep = $request->procedencia_dep;
-        $patient->procedencia_prov = $request->procedencia_prov;
-        $patient->procedencia_dis = $request->procedencia_dis;
-        $patient->direccion = $request->direccion;
-        $patient->ocupacion = $request->ocupacion;
-        $patient->otros = $request->otros;
+        $my_user = \Auth::user();
+        Auditoria::create([
+            'tabla' => 'pacientes',
+            'accion' => 'update',
+            'user_id' => $my_user->id,
+            'tabla_id' => $id,
+            'detalles' => "Asistente:$my_user->full_name; old_num_document:$user->num_document,new_num_document:$request->num_document"
+        ]);
 
+        $user->num_document = $request->num_document;
+        $user->first_names = $request->first_names;
+        $user->last_name1 = $request->last_name1;
+        $user->last_name2 = $request->last_name2;
+        $user->estado_civil = $request->estado_civil;
+        $user->fecha_nacimiento = $request->fecha_nacimiento;
+        $user->edad = $request->edad;
+        $user->procedencia_dep = $request->procedencia_dep;
+        $user->procedencia_prov = strlen($request->procedencia_prov) > 4 ? '1201' : $request->procedencia_prov;
+        $user->procedencia_dis = strlen($request->procedencia_dis) > 6 ? '120101' : $request->procedencia_dis;
+        $user->direccion = $request->direccion;
+        $user->ocupacion = $request->ocupacion;
+        $user->celular = $request->celular;
+        $user->refiere = $request->refiere;
+        $user->medico_tratante = $request->medico_tratante;
+        $user->otros = $request->otros;
+        $user->password = Hash::make($request->num_document);
+        $user->created_at = $request->created_at;
+
+        $user->save();
+
+        $patient->proxima_cita = $request->proxima_cita_pac;
         $patient->save();
 
-        return redirect(route('patients.edit', $id));
+        return redirect(route('patients.edit', ['id' => $id, 'notification' => 'Paciente actualizado correctamente']));
     }
 
     /**
@@ -165,6 +199,15 @@ class PatientController extends Controller
                 }
             }
         }
+
+        $my_user = \Auth::user();
+        Auditoria::create([
+            'tabla' => 'pacientes',
+            'accion' => 'delete',
+            'user_id' => $my_user->id,
+            'tabla_id' => $p->id,
+            'detalles' => "Asistente:$my_user->full_name; num_document:$u->num_document, full_name:$u->full_name"
+        ]);
 
         // $u->results()->delete();
 
@@ -239,13 +282,13 @@ class PatientController extends Controller
                 'sede' => $data['sede'] ?? NULL
             ]);
 
-            $f = Funcion::create([
-                'cita_id' => $cita->id,
-                'fun_vit_peso' => $data['peso'] ? $data['peso'] : NULL,
-                'fun_vit_talla' => $data['talla'] ? $data['talla'] : NULL
-            ]);
+            // $f = Funcion::create([
+            //     'cita_id' => $cita->id,
+            //     'fun_vit_peso' => $data['peso'] ? $data['peso'] : NULL,
+            //     'fun_vit_talla' => $data['talla'] ? $data['talla'] : NULL
+            // ]);
 
-            $cita->funcion_id = $f->id;
+            //$cita->funcion_id = $f->id;
             $cita->save();
         }
 

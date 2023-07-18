@@ -9,9 +9,19 @@ function GetDate(dateTime, daysToAdd = 0) {
     return `${newDate.getFullYear()}-${(newDate.getMonth()+1).toString().padStart(2, '0')}-${newDate.getDate().toString().padStart(2, '0')}`;
 }
 
+function GetDateTime(dateTime, daysToAdd = 0) {
+    let newDate = dateTime.addDays(daysToAdd);
+    return `${newDate.getFullYear()}-${(newDate.getMonth()+1).toString().padStart(2, '0')}-${newDate.getDate().toString().padStart(2, '0')} ${newDate.getHours().toString().padStart(2, '0')}:${newDate.getMinutes().toString().padStart(2, '0')}`;
+}
+
 function GetTodayDate(daysToAdd = 0) {
     let newDate = new Date().addDays(daysToAdd);
     return GetDate(newDate);
+}
+
+function GetTodayDateTime(daysToAdd = 0) {
+    let newDate = new Date().addDays(daysToAdd);
+    return GetDateTime(newDate);
 }
 
 function CalculateAge(dateSelectQ, yearSelectQ){

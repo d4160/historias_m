@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => 'f6bbe91c75187e52b5a137f4030427e0471c0519',
+    'reference' => '6049eff3a6b319cdc62bcb2de17903775ecde474',
     'name' => 'laravel/laravel',
   ),
   'versions' => 
@@ -19,6 +19,15 @@
       array (
       ),
       'reference' => '73e5b88775c64ccc0b84fb60836b30dc9d92ac4a',
+    ),
+    'barryvdh/laravel-dompdf' => 
+    array (
+      'pretty_version' => 'v2.0.1',
+      'version' => '2.0.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '9843d2be423670fb434f4c978b3c0f4dd92c87a6',
     ),
     'brick/math' => 
     array (
@@ -78,6 +87,15 @@
       array (
       ),
       'reference' => 'c268e882d4dbdd85e36e4ad69e02dc284f89d229',
+    ),
+    'dompdf/dompdf' => 
+    array (
+      'pretty_version' => 'v2.0.3',
+      'version' => '2.0.3.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'e8d2d5e37e8b0b30f0732a011295ab80680d7e85',
     ),
     'dragonmantank/cron-expression' => 
     array (
@@ -445,7 +463,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => 'f6bbe91c75187e52b5a137f4030427e0471c0519',
+      'reference' => '6049eff3a6b319cdc62bcb2de17903775ecde474',
     ),
     'laravel/sail' => 
     array (
@@ -536,6 +554,15 @@
       array (
       ),
       'reference' => '019b1e69d8cd8c7e749eba7a38e4fa69ecbc8f74',
+    ),
+    'masterminds/html5' => 
+    array (
+      'pretty_version' => '2.8.0',
+      'version' => '2.8.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '3c5d5a56d56f48a1ca08a0670f0f80c1dad368f3',
     ),
     'mockery/mockery' => 
     array (
@@ -642,6 +669,24 @@
       array (
       ),
       'reference' => '4f7fd7836c6f332bb2933569e566a0d6c4cbed74',
+    ),
+    'phenx/php-font-lib' => 
+    array (
+      'pretty_version' => '0.5.4',
+      'version' => '0.5.4.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'dd448ad1ce34c63d09baccd05415e361300c35b4',
+    ),
+    'phenx/php-svg-lib' => 
+    array (
+      'pretty_version' => '0.5.0',
+      'version' => '0.5.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '76876c6cf3080bcb6f249d7d59705108166a6685',
     ),
     'phpoption/phpoption' => 
     array (
@@ -799,8 +844,8 @@
     array (
       'provided' => 
       array (
-        0 => '1.0|2.0',
-        1 => '1.0.0 || 2.0.0 || 3.0.0',
+        0 => '1.0.0 || 2.0.0 || 3.0.0',
+        1 => '1.0|2.0',
       ),
     ),
     'psr/simple-cache' => 
@@ -861,6 +906,15 @@
       array (
         0 => '4.7.4',
       ),
+    ),
+    'sabberworm/php-css-parser' => 
+    array (
+      'pretty_version' => '8.4.0',
+      'version' => '8.4.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'e41d2140031d533348b2192a83f02d8dd8a71d30',
     ),
     'sebastian/cli-parser' => 
     array (

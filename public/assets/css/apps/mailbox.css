@@ -36,7 +36,7 @@
 
 .g-dot-success:before {
   border: none;
-  background: #05F2DB; }
+  background: #4CA9D1; }
 
 .g-dot-danger:before {
   border: none;
@@ -255,7 +255,7 @@
   .tab-title .nav-pills.group-list .nav-item a.g-dot-warning.active:before {
     background: #e2a03f; }
   .tab-title .nav-pills.group-list .nav-item a.g-dot-success.active:before {
-    background: #05F2DB; }
+    background: #4CA9D1; }
   .tab-title .nav-pills.group-list .nav-item a.g-dot-danger.active:before {
     background: #EE8903; }
   .tab-title .nav-pills.group-list .nav-item a[class*="g-dot-"]:before {

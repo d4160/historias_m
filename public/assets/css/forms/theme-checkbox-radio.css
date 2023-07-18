@@ -77,7 +77,7 @@
   color: #2762AB; }
 
 .new-control.new-checkbox.new-checkbox-text.checkbox-success > input:checked ~ span.new-chk-content, .new-control.new-checkbox.new-checkbox-text.checkbox-outline-success > input:checked ~ span.new-chk-content {
-  color: #05F2DB; }
+  color: #4CA9D1; }
 
 .new-control.new-checkbox.new-checkbox-text.checkbox-info > input:checked ~ span.new-chk-content, .new-control.new-checkbox.new-checkbox-text.checkbox-outline-info > input:checked ~ span.new-chk-content {
   color: #2196f3; }
@@ -98,7 +98,7 @@
   background: #2762AB; }
 
 .new-control.new-checkbox.checkbox-success > input:checked ~ span.new-control-indicator {
-  background: #05F2DB; }
+  background: #4CA9D1; }
 
 .new-control.new-checkbox.checkbox-info > input:checked ~ span.new-control-indicator {
   background: #2196f3; }
@@ -125,7 +125,7 @@
   border: 2px solid #2762AB; }
 
 .new-control.new-checkbox.checkbox-outline-success > input:checked ~ span.new-control-indicator {
-  border: 2px solid #05F2DB; }
+  border: 2px solid #4CA9D1; }
 
 .new-control.new-checkbox.checkbox-outline-info > input:checked ~ span.new-control-indicator {
   border: 2px solid #2196f3; }
@@ -149,7 +149,7 @@
   border-color: #2762AB; }
 
 .new-control.new-checkbox.checkbox-outline-success > input:checked ~ span.new-control-indicator:after {
-  border-color: #05F2DB; }
+  border-color: #4CA9D1; }
 
 .new-control.new-checkbox.checkbox-outline-info > input:checked ~ span.new-control-indicator:after {
   border-color: #2196f3; }
@@ -204,7 +204,7 @@
   .new-control.new-radio.radio-primary > input:checked ~ span.new-control-indicator {
     background: #2762AB; }
   .new-control.new-radio.radio-success > input:checked ~ span.new-control-indicator {
-    background: #05F2DB; }
+    background: #4CA9D1; }
   .new-control.new-radio.radio-info > input:checked ~ span.new-control-indicator {
     background: #2196f3; }
   .new-control.new-radio.radio-warning > input:checked ~ span.new-control-indicator {
@@ -222,7 +222,7 @@
   .new-control.new-radio.radio-classic-primary > input:checked ~ span.new-control-indicator {
     border: 3px solid #2762AB; }
   .new-control.new-radio.radio-classic-success > input:checked ~ span.new-control-indicator {
-    border: 3px solid #05F2DB; }
+    border: 3px solid #4CA9D1; }
   .new-control.new-radio.radio-classic-info > input:checked ~ span.new-control-indicator {
     border: 3px solid #2196f3; }
   .new-control.new-radio.radio-classic-warning > input:checked ~ span.new-control-indicator {
@@ -238,7 +238,7 @@
   .new-control.new-radio.radio-classic-primary > input:checked ~ span.new-control-indicator:after {
     background-color: #2762AB; }
   .new-control.new-radio.radio-classic-success > input:checked ~ span.new-control-indicator:after {
-    background-color: #05F2DB; }
+    background-color: #4CA9D1; }
   .new-control.new-radio.radio-classic-info > input:checked ~ span.new-control-indicator:after {
     background-color: #2196f3; }
   .new-control.new-radio.radio-classic-warning > input:checked ~ span.new-control-indicator:after {
@@ -254,7 +254,7 @@
   .new-control.new-radio.new-radio-text.radio-primary > input:checked ~ span.new-radio-content, .new-control.new-radio.new-radio-text.radio-classic-primary > input:checked ~ span.new-radio-content {
     color: #2762AB; }
   .new-control.new-radio.new-radio-text.radio-success > input:checked ~ span.new-radio-content, .new-control.new-radio.new-radio-text.radio-classic-success > input:checked ~ span.new-radio-content {
-    color: #05F2DB; }
+    color: #4CA9D1; }
   .new-control.new-radio.new-radio-text.radio-info > input:checked ~ span.new-radio-content, .new-control.new-radio.new-radio-text.radio-classic-info > input:checked ~ span.new-radio-content {
     color: #2196f3; }
   .new-control.new-radio.new-radio-text.radio-warning > input:checked ~ span.new-radio-content, .new-control.new-radio.new-radio-text.radio-classic-warning > input:checked ~ span.new-radio-content {
