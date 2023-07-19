@@ -59,18 +59,49 @@
 <script>
 
     $(() => {
-        var createdExamEdit = flatpickr(document.getElementById('created_at_edit'), {
+        window.createdExamEdit = flatpickr(document.getElementById('created_at_edit'), {
             maxDate: GetTodayDate(1),
             enableTime: true,
             minuteIncrement: 1,
-            //defaultDate: GetTodayDateTime()  
+            //defaultDate: GetTodayDateTime()
             //locale: 'es'
             //defaultDate: GetTodayDateTime()
         });
 
         $('#created_now_edit').click(() => {
-            createdExamEdit.setDate(GetTodayDateTime());
+            window.createdExamEdit.setDate(GetTodayDateTime());
         });
+
+        function OnEditBtnClick(formAction, id, titulo, description, url, urlText, urlFinal, created){
+
+            {{--  // '{{ route('examen_auxiliares.update', $exam->id) }}'
+            // '{{ $exam->id }}'
+            // '{{ addslashes($exam->titulo) }}'
+            // '{{ old('edit_descripcion', addslashes($exam->descripcion)) }}'
+            // '{{ addslashes($exam->url) }}'
+            // '{{ addslashes(substr($exam->url, 31)) }}'
+            // '{{ Storage::url(addslashes($exam->url)) }}'
+            // '{{ substr($exam->created_at, 0, 16) }}'  --}}
+            $('#exam_edit_form').attr('action', formAction); 
+            $('#exam_edit_id').val(id); 
+            $('#exam_edit_titulo').text(titulo); 
+            $('#edit_titulo').val(titulo); 
+            $('#edit_descripcion').val(description); 
+            $('#edit_form').prop('action', formAction); 
+            $('#edit_file_url').text(urlText); 
+            $('#edit_file_download').attr('href', urlFinal);
+            
+            if(url == ''){ 
+                $('#replace_file').hide();
+                $('#put_file').show(); 
+            }else{ 
+                $('#replace_file').show();
+                $('#put_file').hide(); 
+            } 
+                
+            $('#created_at_edit').val(created); 
+            createdExam.setDate(created);
+        }
     });
 
     $('#btnGuardarEditExam').click((e) => {
