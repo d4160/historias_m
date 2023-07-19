@@ -59,20 +59,17 @@
 <script>
 
     $(() => {
-        let createdExam = flatpickr(document.getElementById('created_at_edit'), {
-            maxDate: GetTodayDate(),
+        var createdExamEdit = flatpickr(document.getElementById('created_at_edit'), {
+            maxDate: GetTodayDate(1),
             enableTime: true,
-            minuteIncrement: 1
+            minuteIncrement: 1,
+            //defaultDate: GetTodayDateTime()  
             //locale: 'es'
             //defaultDate: GetTodayDateTime()
         });
 
-        $('#created_at_edit').val(GetTodayDateTime());
-        //createdExam.setDate(GetTodayDateTime(), false);
-
         $('#created_now_edit').click(() => {
-            $('#created_at_edit').val(GetTodayDateTime());
-            //createdExam.setDate(GetTodayDateTime(), false);
+            createdExamEdit.setDate(GetTodayDateTime());
         });
     });
 
