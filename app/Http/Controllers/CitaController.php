@@ -126,7 +126,12 @@ class CitaController extends Controller
         ]);
 
         $historia->proxima_cita = $request->proxima_cita;
+        $historia->estado = $request->estado;
 
+        $paciente = $historia->paciente;
+        $paciente->proxima_cita = $request->proxima_cita;
+        $paciente->estado = $request->estado;
+        $paciente->save();
         $historia->save();
 
         return back();

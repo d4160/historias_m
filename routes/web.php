@@ -10,7 +10,7 @@ use App\Http\Controllers\DiagnosticoController;
 use App\Http\Controllers\EnfermedadActualController;
 use App\Http\Controllers\ExamenAuxiliarController;
 use App\Http\Controllers\ExamenController;
-use App\Http\Controllers\FuncionController;
+use App\Http\Controllers\KardexController;
 use App\Http\Controllers\TratamientoController;
 use App\Http\Controllers\TratamientoDetalleController;
 
@@ -40,6 +40,9 @@ Route::get('pacientes/{id}/{notification?}', [PatientController::class, 'edit'])
 
 Route::post('pacientes/actualizar/{id}', [PatientController::class, 'update'])
     ->middleware(['auth', 'role'])->name('patients.update');
+
+Route::post('pacientes/actualizar2/{id}', [PatientController::class, 'update2'])
+    ->middleware(['auth', 'role'])->name('patients.update2');
 
 Route::post('pacientes/eliminar/{id}', [PatientController::class, 'destroy'])
     ->middleware(['auth', 'role'])->name('patients.destroy');
@@ -122,29 +125,8 @@ Route::get('tratamientos/{historia_id}', [TratamientoController::class, 'index']
 Route::post('enfermedadActuales/guardar/{id}', [EnfermedadActualController::class, 'save'])
     ->middleware(['auth', 'role'])->name('enfermedad_actuales.save');
 
-Route::post('funciones/guardarBio/{id}', [FuncionController::class, 'saveFunBiologicas'])
-    ->middleware(['auth', 'role'])->name('funciones.save_fun_bio');
-
-Route::post('funciones/guardarVit/{id}', [FuncionController::class, 'saveFunVitales'])
-    ->middleware(['auth', 'role'])->name('funciones.save_fun_vit');
-
 Route::post('examenes/guardar/{id}', [ExamenController::class, 'save'])
     ->middleware(['auth', 'role'])->name('examenes.save');
-
-Route::post('diagnosticos/guardarP/{id}', [DiagnosticoController::class, 'saveP'])
-    ->middleware(['auth', 'role'])->name('diagnosticos.save_p');
-
-Route::post('diagnosticos/guardarD/{id}', [DiagnosticoController::class, 'saveD'])
-    ->middleware(['auth', 'role'])->name('diagnosticos.save_d');
-
-Route::post('medicamentos/guardar/{id}/cita/{cita_id}', [TratamientoDetalleController::class, 'store'])
-    ->middleware(['auth', 'role'])->name('medicamentos.store');
-
-Route::post('medicamentos/update/{id}/cita/{cita_id}', [TratamientoDetalleController::class, 'update'])
-    ->middleware(['auth', 'role'])->name('medicamentos.update');
-
-Route::post('medicamentos/eliminar/{id}', [TratamientoDetalleController::class, 'destroy'])
-    ->middleware(['auth', 'role'])->name('medicamentos.destroy');
 
 Route::post('examenAuxiliares/guardar', [ExamenAuxiliarController::class, 'store'])
     ->middleware(['auth', 'role'])->name('examen_auxiliares.store');
@@ -175,6 +157,15 @@ Route::post('resultados/eliminar/{id}', [ClinicStoryController::class, 'destroy'
 
 Route::get('resultados', [ClinicStoryController::class, 'index'])
     ->middleware(['auth'])->name('results.all');
+
+Route::get('kardex/{historia_id}', [KardexController::class, 'index'])
+    ->middleware(['auth', 'role'])->name('kardex.index');
+
+Route::post('kardex/guardar/{id}', [KardexController::class, 'update'])
+    ->middleware(['auth', 'role'])->name('kardex.update');
+
+Route::post('kardex/detalles/guardar', [KardexController::class, 'detallesStore'])
+    ->middleware(['auth', 'role'])->name('kardex.detalles_store');
 
 Route::get('/', function () {
     return view('dashboard');

@@ -4,9 +4,15 @@
         <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/forms/theme-checkbox-radio.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('plugins/table/datatable/dt-global_style.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('plugins/table/datatable/custom_dt_custom.css') }}">
+        <link href="{{ asset('plugins/flatpickr/flatpickr.css') }}" rel="stylesheet" type="text/css">
+        <link href="{{ asset('assets/css/tables/table-basic.css') }}" rel="stylesheet" type="text/css">
+
+        @livewireStyles
     </x-slot>
 
     @include('patients.import_csv')
+    @include('patients.edit_modal')
+    @include('historias.historias_list')
 
     <div class="row layout-top-spacing layout-spacing">
         <div class="col-lg-12">
@@ -35,24 +41,55 @@
                                     <th class="text-center">Nº Historias</th>
                                     <th class="text-center">Fecha de Registro</th>
                                     <th class="text-center">Próxima Cita</th>
+                                    <th class="text-center">Estado</th>
                                     <th class="text-center">Acción</th>
                                 </tr>
                             </thead>
                             <tbody>
+                                @php
+                                $count = 0; $estado = '';
+                                @endphp
                                 @foreach($patients as $patient)
                                 <tr>
                                     <td class="checkbox-column">{{ $patient->id }}</td>
                                     <td>{{ $patient->num_document }}</td>
                                     <td>{{ $patient->first_names }}</td>
                                     <td>{{ $patient->last_names }}</td>
-                                    <td class="text-center"><span class="shadow-none badge badge-primary" style="font-size: 17px; font-weight: normal;">{{ $patient->patient()->historias()->count() }}</span></td>
+                                    @php
+                                    $count = $patient->patient()->historias()->count();
+                                    $estado = $patient->patient()->estado;
+                                    @endphp
+                                    <td class="text-center"><span class="shadow-none badge badge-primary" style="font-size: 17px; font-weight: normal;">{{ $count }}</span>
+                                    @if ($count > 0)
+                                    <span data-toggle="modal" data-target="#historiasModal"><a class="bs-tooltip" data-toggle="tooltip" data-placement="top" title="" data-original-title="Ver Historias" onclick="OpenHistoriasModal('{{ $patient->full_name }}', '{{ $patient->patientId() }}');"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="p-1 mb-1 feather feather-file-text br-6"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg></a></span>
+                                    @endif
+                                    </td>
                                     <td class="text-center">{{ explode(' ', $patient->created_at)[0] }}</td>
                                     <td class="text-center">{{ $patient->patient()->proxima_cita }}</td>
+                                    <td class="text-center">
+                                    @if ($count > 0)
+                                    @switch($estado)
+                                        @case('Atendido')
+                                            <span class="badge badge-danger" style="color:#8dbf42;border-color:#8dbf42;"> {{ $estado }} </span>
+                                            @break
+
+                                        @case('Pendiente')
+                                            <span class="badge badge-danger" style="color: #e7515a;"> {{ $estado }} </span>
+                                            @break
+
+                                        @default
+                                            <span class="badge badge-warning"> {{ $estado }} </span>
+                                    @endswitch
+                                    @endif
+                                    </td>
                                     {{--  {{ $patient->results()->count() }}  --}}
                                     <td class="text-center">
                                         <ul class="table-controls">
-                                            <li><a href="{{ route('patients.edit', $patient->patientId()) }}" class="bs-tooltip" data-toggle="tooltip" data-placement="top" title="" data-original-title="Editar"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="p-1 mb-1 feather feather-edit-2 br-6"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></a></li>
+                                            <li><a href="{{ route('patients.edit', $patient->patientId()) }}" class="bs-tooltip" data-toggle="tooltip" data-placement="top" title="" data-original-title="Ver"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="p-1 mb-1 feather feather-edit-2 br-6"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></a></li>
 
+                                            @if ($count > 0)
+                                            <li><span data-toggle="modal" data-target="#historiaModal"><a class="bs-tooltip" data-toggle="tooltip" data-placement="top" title="" data-original-title="Editar" onclick="OpenPacienteModal('{{ $patient->full_name }}', '{{ $patient->patientId() }}', '{{ route('patients.update2', $patient->patientId()) }}', '{{ $patient->patient()->proxima_cita }}', '{{ $patient->patient()->estado }}')"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="p-1 mb-1 feather feather-edit-2 br-6"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></a></span></li>
+                                            @endif
                                             <li>
                                                 <form method="POST" id="delete_{{ $patient->id }}_form" action="{{ route('patients.destroy', $patient->id) }}" style="display: inline-block">
                                                     @csrf
@@ -79,6 +116,8 @@
     <x-slot name="scripts">
         <script src="{{ asset('plugins/table/datatable/datatables.js') }}"></script>
         <script src="{{ asset('plugins/sweetalerts/sweetalert2.min.js') }}"></script>
+        <script src="{{ asset('plugins/flatpickr/flatpickr.js') }}"></script>
+        <script src="{{ asset('assets/js/date-util.js') }}"></script>
         <script>
 
             $(function () {
@@ -128,7 +167,24 @@
                     });
                 });
             }
+
+            function OpenPacienteModal(pacienteFullname, id, route, proximaCita, estado) {
+                $('#hc_number').html(pacienteFullname);
+
+                $('#formHC').attr('action', route); 
+                $('#hc_modal_id').val(id); 
+                window.f1.setDate(proximaCita);
+                $('#proxima_cita').val(proximaCita);
+                $('#estado').val(estado); 
+            }
+
+            function OpenHistoriasModal(pacienteFullname, id) {
+                $('#pac_fullname').html(pacienteFullname);
+                $('#historias_modal_id').val(id).change();;
+            }
+            
         </script>
+        @livewireScripts
     </x-slot>
 
 </x-layouts.admin>

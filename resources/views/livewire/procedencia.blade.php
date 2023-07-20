@@ -32,8 +32,10 @@
     </div>
 </div>
 
+@push('scripts')
 <script>
     $('#procedencia_dep').change(() => {
+        console.log('dep changed');
         $('#procedencia_prov').empty();
         $('#procedencia_prov').append('<option>CARGANDO...</option>');
         $('#procedencia_dis').empty();
@@ -64,5 +66,5 @@
     });
 
 </script>
-
+@endpush
 

@@ -7,6 +7,7 @@ use App\Models\Auditoria;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Paciente;
+use App\Models\Historia;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\File;
@@ -172,10 +173,40 @@ class PatientController extends Controller
 
         $user->save();
 
-        $patient->proxima_cita = $request->proxima_cita_pac;
-        $patient->save();
+        // $patient->proxima_cita = $request->proxima_cita_pac;
+        // $patient->save();
 
         return redirect(route('patients.edit', ['id' => $id, 'notification' => 'Paciente actualizado correctamente']));
+    }
+
+    public function update2(Request $request, $id)
+    {
+        $patient = Paciente::find($id);
+        $user = $patient->user;
+
+        $request->validate([
+
+        ]);
+
+        $my_user = \Auth::user();
+        Auditoria::create([
+            'tabla' => 'pacientes',
+            'accion' => 'update',
+            'user_id' => $my_user->id,
+            'tabla_id' => $id,
+            'detalles' => "Asistente:$my_user->full_name; old_estado:$patient->estado,new_estado:$request->estado"
+        ]);
+
+        $patient->proxima_cita = $request->proxima_cita;
+        $patient->estado = $request->estado;
+        $patient->save();
+
+        $historia = Historia::where('paciente_id', '=', $id)->orderBy('updated_at')->first();
+        $historia->proxima_cita = $request->proxima_cita;
+        $historia->estado = $request->estado;
+        $historia->save();
+
+        return back();
     }
 
     /**

@@ -16,7 +16,8 @@ class Historia extends Model
         'examen_clinico_id',
         'examen_regional_id',
         'impresion_diagnostica_id',
-        'proxima_cita'
+        'proxima_cita',
+        'kardex_id'
     ];
 
     public function paciente() {
@@ -37,6 +38,10 @@ class Historia extends Model
 
     public function examenRegional() {
         return $this->belongsTo('App\Models\ExamenRegional');
+    }
+
+    public function kardex() {
+        return $this->belongsTo('App\Models\Kardex');
     }
 
     public function examenesAuxiliares($order = 'desc') {

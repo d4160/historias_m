@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Tratamiento;
 use App\Models\Historia;
+use Illuminate\Support\Facades\File;
 use Illuminate\Http\Request;
 
 class TratamientoController extends Controller
