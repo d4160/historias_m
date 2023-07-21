@@ -172,9 +172,11 @@ class CitaController extends Controller
 
         $historia = Historia::where('paciente_id', '=', $patient->id)->orderBy('updated_at', 'desc')->first();
 
-        $patient->proxima_cita = $historia->proxima_cita;
-        $patient->estado = $historia->estado;
-        $patient->save();
+        if ($historia) {
+            $patient->proxima_cita = $historia->proxima_cita;
+            $patient->estado = $historia->estado;
+            $patient->save();
+        }
 
         return back();
     }
@@ -223,6 +225,7 @@ class CitaController extends Controller
         $instance->fc = $request->fc;
         $instance->fr = $request->fr;
         $instance->sat = $request->sat;
+        $instance->pa = $request->pa;
         $instance->temperatura = $request->temperatura;
         $instance->peso = $request->peso;
         $instance->talla = $request->talla;

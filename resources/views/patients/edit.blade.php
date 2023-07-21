@@ -58,7 +58,7 @@
                                 <input id="last_name2" name="last_name2" type="text" class="form-control" placeholder="" value="{{ $user->last_name2 }}" required>
                             </div>
                         </div>
-                        <div class="mt-2 mb-3  row">
+                        <div class="mt-2 mb-3 row">
                             <div class="col">
                                 <label for="fecha_nacimiento">Fecha de nacimiento</label>
                                 <input id="fecha_nacimiento" name="fecha_nacimiento" value="{{ $user->fecha_nacimiento }}" class="form-control" type="text" placeholder="">
@@ -489,9 +489,9 @@
                     maxDate: GetTodayDate()
                 });
 
-                var f2 = flatpickr(document.getElementById('proxima_cita_pac'), {
-                    minDate: GetTodayDate(1)
-                });
+                // var f2 = flatpickr(document.getElementById('proxima_cita_pac'), {
+                //     minDate: GetTodayDate(1)
+                // });
 
                 {{--  $("#fecha_nacimiento").inputmask("9999/99/99");
 
@@ -512,6 +512,7 @@
                 );  --}}
 
                 @if ($notification)
+                    console.log('notify');
                     Snackbar.show({
                         text: '{{ $notification }}',
                         actionTextColor: '#fff',

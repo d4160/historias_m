@@ -18,6 +18,17 @@
         </div>
 
         <div class="col">
+            <label for="pa">PA (mmHg)</label>
+            <input id="pa" name="pa" type="text" maxlength="10" class="mb-2 form-control" placeholder=""
+                value="{{ old('pa') }}">
+            @error('pa') <div class="invalid-feedback" style="display: block;">{{ $message }}</div> @enderror
+        </div>
+    </div>
+</div>
+
+<div class="mt-2 form-group">
+    <div class="row">
+        <div class="col">
             <label for="sat">Saturación (%)</label>
             <input id="sat" name="sat" min="0" type="number" step="1" class="mb-2 form-control" placeholder=""
                 value="{{ old('sat') }}">
@@ -26,8 +37,8 @@
 
         <div class="col">
             <label for="temperatura">Temperatura (ºC)</label>
-            <input id="temperatura" name="temperatura" min="0" type="number" step="0.1" class="mb-2 form-control" placeholder=""
-                value="{{ old('temperatura') }}">
+            <input id="temperatura" name="temperatura" min="0" type="number" step="0.1" class="mb-2 form-control"
+                placeholder="" value="{{ old('temperatura') }}">
             @error('temperatura') <div class="invalid-feedback" style="display: block;">{{ $message }}</div> @enderror
         </div>
     </div>
@@ -94,6 +105,7 @@
         $('#fc').val(data.fc);
         $('#fr').val(data.fr);
         $('#sat').val(data.sat);
+        $('#pa').val(data.pa);
         $('#temperatura').val(data.temperatura);
         $('#peso').val(data.peso);
         $('#talla').val(data.talla);

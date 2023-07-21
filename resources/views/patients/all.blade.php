@@ -42,7 +42,7 @@
                                     <th class="text-center">Fecha de Registro</th>
                                     <th class="text-center">Próxima Cita</th>
                                     <th class="text-center">Estado</th>
-                                    <th class="text-center">Acción</th>
+                                    <th class="text-center" style="min-width:174px!important;">Acción</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -144,7 +144,7 @@
                     "sInfoEmpty": "Mostrando 0 a 0 de 0 entradas",
                 },
                 "lengthMenu": [5, 10, 20, 50],
-                "pageLength": 5
+                "pageLength": 10
             });
 
             multiCheck(c2);

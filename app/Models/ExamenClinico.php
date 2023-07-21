@@ -22,7 +22,8 @@ class ExamenClinico extends Model
         'deposiciones',
         'orina',
         'fur',
-        'otros'
+        'otros',
+        'pa'
     ];
 
     public function historia() {
