@@ -45,17 +45,15 @@
                         </div>
                     </div>
 
-                    <div class="m-3 mt-4 row">
-                        <div class="col">
-                            <label style="font-weight: bold; color: #7b7e8c; font-size: 17px;" for="observaciones">Observaciones</label>
-                            <textarea id="observaciones" name="observaciones" type="text" class="form-control" placeholder="">{{ $kardex->observaciones }}</textarea>
-                        </div>
-                    </div>
-
                     <div class="mb-4 ml-3 mr-4 row" style="justify-content:space-between;">
                         <div>
-                            <a href="{{ route('kardex.update', $kardex->id) }}" class="mt-3 ml-3 btn btn-success">Guardar</a>
+                            <a href="" class="mt-3 ml-3 btn btn-primary">Imprimir Kardex</a>
                         </div>
+
+                        <div>
+                            <a href="" class="mt-3 ml-3 btn btn-primary">Descargar PDF</a>
+                        </div>
+
                         <div>
                             <a href="{{ route('patients.edit', $patient_id) }}" class="mt-3 ml-3 btn btn-info">Regresar a la página del paciente</a>
                         </div>
@@ -108,7 +106,7 @@
                                                 @csrf
                                                 <a href="javascript:void(0);" class="bs-tooltip exam_remove confirm"
                                                                         form_id="delete_exam_{{ $det->id }}_form"
-                                                                        exam_aux_title="{{ addslashes($det->tratamiento) }}"
+                                                                        exam_aux_title="{{ addslashes($det->medicamento) }}"
                                                                         data-container="body" data-html="true" data-toggle="tooltip" data-placement="top" title="" data-original-title="Eliminar">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="p-1 mb-1 feather feather-trash br-6"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
                                                 </a>
@@ -122,6 +120,55 @@
                         </table>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row layout-spacing">
+        <div class="col-lg-12">
+            <div class="statbox widget box box-shadow">
+
+                <div class="widget-header">
+
+                    @if(count($errors) > 0)
+                    <div>{{ $errors }}</div>
+                    @endif
+
+                    <form class="m-3 mt-4 mb-4" method="POST" id="formKardex" action="{{ route('kardex.update', $kardex->id) }}">
+                        @csrf
+
+                        <span style="font-weight: bold; color: #7b7e8c; font-size: 17px;">Otros Datos de Kardex</span>
+
+                        <div class="mt-4 mb-4 row">
+                            <div class="col">
+                                <label style="" for="exam_lab">Exámenes de laboratorio</label>
+                                <textarea id="exam_lab" name="exam_lab" type="text" class="form-control" placeholder="">{{ $kardex->exam_lab }}</textarea>
+                            </div>
+
+                            <div class="col">
+                                <label style="" for="exam_imagen">Exámenes de imagen</label>
+                                <textarea id="exam_imagen" name="exam_imagen" type="text" class="form-control" placeholder="">{{ $kardex->exam_imagen }}</textarea>
+                            </div>
+
+                            <div class="col">
+                                <label style="" for="reevaluacion">Reevaluación</label>
+                                <textarea id="reevaluacion" name="reevaluacion" type="text" class="form-control" placeholder="">{{ $kardex->reevaluacion }}</textarea>
+                            </div>
+                        </div>
+
+                        <div class="mt-3 row">
+                            <div class="col">
+                                <label style="" for="observaciones">Observaciones</label>
+                                <textarea id="observaciones" name="observaciones" type="text" class="form-control"
+                                    placeholder="">{{ $kardex->observaciones }}</textarea>
+                            </div>
+                        </div>
+
+                        <button type="submit" id="btnGuardarKardex"
+                            class="mt-4 mb-2 btn btn-primary btn_submit2">Guardar</button>
+                    </form>
+                </div>
+
             </div>
         </div>
     </div>
@@ -178,6 +225,15 @@
                     });
                 });
             }
+
+            $('#btnGuardarKardex').click((e) => {
+                e.preventDefault();
+                if($('#formKardex').get(0).reportValidity()){
+                    $('#btnGuardarKardex').prop('disabled',true);
+                    $('#btnGuardarKardex').html('Guardando...');
+                    $('#formKardex').submit();
+                }
+            });
 
 
         </script>

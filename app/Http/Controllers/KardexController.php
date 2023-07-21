@@ -33,31 +33,14 @@ class KardexController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'historia_id' => ['required', 'exists:historias,id'],
-            'titulo' => ['required', 'string', 'max:255'],
-            'file' => ['mimes:pdf,png,jpg,jpeg,doc,docx,xls,xlsx,zip,rar', 'max:10240']
         ]);
 
-        $folder = 'tratamientos';
-
-        if ($request->file('file')) {
-            $fileName = time().'_'.str_replace('+', '_', $request->file->getClientOriginalName());
-            $filePath = $request->file('file')->storeAs($folder, $fileName, 'public');
-
-            Kardex::create([
-                'historia_id' => $request->historia_id,
-                'tratamiento' => $request->titulo,
-                'descripcion' => $request->descripcion,
-                'url' => '' . $filePath
-            ]);
-        }
-        else {
-            Kardex::create([
-                'historia_id' => $request->historia_id,
-                'tratamiento' => $request->titulo,
-                'descripcion' => $request->descripcion
-            ]);
-        }
+        $kardex = Kardex::find($id);
+        $kardex->observaciones = $request->observaciones;
+        $kardex->exam_lab = $request->exam_lab;
+        $kardex->exam_imagen = $request->exam_imagen;
+        $kardex->reevaluacion = $request->reevaluacion;
+        $kardex->save();
 
         return back();
     }
@@ -93,21 +76,21 @@ class KardexController extends Controller
             'medicamento' => ['required', 'string']
         ]);
 
-        KardexDetalle::create([
-            'kardex_id' => $id,
-            'medicamento' => $request->medicamento,
-            'dosis' => $request->dosis,
-            'via' => $request->via,
-            'frecuencia' => $request->frecuencia,
-            'dia1' => $request->dia1,
-            'dia2' => $request->dia2,
-            'dia3' => $request->dia3,
-            'dia4' => $request->dia4,
-            'dia5' => $request->dia5,
-            'dia6' => $request->dia6,
-            'dia7' => $request->dia7,
-            'dia8' => $request->dia8
-        ]);
+        $det = KardexDetalle::find($id);
+        $det->medicamento = $request->medicamento;
+        $det->dosis = $request->dosis;
+        $det->via = $request->via;
+        $det->frecuencia = $request->frecuencia;
+        $det->dia1 = $request->dia1;
+        $det->dia2 = $request->dia2;
+        $det->dia3 = $request->dia3;
+        $det->dia4 = $request->dia4;
+        $det->dia5 = $request->dia5;
+        $det->dia6 = $request->dia6;
+        $det->dia7 = $request->dia7;
+        $det->dia8 = $request->dia8;
+
+        $det->save();
 
         return back();
     }

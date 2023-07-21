@@ -16,7 +16,10 @@ class CreateExamenesClinicosTable extends Migration
         Schema::create('examenes_clinicos', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('historia_id');
-            $table->string('funciones_vitales', 1000)->nullable();
+            $table->integer('fc', false, true)->nullable();
+            $table->integer('fr', false, true)->nullable();
+            $table->integer('sat', false, true)->nullable();
+            $table->decimal('temperatura',8, 1)->nullable();
             $table->decimal('peso')->nullable();
             $table->decimal('talla')->nullable();
             $table->string('deposiciones', 250)->nullable();

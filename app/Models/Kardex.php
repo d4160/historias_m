@@ -11,7 +11,10 @@ class Kardex extends Model
 
     protected $fillable = [
         'historia_id',
-        'observaciones'
+        'observaciones',
+        'exam_lab',
+        'exam_imagen',
+        'reevaluacion'
     ];
 
     public function detalles() {

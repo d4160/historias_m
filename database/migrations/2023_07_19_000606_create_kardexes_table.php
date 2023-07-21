@@ -16,6 +16,9 @@ class CreateKardexesTable extends Migration
         Schema::create('kardexes', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('historia_id');
+            $table->string('exam_lab', 500)->nullable();
+            $table->string('exam_imagen', 500)->nullable();
+            $table->string('reevaluacion', 500)->nullable();
             $table->string('observaciones', 1000)->nullable();
             $table->timestamps();
 

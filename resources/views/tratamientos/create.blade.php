@@ -17,11 +17,29 @@
                         @error('titulo') <div class="invalid-feedback" style="display: block;">{{ $message }}</div> @enderror
                     </div>
                     <div class="form-group">
+                        <label for="created_at">Fecha y hora de subida</label>
+                        <div class="d-flex">
+                            <input id="created_at" name="created_at" value="{{ old('created_at') }}" class="form-control" type="text"
+                                placeholder="" data-input>
+                            <button type="button" class="btn" id="created_now">Ahora</button>
+                        </div>
+                        {{-- readonly="readonly" --}}
+                        {{-- <a class="input-button" title="toggle" data-toggle>
+                            <i class="icon-calendar"></i>
+                        </a> --}}
+                    </div>
+                    <div class="form-group">
+                        <label for="prox_control">Próximo Control</label>
+                        <input id="prox_control" type="text" class="mb-2 form-control" name="prox_control" placeholder=""
+                            value="{{ old('prox_control') }}">
+                        @error('prox_control') <div class="invalid-feedback" style="display: block;">{{ $message }}</div> @enderror
+                    </div>
+                    <div class="form-group">
                         <label for="descripcion">Descripción</label>
                         <textarea class="mb-2 form-control" id="descripcion" name="descripcion" rows="2">{{ old('descripcion') }}</textarea>
                         @error('descripcion') <div class="invalid-feedback" style="display: block;">{{ $message }}</div> @enderror
                     </div>
-                    <div class="form-group mb-4">
+                    <div class="mb-4 form-group">
                         <label for="file">Archivo</label>
                         <input type="file" class="form-control-file" id="file" name="file">
                         @error('file') <div class="invalid-feedback" style="display: block;">{{ $message }}</div> @enderror
@@ -38,6 +56,21 @@
 @section('scripts')
 @parent
 <script>
+
+    $(() => {
+        let createdExam = flatpickr(document.getElementById('created_at'), {
+            maxDate: GetTodayDate(1),
+            enableTime: true,
+            minuteIncrement: 1,
+            defaultDate: GetTodayDateTime()
+            //locale: 'es'
+            //defaultDate: GetTodayDateTime()
+        });
+
+        $('#created_now').click(() => {
+            createdExam.setDate(GetTodayDateTime());
+        });
+    });
 
     $('#btnGuardarExam').click((e) => {
         e.preventDefault();

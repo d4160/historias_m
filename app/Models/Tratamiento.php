@@ -12,6 +12,7 @@ class Tratamiento extends Model
     protected $fillable = [
         'historia_id',
         'tratamiento',
+        'prox_control',
         'descripcion',
         'url'
     ];

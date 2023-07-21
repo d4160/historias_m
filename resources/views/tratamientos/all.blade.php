@@ -4,6 +4,7 @@
         <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/forms/theme-checkbox-radio.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('plugins/table/datatable/dt-global_style.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('plugins/table/datatable/custom_dt_custom.css') }}">
+        <link href="{{ asset('plugins/flatpickr/flatpickr.css') }}" rel="stylesheet" type="text/css">
     </x-slot>
 
     @include('tratamientos.create')
@@ -14,7 +15,7 @@
             <div class="statbox widget box box-shadow">
                 <div class="widget-header">
 
-                    <div class="m-3 row mt-4">
+                    <div class="m-3 mt-4 row">
                         <div class="col">
                             <label for="paciente" class="font-weight-bold">Paciente {{ $patient->num_document }}</label>
                             <input id="paciente" name="paciente" type="text" class="form-control" placeholder="" value="{{ $patient->full_name }}" disabled>
@@ -29,7 +30,7 @@
                         </div>
                     </div>
 
-                    <div class="row mx-1">
+                    <div class="mx-1 row">
                         <div class="col">
                             <a href="{{ route('patients.edit', $patient_id) }}" class="mt-3 ml-3 btn btn-info">Regresar a la página del paciente</a>
                         </div>
@@ -52,6 +53,7 @@
                                     <th class="text-center">Nº</th>
                                     <th class="text-center">Título</th>
                                     <th class="text-center">Descripción</th>
+                                    <th class="text-center">Próximo Control</th>
                                     <th class="text-center">Fecha de subida</th>
                                     <th class="text-center">Acciones</th>
                                 </tr>
@@ -64,14 +66,16 @@
                                     <td class="text-center">{{ $loop->index + 1 }}</td>
                                     <td class="text-center">{{ $trat->tratamiento }}</td>
                                     <td class="text-center">{{ substr($trat->descripcion, 0, 50).'...' }}</td>
-                                    <td class="text-center">{{ $trat->url ? $trat->updated_at : 'Todavia no subido' }}</td>
+                                    <td class="text-center">{{ $trat->prox_control }}</td>
+                                    <td class="text-center">{{ $trat->url ? substr($trat->created_at, 0, 16) : 'Todavia no subido' }}</td>
                                     <td class="text-center">
                                         <ul class="table-controls">
                                             @if($trat->url)
                                             <li><a href="{{ Storage::url($trat->url) }}" target="_blank" class="bs-tooltip" data-toggle="tooltip" data-placement="top" title="" data-original-title="Descargar"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-download"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg></a></li>
                                             @endif
 
-                                            <li><span data-toggle="modal" data-target="#examEditModal"><a href="javascript:void(0);" class="bs-tooltip" data-toggle="tooltip" data-placement="top" title="" data-original-title="Editar" onclick="$('#exam_edit_form').attr('action', '{{ route('tratamientos.update', $trat->id) }}'); $('#exam_edit_id').val('{{ $trat->id }}'); $('#exam-edit-title').text('Tratamiento'); $('#exam_edit_titulo').text('{{ addslashes($trat->tratamiento) }}'); $('#edit_titulo').val('{{ addslashes($trat->tratamiento) }}'); $('#edit_descripcion').val(`{{ old('edit_descripcion', addslashes($trat->descripcion)) }}`); $('#edit_form').prop('action', '{{ route('tratamientos.update', $trat->id) }}'); $('#edit_file_url').text('{{ addslashes(substr($trat->url, 31)) }}'); $('#edit_file_download').attr('href', '{{ Storage::url(addslashes($trat->url)) }}');if('{{ addslashes($trat->url) }}' == ''){ $('#replace_file').hide();$('#put_file').show(); }else{ $('#replace_file').show();$('#put_file').hide(); } "><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="p-1 mb-1 feather feather-edit-2 br-6"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></a></li>
+                                            <li><span data-toggle="modal" data-target="#examEditModal"><a href="javascript:void(0);" class="bs-tooltip" data-toggle="tooltip" data-placement="top" title="" data-original-title="Editar" onclick="$('#exam_edit_form').attr('action', '{{ route('tratamientos.update', $trat->id) }}'); $('#exam_edit_id').val('{{ $trat->id }}'); $('#exam-edit-title').text('Tratamiento'); $('#exam_edit_titulo').text('{{ addslashes($trat->tratamiento) }}'); $('#edit_titulo').val('{{ addslashes($trat->tratamiento) }}'); $('#edit_descripcion').val(`{{ old('edit_descripcion', addslashes($trat->descripcion)) }}`); $('#edit_prox_control').val(`{{ old('edit_prox_control', $trat->prox_control) }}`); $('#edit_form').prop('action', '{{ route('tratamientos.update', $trat->id) }}'); $('#edit_file_url').text('{{ addslashes(substr($trat->url, 24)) }}'); $('#edit_file_download').attr('href', '{{ Storage::url(addslashes($trat->url)) }}');if('{{ addslashes($trat->url) }}' == ''){ $('#replace_file').hide();$('#put_file').show(); }else{ $('#replace_file').show();$('#put_file').hide(); } $('#created_at_edit').val('{{ substr($trat->created_at, 0, 16) }}'); window.createdExamEdit.setDate('{{
+                                            $trat->created_at }}');"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="p-1 mb-1 feather feather-edit-2 br-6"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></a></li>
 
                                             <li><form id="delete_exam_{{ $trat->id }}_form" method="POST" action="{{ route('tratamientos.destroy', $trat->id) }}" style="display: inline-block">
                                                 @csrf
@@ -98,6 +102,9 @@
     <x-slot name="scripts">
         <script src="{{ asset('plugins/table/datatable/datatables.js') }}"></script>
         <script src="{{ asset('plugins/sweetalerts/sweetalert2.min.js') }}"></script>
+        <script src="{{ asset('plugins/flatpickr/flatpickr.js') }}"></script>
+        <script src="{{ asset('assets/js/date-util.js') }}"></script>
+        <script src="https://npmcdn.com/flatpickr/dist/l10n/es.js"></script>
         <script>
 
             $(function () {

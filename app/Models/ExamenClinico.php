@@ -13,7 +13,10 @@ class ExamenClinico extends Model
 
     protected $fillable = [
         'historia_id',
-        'funciones_vitales',
+        'fc',
+        'fr',
+        'sat',
+        'temperatura',
         'peso',
         'talla',
         'deposiciones',

@@ -17,6 +17,7 @@ class CreateTratamientosTable extends Migration
             $table->id();
             $table->unsignedBigInteger('historia_id');
             $table->string('tratamiento');
+            $table->string('prox_control')->nullable();
             $table->string('descripcion', 1000)->nullable();
             $table->string('url', 512)->nullable();
 

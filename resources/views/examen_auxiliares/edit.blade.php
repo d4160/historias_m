@@ -14,7 +14,7 @@
                     <input type="hidden" name="exam_edit_id" id="exam_edit_id" value="{{ old('exam_edit_id') }}">
                     <div class="form-group">
                         <label for="edit_titulo">Título *</label>
-                        {{ Form::select('edit_titulo', ['Tomografía' => 'Tomografía', 'Rayos X' => 'Rayos X', 'Laboratorio' => 'Laboratorio', 'Ecografía' => 'Ecografía', 'Resonancia Magnética' => 'Resonancia Magnética'], old('edit_titulo'), ['id' => 'edit_titulo', 'class' => 'mb-2 form-control', 'required' => 'required']) }}
+                        {{ Form::select('edit_titulo', ['Tomografía' => 'Tomografía', 'Rayos X' => 'Rayos X', 'Laboratorio' => 'Laboratorio', 'Ecografía' => 'Ecografía', 'Resonancia Magnética' => 'Resonancia Magnética', 'Otros' => 'Otros'], old('edit_titulo'), ['id' => 'edit_titulo', 'class' => 'mb-2 form-control', 'required' => 'required']) }}
                         @error('edit_titulo') <div class="invalid-feedback" style="display: block;">{{ $message }}</div> @enderror
                     </div>
                     <div class="form-group">
@@ -33,14 +33,14 @@
                         <textarea class="mb-2 form-control" id="edit_descripcion" name="edit_descripcion" rows="2">{{ old('edit_descripcion') }}</textarea>
                         @error('edit_descripcion') <div class="invalid-feedback" style="display: block;">{{ $message }}</div> @enderror
                     </div>
-                    <div class="form-group mt-4" id="replace_file">
+                    <div class="mt-4 form-group" id="replace_file">
                         <a target="_blank" id="edit_file_download"><span class="font-weight-bold">Archivo actual</span>: <span id="edit_file_url"></span></a><br>
                         <label for="edit_file1" style="letter-spacing: 0px;" class="mt-4 font-weight-bold">Reemplazar por: </label>
                         <input type="file" class="form-control-file" id="edit_file1" name="edit_file">
                         @error('edit_file') <div class="invalid-feedback" style="display: block;">{{ $message }}</div> @enderror
                         <label class="mt-1">(No elegir ninguno para conservar el archivo actual)</label>
                     </div>
-                    <div class="form-group mb-4" id="put_file">
+                    <div class="mb-4 form-group" id="put_file">
                         <label for="edit_file2">Archivo</label>
                         <input type="file" class="form-control-file" id="edit_file2" name="edit_file2">
                         @error('edit_file2') <div class="invalid-feedback" style="display: block;">{{ $message }}</div> @enderror
@@ -74,32 +74,32 @@
 
         function OnEditBtnClick(formAction, id, titulo, description, url, urlText, urlFinal, created){
 
-            {{--  // '{{ route('examen_auxiliares.update', $exam->id) }}'
-            // '{{ $exam->id }}'
-            // '{{ addslashes($exam->titulo) }}'
-            // '{{ old('edit_descripcion', addslashes($exam->descripcion)) }}'
-            // '{{ addslashes($exam->url) }}'
-            // '{{ addslashes(substr($exam->url, 31)) }}'
-            // '{{ Storage::url(addslashes($exam->url)) }}'
-            // '{{ substr($exam->created_at, 0, 16) }}'  --}}
-            $('#exam_edit_form').attr('action', formAction); 
-            $('#exam_edit_id').val(id); 
-            $('#exam_edit_titulo').text(titulo); 
-            $('#edit_titulo').val(titulo); 
-            $('#edit_descripcion').val(description); 
-            $('#edit_form').prop('action', formAction); 
-            $('#edit_file_url').text(urlText); 
+            // {{--  // '{{ route('examen_auxiliares.update', $exam->id) }}'
+            // // '{{ $exam->id }}'
+            // // '{{ addslashes($exam->titulo) }}'
+            // // '{{ old('edit_descripcion', addslashes($exam->descripcion)) }}'
+            // // '{{ addslashes($exam->url) }}'
+            // // '{{ addslashes(substr($exam->url, 31)) }}'
+            // // '{{ Storage::url(addslashes($exam->url)) }}'
+            // // '{{ substr($exam->created_at, 0, 16) }}'  --}}
+            $('#exam_edit_form').attr('action', formAction);
+            $('#exam_edit_id').val(id);
+            $('#exam_edit_titulo').text(titulo);
+            $('#edit_titulo').val(titulo);
+            $('#edit_descripcion').val(description);
+            $('#edit_form').prop('action', formAction);
+            $('#edit_file_url').text(urlText);
             $('#edit_file_download').attr('href', urlFinal);
-            
-            if(url == ''){ 
+
+            if(url == ''){
                 $('#replace_file').hide();
-                $('#put_file').show(); 
-            }else{ 
+                $('#put_file').show();
+            }else{
                 $('#replace_file').show();
-                $('#put_file').hide(); 
-            } 
-                
-            $('#created_at_edit').val(created); 
+                $('#put_file').hide();
+            }
+
+            $('#created_at_edit').val(created);
             createdExam.setDate(created);
         }
     });

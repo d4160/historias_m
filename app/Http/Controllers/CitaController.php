@@ -203,6 +203,9 @@ class CitaController extends Controller
         ]);
 
         $instance->antecedentes = $request->antecedentes;
+        $instance->familiares = $request->familiares;
+        $instance->personales = $request->personales;
+        $instance->hab_nocivos = $request->hab_nocivos;
 
         $instance->save();
 
@@ -217,7 +220,10 @@ class CitaController extends Controller
         $request->validate([
         ]);
 
-        $instance->funciones_vitales = $request->funciones_vitales;
+        $instance->fc = $request->fc;
+        $instance->fr = $request->fr;
+        $instance->sat = $request->sat;
+        $instance->temperatura = $request->temperatura;
         $instance->peso = $request->peso;
         $instance->talla = $request->talla;
         $instance->deposiciones = $request->deposiciones;

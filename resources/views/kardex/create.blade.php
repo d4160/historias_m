@@ -1,6 +1,6 @@
 <!-- Modal -->
 <div class="modal fade form-modal" id="medicamentoModal" tabindex="-1" role="dialog" aria-labelledby="examenClinicoModal" aria-hidden="true">
-    <div class="modal-dialog" role="document">
+    <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <livewire:kardex />
         </div>

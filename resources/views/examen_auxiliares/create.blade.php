@@ -13,7 +13,7 @@
                     <input type="hidden" id="exam_modal_historia_id" name="historia_id" value="{{ old('historia_id') }}">
                     <div class="form-group">
                         <label for="titulo">Título *</label>
-                        {{ Form::select('titulo', ['Tomografía' => 'Tomografía', 'Rayos X' => 'Rayos X', 'Laboratorio' => 'Laboratorio', 'Ecografía' => 'Ecografía', 'Resonancia Magnética' => 'Resonancia Magnética'], old('titulo'), ['id' => 'titulo', 'class' => 'mb-2 form-control', 'required' => 'required']) }}
+                        {{ Form::select('titulo', ['Tomografía' => 'Tomografía', 'Rayos X' => 'Rayos X', 'Laboratorio' => 'Laboratorio', 'Ecografía' => 'Ecografía', 'Resonancia Magnética' => 'Resonancia Magnética', 'Otros' => 'Otros'], old('titulo'), ['id' => 'titulo', 'class' => 'mb-2 form-control', 'required' => 'required']) }}
                         @error('titulo') <div class="invalid-feedback" style="display: block;">{{ $message }}</div> @enderror
                     </div>
                     <div class="form-group">
@@ -32,7 +32,7 @@
                         <textarea class="mb-2 form-control" id="descripcion" name="descripcion" rows="2">{{ old('descripcion') }}</textarea>
                         @error('descripcion') <div class="invalid-feedback" style="display: block;">{{ $message }}</div> @enderror
                     </div>
-                    <div class="form-group mb-4">
+                    <div class="mb-4 form-group">
                         <label for="file">Archivo</label>
                         <input type="file" class="form-control-file" id="file" name="file">
                         @error('file') <div class="invalid-feedback" style="display: block;">{{ $message }}</div> @enderror
@@ -55,7 +55,7 @@
             maxDate: GetTodayDate(1),
             enableTime: true,
             minuteIncrement: 1,
-            defaultDate: GetTodayDateTime()  
+            defaultDate: GetTodayDateTime()
             //locale: 'es'
             //defaultDate: GetTodayDateTime()
         });

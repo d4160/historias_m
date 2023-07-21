@@ -36,7 +36,7 @@
 
                         <span style="font-weight: bold; color: #7b7e8c; font-size: 17px;">Datos Personales</span>
 
-                        <div class="mb-4 mt-2 row">
+                        <div class="mt-2 mb-4 row">
                             <div class="col">
                                 <label for="created_at">Fecha de registro *</label>
                                 <input id="created_at" name="created_at" value="{{ $user->created_at }}" class="form-control" type="text" placeholder="">
@@ -58,7 +58,7 @@
                                 <input id="last_name2" name="last_name2" type="text" class="form-control" placeholder="" value="{{ $user->last_name2 }}" required>
                             </div>
                         </div>
-                        <div class=" mt-2 row">
+                        <div class="mt-2 mb-3  row">
                             <div class="col">
                                 <label for="fecha_nacimiento">Fecha de nacimiento</label>
                                 <input id="fecha_nacimiento" name="fecha_nacimiento" value="{{ $user->fecha_nacimiento }}" class="form-control" type="text" placeholder="">
@@ -81,7 +81,7 @@
 
                         <span style="font-weight: bold; color: #7b7e8c; font-size: 17px;">Otros Datos</span>
 
-                        <div class="mb-4 mt-2 row">
+                        <div class="mt-2 mb-4 row">
                             <div class="col">
                                 <label for="celular">Celular</label>
                                 <input id="celular" name="celular" value="{{ $user->celular }}" class="form-control" type="text" placeholder="">
@@ -115,7 +115,7 @@
         </div>
         <form method="POST" id="historia_nuevo_form" action="{{ route('citas.store', $patient->id) }}" style="display: inline-block">
             @csrf
-            <a href="javascript:void(0);" class="ml-3 btn btn-success historia_nuevo confirm" 
+            <a href="javascript:void(0);" class="ml-3 btn btn-success historia_nuevo confirm"
                                     form_id="historia_nuevo_form"
                                     patient_full_name="{{ $user->full_name }}">
                 Nueva Historia
@@ -646,9 +646,9 @@
             function OpenHCModal(historiaTdNumber, id, route, proximaCita, estado) {
                 let hcFormatted = historiaTdNumber.innerText;
                 $('#hc_number').html(hcFormatted);
-                
-                $('#formHC').attr('action', route); 
-                $('#hc_modal_id').val(id); 
+
+                $('#formHC').attr('action', route);
+                $('#hc_modal_id').val(id);
                 window.f1.setDate(proximaCita);
                 $('#proxima_cita').val(proximaCita);
                 $('#estado').val(estado);

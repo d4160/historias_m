@@ -19,7 +19,7 @@ class TratamientoController extends Controller
         $historia = Historia::find($historia_id);
         $patient = $historia->paciente;
 
-        return view('tratamientos.all', ['historia' => $historia, 
+        return view('tratamientos.all', ['historia' => $historia,
             'patient' => $patient->user, 'patient_id' => $patient->id
         ]);
     }
@@ -38,19 +38,26 @@ class TratamientoController extends Controller
             $fileName = time().'_'.str_replace('+', '_', $request->file->getClientOriginalName());
             $filePath = $request->file('file')->storeAs($folder, $fileName, 'public');
 
-            Tratamiento::create([
+            $trat = Tratamiento::create([
                 'historia_id' => $request->historia_id,
                 'tratamiento' => $request->titulo,
+                'prox_control' => $request->prox_control,
                 'descripcion' => $request->descripcion,
                 'url' => '' . $filePath
             ]);
         }
         else {
-            Tratamiento::create([
+            $trat = Tratamiento::create([
                 'historia_id' => $request->historia_id,
                 'tratamiento' => $request->titulo,
+                'prox_control' => $request->prox_control,
                 'descripcion' => $request->descripcion
             ]);
+        }
+
+        if ($request->created_at) {
+            $trat->created_at = $request->created_at;
+            $trat->save();
         }
 
         return back();
@@ -94,6 +101,10 @@ class TratamientoController extends Controller
 
         $tratamiento->tratamiento = $request->edit_titulo;
         $tratamiento->descripcion = $request->edit_descripcion;
+        $tratamiento->prox_control = $request->edit_prox_control;
+        if ($request->created_at_edit) {
+            $tratamiento->created_at = $request->created_at_edit;
+        }
         $tratamiento->save();
 
         return back();

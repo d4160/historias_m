@@ -1,6 +1,6 @@
 <!-- Modal -->
 <div class="modal fade form-modal" id="examenClinicoModal" tabindex="-1" role="dialog" aria-labelledby="examenClinicoModal" aria-hidden="true">
-    <div class="modal-dialog" role="document">
+    <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header" id="examenClinicoModalHeader">
                 <h4 class="modal-title">Examen Clínico - H.C. <span id="examen_clinico_hc"></span> </h4>

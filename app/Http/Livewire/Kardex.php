@@ -10,7 +10,7 @@ class Kardex extends Component
     protected $listeners = ['forceRefresh' => '$refresh', 'createMedicamento' => 'createMedicamento', 'editMedicamento' => 'editMedicamento'];
 
     public $titulo;
-    public $medicamento;
+    //public $medicamento;
 
     public function render()
     {
@@ -18,17 +18,17 @@ class Kardex extends Component
     }
 
     public function createMedicamento($id){
-        $this->medicamento = null;
+        //$this->medicamento = null;
         $this->titulo = 'Nuevo Medicamento';
         $action = route('kardex.detalle_store', $id);
-        $this->emit('updateKardexView', $action);
+        $this->emit('updateKardexView', $action, null);
     }
 
     public function editMedicamento($id){
-        $this->medicamento = KardexDetalle::find($id);
-        $med = $this->medicamento->medicamento;
+        $medicamento = KardexDetalle::find($id);
+        $med = $medicamento->medicamento;
         $this->titulo = "Editar Medicamento '$med'";
         $action = route('kardex.detalle_update', $id);
-        $this->emit('updateKardexView', $action);
+        $this->emit('updateKardexView', $action, $medicamento);
     }
 }

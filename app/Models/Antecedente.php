@@ -11,7 +11,10 @@ class Antecedente extends Model
 
     protected $fillable = [
         'historia_id',
-        'antecedentes'
+        'antecedentes',
+        'familiares',
+        'personales',
+        'hab_nocivos'
     ];
 
     public function historia() {

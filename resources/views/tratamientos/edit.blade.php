@@ -18,18 +18,36 @@
                         @error('edit_titulo') <div class="invalid-feedback" style="display: block;">{{ $message }}</div> @enderror
                     </div>
                     <div class="form-group">
+                        <label for="created_at_edit">Fecha y hora de subida</label>
+                        <div class="d-flex">
+                            <input id="created_at_edit" name="created_at_edit" value="{{ old('created_at_edit') }}" class="form-control"
+                                type="text" placeholder="" data-input>
+                            <button type="button" class="btn" id="created_now_edit">Ahora</button>
+                        </div>
+                        {{-- readonly="readonly" --}}
+                        {{-- <a class="input-button" title="toggle" data-toggle>
+                            <i class="icon-calendar"></i>
+                        </a> --}}
+                    </div>
+                    <div class="form-group">
+                        <label for="edit_prox_control">Próximo Control</label>
+                        <input id="edit_prox_control" type="text" class="mb-2 form-control" name="edit_prox_control" placeholder=""
+                            value="{{ old('edit_prox_control') }}">
+                        @error('edit_prox_control') <div class="invalid-feedback" style="display: block;">{{ $message }}</div> @enderror
+                    </div>
+                    <div class="form-group">
                         <label for="edit_descripcion">Descripción</label>
                         <textarea class="mb-2 form-control" id="edit_descripcion" name="edit_descripcion" rows="2">{{ old('edit_descripcion') }}</textarea>
                         @error('edit_descripcion') <div class="invalid-feedback" style="display: block;">{{ $message }}</div> @enderror
                     </div>
-                    <div class="form-group mt-4" id="replace_file">
+                    <div class="mt-4 form-group" id="replace_file">
                         <a target="_blank" id="edit_file_download"><span class="font-weight-bold">Archivo actual</span>: <span id="edit_file_url"></span></a><br>
                         <label for="edit_file1" style="letter-spacing: 0px;" class="mt-4 font-weight-bold">Reemplazar por: </label>
                         <input type="file" class="form-control-file" id="edit_file1" name="edit_file">
                         @error('edit_file') <div class="invalid-feedback" style="display: block;">{{ $message }}</div> @enderror
                         <label class="mt-1">(No elegir ninguno para conservar el archivo actual)</label>
                     </div>
-                    <div class="form-group mb-4" id="put_file">
+                    <div class="mb-4 form-group" id="put_file">
                         <label for="edit_file2">Archivo</label>
                         <input type="file" class="form-control-file" id="edit_file2" name="edit_file2">
                         @error('edit_file2') <div class="invalid-feedback" style="display: block;">{{ $message }}</div> @enderror
@@ -46,6 +64,19 @@
 @parent
 
 <script>
+
+    window.createdExamEdit = flatpickr(document.getElementById('created_at_edit'), {
+        maxDate: GetTodayDate(1),
+        enableTime: true,
+        minuteIncrement: 1,
+        //defaultDate: GetTodayDateTime()
+        //locale: 'es'
+        //defaultDate: GetTodayDateTime()
+    });
+
+    $('#created_now_edit').click(() => {
+        window.createdExamEdit.setDate(GetTodayDateTime());
+    });
 
     $('#btnGuardarEditExam').click((e) => {
         e.preventDefault();

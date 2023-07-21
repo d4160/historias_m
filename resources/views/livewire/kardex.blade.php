@@ -16,7 +16,7 @@
             <div class="row">
                 <div class="col">
                     <label for="medicamento">Medicamento</label>
-                    <input id="medicamento" name="medicamento" type="text" class="mb-2 form-control" placeholder="" value="{{ $medicamento ? '$medicamento->medicamento' : 'erro' }}" required>
+                    <input id="medicamento" name="medicamento" type="text" class="mb-2 form-control" placeholder="" value="{{ old('medicamento') }}" required>
                     @error('medicamento') <div class="invalid-feedback" style="display: block;">{{ $message }}</div> @enderror
                 </div>
                 <div class="col">
@@ -24,26 +24,22 @@
                     <input id="dosis" name="dosis" type="text" class="mb-2 form-control" placeholder="" value="{{ old('dosis') }}" required>
                     @error('dosis') <div class="invalid-feedback" style="display: block;">{{ $message }}</div> @enderror
                 </div>
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="row">
                 <div class="col">
                     <label for="via">Vía</label>
                     <input id="via" name="via" type="text" class="mb-2 form-control" placeholder="" value="{{ old('via') }}">
                     @error('via') <div class="invalid-feedback" style="display: block;">{{ $message }}</div> @enderror
                 </div>
-                <div class="col">
-                    <label for="frecuencia">Frecuencia</label>
-                    <input id="frecuencia" name="frecuencia" type="text" class="mb-2 form-control" placeholder="" value="{{ old('frecuencia') }}">
-                    @error('frecuencia') <div class="invalid-feedback" style="display: block;">{{ $message }}</div> @enderror
-                </div>
             </div>
         </div>
 
         <div class="form-group">
             <div class="row">
+                <div class="col">
+                    <label for="frecuencia">Frecuencia</label>
+                    <input id="frecuencia" name="frecuencia" type="text" class="mb-2 form-control" placeholder=""
+                        value="{{ old('frecuencia') }}">
+                    @error('frecuencia') <div class="invalid-feedback" style="display: block;">{{ $message }}</div> @enderror
+                </div>
                 <div class="col">
                     <label for="dia1">Día 1</label>
                     <input id="dia1" name="dia1" type="text" class="mb-2 form-control" placeholder="" value="{{ old('dia1') }}">
@@ -67,42 +63,34 @@
                 </div>
                 <div class="col">
                     <label for="dia4">Día 4</label>
-                    <input id="dia4" name="dia4" type="text" class="mb-2 form-control" placeholder="" value="{{ old('dia4') }}"
-                        >
+                    <input id="dia4" name="dia4" type="text" class="mb-2 form-control" placeholder="" value="{{ old('dia4') }}">
                     @error('dia4') <div class="invalid-feedback" style="display: block;">{{ $message }}</div> @enderror
                 </div>
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="row">
                 <div class="col">
                     <label for="dia5">Día 5</label>
                     <input id="dia5" name="dia5" type="text" class="mb-2 form-control" placeholder="" value="{{ old('dia5') }}"
                         >
                     @error('dia5') <div class="invalid-feedback" style="display: block;">{{ $message }}</div> @enderror
                 </div>
-                <div class="col">
-                    <label for="dia6">Día 6</label>
-                    <input id="dia6" name="dia6" type="text" class="mb-2 form-control" placeholder="" value="{{ old('dia6') }}"
-                        >
-                    @error('dia6') <div class="invalid-feedback" style="display: block;">{{ $message }}</div> @enderror
-                </div>
             </div>
         </div>
 
         <div class="form-group">
             <div class="row">
                 <div class="col">
+                    <label for="dia6">Día 6</label>
+                    <input id="dia6" name="dia6" type="text" class="mb-2 form-control" placeholder="" value="{{ old('dia6') }}">
+                    @error('dia6') <div class="invalid-feedback" style="display: block;">{{ $message }}</div> @enderror
+                </div>
+
+                <div class="col">
                     <label for="dia7">Día 7</label>
-                    <input id="dia7" name="dia7" type="text" class="mb-2 form-control" placeholder="" value="{{ old('dia7') }}"
-                        >
+                    <input id="dia7" name="dia7" type="text" class="mb-2 form-control" placeholder="" value="{{ old('dia7') }}">
                     @error('dia7') <div class="invalid-feedback" style="display: block;">{{ $message }}</div> @enderror
                 </div>
                 <div class="col">
                     <label for="dia8">Día 8</label>
-                    <input id="dia8" name="dia8" type="text" class="mb-2 form-control" placeholder="" value="{{ old('dia8') }}"
-                        >
+                    <input id="dia8" name="dia8" type="text" class="mb-2 form-control" placeholder="" value="{{ old('dia8') }}">
                     @error('dia8') <div class="invalid-feedback" style="display: block;">{{ $message }}</div> @enderror
                 </div>
             </div>
@@ -126,6 +114,7 @@
     });
 
     function CreateMedicamentoModal(id) {
+        $('#formMedicamento').get(0).reset();
         Livewire.emit('createMedicamento', id);
     }
 
@@ -133,8 +122,23 @@
         Livewire.emit('editMedicamento', id);
     }
 
-    Livewire.on('updateKardexView', (action) => {
+    Livewire.on('updateKardexView', (action, med) => {
         $('#formMedicamento').attr('action', action);
+
+        if (med) {
+            $('#medicamento').val(med.medicamento);
+            $('#dosis').val(med.dosis);
+            $('#via').val(med.via);
+            $('#frecuencia').val(med.frecuencia);
+            $('#dia1').val(med.dia1);
+            $('#dia2').val(med.dia2);
+            $('#dia3').val(med.dia3);
+            $('#dia4').val(med.dia4);
+            $('#dia5').val(med.dia5);
+            $('#dia6').val(med.dia6);
+            $('#dia7').val(med.dia7);
+            $('#dia8').val(med.dia8);
+        }
     });
 
 </script>
