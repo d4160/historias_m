@@ -164,8 +164,14 @@ Route::get('kardex/{historia_id}', [KardexController::class, 'index'])
 Route::post('kardex/guardar/{id}', [KardexController::class, 'update'])
     ->middleware(['auth', 'role'])->name('kardex.update');
 
-Route::post('kardex/detalles/guardar', [KardexController::class, 'detallesStore'])
-    ->middleware(['auth', 'role'])->name('kardex.detalles_store');
+Route::post('kardex/detalles/guardar/{id}', [KardexController::class, 'detalleStore'])
+    ->middleware(['auth', 'role'])->name('kardex.detalle_store');
+
+Route::post('kardex/detalles/actualizar/{id}', [KardexController::class, 'detalleUpdate'])
+    ->middleware(['auth', 'role'])->name('kardex.detalle_update');
+
+Route::post('kardex/detalles/eliminar/{id}', [KardexController::class, 'detalleDestroy'])
+    ->middleware(['auth', 'role'])->name('kardex.destroy');
 
 Route::get('/', function () {
     return view('dashboard');

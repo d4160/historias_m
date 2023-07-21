@@ -15,7 +15,7 @@
             <div class="statbox widget box box-shadow">
                 <div class="widget-header">
 
-                    <div class="m-3 row mt-4">
+                    <div class="m-3 mt-4 row">
                         <div class="col">
                             <label for="paciente" class="font-weight-bold">Paciente {{ $user->num_document }}</label>
                             <input id="paciente" name="paciente" type="text" class="form-control" placeholder="" value="{{ $user->full_name }}" disabled>
@@ -30,7 +30,7 @@
                         </div>
                     </div>
 
-                    <div class="m-3 row mt-4">
+                    <div class="m-3 mt-4 row">
                         <div class="col">
                             <label for="hc" class="font-weight-bold">Historia Clínica</label>
                             <input id="hc" name="hc" type="text" class="form-control" placeholder="" value="@php(printf("%06d", $historia->id))" disabled>
@@ -45,14 +45,14 @@
                         </div>
                     </div>
 
-                    <div class="m-3 row mt-4">
+                    <div class="m-3 mt-4 row">
                         <div class="col">
                             <label style="font-weight: bold; color: #7b7e8c; font-size: 17px;" for="observaciones">Observaciones</label>
                             <textarea id="observaciones" name="observaciones" type="text" class="form-control" placeholder="">{{ $kardex->observaciones }}</textarea>
                         </div>
                     </div>
 
-                    <div class="row ml-3 mr-4 mb-4" style="justify-content:space-between;">
+                    <div class="mb-4 ml-3 mr-4 row" style="justify-content:space-between;">
                         <div>
                             <a href="{{ route('kardex.update', $kardex->id) }}" class="mt-3 ml-3 btn btn-success">Guardar</a>
                         </div>
@@ -67,8 +67,8 @@
                         <div class="page-header">
                             <label class="ml-3" style="font-weight: bold; color: black; font-size: 17px; margin-bottom: 31px;">Medicamentos</label>
 
-                            <button type="button" data-toggle="modal" data-target="#examModal"
-                            class="ml-3 btn btn-success" style="margin-bottom: 10px;" onclick="$('#exam_modal_historia_id').val({{ $historia->id }}); $('#formExam').attr('action', '{{ route('kardex.detalles_store') }}'); $('#exam-title').text('Medicamento');">Nuevo Medicamento</button>
+                            <button type="button" data-toggle="modal" data-target="#medicamentoModal"
+                            class="ml-3 btn btn-success" style="margin-bottom: 10px;" onclick="CreateMedicamentoModal({{ $kardex->id }})">Nuevo Medicamento</button>
                         </div>
 
                         <table id="exam_table" class="table style-3 table-hover">
@@ -101,11 +101,8 @@
                                     <td class="text-center">{{ $det->dia3 }}</td>
                                     <td class="text-center">
                                         <ul class="table-controls">
-                                            @if($det->url)
-                                            <li><a href="{{ Storage::url($det->url) }}" target="_blank" class="bs-tooltip" data-toggle="tooltip" data-placement="top" title="" data-original-title="Descargar"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-download"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg></a></li>
-                                            @endif
 
-                                            <li><span data-toggle="modal" data-target="#examEditModal"><a href="javascript:void(0);" class="bs-tooltip" data-toggle="tooltip" data-placement="top" title="" data-original-title="Editar" onclick="$('#exam_edit_form').attr('action', '{{ route('kardex.update', $det->id) }}'); $('#exam_edit_id').val('{{ $det->id }}'); $('#exam-edit-title').text('Tratamiento'); $('#exam_edit_titulo').text('{{ addslashes($det->tratamiento) }}'); $('#edit_titulo').val('{{ addslashes($det->tratamiento) }}'); $('#edit_descripcion').val(`{{ old('edit_descripcion', addslashes($det->descripcion)) }}`); $('#edit_form').prop('action', '{{ route('kardex.update', $det->id) }}'); $('#edit_file_url').text('{{ addslashes(substr($det->url, 31)) }}'); $('#edit_file_download').attr('href', '{{ Storage::url(addslashes($det->url)) }}');if('{{ addslashes($det->url) }}' == ''){ $('#replace_file').hide();$('#put_file').show(); }else{ $('#replace_file').show();$('#put_file').hide(); } "><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="p-1 mb-1 feather feather-edit-2 br-6"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></a></li>
+                                            <li><span data-toggle="modal" data-target="#medicamentoModal"><a href="javascript:void(0);" class="bs-tooltip" data-toggle="tooltip" data-placement="top" title="" data-original-title="Editar" onclick="EditMedicamentoModal({{ $det->id }})"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="p-1 mb-1 feather feather-edit-2 br-6"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></a></li>
 
                                             <li><form id="delete_exam_{{ $det->id }}_form" method="POST" action="{{ route('kardex.destroy', $det->id) }}" style="display: inline-block">
                                                 @csrf
@@ -181,6 +178,8 @@
                     });
                 });
             }
+
+
         </script>
         @livewireScripts
     </x-slot>

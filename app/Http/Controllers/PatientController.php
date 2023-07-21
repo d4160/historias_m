@@ -182,7 +182,6 @@ class PatientController extends Controller
     public function update2(Request $request, $id)
     {
         $patient = Paciente::find($id);
-        $user = $patient->user;
 
         $request->validate([
 
@@ -201,7 +200,7 @@ class PatientController extends Controller
         $patient->estado = $request->estado;
         $patient->save();
 
-        $historia = Historia::where('paciente_id', '=', $id)->orderBy('updated_at')->first();
+        $historia = Historia::where('paciente_id', '=', $id)->orderBy('updated_at', 'desc')->first();
         $historia->proxima_cita = $request->proxima_cita;
         $historia->estado = $request->estado;
         $historia->save();

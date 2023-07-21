@@ -5,8 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\Auditoria;
 use App\Models\Anamnesis;
 use App\Models\Antecedente;
-use App\Models\Cita;
-use App\Models\EnfermedadActual;
 use App\Models\ExamenClinico;
 use App\Models\ExamenRegional;
 use App\Models\Historia;
@@ -14,10 +12,8 @@ use App\Models\ImpresionDiagnostica;
 use App\Models\Paciente;
 use App\Models\Tratamiento;
 use Illuminate\Http\Request;
-use App\Models\User;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\File;
-use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Redirect;
 use Barryvdh\DomPDF\Facade\Pdf as PDF;
 
@@ -82,6 +78,11 @@ class CitaController extends Controller
         $historia->examen_regional_id = $examenRegional->id;
         $historia->impresion_diagnostica_id = $impresionDiagnostica->id;
         $historia->save();
+
+        $paciente = Paciente::find($id);
+        $paciente->proxima_cita = $historia->proxima_cita;
+        $paciente->estado = $historia->estado;
+        $paciente->save();
 
         $my_user = \Auth::user();
         Auditoria::create([
@@ -165,8 +166,15 @@ class CitaController extends Controller
         ]);
 
         // $historia->results()->delete();
+        $patient = Paciente::find($historia->paciente_id);
 
         $historia->delete();
+
+        $historia = Historia::where('paciente_id', '=', $patient->id)->orderBy('updated_at', 'desc')->first();
+
+        $patient->proxima_cita = $historia->proxima_cita;
+        $patient->estado = $historia->estado;
+        $patient->save();
 
         return back();
     }
