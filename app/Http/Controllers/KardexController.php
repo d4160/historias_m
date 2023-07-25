@@ -64,7 +64,8 @@ class KardexController extends Controller
             'dia5' => $request->dia5,
             'dia6' => $request->dia6,
             'dia7' => $request->dia7,
-            'dia8' => $request->dia8
+            'dia8' => $request->dia8,
+            'fecha' => $request->fecha
         ]);
 
         return back();
@@ -89,6 +90,7 @@ class KardexController extends Controller
         $det->dia6 = $request->dia6;
         $det->dia7 = $request->dia7;
         $det->dia8 = $request->dia8;
+        $det->fecha = $request->fecha;
 
         $det->save();
 

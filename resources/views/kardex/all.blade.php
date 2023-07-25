@@ -4,6 +4,7 @@
         <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/forms/theme-checkbox-radio.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('plugins/table/datatable/dt-global_style.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('plugins/table/datatable/custom_dt_custom.css') }}">
+        <link href="{{ asset('plugins/flatpickr/flatpickr.css') }}" rel="stylesheet" type="text/css">
         @livewireStyles
     </x-slot>
 
@@ -74,6 +75,7 @@
                             <thead>
                                 <tr>
                                     <th class="text-center">Nº</th>
+                                    <th class="text-center">Fecha</th>
                                     <th class="text-center">Medicamento</th>
                                     <th class="text-center">Dosis</th>
                                     <th class="text-center">Vía</th>
@@ -90,6 +92,7 @@
                                 <tr>
                                     {{--  class="checkbox-column"  --}}
                                     <td class="text-center">{{ $loop->index + 1 }}</td>
+                                    <td class="text-center">{{ $det->fecha }}</td>
                                     <td class="text-center">{{ $det->medicamento }}</td>
                                     <td class="text-center">{{ $det->dosis }}</td>
                                     <td class="text-center">{{ $det->via }}</td>
@@ -176,6 +179,8 @@
     <x-slot name="scripts">
         <script src="{{ asset('plugins/table/datatable/datatables.js') }}"></script>
         <script src="{{ asset('plugins/sweetalerts/sweetalert2.min.js') }}"></script>
+        <script src="{{ asset('plugins/flatpickr/flatpickr.js') }}"></script>
+        <script src="{{ asset('assets/js/date-util.js') }}"></script>
         <script>
 
             $(function () {

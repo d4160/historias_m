@@ -18,7 +18,7 @@ class CreateKardexDetallesTable extends Migration
             $table->unsignedBigInteger('kardex_id');
             $table->string('medicamento');
             $table->string('dosis', 25);
-            $table->string('via', 10)->nullable();
+            $table->string('via', 31)->nullable();
             $table->string('frecuencia', 50)->nullable();
             $table->string('dia1', 50)->nullable();
             $table->string('dia2', 50)->nullable();
@@ -28,6 +28,7 @@ class CreateKardexDetallesTable extends Migration
             $table->string('dia6', 50)->nullable();
             $table->string('dia7', 50)->nullable();
             $table->string('dia8', 50)->nullable();
+            $table->date('fecha')->nullable();
 
             $table->timestamps();
 

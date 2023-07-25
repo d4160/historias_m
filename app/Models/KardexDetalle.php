@@ -22,7 +22,8 @@ class KardexDetalle extends Model
         'dia5',
         'dia6',
         'dia7',
-        'dia8'
+        'dia8',
+        'fecha'
     ];
 
     public function kardex() {

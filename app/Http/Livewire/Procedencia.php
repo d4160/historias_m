@@ -29,9 +29,9 @@ class Procedencia extends Component
             if (!$this->seldis) $this->seldis = '120101';
         }
         else {
-            $this->seldep = '12';
-            $this->selprov = '1201';
-            $this->seldis = '120101';
+            if (!$this->seldep) $this->seldep = '12';
+            if (!$this->selprov) $this->selprov = '1201';
+            if (!$this->seldis) $this->seldis = '120101';
         }
     }
 
@@ -47,19 +47,25 @@ class Procedencia extends Component
 
         //$prov = $this->patient && $this->selprov ? Provincia::find($this->selprov) : Provincia::where('codigo_dep', $dep->codigo_dep)->first();
 
-        $this->distritos = $prov->distritos;
+        if ($prov)
+            $this->distritos = $prov->distritos;
 
         return view('livewire.procedencia');
     }
 
     public function updatedDep($value){
         $this->provincias = Departamento::find($value)->provincias;
+        $this->seldep = $value;
+        //$this->selprov = $this->provincias->first()->codigo_prov;
 
+        // $this->distritos = Provincia::find($this->selprov)->distritos;
+        // $this->selprov = $this->distritos[0]->codigo_dis;
         $this->emit('updateProvincias', $this->provincias);
     }
 
     public function updatedProv($value){
         $this->distritos = Provincia::find($value)->distritos;
+        $this->selprov = $value;
 
         $this->emit('updateDistritos', $this->distritos);
     }
