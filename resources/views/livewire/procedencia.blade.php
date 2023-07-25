@@ -1,34 +1,36 @@
-<span style="font-weight: bold; color: #7b7e8c; font-size: 17px;">Procedencia</span>
+<div>
+    <span style="font-weight: bold; color: #7b7e8c; font-size: 17px;">Procedencia</span>
 
-<div class="mb-4 mt-2 row">
-    <div class="col">
-        <label for="procedencia_dep">Departamento</label>
-        <select id="procedencia_dep" name="procedencia_dep" class="form-control">
-            @foreach ($departamentos as $departamento)
-            <option value="{{ $departamento->codigo_dep }}" {{ $departamento->codigo_dep === $seldep ? 'selected' : '' }}>{{ $departamento->nombre_dep }}</option>
-            @endforeach
-        </select>
-    </div>
-    <div class="col">
-        <label for="procedencia_prov">Provincia</label>
-        <select id="procedencia_prov" name="procedencia_prov" class="form-control">
-            @foreach ($provincias as $provincia)
-            <option value="{{ $provincia->codigo_prov }}" {{ $provincia->codigo_prov === $selprov ? 'selected' : '' }}>{{ $provincia->nombre_prov }}</option>
-            @endforeach
-        </select>
-    </div>
-    <div class="col">
-        <label for="procedencia_dis">Distrito</label>
-        <select id="procedencia_dis" name="procedencia_dis" class="form-control">
-            @foreach ($distritos as $distrito)
-            <option value="{{ $distrito->codigo_dis }}" {{ $distrito->codigo_dis === $seldis ? 'selected' : '' }}>{{ $distrito->nombre_dis }}</option>
-            @endforeach
-        </select>
-    </div>
+    <div class="mb-4 mt-2 row">
+        <div class="col">
+            <label for="procedencia_dep">Departamento</label>
+            <select id="procedencia_dep" name="procedencia_dep" class="form-control">
+                @foreach ($departamentos as $departamento)
+                <option value="{{ $departamento->codigo_dep }}" {{ $departamento->codigo_dep === $seldep ? 'selected' : '' }}>{{ $departamento->nombre_dep }}</option>
+                @endforeach
+            </select>
+        </div>
+        <div class="col">
+            <label for="procedencia_prov">Provincia</label>
+            <select id="procedencia_prov" name="procedencia_prov" class="form-control">
+                @foreach ($provincias as $provincia)
+                <option value="{{ $provincia->codigo_prov }}" {{ $provincia->codigo_prov === $selprov ? 'selected' : '' }}>{{ $provincia->nombre_prov }}</option>
+                @endforeach
+            </select>
+        </div>
+        <div class="col">
+            <label for="procedencia_dis">Distrito</label>
+            <select id="procedencia_dis" name="procedencia_dis" class="form-control">
+                @foreach ($distritos as $distrito)
+                <option value="{{ $distrito->codigo_dis }}" {{ $distrito->codigo_dis === $seldis ? 'selected' : '' }}>{{ $distrito->nombre_dis }}</option>
+                @endforeach
+            </select>
+        </div>
 
-    <div class="col-4">
-        <label for="direccion">Dirección</label>
-        <input id="direccion" name="direccion" type="text" class="form-control" placeholder="" value="{{ $patient ? $patient->direccion : old('direccion') }}">
+        <div class="col-4">
+            <label for="direccion">Dirección</label>
+            <input id="direccion" name="direccion" type="text" class="form-control" placeholder="" value="{{ $patient ? $patient->direccion : old('direccion') }}">
+        </div>
     </div>
 </div>
 

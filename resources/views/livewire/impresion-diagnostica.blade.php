@@ -1,9 +1,11 @@
-<input type="hidden" id="impresion_diagnostica_modal_id" name="impresion_diagnostica_id" value="{{ old('impresion_diagnostica_id') }}">
+<div>
+    <input type="hidden" id="impresion_diagnostica_modal_id" name="impresion_diagnostica_id" value="{{ old('impresion_diagnostica_id') }}">
 
-<div class="form-group">
-    <label for="impresion_diagnostica">Descripción</label>
-    <textarea id="impresion_diagnostica" name="impresion_diagnostica" type="text" class="mb-2 form-control" placeholder="" rows="10">{{ old('impresion_diagnostica') }}</textarea>
-    @error('impresion_diagnostica') <div class="invalid-feedback" style="display: block;">{{ $message }}</div> @enderror
+    <div class="form-group">
+        <label for="impresion_diagnostica">Descripción</label>
+        <textarea id="impresion_diagnostica" name="impresion_diagnostica" type="text" class="mb-2 form-control" placeholder="" rows="10">{{ old('impresion_diagnostica') }}</textarea>
+        @error('impresion_diagnostica') <div class="invalid-feedback" style="display: block;">{{ $message }}</div> @enderror
+    </div>
 </div>
 
 @push('scripts')

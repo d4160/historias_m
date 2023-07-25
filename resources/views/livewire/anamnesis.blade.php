@@ -1,9 +1,11 @@
-<input type="hidden" id="anamnesis_modal_id" name="anamnesis_id" value="{{ old('anamnesis_id') }}">
+<div>
+    <input type="hidden" id="anamnesis_modal_id" name="anamnesis_id" value="{{ old('anamnesis_id') }}">
 
-<div class="form-group">
-    <label for="anamnesis">Descripción</label>
-    <textarea id="anamnesis" name="anamnesis" type="text" class="mb-2 form-control" placeholder="" rows="6">{{ old('anamnesis') }}</textarea>
-    @error('anamnesis') <div class="invalid-feedback" style="display: block;">{{ $message }}</div> @enderror
+    <div class="form-group">
+        <label for="anamnesis">Descripción</label>
+        <textarea id="anamnesis" name="anamnesis" type="text" class="mb-2 form-control" placeholder="" rows="6">{{ old('anamnesis') }}</textarea>
+        @error('anamnesis') <div class="invalid-feedback" style="display: block;">{{ $message }}</div> @enderror
+    </div>
 </div>
 
 @push('scripts')

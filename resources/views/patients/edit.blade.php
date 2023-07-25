@@ -415,7 +415,7 @@
                                             @break
 
                                         @case('Pendiente')
-                                            <span class="badge badge-danger" style="color: #e7515a;"> {{ $historia->estado }} </span>
+                                            <span class="badge badge-danger" style="border-color: #e7515a; color: #e7515a;"> {{ $historia->estado }} </span>
                                             @break
 
                                         @default
