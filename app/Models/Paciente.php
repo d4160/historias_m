@@ -10,7 +10,10 @@ class Paciente extends Model
     use HasFactory;
 
     protected $fillable = [
-        'user_id'
+        'user_id',
+        'tipo',
+        'proxima_cita',
+        'estado'
     ];
 
     public function user() {
@@ -19,5 +22,9 @@ class Paciente extends Model
 
     public function historias() {
         return $this->hasMany('App\Models\Historia')->orderBy('created_at', 'desc');
+    }
+
+    public function citas() {
+        return $this->hasMany('App\Models\Cita')->orderBy('created_at', 'desc');
     }
 }

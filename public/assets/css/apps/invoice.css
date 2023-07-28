@@ -173,7 +173,7 @@
     justify-content: space-between;
     padding: 17px 20px;
     border-bottom: 1px solid #ebedf2;
-    display: none; }
+    display: flex; }
   .invoice-inbox .inv-number {
     font-size: 18px;
     font-weight: 700;

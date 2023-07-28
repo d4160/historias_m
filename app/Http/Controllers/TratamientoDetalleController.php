@@ -28,7 +28,7 @@ class TratamientoDetalleController extends Controller
 
         $medicamento->save();
 
-        return redirect(route('citas.edit', $cita_id));
+        return redirect(route('historias.edit', $cita_id));
     }
 
     public function update(Request $request, $id, $cita_id)
@@ -51,7 +51,7 @@ class TratamientoDetalleController extends Controller
 
         $td->save();
 
-        return redirect(route('citas.edit', $cita_id));
+        return redirect(route('historias.edit', $cita_id));
     }
 
     public function destroy($id)

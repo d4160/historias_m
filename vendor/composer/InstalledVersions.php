@@ -30,7 +30,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => '30726a5bcc6ad6e460b78e809995dd2b035f4e4d',
+    'reference' => '17bc20aedf0cceb82d80d74d9f10bb8fb6e4b7b5',
     'name' => 'laravel/laravel',
   ),
   'versions' => 
@@ -61,6 +61,15 @@ private static $installed = array (
       array (
       ),
       'reference' => '0ad82ce168c82ba30d1c01ec86116ab52f589478',
+    ),
+    'carlos-meneses/laravel-mpdf' => 
+    array (
+      'pretty_version' => '2.1.12',
+      'version' => '2.1.12.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '6198486b23e7cff340958dfee09169da280f8f27',
     ),
     'cordoval/hamcrest-php' => 
     array (
@@ -487,7 +496,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => '30726a5bcc6ad6e460b78e809995dd2b035f4e4d',
+      'reference' => '17bc20aedf0cceb82d80d74d9f10bb8fb6e4b7b5',
     ),
     'laravel/sail' => 
     array (
@@ -606,6 +615,15 @@ private static $installed = array (
       ),
       'reference' => 'f259e2b15fb95494c83f52d3caad003bbf5ffaa1',
     ),
+    'mpdf/mpdf' => 
+    array (
+      'pretty_version' => 'v8.0.17',
+      'version' => '8.0.17.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '5f64118317c8145c0abc606b310aa0a66808398a',
+    ),
     'mtdowling/cron-expression' => 
     array (
       'replaced' => 
@@ -675,6 +693,15 @@ private static $installed = array (
       array (
       ),
       'reference' => '3d81e4309d2a927abbe66df935f4bb60082805ad',
+    ),
+    'paragonie/random_compat' => 
+    array (
+      'pretty_version' => 'v9.99.100',
+      'version' => '9.99.100.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '996434e5492cb4c3edcb9168db6fbb1359ef965a',
     ),
     'phar-io/manifest' => 
     array (
@@ -1083,6 +1110,15 @@ private static $installed = array (
       array (
       ),
       'reference' => 'c6c1022351a901512170118436c764e473f6de8c',
+    ),
+    'setasign/fpdi' => 
+    array (
+      'pretty_version' => 'v2.4.0',
+      'version' => '2.4.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '984c0a6c546230cbc7444b8ffdc04000bb8b44b9',
     ),
     'swiftmailer/swiftmailer' => 
     array (

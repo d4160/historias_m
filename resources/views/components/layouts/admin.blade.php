@@ -57,12 +57,12 @@
             <a href="javascript:void(0);" class="sidebarCollapse" data-placement="bottom"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></a>
 
             <div class="nav-logo align-self-center">
-                <a href="/" class="navbar-brand href="/"><img style="width: auto!important; height: 80px;" alt="logo" src="{{ asset('assets/img/logo.png') }}">
-                    {{--  <span class="navbar-brand-name">Yabaja</span></a>  --}}
+                <a href="/" class="navbar-brand href="/"><img style="width: auto!important; height: 80px;" alt="logo" src="{{ asset('assets/img/logo.png') }}"></a>
+                    {{--  <span class="navbar-brand-name">Yabaja</span>  --}}
             </div>
 
-            <ul class="navbar-item flex-row nav-dropdowns ml-auto">
-                <li class="nav-item dropdown user-profile-dropdown order-lg-0 order-1">
+            <ul class="flex-row ml-auto navbar-item nav-dropdowns">
+                <li class="order-1 nav-item dropdown user-profile-dropdown order-lg-0">
                     <a href="javascript:void(0);" class="nav-link dropdown-toggle user" id="user-profile-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <div class="media">
                             {{--  <img src="assets/img/90x90.jpg" class="img-fluid" alt="admin-profile">  --}}
@@ -119,7 +119,7 @@
         <!--  BEGIN TOPBAR  -->
         <div class="topbar-nav header navbar" role="banner">
             <nav id="topbar">
-                <ul class="navbar-nav theme-brand flex-row  text-center">
+                <ul class="flex-row text-center navbar-nav theme-brand">
                     <li class="nav-item theme-logo">
                         <a href="index.html">
                             <img src="assets/img/90x90.jpg" class="navbar-logo" alt="logo">
@@ -170,6 +170,33 @@
                         </ul>
                     </li>
 
+                    <li class="menu single-menu active">
+                        <a href="#menu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle autodroprown">
+                            <div class="">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                    class="feather feather-home">
+                                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                                </svg>
+                                <span>CItas</span>
+                            </div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                class="feather feather-chevron-down">
+                                <polyline points="6 9 12 15 18 9"></polyline>
+                            </svg>
+                        </a>
+                        <ul class="collapse submenu list-unstyled" id="menu1" data-parent="#topAccordion">
+                            <li>
+                                <a href="{{ route('citas.all') }}"> Agenda de Citas </a>
+                            </li>
+                            {{-- <li>
+                                <a href="{{ route('citas.create') }}"> Nueva Cita </a>
+                            </li> --}}
+                        </ul>
+                    </li>
+
                     @elseif ($user->user_role_id === 5)
                     <li class="menu single-menu active">
                         <a href="#menu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle autodroprown">
@@ -197,7 +224,7 @@
             <div class="layout-px-spacing">
 
                 <div class="page-header">
-                    <div class="page-title mt-4">
+                    <div class="mt-4 page-title">
                         <h3>{{ $bodyTitle }}</h3>
                     </div>
                 </div>

@@ -30,7 +30,7 @@
                         <div>{{ $errors }}</div>
                     @endif
 
-                    <form class="m-3 mt-4 mb-4" method="POST" action="{{ route('citas.update', $cita->id) }}">
+                    <form class="m-3 mt-4 mb-4" method="POST" action="{{ route('historias.update', $cita->id) }}">
                         @csrf
 
                         <label style="font-weight: bold; color: black; font-size: 17px;">PACIENTE</label>

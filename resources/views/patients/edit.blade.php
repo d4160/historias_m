@@ -113,7 +113,7 @@
         <div class="page-title">
             <h3 id="hc_label">Historia Clínica</h3>
         </div>
-        <form method="POST" id="historia_nuevo_form" action="{{ route('citas.store', $patient->id) }}" style="display: inline-block">
+        <form method="POST" id="historia_nuevo_form" action="{{ route('historias.store', $patient->id) }}" style="display: inline-block">
             @csrf
             <a href="javascript:void(0);" class="ml-3 btn btn-success historia_nuevo confirm"
                                     form_id="historia_nuevo_form"
@@ -424,7 +424,7 @@
                                     </td>
                                     <td class="text-center">
                                         <ul class="table-controls">
-                                            <li><span><a class="bs-tooltip" target="_blank" data-toggle="tooltip" data-placement="top" title="" data-original-title="Imprimir" href="{{ route('citas.print', $historia->id)}}"><svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+                                            <li><span><a class="bs-tooltip" target="_blank" data-toggle="tooltip" data-placement="top" title="" data-original-title="Imprimir" href="{{ route('historias.print', $historia->id)}}"><svg version="1.0" xmlns="http://www.w3.org/2000/svg"
                                             width="64.000000pt" height="64.000000pt" viewBox="0 0 64.000000 64.000000"
                                             preserveAspectRatio="xMidYMid meet" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="p-1 mb-1 feather feather-edit-2 br-6">
 
@@ -444,12 +444,12 @@
                                             </g>
                                             </svg></a></span></li>
 
-                                            {{--  <li><span><a class="bs-tooltip" target="_blank" data-toggle="tooltip" data-placement="top" title="" data-original-title="Descargar PDF" href="{{ route('citas.pdf', $historia->id)}}"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-download"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg></a></li>  --}}
+                                             <li><span><a class="bs-tooltip" target="_blank" data-toggle="tooltip" data-placement="top" title="" data-original-title="Descargar PDF" href="{{ route('historias.pdf', $historia->id)}}"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-download"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg></a></li>
 
-                                            <li><span data-toggle="modal" data-target="#historiaModal"><a class="bs-tooltip" data-toggle="tooltip" data-placement="top" title="" data-original-title="Editar" onclick="OpenHCModal(historia_{{ $historia->id }}_id, '{{ $historia->id }}', '{{ route('citas.update', $historia->id) }}', '{{ $historia->proxima_cita }}', '{{ $historia->estado }}')"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="p-1 mb-1 feather feather-edit-2 br-6"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></a></span></li>
+                                            <li><span data-toggle="modal" data-target="#historiaModal"><a class="bs-tooltip" data-toggle="tooltip" data-placement="top" title="" data-original-title="Editar" onclick="OpenHCModal(historia_{{ $historia->id }}_id, '{{ $historia->id }}', '{{ route('historias.update', $historia->id) }}', '{{ $historia->proxima_cita }}', '{{ $historia->estado }}')"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="p-1 mb-1 feather feather-edit-2 br-6"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></a></span></li>
 
                                             <li>
-                                                <form method="POST" id="delete_{{ $historia->id }}_form" action="{{ route('citas.destroy', $historia->id) }}" style="display: inline-block">
+                                                <form method="POST" id="delete_{{ $historia->id }}_form" action="{{ route('historias.destroy', $historia->id) }}" style="display: inline-block">
                                                     @csrf
                                                     <a href="javascript:void(0);" class="bs-tooltip historia_remove confirm"
                                                             form_id="delete_{{ $historia->id }}_form"
@@ -512,7 +512,6 @@
                 );  --}}
 
                 @if ($notification)
-                    console.log('notify');
                     Snackbar.show({
                         text: '{{ $notification }}',
                         actionTextColor: '#fff',

@@ -18,6 +18,7 @@ class CreatePacientesTable extends Migration
             $table->unsignedBigInteger('user_id')->nullable();
             $table->date('proxima_cita')->nullable();
             $table->enum('estado', array('Atendido','Evaluación', 'Pendiente'))->default('Pendiente');
+            $table->unsignedTinyInteger('tipo')->default(1);
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')->cascadeOnDelete();

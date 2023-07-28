@@ -35,7 +35,7 @@ class FuncionController extends Controller
             $c->save();
         }
 
-        return redirect(route('citas.edit', $id));
+        return redirect(route('historias.edit', $id));
     }
 
     public function saveFunVitales(Request $request, $id){
@@ -69,6 +69,6 @@ class FuncionController extends Controller
             $c->save();
         }
 
-        return redirect(route('citas.edit', $id));
+        return redirect(route('historias.edit', $id));
     }
 }

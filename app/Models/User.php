@@ -64,6 +64,14 @@ class User extends Authenticatable
         return $this->belongsTo('App\Models\UserRole');
     }
 
+    public function paciente() {
+        return $this->belongsTo('App\Models\Paciente', 'specific_role_id', 'id');
+    }
+
+    public function historias() {
+        return $this->belongsTo('App\Models\Historia', 'specific_role_id', 'paciente_id');
+    }
+
     public function getFullNameAttribute() {
         return ucfirst($this->first_names) . ' ' . ucfirst($this->last_name1) . ' ' . ucfirst($this->last_name2);
     }
