@@ -47,11 +47,12 @@
                     <td>{{ $cita->created_at }}</td>
                     <td>{{ substr($cita->fecha_hora, 0, 16) }}</td>
                     <td>{{ $cita->paciente->user->full_name }}</td>
-                    <td class="text-center">{{ $cita->tipo }}</td>
+                    <td class="text-center">{{ $cita->tipo == 'Otros' ? $cita->tipo_otros : $cita->tipo }}</td>
                     <td class="text-center">{{ $cita->consultorio }}</td>
                     <td class="text-center">{{ $cita->medico }}</td>
                     <td class="text-center">
-                        @switch($cita->estado)
+                        {{ $cita->estado }}
+                        {{-- @switch($cita->estado)
                             @case('Paciente confirmado')
                                 <span class="badge badge-danger" style="color:#8dbf42;border-color:#8dbf42;"> Paciente confirmado </span>
                             @break
@@ -62,7 +63,7 @@
 
                             @default
                                 <span class="badge badge-warning"> {{ $estado }} </span>
-                        @endswitch
+                        @endswitch --}}
                     </td>
                     <td class="text-center">
                         <ul class="table-controls">

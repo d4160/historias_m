@@ -18,10 +18,11 @@ class CreateCitasTable extends Migration
             $table->dateTime('fecha_hora');
             $table->unsignedBigInteger('paciente_id'); //paciente dni/nombres/apellidos/celular si no existe tipo=0
             $table->enum('tipo', array('Consulta Médica', 'Tomografía','Rayos X', 'Laboratorio', 'Ecografía','Resonancia Magnética', 'Otros'))->default('Consulta Médica');
-            $table->enum('consultorio', array('Consultorio 1', 'Consultorio 2'))->default('Consultorio 1');
+            $table->string('tipo_otros', 150)->nullable();
+            $table->enum('consultorio', array('Consultorio 1', 'Consultorio 2', 'Tópico'))->default('Consultorio 1');
             $table->enum('medico', array('Yamil Cabrera', 'Daysy Mechan', 'Rodolfo Cairo'))->default('Daysy Mechan');
-            $table->enum('estado', array('Paciente confirmado', 'Paciente no confirmado'))->default('Paciente no confirmado');
-            $table->enum('origen', array('Llamada', 'Red Social'))->default('Llamada');
+            $table->string('estado', 150)->nullable();
+            $table->string('origen', 150)->nullable();
             $table->timestamps();
 
             $table->foreign('paciente_id')->references('id')->on('pacientes')->cascadeOnDelete();

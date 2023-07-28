@@ -11,7 +11,7 @@
 @parent
 <script>
 
-    @if($errors->has('peso') || $errors->has('talla'))
+    @if($errors->has('num_document'))
 
         $(function() {
             $('#citaModal').modal({

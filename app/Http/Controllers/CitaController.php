@@ -19,15 +19,20 @@ class CitaController extends Controller
         return view('citas.all', ['citas' => $citas]);
     }
 
-    public function store(Request $request, $id = 0)
+    public function store(Request $request, $id = 0, $user_id = 0)
     {
-        $user = User::where('num_document', '=', $request->num_document)->first();
+        if ($user_id == 0) {
+            $user = $request->num_document ? User::where('num_document', '=', $request->num_document)->first() : null;
+        }
+        else {
+            $user = User::find($user_id);
+        }
 
         $request->validate([
-            'num_document' => ['required', 'string', 'max:11', 'unique:users,num_document,'.($user?$user->id : 0)], // 'confirmed'
+            'num_document' => ['max:11'], // 'confirmed'
             'nombres' => ['required', 'string', 'max:255'],
             'last_name1' => ['required', 'string', 'max:255'],
-            'last_name2' => ['required', 'string', 'max:255']
+            'last_name2' => ['max:255']
         ]);
 
 
@@ -40,8 +45,8 @@ class CitaController extends Controller
                 'first_names' => $request->nombres,
                 'last_name1' => $request->last_name1,
                 'last_name2' => $request->last_name2,
-                'celular' => $request->celular,
-                'password' => Hash::make($request->num_document)
+                'celular' => $request->celular
+                //'password' => Hash::make($request->num_document)
             ]);
 
             $patient = Paciente::create([
@@ -75,6 +80,9 @@ class CitaController extends Controller
             $user->last_name2 = $request->last_name2;
             $user->celular = $request->celular;
 
+            if ($request->num_document)
+                $user->password = Hash::make($request->num_document);
+
             $user->save();
         }
 
@@ -83,6 +91,7 @@ class CitaController extends Controller
                 'paciente_id' => $user->specific_role_id,
                 'fecha_hora' => $request->fecha_hora,
                 'tipo' => $request->tipo,
+                'tipo_otros' => $request->tipo_otros,
                 'consultorio' => $request->consultorio,
                 'medico' => $request->medico,
                 'estado' => $request->estado,
@@ -102,6 +111,7 @@ class CitaController extends Controller
             $cita->paciente_id = $user->specific_role_id;
             $cita->fecha_hora = $request->fecha_hora;
             $cita->tipo = $request->tipo;
+            $cita->tipo_otros = $request->tipo_otros;
             $cita->consultorio = $request->consultorio;
             $cita->medico = $request->medico;
             $cita->estado = $request->estado;

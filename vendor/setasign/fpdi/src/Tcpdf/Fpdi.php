@@ -46,7 +46,7 @@ class Fpdi extends \TCPDF
      *
      * @string
      */
-    const VERSION = '2.4.0';
+    const VERSION = '2.4.1';
 
     /**
      * A counter for template ids.
@@ -284,7 +284,7 @@ class Fpdi extends \TCPDF
      * @param float|int $yPt
      * @param float|int $newHeightPt
      * @param float|int $scaleY
-     * @param $importedPage
+     * @param array $importedPage
      * @return void
      */
     protected function adjustLastLink($externalLink, $xPt, $scaleX, $yPt, $newHeightPt, $scaleY, $importedPage)

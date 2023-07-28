@@ -183,7 +183,7 @@ Route::post('kardex/detalles/eliminar/{id}', [KardexController::class, 'detalleD
 Route::get('citas', [CitaController::class, 'index'])
     ->middleware(['auth', 'role'])->name('citas.all');
 
-Route::post('citas/guardar/{id?}', [CitaController::class, 'store'])
+Route::post('citas/guardar/{id?}/{user_id?}', [CitaController::class, 'store'])
     ->middleware(['auth', 'role'])->name('citas.store');
 
 Route::post('citas/eliminar/{id}', [CitaController::class, 'destroy'])

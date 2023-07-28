@@ -20,7 +20,7 @@
                     <div class="col">
                         <label for="num_document">DNI o CE</label>
                         <input id="num_document" name="num_document" minlength="8" maxLength="11" type="text" class="mb-2 form-control" placeholder=""
-                            value="{{ old('num_document') }}" required>
+                            value="{{ old('num_document') }}">
                         @error('num_document') <div class="invalid-feedback" style="display: block;">{{ $message }}</div>
                         @enderror
                     </div>
@@ -46,7 +46,7 @@
                     <div class="col">
                         <label for="last_name2">Apellido Materno</label>
                         <input id="last_name2" name="last_name2" type="text" class="mb-2 form-control" placeholder=""
-                            value="{{ old('last_name2') }}" required>
+                            value="{{ old('last_name2') }}">
                         @error('last_name2') <div class="invalid-feedback" style="display: block;">{{ $message }}</div>
                         @enderror
                     </div>
@@ -64,20 +64,10 @@
 
             <div class="mt-2 form-group">
                 <div class="row">
-
                     <div class="col">
                         <label for="origen">Origen</label>
-                        {{ Form::select('origen', ['Llamada' => 'Llamada', 'Red Social' => 'Red Social'], old('origen'), ['id' =>
-                        'origen', 'class' => 'form-control', 'required' => 'required']) }}
+                        <input id="origen" name="origen" type="text" class="mb-2 form-control" placeholder="" value="{{ old('origen') }}">
                         @error('origen') <div class="invalid-feedback" style="display: block;">{{ $message }}</div>
-                        @enderror
-                    </div>
-                    <div class="col">
-                        <label for="tipo">Tipo</label>
-                        {{ Form::select('tipo', ['Consulta Médica' => 'Consulta Médica', 'Tomografía' => 'Tomografía', 'Rayos X' => 'Rayos X', 'Laboratorio' => 'Laboratorio', 'Ecografía' => 'Ecografía', 'Resonancia Magnética' =>
-                        'Resonancia Magnética', 'Otros' => 'Otros'], old('tipo'), ['id' =>
-                        'tipo', 'class' => 'form-control', 'required' => 'required']) }}
-                        @error('tipo') <div class="invalid-feedback" style="display: block;">{{ $message }}</div>
                         @enderror
                     </div>
                     <div class="col">
@@ -89,11 +79,32 @@
                 </div>
             </div>
 
+            <div class="mt-2 form-group">
+                <div class="row">
+                    <div class="col">
+                        <label for="tipo">Tipo</label>
+                        {{ Form::select('tipo', ['Consulta Médica' => 'Consulta Médica', 'Tomografía' => 'Tomografía', 'Rayos X' =>
+                        'Rayos X', 'Laboratorio' => 'Laboratorio', 'Ecografía' => 'Ecografía', 'Resonancia Magnética' =>
+                        'Resonancia Magnética', 'Otros' => 'Otros'], old('tipo'), ['id' =>
+                        'tipo', 'class' => 'form-control', 'required' => 'required']) }}
+                        @error('tipo') <div class="invalid-feedback" style="display: block;">{{ $message }}</div>
+                        @enderror
+                    </div>
+                    <div class="col d-none" id="tipo_otros_parent">
+                        <label for="tipo_otros">Otros</label>
+                        <input id="tipo_otros" name="tipo_otros" type="text" class="mb-2 form-control" placeholder=""
+                            value="{{ old('tipo_otros') }}">
+                        @error('tipo_otros') <div class="invalid-feedback" style="display: block;">{{ $message }}</div>
+                        @enderror
+                    </div>
+                </div>
+            </div>
+
             <div class="form-group">
                 <div class="row">
                     <div class="col">
                         <label for="consultorio">Consultorio</label>
-                        {{ Form::select('consultorio', ['Consultorio 1' => 'Consultorio 1', 'Consultorio 2' => 'Consultorio 2'], old('consultorio'), ['id' =>
+                        {{ Form::select('consultorio', ['Consultorio 1' => 'Consultorio 1', 'Consultorio 2' => 'Consultorio 2', 'Tópico' => 'Tópico'], old('consultorio'), ['id' =>
                         'consultorio', 'class' => 'form-control', 'required' => 'required']) }}
                         @error('consultorio') <div class="invalid-feedback" style="display: block;">{{ $message }}</div>
                         @enderror
@@ -106,12 +117,11 @@
                         @error('medico') <div class="invalid-feedback" style="display: block;">{{ $message }}</div>
                         @enderror
                     </div>
-                    <div class="col">
-                        <label for="Estado">Estado</label>
-                        {{ Form::select('estado', ['Paciente no confirmado' => 'Paciente no confirmado', 'Paciente confirmado' => 'Paciente confirmado'],
-                        old('estado'), ['id' =>
-                        'estado', 'class' => 'form-control', 'required' => 'required']) }}
-                        @error('Estado') <div class="invalid-feedback" style="display: block;">{{ $message }}</div>
+                    <div class="col-5">
+                        <label for="estado">Estado</label>
+                        <input id="estado" name="estado" type="text" class="mb-2 form-control" placeholder=""
+                            value="{{ old('estado') }}">
+                        @error('estado') <div class="invalid-feedback" style="display: block;">{{ $message }}</div>
                         @enderror
                     </div>
                 </div>
@@ -128,7 +138,7 @@
 <script>
     $(() => {
         window.fecha_hora = flatpickr(document.getElementById('fecha_hora'), {
-            minDate: GetTodayDateTime(),
+            //minDate: GetTodayDateTime(),
             minuteIncrement: 1,
             defaultDate: GetTodayDateTime(),
             enableTime: true
@@ -143,6 +153,15 @@
             $('#btnGuardar').prop('disabled',true);
             $('#btnGuardar').html('Guardando...');
             $('#form').submit();
+        }
+    });
+
+    $('#tipo').change(() => {
+        if($('#tipo').val() == 'Otros') {
+            $('#tipo_otros_parent').removeClass('d-none');
+        }
+        else {
+            $('#tipo_otros_parent').addClass('d-none');
         }
     });
 
@@ -166,12 +185,16 @@
             $('#celular').val(user.celular);
             $('#origen').val(cita.origen);
             $('#tipo').val(cita.tipo);
+            if (cita.tipo == 'Otros') {
+                $('#tipo_otros_parent').removeClass('d-none');
+                $('#tipo_otros').val(cita.tipo_otros);
+            }
             $('#consultorio').val(cita.consultorio);
             $('#medico').val(cita.medico);
             $('#estado').val(cita.estado);
 
             //if (cita.fecha) {
-            window.fecha_hora.set('minDate', '');
+            //window.fecha_hora.set('minDate', '');
             window.fecha_hora.setDate(cita.fecha_hora);
             $('#fecha_hora').val(cita.fecha_hora);
             //}
@@ -186,7 +209,7 @@
 
     function SetTodayDate() {
         let today = GetTodayDateTime();
-        window.fecha_hora.set('minDate', today);
+        //window.fecha_hora.set('minDate', today);
         window.fecha_hora.setDate(today);
         $('#fecha_hora').val(today);
     }

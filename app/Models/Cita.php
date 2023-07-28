@@ -16,7 +16,8 @@ class Cita extends Model
         'medico',
         'estado',
         'origen',
-        'paciente_id'
+        'paciente_id',
+        'tipo_otros'
     ];
 
     public function paciente() {

@@ -28,7 +28,7 @@ class Cita extends Component
         $user = $cita->paciente->user;
         $fecha_hora = $cita->fecha_hora;
         $this->titulo = "Editar Cita del '$fecha_hora'";
-        $action = route('citas.store', $id);
+        $action = route('citas.store', $id, $user->id);
         $this->emit('updateView', $action, $cita, $user);
     }
 }

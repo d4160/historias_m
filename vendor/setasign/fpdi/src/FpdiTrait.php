@@ -245,6 +245,7 @@ trait FpdiTrait
      * @param int $pageNumber The page number.
      * @param string $box The page boundary to import. Default set to PageBoundaries::CROP_BOX.
      * @param bool $groupXObject Define the form XObject as a group XObject to support transparency (if used).
+     * @param bool $importExternalLinks Define whether external links are imported or not.
      * @return string A unique string identifying the imported page.
      * @throws CrossReferenceException
      * @throws FilterException
@@ -480,6 +481,11 @@ trait FpdiTrait
 
         if (count($importedPage['externalLinks']) > 0) {
             foreach ($importedPage['externalLinks'] as $externalLink) {
+                // mPDF uses also 'externalLinks' but doesn't come with a rect-value
+                if (!isset($externalLink['rect'])) {
+                    continue;
+                }
+
                 /** @var Rectangle $rect */
                 $rect = $externalLink['rect'];
                 $this->Link(
