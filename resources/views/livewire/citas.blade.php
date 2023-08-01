@@ -31,10 +31,11 @@
                     <th>Fecha Registro</th>
                     <th>Fecha Cita</th>
                     <th>Paciente</th>
-                    <th class="text-center">Tipo</th>
+                    <th class="text-center">Motivo</th>
                     <th class="text-center">Consultorio</th>
                     <th class="text-center">Médico Tratante</th>
                     <th class="text-center">Estado</th>
+                    <th class="text-center">Obs.</th>
                     <th class="text-center">Acción</th>
                     {{-- style="min-width:174px!important;" --}}
                 </tr>
@@ -51,20 +52,21 @@
                     <td class="text-center">{{ $cita->consultorio }}</td>
                     <td class="text-center">{{ $cita->medico }}</td>
                     <td class="text-center">
-                        {{ $cita->estado }}
-                        {{-- @switch($cita->estado)
-                            @case('Paciente confirmado')
-                                <span class="badge badge-danger" style="color:#8dbf42;border-color:#8dbf42;"> Paciente confirmado </span>
+                        {{-- {{ $cita->estado_enum }} --}}
+                        @switch($cita->estado_enum)
+                            @case('Atendido')
+                                <span class="badge badge-danger" style="color:#8dbf42;border-color:#8dbf42;"> Atendido </span>
                             @break
 
-                            @case('Paciente no confirmado')
-                                <span class="badge badge-danger" style="color: #e7515a;border-color:#e7515a;"> Paciente no confirmado </span>
+                            @case('No atendido')
+                                <span class="badge badge-danger" style="color: #e7515a;border-color:#e7515a;"> No atendido </span>
                             @break
 
                             @default
-                                <span class="badge badge-warning"> {{ $estado }} </span>
-                        @endswitch --}}
+                                <span class="badge badge-warning"> {{ $cita->estado_enum }} </span>
+                        @endswitch
                     </td>
+                    <td class="text-center">{{ $cita->estado }}</td>
                     <td class="text-center">
                         <ul class="table-controls">
 

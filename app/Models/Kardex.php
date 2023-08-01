@@ -20,4 +20,8 @@ class Kardex extends Model
     public function detalles() {
         return $this->hasMany('App\Models\KardexDetalle');
     }
+
+    public function historia() {
+        return $this->belongsTo('App\Models\Historia');
+    }
 }

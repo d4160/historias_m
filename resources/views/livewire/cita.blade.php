@@ -71,9 +71,20 @@
                         @enderror
                     </div>
                     <div class="col">
-                        <label for="fecha_hora">Fecha y hora</label>
-                        <input id="fecha_hora" name="fecha_hora" type="text" class="mb-2 form-control" placeholder="" value="{{ old('fecha_hora') }}" required>
-                        @error('fecha_hora') <div class="invalid-feedback" style="display: block;">{{ $message }}</div>
+                        <label for="consultorio">Consultorio</label>
+                        {{ Form::select('consultorio', ['Consultorio 1' => 'Consultorio 1', 'Consultorio 2' => 'Consultorio 2', 'Tópico' =>
+                        'Tópico'], old('consultorio'), ['id' =>
+                        'consultorio', 'class' => 'form-control', 'required' => 'required']) }}
+                        @error('consultorio') <div class="invalid-feedback" style="display: block;">{{ $message }}</div>
+                        @enderror
+                    </div>
+                    <div class="col">
+                        <label for="medico">Médico Tratante</label>
+                        {{ Form::select('medico', ['Yamil Cabrera' => 'Yamil Cabrera', 'Daysy Mechan' => 'Daysy Mechan', 'Rodolfo Cairo' =>
+                        'Rodolfo Cairo'],
+                        old('medico'), ['id' =>
+                        'medico', 'class' => 'form-control', 'required' => 'required']) }}
+                        @error('medico') <div class="invalid-feedback" style="display: block;">{{ $message }}</div>
                         @enderror
                     </div>
                 </div>
@@ -82,19 +93,17 @@
             <div class="mt-2 form-group">
                 <div class="row">
                     <div class="col">
-                        <label for="tipo">Tipo</label>
-                        {{ Form::select('tipo', ['Consulta Médica' => 'Consulta Médica', 'Tomografía' => 'Tomografía', 'Rayos X' =>
-                        'Rayos X', 'Laboratorio' => 'Laboratorio', 'Ecografía' => 'Ecografía', 'Resonancia Magnética' =>
-                        'Resonancia Magnética', 'Otros' => 'Otros'], old('tipo'), ['id' =>
-                        'tipo', 'class' => 'form-control', 'required' => 'required']) }}
-                        @error('tipo') <div class="invalid-feedback" style="display: block;">{{ $message }}</div>
+                        <label for="fecha_hora">Fecha y hora</label>
+                        <input id="fecha_hora" name="fecha_hora" type="text" class="mb-2 form-control" placeholder=""
+                            value="{{ old('fecha_hora') }}" required>
+                        @error('fecha_hora') <div class="invalid-feedback" style="display: block;">{{ $message }}</div>
                         @enderror
                     </div>
-                    <div class="col d-none" id="tipo_otros_parent">
-                        <label for="tipo_otros">Otros</label>
-                        <input id="tipo_otros" name="tipo_otros" type="text" class="mb-2 form-control" placeholder=""
-                            value="{{ old('tipo_otros') }}">
-                        @error('tipo_otros') <div class="invalid-feedback" style="display: block;">{{ $message }}</div>
+                    <div class="col-7" id="tipo_otros_parent">
+                        {{-- d-none --}}
+                        <label for="tipo">Motivo</label>
+                        <input id="tipo" name="tipo" type="text" class="mb-2 form-control" placeholder="" value="{{ old('tipo') }}">
+                        @error('tipo') <div class="invalid-feedback" style="display: block;">{{ $message }}</div>
                         @enderror
                     </div>
                 </div>
@@ -103,22 +112,15 @@
             <div class="form-group">
                 <div class="row">
                     <div class="col">
-                        <label for="consultorio">Consultorio</label>
-                        {{ Form::select('consultorio', ['Consultorio 1' => 'Consultorio 1', 'Consultorio 2' => 'Consultorio 2', 'Tópico' => 'Tópico'], old('consultorio'), ['id' =>
-                        'consultorio', 'class' => 'form-control', 'required' => 'required']) }}
-                        @error('consultorio') <div class="invalid-feedback" style="display: block;">{{ $message }}</div>
+                        <label for="estado_enum">Estado</label>
+                        {{ Form::select('estado_enum', ['Atendido' => 'Atendido', 'En espera' => 'En espera', 'No atendido' =>
+                        'No atendido'], old('estado_enum', 'No atendido'), ['id' =>
+                        'estado_enum', 'class' => 'form-control', 'required' => 'required']) }}
+                        @error('estado_enum') <div class="invalid-feedback" style="display: block;">{{ $message }}</div>
                         @enderror
                     </div>
-                    <div class="col">
-                        <label for="medico">Médico Tratante</label>
-                        {{ Form::select('medico', ['Yamil Cabrera' => 'Yamil Cabrera', 'Daysy Mechan' => 'Daysy Mechan', 'Rodolfo Cairo' => 'Rodolfo Cairo'],
-                        old('medico'), ['id' =>
-                        'medico', 'class' => 'form-control', 'required' => 'required']) }}
-                        @error('medico') <div class="invalid-feedback" style="display: block;">{{ $message }}</div>
-                        @enderror
-                    </div>
-                    <div class="col-5">
-                        <label for="estado">Estado</label>
+                    <div class="col-7">
+                        <label for="estado">Observaciones</label>
                         <input id="estado" name="estado" type="text" class="mb-2 form-control" placeholder=""
                             value="{{ old('estado') }}">
                         @error('estado') <div class="invalid-feedback" style="display: block;">{{ $message }}</div>
@@ -156,14 +158,14 @@
         }
     });
 
-    $('#tipo').change(() => {
-        if($('#tipo').val() == 'Otros') {
-            $('#tipo_otros_parent').removeClass('d-none');
-        }
-        else {
-            $('#tipo_otros_parent').addClass('d-none');
-        }
-    });
+    // $('#tipo').change(() => {
+    //     if($('#tipo').val() == 'Otros') {
+    //         $('#tipo_otros_parent').removeClass('d-none');
+    //     }
+    //     else {
+    //         $('#tipo_otros_parent').addClass('d-none');
+    //     }
+    // });
 
     function CreateCitaModal() {
         $('#form').get(0).reset();
@@ -185,18 +187,19 @@
             $('#celular').val(user.celular);
             $('#origen').val(cita.origen);
             $('#tipo').val(cita.tipo);
-            if (cita.tipo == 'Otros') {
-                $('#tipo_otros_parent').removeClass('d-none');
-                $('#tipo_otros').val(cita.tipo_otros);
-            }
+            // if (cita.tipo == 'Otros') {
+            //     $('#tipo_otros_parent').removeClass('d-none');
+            //     $('#tipo_otros').val(cita.tipo_otros);
+            // }
             $('#consultorio').val(cita.consultorio);
             $('#medico').val(cita.medico);
             $('#estado').val(cita.estado);
+            $('#estado_enum').val(cita.estado_enum ?? 'No atendido');
 
             //if (cita.fecha) {
             //window.fecha_hora.set('minDate', '');
             window.fecha_hora.setDate(cita.fecha_hora);
-            $('#fecha_hora').val(cita.fecha_hora);
+            $('#fecha_hora').val(cita.fecha_hora.substring(0, 16));
             //}
             // else {
             //     SetTodayDate();
@@ -211,7 +214,7 @@
         let today = GetTodayDateTime();
         //window.fecha_hora.set('minDate', today);
         window.fecha_hora.setDate(today);
-        $('#fecha_hora').val(today);
+        $('#fecha_hora').val(today.substring(0, 16));
     }
 
 </script>

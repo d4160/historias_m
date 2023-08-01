@@ -6,13 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
     <title>Imprimir Historia</title>
-    <link rel="icon" type="image/x-icon" href="{{ asset('assets/img/favicon.png') }}" />
+    <link rel="icon" type="image/x-icon" href="{{ public_path('assets/img/favicon.png') }}" />
 
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap" rel="stylesheet">
 
-    <link href="{{ asset('bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset('assets/css/plugins.css') }}" rel="stylesheet" type="text/css" />
-    <link href="{{ asset('assets/css/apps/invoice.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ public_path('bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ public_path('assets/css/plugins.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ public_path('assets/css/apps/invoice.css') }}" rel="stylesheet" type="text/css" />
 
     <style>
         .layout-px-spacing {
@@ -61,7 +61,7 @@
                                                 <div class="text-right col-sm-12 col-12">
                                                     <div class="company-info">
                                                         <img style="width: auto!important; height: 80px;" alt="logo"
-                                                            src="{{ asset('assets/img/logo.png') }}">
+                                                            src="{{ public_path('assets/img/logo.png') }}">
                                                     </div>
                                                 </div>
 

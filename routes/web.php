@@ -180,6 +180,9 @@ Route::post('kardex/detalles/actualizar/{id}', [KardexController::class, 'detall
 Route::post('kardex/detalles/eliminar/{id}', [KardexController::class, 'detalleDestroy'])
     ->middleware(['auth', 'role'])->name('kardex.destroy');
 
+Route::get('kardex/imprimir/{id}', [KardexController::class, 'print'])
+    ->middleware(['auth', 'role'])->name('kardex.print');
+
 Route::get('citas', [CitaController::class, 'index'])
     ->middleware(['auth', 'role'])->name('citas.all');
 

@@ -27,7 +27,8 @@ class Cita extends Component
         $cita = ModelsCita::find($id);
         $user = $cita->paciente->user;
         $fecha_hora = $cita->fecha_hora;
-        $this->titulo = "Editar Cita del '$fecha_hora'";
+        $formatted = substr($fecha_hora, 0, 16);
+        $this->titulo = "Editar Cita del '$formatted'";
         $action = route('citas.store', $id, $user->id);
         $this->emit('updateView', $action, $cita, $user);
     }

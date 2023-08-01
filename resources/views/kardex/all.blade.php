@@ -48,12 +48,12 @@
 
                     <div class="mb-4 ml-3 mr-4 row" style="justify-content:space-between;">
                         <div>
-                            <a href="" class="mt-3 ml-3 btn btn-primary">Imprimir Kardex</a>
+                            <a href="{{ route('kardex.print', $kardex->id) }}" target="_blank" class="mt-3 ml-3 btn btn-primary">Imprimir Kardex</a>
                         </div>
 
-                        <div>
+                        {{-- <div>
                             <a href="" class="mt-3 ml-3 btn btn-primary">Descargar PDF</a>
-                        </div>
+                        </div> --}}
 
                         <div>
                             <a href="{{ route('patients.edit', $patient_id) }}" class="mt-3 ml-3 btn btn-info">Regresar a la página del paciente</a>

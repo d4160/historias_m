@@ -205,10 +205,10 @@ class HistoriaController extends Controller
         $request->validate([
         ]);
 
-        $instance->antecedentes = $request->antecedentes;
-        $instance->familiares = $request->familiares;
-        $instance->personales = $request->personales;
-        $instance->hab_nocivos = $request->hab_nocivos;
+        $instance->antecedentes = $request->antecedentes == 'CARGANDO...' ? '' : $request->antecedentes;
+        $instance->familiares = $request->familiares == 'CARGANDO...' ? '' : $request->familiares;
+        $instance->personales = $request->personales == 'CARGANDO...' ? '' : $request->personales;
+        $instance->hab_nocivos = $request->hab_nocivos == 'CARGANDO...' ? '' : $request->hab_nocivos;
 
         $instance->save();
 
@@ -230,10 +230,10 @@ class HistoriaController extends Controller
         $instance->temperatura = $request->temperatura;
         $instance->peso = $request->peso;
         $instance->talla = $request->talla;
-        $instance->deposiciones = $request->deposiciones;
-        $instance->orina = $request->orina;
-        $instance->fur = $request->fur;
-        $instance->otros = $request->otros;
+        $instance->deposiciones = $request->deposiciones == 'CARGANDO...' ? '' : $request->deposiciones;
+        $instance->orina = $request->orina == 'CARGANDO...' ? '' : $request->orina;
+        $instance->fur = $request->fur == 'CARGANDO...' ? '' : $request->fur;
+        $instance->otros = $request->otros == 'CARGANDO...' ? '' : $request->otros;
 
         $instance->save();
 

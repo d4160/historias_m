@@ -105,4 +105,16 @@ class KardexController extends Controller
 
         return back();
     }
+
+    public function print($id)
+    {
+        $kardex = Kardex::find($id);
+
+        return view('kardex.print', [
+            'kardex' => $kardex,
+            'historia' => $kardex->historia,
+            'user' => $kardex->historia->paciente->user,
+            'detalles' => $kardex->detalles
+        ]);
+    }
 }

@@ -91,10 +91,11 @@ class CitaController extends Controller
                 'paciente_id' => $user->specific_role_id,
                 'fecha_hora' => $request->fecha_hora,
                 'tipo' => $request->tipo,
-                'tipo_otros' => $request->tipo_otros,
+                // 'tipo_otros' => $request->tipo_otros,
                 'consultorio' => $request->consultorio,
                 'medico' => $request->medico,
                 'estado' => $request->estado,
+                'estado_enum' => $request->estado_enum,
                 'origen' => $request->origen
             ]);
 
@@ -111,10 +112,11 @@ class CitaController extends Controller
             $cita->paciente_id = $user->specific_role_id;
             $cita->fecha_hora = $request->fecha_hora;
             $cita->tipo = $request->tipo;
-            $cita->tipo_otros = $request->tipo_otros;
+            //$cita->tipo_otros = $request->tipo_otros;
             $cita->consultorio = $request->consultorio;
             $cita->medico = $request->medico;
             $cita->estado = $request->estado;
+            $cita->estado_enum = $request->estado_enum;
             $cita->origen = $request->origen;
             $cita->save();
 
