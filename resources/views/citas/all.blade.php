@@ -7,6 +7,7 @@
         <link href="{{ asset('plugins/flatpickr/flatpickr.css') }}" rel="stylesheet" type="text/css">
         <link href="{{ asset('assets/css/tables/table-basic.css') }}" rel="stylesheet" type="text/css">
         <link href="{{ asset('plugins/notification/snackbar/snackbar.min.css') }}" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/forms/switches.css') }}">
 
         @livewireStyles
     </x-slot>

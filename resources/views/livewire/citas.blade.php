@@ -2,13 +2,13 @@
     <div class="row">
         <div class="col d-flex justify-content-center">
             <div class="n-chk">
-                <strong>Ordenar por</strong> &ensp;
+                <strong>Ordenar por:</strong> &ensp;
                 <label class="new-control new-radio square-radio radio-primary">
-                    <input type="radio" class="new-control-input" name="option" value="1" checked>
+                    <input type="radio" class="new-control-input" wire:model='option' name="option" value="fecha_hora">
                     <span class="new-control-indicator"></span>Fecha Cita
                 </label>
                 <label class="new-control new-radio square-radio radio-primary">
-                    <input type="radio" class="new-control-input" name="option" value="2">
+                    <input type="radio" class="new-control-input" wire:model='option' name="option" value="created_at">
                     <span class="new-control-indicator"></span>Fecha Registro
                 </label>
             </div>
@@ -21,6 +21,17 @@
                 <button class="mb-2 btn btn-outline-primary" id="btnToday">Hoy</button>
                 <button class="mb-2 btn btn-outline-primary" id="btnClear">Limpiar</button>
             </label>
+        </div>
+    </div>
+    <div class="mt-2 row">
+        <div class="col d-flex justify-content-center">
+            <div class="n-chk d-flex">
+                <strong>Ocultar 'Atendidos'</strong> &ensp;
+                <label class="new-control switch s-primary">
+                    <input type="checkbox" wire:model="hideAtendido" class="new-control-input" checked id="hideAtendido">
+                    <span class="slider"></span>
+                </label>
+            </div>
         </div>
     </div>
     <div class="mb-4 table-responsive">
@@ -152,7 +163,7 @@
     });
 
     $('#fecha_filter').change(() => {
-        console.log('change');
+        //console.log('change');
         if (prev_fecha_filter != $('#fecha_filter').val()) {
             ClearDataTable();
             prev_fecha_filter = $('#fecha_filter').val();
@@ -160,6 +171,12 @@
                 Livewire.emit('filterByDate', $('#fecha_filter').val());
             }, 0.1);
         }
+    });
+
+    $('#hideAtendido').change(() => {
+        count = 0;
+        ClearDataTable();
+        Livewire.emit('filterByHideAtendido', $('#hideAtendido').is(":checked"));
     });
 
     Livewire.on('setDataTable', () => {
