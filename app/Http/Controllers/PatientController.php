@@ -23,9 +23,9 @@ class PatientController extends Controller
     public function index()
     {
         // where('user_role_id', 5) with whereHas, this is not already needed
-        $patients = User::whereHas('paciente', function($q) {
+        $patients = User::withWhereHas('paciente', function($q) {
             $q->where('tipo', 1);
-        })->with('paciente')->withCount('historias')->orderBy('created_at', 'desc')->get();
+        })->withCount('historias')->orderBy('created_at', 'desc')->get();
         return view('patients.all', ['patients' => $patients]);
     }
 
