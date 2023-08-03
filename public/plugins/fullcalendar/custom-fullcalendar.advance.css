@@ -50,7 +50,7 @@
   font-weight: 400; }
 
 .popover-primary .popover-body {
-  color: #3b3f5c;
+  color: #212121;
   min-height: 90px;
   font-size: 13px;
   letter-spacing: 1px;
@@ -71,7 +71,7 @@
   position: relative;
   padding: 0 17px;
   font-size: 14px;
-  color: #3b3f5c;
+  color: #212121;
   cursor: pointer; }
   .labels .label:before {
     content: '';
@@ -177,21 +177,21 @@ a.bg-primary:hover, a.bg-success:hover, a.bg-warning:hover, a.bg-danger:hover {
     font-size: 18px;
     font-weight: 600;
     letter-spacing: 0px;
-    color: #3b3f5c; }
+    color: #212121; }
   #addEventsModal form {
     margin-top: 30px; }
     #addEventsModal form label {
       margin-bottom: 5px;
       font-size: 14px;
       font-weight: 600;
-      color: #595b69; }
+      color: #050505; }
     #addEventsModal form .event-badge {
       margin-top: 16px; }
       #addEventsModal form .event-badge p {
         margin-bottom: 10px;
         font-size: 14px;
         font-weight: 600;
-        color: #595b69; }
+        color: #050505; }
     #addEventsModal form input {
       margin-bottom: 25px; }
     #addEventsModal form .form-group {
@@ -199,12 +199,12 @@ a.bg-primary:hover, a.bg-success:hover, a.bg-warning:hover, a.bg-danger:hover {
 
 #calendar .form-control {
   margin-bottom: 20px;
-  color: #3b3f5c;
+  color: #212121;
   letter-spacing: 2px;
   font-weight: 600; }
 
 input[readonly] {
-  color: #3b3f5c; }
+  color: #212121; }
 
 .modal-footer {
   border-top: none;

@@ -16,7 +16,7 @@ select.bs-select-hidden, select.selectpicker {
   .bootstrap-select.btn-group > .dropdown-toggle {
     height: auto;
     border: 1px solid #bfc9d4;
-    color: #3b3f5c !important;
+    color: #212121 !important;
     font-size: 15px;
     padding: 8px 10px;
     letter-spacing: 1px;
@@ -30,9 +30,9 @@ select.bs-select-hidden, select.selectpicker {
     padding-right: 25px;
     z-index: 1; }
     .bootstrap-select > .dropdown-toggle.bs-placeholder {
-      color: #888ea8; }
+      color: #313131; }
       .bootstrap-select > .dropdown-toggle.bs-placeholder:hover, .bootstrap-select > .dropdown-toggle.bs-placeholder:focus, .bootstrap-select > .dropdown-toggle.bs-placeholder:active {
-        color: #888ea8; }
+        color: #313131; }
   .bootstrap-select > select {
     position: absolute !important;
     bottom: 0;
@@ -62,7 +62,7 @@ select.bs-select-hidden, select.selectpicker {
 .bootstrap-select.show .dropdown-toggle {
   border: 1px solid #2762AB !important;
   box-shadow: 0 0 5px 2px rgba(194, 213, 255, 0.619608);
-  color: #3b3f5c; }
+  color: #212121; }
   .bootstrap-select.show .dropdown-toggle.btn-outline-primary {
     border: 1px solid #2762AB !important; }
   .bootstrap-select.show .dropdown-toggle.btn-outline-info {

@@ -24,7 +24,7 @@ body {
   background-color: #c2d5ff; }
   .cu-contact-section .cu-section-header {
     position: absolute;
-    background: #3b3f5c;
+    background: #212121;
     z-index: 1;
     width: 100%;
     padding: 15px 34px;
@@ -74,7 +74,7 @@ body {
         font-size: 22px;
         font-weight: 600;
         margin-bottom: 25px;
-        color: #3b3f5c; }
+        color: #212121; }
       .cu-contact-section .contact-form form input {
         padding: 8px 5px 8px 40px;
         background-color: transparent;
@@ -84,7 +84,7 @@ body {
           font-size: 14px; }
         .cu-contact-section .contact-form form input:focus {
           background-color: #ffffff;
-          border-color: #3b3f5c; }
+          border-color: #212121; }
   .cu-contact-section .n-chk {
     display: inline-block; }
   .cu-contact-section .form-group textarea {
@@ -97,7 +97,7 @@ body {
       font-size: 14px; }
     .cu-contact-section .form-group textarea:focus {
       background-color: #ffffff;
-      border-color: #3b3f5c; }
+      border-color: #212121; }
     .cu-contact-section .form-group textarea:-ms-input-placeholder {
       color: #7b8489; }
   .cu-contact-section form button {

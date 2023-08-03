@@ -25,14 +25,14 @@
       letter-spacing: 1px; }
     .modal-content .modal-header svg {
       width: 17px;
-      color: #595b69; }
+      color: #050505; }
   .modal-content .modal-body {
     padding: 26px 26px; }
     .modal-content .modal-body a:not(.btn) {
       color: #2762AB;
       font-weight: 600; }
     .modal-content .modal-body p {
-      color: #888ea8;
+      color: #313131;
       letter-spacing: 1px;
       font-size: 14px;
       line-height: 22px; }
@@ -106,7 +106,7 @@
   .modal-notification .modal-body .icon-content svg {
     width: 36px;
     height: 36px;
-    color: #888ea8;
+    color: #313131;
     fill: rgba(0, 23, 55, 0.08); }
 
 /*

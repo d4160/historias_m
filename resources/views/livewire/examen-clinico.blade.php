@@ -1,7 +1,7 @@
 <div>
     <input type="hidden" id="examen_clinico_modal_id" name="examen_clinico_id" value="{{ old('examen_clinico_id') }}">
 
-    <span style="font-weight: bold; color: #7b7e8c; font-size: 17px;">Funciones Vitales</span>
+    <span style="font-weight: bold; color: #313131; font-size: 17px;">Funciones Vitales</span>
 
     <div class="mt-2 form-group">
         <div class="row">
@@ -17,18 +17,17 @@
                     value="{{ old('fr') }}">
                 @error('fr') <div class="invalid-feedback" style="display: block;">{{ $message }}</div> @enderror
             </div>
+        </div>
+    </div>
 
+    <div class="mt-2 form-group">
+        <div class="row">
             <div class="col">
                 <label for="pa">PA (mmHg)</label>
                 <input id="pa" name="pa" type="text" maxlength="10" class="mb-2 form-control" placeholder=""
                     value="{{ old('pa') }}">
                 @error('pa') <div class="invalid-feedback" style="display: block;">{{ $message }}</div> @enderror
             </div>
-        </div>
-    </div>
-
-    <div class="mt-2 form-group">
-        <div class="row">
             <div class="col">
                 <label for="sat">Saturación (%)</label>
                 <input id="sat" name="sat" min="0" type="number" step="1" class="mb-2 form-control" placeholder=""
@@ -45,7 +44,7 @@
         </div>
     </div>
 
-    <span style="font-weight: bold; color: #7b7e8c; font-size: 17px;">Otros Datos</span>
+    <span style="font-weight: bold; color: #313131; font-size: 17px;">Otros Datos</span>
 
     <div class="mt-2 form-group">
         <div class="row">

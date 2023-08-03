@@ -57,8 +57,8 @@
 
 .alert-dark {
   color: #fff;
-  background-color: #3b3f5c;
-  border-color: #3b3f5c; }
+  background-color: #212121;
+  border-color: #212121; }
 
 /*Outline Alerts*/
 .alert-outline-primary {
@@ -131,11 +131,11 @@
     color: #EE8903; }
 
 .alert-light-dark {
-  color: #3b3f5c;
-  background-color: #595b69;
-  border-color: #3b3f5c; }
+  color: #212121;
+  background-color: #050505;
+  border-color: #212121; }
   .alert-light-dark svg.close {
-    color: #3b3f5c; }
+    color: #212121; }
 
 /*  Background Alerts      */
 .alert-background {

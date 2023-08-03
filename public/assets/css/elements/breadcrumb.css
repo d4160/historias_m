@@ -23,7 +23,7 @@
   .breadcrumb-one .breadcrumb-item {
     align-self: center; }
     .breadcrumb-one .breadcrumb-item a {
-      color: #888ea8;
+      color: #313131;
       vertical-align: text-bottom; }
       .breadcrumb-one .breadcrumb-item a svg {
         width: 18px;
@@ -35,12 +35,12 @@
     .breadcrumb-one .breadcrumb-item span {
       vertical-align: text-bottom; }
     .breadcrumb-one .breadcrumb-item.active {
-      color: #3b3f5c;
+      color: #212121;
       font-weight: 600; }
     .breadcrumb-one .breadcrumb-item + .breadcrumb-item {
       padding: 0px; }
       .breadcrumb-one .breadcrumb-item + .breadcrumb-item::before {
-        color: #888ea8;
+        color: #313131;
         padding: 0 6px 0 6px; }
 
 /*
@@ -127,7 +127,7 @@
   .breadcrumb-three .breadcrumb {
     padding: 0; }
   .breadcrumb-three .breadcrumb-item {
-    color: #888ea8;
+    color: #313131;
     padding: 9px 9px;
     background: #f1f2f3;
     border-bottom-right-radius: 13px;

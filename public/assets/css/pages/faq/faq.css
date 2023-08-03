@@ -24,7 +24,7 @@ nav .navbar-brand {
 .fq-header-wrapper {
   padding: 0 0;
   background-color: #2762AB;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 1000'%3E%3Cg %3E%3Ccircle fill='%232b50ed' cx='50' cy='0' r='50'/%3E%3Cg fill='%233154ea' %3E%3Ccircle cx='0' cy='50' r='50'/%3E%3Ccircle cx='100' cy='50' r='50'/%3E%3C/g%3E%3Ccircle fill='%233658e8' cx='50' cy='100' r='50'/%3E%3Cg fill='%233c5be5' %3E%3Ccircle cx='0' cy='150' r='50'/%3E%3Ccircle cx='100' cy='150' r='50'/%3E%3C/g%3E%3Ccircle fill='%23415fe2' cx='50' cy='200' r='50'/%3E%3Cg fill='%234662df' %3E%3Ccircle cx='0' cy='250' r='50'/%3E%3Ccircle cx='100' cy='250' r='50'/%3E%3C/g%3E%3Ccircle fill='%234b66dc' cx='50' cy='300' r='50'/%3E%3Cg fill='%235069d9' %3E%3Ccircle cx='0' cy='350' r='50'/%3E%3Ccircle cx='100' cy='350' r='50'/%3E%3C/g%3E%3Ccircle fill='%23546cd5' cx='50' cy='400' r='50'/%3E%3Cg fill='%23596fd2' %3E%3Ccircle cx='0' cy='450' r='50'/%3E%3Ccircle cx='100' cy='450' r='50'/%3E%3C/g%3E%3Ccircle fill='%235e72cf' cx='50' cy='500' r='50'/%3E%3Cg fill='%236275cb' %3E%3Ccircle cx='0' cy='550' r='50'/%3E%3Ccircle cx='100' cy='550' r='50'/%3E%3C/g%3E%3Ccircle fill='%236678c8' cx='50' cy='600' r='50'/%3E%3Cg fill='%236b7bc4' %3E%3Ccircle cx='0' cy='650' r='50'/%3E%3Ccircle cx='100' cy='650' r='50'/%3E%3C/g%3E%3Ccircle fill='%236f7ec0' cx='50' cy='700' r='50'/%3E%3Cg fill='%237381bc' %3E%3Ccircle cx='0' cy='750' r='50'/%3E%3Ccircle cx='100' cy='750' r='50'/%3E%3C/g%3E%3Ccircle fill='%237783b8' cx='50' cy='800' r='50'/%3E%3Cg fill='%237c86b4' %3E%3Ccircle cx='0' cy='850' r='50'/%3E%3Ccircle cx='100' cy='850' r='50'/%3E%3C/g%3E%3Ccircle fill='%238089b0' cx='50' cy='900' r='50'/%3E%3Cg fill='%23848bac' %3E%3Ccircle cx='0' cy='950' r='50'/%3E%3Ccircle cx='100' cy='950' r='50'/%3E%3C/g%3E%3Ccircle fill='%23888ea8' cx='50' cy='1000' r='50'/%3E%3C/g%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 1000'%3E%3Cg %3E%3Ccircle fill='%232b50ed' cx='50' cy='0' r='50'/%3E%3Cg fill='%233154ea' %3E%3Ccircle cx='0' cy='50' r='50'/%3E%3Ccircle cx='100' cy='50' r='50'/%3E%3C/g%3E%3Ccircle fill='%233658e8' cx='50' cy='100' r='50'/%3E%3Cg fill='%233c5be5' %3E%3Ccircle cx='0' cy='150' r='50'/%3E%3Ccircle cx='100' cy='150' r='50'/%3E%3C/g%3E%3Ccircle fill='%23415fe2' cx='50' cy='200' r='50'/%3E%3Cg fill='%234662df' %3E%3Ccircle cx='0' cy='250' r='50'/%3E%3Ccircle cx='100' cy='250' r='50'/%3E%3C/g%3E%3Ccircle fill='%234b66dc' cx='50' cy='300' r='50'/%3E%3Cg fill='%235069d9' %3E%3Ccircle cx='0' cy='350' r='50'/%3E%3Ccircle cx='100' cy='350' r='50'/%3E%3C/g%3E%3Ccircle fill='%23546cd5' cx='50' cy='400' r='50'/%3E%3Cg fill='%23596fd2' %3E%3Ccircle cx='0' cy='450' r='50'/%3E%3Ccircle cx='100' cy='450' r='50'/%3E%3C/g%3E%3Ccircle fill='%235e72cf' cx='50' cy='500' r='50'/%3E%3Cg fill='%236275cb' %3E%3Ccircle cx='0' cy='550' r='50'/%3E%3Ccircle cx='100' cy='550' r='50'/%3E%3C/g%3E%3Ccircle fill='%236678c8' cx='50' cy='600' r='50'/%3E%3Cg fill='%236b7bc4' %3E%3Ccircle cx='0' cy='650' r='50'/%3E%3Ccircle cx='100' cy='650' r='50'/%3E%3C/g%3E%3Ccircle fill='%236f7ec0' cx='50' cy='700' r='50'/%3E%3Cg fill='%237381bc' %3E%3Ccircle cx='0' cy='750' r='50'/%3E%3Ccircle cx='100' cy='750' r='50'/%3E%3C/g%3E%3Ccircle fill='%237783b8' cx='50' cy='800' r='50'/%3E%3Cg fill='%237c86b4' %3E%3Ccircle cx='0' cy='850' r='50'/%3E%3Ccircle cx='100' cy='850' r='50'/%3E%3C/g%3E%3Ccircle fill='%238089b0' cx='50' cy='900' r='50'/%3E%3Cg fill='%23848bac' %3E%3Ccircle cx='0' cy='950' r='50'/%3E%3Ccircle cx='100' cy='950' r='50'/%3E%3C/g%3E%3Ccircle fill='%23313131' cx='50' cy='1000' r='50'/%3E%3C/g%3E%3C/svg%3E");
   background-attachment: fixed;
   background-size: contain; }
   .fq-header-wrapper h1 {
@@ -78,7 +78,7 @@ nav .navbar-brand {
       font-size: 15px;
       font-weight: 600;
       margin-bottom: 16px;
-      color: #3b3f5c; }
+      color: #212121; }
       .faq .faq-layouting .fq-comman-question-wrapper ul li:hover {
         cursor: pointer;
         color: #2762AB; }
@@ -86,7 +86,7 @@ nav .navbar-brand {
         display: inline-block;
         margin-right: 9px; }
       .faq .faq-layouting .fq-comman-question-wrapper ul li svg {
-        color: #888ea8;
+        color: #313131;
         width: 19px;
         height: 19px;
         vertical-align: bottom; }
@@ -119,13 +119,13 @@ nav .navbar-brand {
         overflow: hidden;
         white-space: nowrap;
         font-size: 13px;
-        color: #3b3f5c;
+        color: #212121;
         font-weight: 700; }
       .faq .faq-layouting .fq-tab-section .accordion .card .card-header div svg.feather-code {
         width: 17px;
         vertical-align: middle;
         margin-right: 11px;
-        color: #888ea8; }
+        color: #313131; }
     .faq .faq-layouting .fq-tab-section .accordion .card:hover .card-header div svg.feather-code {
       color: #2762AB; }
     .faq .faq-layouting .fq-tab-section .accordion .card .card-header div[aria-expanded="true"] svg.feather-code {
@@ -138,7 +138,7 @@ nav .navbar-brand {
       vertical-align: bottom;
       margin-right: 10px;
       width: 18px;
-      color: #888ea8;
+      color: #313131;
       fill: rgba(0, 23, 55, 0.08); }
     .faq .faq-layouting .fq-tab-section .accordion .card:hover .card-header div svg.feather-thumbs-up {
       color: #2762AB;
@@ -149,7 +149,7 @@ nav .navbar-brand {
     .faq .faq-layouting .fq-tab-section .accordion .card .card-header div span.faq-like-count {
       font-size: 13px;
       font-weight: 700;
-      color: #888ea8;
+      color: #313131;
       fill: rgba(0, 23, 55, 0.08); }
     .faq .faq-layouting .fq-tab-section .accordion .card:hover .card-header div span.faq-like-count, .faq .faq-layouting .fq-tab-section .accordion .card .card-header div[aria-expanded="true"] span.faq-like-count {
       color: #2762AB;
@@ -186,7 +186,7 @@ nav .navbar-brand {
       margin-bottom: 21px; }
     .faq .faq-layouting .fq-article-section .card .card-body p.card-text {
       letter-spacing: 1px;
-      color: #888ea8; }
+      color: #313131; }
     .faq .faq-layouting .fq-article-section .card .card-body p.meta-text {
       font-size: 13px;
       font-weight: 600;

@@ -46,11 +46,11 @@
     border-radius: 50%;
     margin-right: 13px; }
   .new-control.new-checkbox > input:checked ~ span.new-control-indicator {
-    background: #888ea8; }
+    background: #313131; }
     .new-control.new-checkbox > input:checked ~ span.new-control-indicator:after {
       display: block; }
   .new-control.new-checkbox span.new-control-indicator:after {
-    border: solid #888ea8;
+    border: solid #313131;
     top: 50%;
     left: 50%;
     margin-left: -2px;
@@ -64,7 +64,7 @@
     display: none; }
   .new-control.new-checkbox.checkbox-primary > input:checked ~ span.new-control-indicator {
     background: transparent;
-    border: 2px solid #888ea8; }
+    border: 2px solid #313131; }
 
 .mail-box-container {
   position: relative;
@@ -80,7 +80,7 @@
   position: absolute;
   width: 100vw;
   height: 100%;
-  background: #3b3f5c !important;
+  background: #212121 !important;
   z-index: 4 !important;
   opacity: 0;
   transition: all 0.5s ease-in-out; }
@@ -140,7 +140,7 @@
   .tab-title .nav-pills a.nav-link {
     position: relative;
     font-weight: 700;
-    color: #888ea8;
+    color: #313131;
     border-radius: 0;
     padding: 20px 0px 20px 15px;
     -webkit-transition: all 0.35s ease;
@@ -167,14 +167,14 @@
       color: #2762AB;
       fill: rgba(27, 85, 226, 0.239216); }
   .tab-title .nav-pills a.nav-link svg {
-    color: #888ea8;
+    color: #313131;
     margin-right: 6px;
     vertical-align: middle;
     width: 21px;
     height: 21px;
     fill: rgba(0, 23, 55, 0.08); }
   .tab-title .nav-pills .nav-link#all-list .badge {
-    color: #3b3f5c; }
+    color: #212121; }
   .tab-title .nav-pills .nav-link#todo-task-done .badge {
     color: #2196f3; }
   .tab-title .nav-pills .nav-link#todo-task-important .badge {
@@ -247,7 +247,7 @@
   .todo-inbox .todo-item .todo-item-inner p.todo-text {
     font-size: 14px;
     margin-bottom: 0;
-    color: #595b69;
+    color: #050505;
     font-weight: 600;
     -webkit-transition: all 0.35s ease;
     transition: all 0.35s ease;
@@ -262,7 +262,7 @@
     margin-bottom: 0;
     font-size: 12px;
     font-weight: 600;
-    color: #888ea8;
+    color: #313131;
     -webkit-transition: all 0.35s ease;
     transition: all 0.35s ease; }
   .todo-inbox .todo-item .todo-item-inner:hover p.meta-date {
@@ -321,7 +321,7 @@
       width: 21px;
       height: 21px;
       margin-top: 5px;
-      color: #888ea8; }
+      color: #313131; }
     .todo-inbox .todo-item .todo-item-inner .action-dropdown .show .dropdown-toggle svg {
       color: #1b2e4b; }
   .todo-inbox .todo-item.todo-task-done .todo-item-inner .todo-heading {
@@ -372,7 +372,7 @@
 .compose-box .compose-content h5 {
   font-weight: 700;
   font-size: 18px;
-  color: #3b3f5c;
+  color: #212121;
   text-align: center;
   margin-bottom: 35px; }
 
@@ -437,7 +437,7 @@
   background-color: #515365; }
 
 .compose-box .compose-content form #editor-container h1, .compose-box .compose-content form #editor-container p {
-  color: #3b3f5c; }
+  color: #212121; }
 
 @media (max-width: 767px) {
   .todo-inbox {
@@ -491,7 +491,7 @@
 
 /*
 =====================
-    Mozilla Support 
+    Mozilla Support
 =====================
 */
 @-moz-document url-prefix() {

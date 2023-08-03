@@ -9,7 +9,7 @@
 	===============================
 */
 h1, h2, h3, h4, h5, h6 {
-  color: #3b3f5c; }
+  color: #212121; }
 
 /*
     Basic
@@ -33,7 +33,7 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 14px;
     letter-spacing: 1px; }
     .card-header section > div.collapsed {
-      color: #888ea8; }
+      color: #313131; }
     .card-header section > div:not(.collapsed) {
       color: #2762AB;
       border-bottom: 2px solid #e0e6ed;
@@ -48,7 +48,7 @@ h1, h2, h3, h4, h5, h6 {
         width: 18px; }
 
 .card .card-body p {
-  color: #888ea8;
+  color: #313131;
   letter-spacing: 1px;
   font-size: 13px; }
   .card .card-body p:not(:last-child) {
@@ -62,7 +62,7 @@ h1, h2, h3, h4, h5, h6 {
     .card .card-body ul li:not(:last-child) {
       margin-bottom: 5px; }
     .card .card-body ul li a {
-      color: #3b3f5c;
+      color: #212121;
       font-size: 13px;
       font-weight: 600; }
       .card .card-body ul li a:hover {
@@ -96,7 +96,7 @@ h1, h2, h3, h4, h5, h6 {
   display: inline-block;
   margin-right: 10px; }
   .accordion-icons .accordion-icon svg {
-    color: #888ea8;
+    color: #313131;
     margin-right: 6px;
     vertical-align: middle;
     width: 20px;

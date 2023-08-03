@@ -82,7 +82,7 @@
 }
 .widget-two .w-numeric-value .w-numeric-title {
     font-size: 13px;
-    color: #888ea8;
+    color: #313131;
     font-weight: 600;
 }
 
@@ -221,13 +221,13 @@
     font-size: 13px;
     font-weight: 600;
     margin-bottom: 0;
-    color: #888ea8;
+    color: #313131;
 }
 .widget-three .widget-content .w-summary-info p {
     font-size: 12px;
     font-weight: 600;
     margin-bottom: 0;
-    color: #888ea8;
+    color: #313131;
 }
 .widget-three .widget-content .w-summary-stats .progress {
     margin-bottom: 0;
@@ -379,7 +379,7 @@
     font-size: 12px;
     margin-bottom: 0;
     font-weight: 600;
-    color: #888ea8;
+    color: #313131;
 }
 .widget-table-one .transactions-list .t-item .t-rate {
     align-self: center;
@@ -440,7 +440,7 @@
     height: 8px;
     top: 5px;
     left: 5px;
-    transform: translateX(-50%); 
+    transform: translateX(-50%);
     border-color: #e0e6ed;
     background: #bfc9d4;
     z-index: 1;
@@ -480,7 +480,7 @@
     border-color: rgb(241, 172, 176);
 }
 .widget-activity-four .timeline-line .item-timeline.timeline-dark .t-dot:before {
-    background-color: #3b3f5c;
+    background-color: #212121;
     border-color: rgb(159, 163, 187);
 }
 .widget-activity-four .timeline-line .item-timeline.timeline-secondary .t-dot:before {
@@ -499,7 +499,7 @@
     max-width: 100px;
     font-size: 12px;
     font-weight: 700;
-    color: #888ea8;
+    color: #313131;
     align-self: center;
 }
 .widget-activity-four .timeline-line .item-timeline .t-text {
@@ -512,7 +512,7 @@
 .widget-activity-four .timeline-line .item-timeline .t-text p {
     font-size: 12px;
     margin: 0;
-    color: #888ea8;
+    color: #313131;
     font-weight: 400;
 }
 .widget-activity-four .timeline-line .item-timeline .t-text span.badge {
@@ -532,7 +532,7 @@
 }
 .widget-activity-four .timeline-line .item-timeline .t-text p.t-time {
     text-align: right;
-    color: #888ea8;
+    color: #313131;
     font-size: 10px;
 }
 .widget-activity-four .timeline-line .item-timeline .t-time {
@@ -540,8 +540,8 @@
     min-width: 80px;
     max-width: 80px;
     font-size: 13px;
-    font-weight: 600; 
-    color: #595b69;
+    font-weight: 600;
+    color: #050505;
     letter-spacing: 1px;
 }
 .widget-activity-four .tm-action-btn {
@@ -619,7 +619,7 @@
     margin-left: 9px;
 }
 .widget-account-invoice-one .invoice-box [class*="info-detail-"].info-sub .info-detail-sub p {
-    color: #888ea8;
+    color: #313131;
     margin-bottom: 2px;
     font-weight: 600;
 }
@@ -713,7 +713,7 @@
     cursor: pointer;
     font-weight: 600;
     letter-spacing: 1px;
-    color: #888ea8;
+    color: #313131;
 }
 .widget-table-two .table > tbody > tr:hover > td .td-content {
     color: #515365;
@@ -794,7 +794,7 @@
     margin-left: 10px;
 }
 .widget-table-three .table > thead > tr > th:last-child .th-content {
-    text-align: right; 
+    text-align: right;
     margin-right: 10px;
 }
 .widget-table-three .table > thead > tr > th {
@@ -850,10 +850,10 @@
     cursor: pointer;
     font-weight: 600;
     letter-spacing: 1px;
-    color: #888ea8;
+    color: #313131;
 }
 .widget-table-three .table > tbody > tr:hover > td .td-content {
-    color: #3b3f5c;
+    color: #212121;
 }
 .widget-table-three .table > tbody > tr > td:first-child {
     border-top-left-radius: 6px;

@@ -22,7 +22,7 @@
   .component-card_1 .icon-svg {
     margin-bottom: 20px;
     display: inline-block;
-    background: #3b3f5c;
+    background: #212121;
     padding: 12px;
     border-radius: 50%;
     color: #f1f2f3; }
@@ -35,7 +35,7 @@
     letter-spacing: 1px;
     margin-bottom: 15px; }
   .component-card_1 .card-text {
-    color: #888ea8; }
+    color: #313131; }
 
 /*
 	Component Card 2
@@ -54,7 +54,7 @@
     letter-spacing: 1px;
     margin-bottom: 15px; }
   .component-card_2 .card-text {
-    color: #888ea8;
+    color: #313131;
     line-height: 22px; }
   .component-card_2 a.btn-primary {
     margin: 26px 0 0 0;
@@ -68,7 +68,7 @@
 .component-card_3 {
   border: none;
   border-radius: 8px;
-  background: #3b3f5c;
+  background: #212121;
   width: 18rem;
   margin: 0 auto;
   box-shadow: 4px 6px 10px -3px #bfc9d4; }
@@ -87,7 +87,7 @@
       font-weight: 600; }
     .component-card_3 .card-body p.card-user_occupation {
       font-size: 14px;
-      color: #595b69;
+      color: #050505;
       letter-spacing: 1px; }
     .component-card_3 .card-body .card-star_rating {
       margin-bottom: 24px; }
@@ -97,7 +97,7 @@
         .component-card_3 .card-body .card-star_rating svg.fill {
           fill: #e2a03f; }
     .component-card_3 .card-body .card-text {
-      color: #595b69;
+      color: #050505;
       font-style: italic;
       font-size: 14px;
       letter-spacing: 1px; }
@@ -128,7 +128,7 @@
     font-weight: 700;
     margin-bottom: 10px; }
   .component-card_4 .card-user_occupation {
-    color: #888ea8;
+    color: #313131;
     font-size: 13px; }
   .component-card_4 .card-star_rating span {
     display: inline-block;
@@ -177,7 +177,7 @@
       margin-bottom: 3px; }
     .component-card_5 .card-body p.card-user_occupation {
       font-size: 14px;
-      color: #595b69;
+      color: #050505;
       letter-spacing: 1px;
       margin-bottom: 0; }
     .component-card_5 .card-body .card-text {
@@ -210,13 +210,13 @@
       border-radius: 50%; }
     .component-card_6 .card-body h5.card-user_name {
       font-size: 16px;
-      color: #3b3f5c;
+      color: #212121;
       letter-spacing: 1px;
       font-weight: 700;
       margin-bottom: 3px; }
     .component-card_6 .card-body p.card-user_occupation {
       font-size: 14px;
-      color: #888ea8;
+      color: #313131;
       letter-spacing: 1px;
       margin-bottom: 0; }
     .component-card_6 .card-body .card-text {
@@ -323,7 +323,7 @@
     letter-spacing: 1px;
     margin-bottom: 15px; }
   .component-card_9 .card-text {
-    color: #888ea8;
+    color: #313131;
     line-height: 22px; }
   .component-card_9 .meta-info {
     position: relative;

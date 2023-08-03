@@ -46,7 +46,7 @@ body.error500 {
 
 .error500 .error-text {
   font-size: 18px;
-  color: #3b3f5c;
+  color: #212121;
   font-weight: 600; }
 
 .error500 a.btn {

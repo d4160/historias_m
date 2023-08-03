@@ -1,5 +1,5 @@
 <div>
-    <span style="font-weight: bold; color: #7b7e8c; font-size: 17px;">Procedencia</span>
+    <span style="font-weight: bold; color: #313131; font-size: 17px;">Procedencia</span>
 
     <div class="mb-4 mt-2 row">
         <div class="col">

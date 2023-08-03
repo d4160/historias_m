@@ -10,7 +10,7 @@ class Citas extends Component
     protected $listeners = ['forceRefresh' => '$refresh', 'filterByOption' => 'filterByOption', 'filterByDate' => 'filterByDate', 'filterByHideAtendido' => 'filterByHideAtendido'];
 
     public $citas = [];
-    public $option = 'fecha_hora';
+    public $option = 'created_at';
     public $hideAtendido = true;
     public $date = '';
 

@@ -34,7 +34,7 @@
                     <form class="m-3 mt-4 mb-4" method="POST" action="{{ route('patients.update', $patient->id) }}">
                         @csrf
 
-                        <span style="font-weight: bold; color: #7b7e8c; font-size: 17px;">Datos Personales</span>
+                        <span style="font-weight: bold; color: #313131; font-size: 17px;">Datos Personales</span>
 
                         <div class="mt-2 mb-4 row">
                             <div class="col">
@@ -79,7 +79,7 @@
 
                         <livewire:procedencia :patient="$user"/>
 
-                        <span style="font-weight: bold; color: #7b7e8c; font-size: 17px;">Otros Datos</span>
+                        <span style="font-weight: bold; color: #313131; font-size: 17px;">Otros Datos</span>
 
                         <div class="mt-2 mb-4 row">
                             <div class="col">
@@ -96,7 +96,7 @@
                                 <input id="proxima_cita_pac" name="proxima_cita_pac" value="{{ $patient->proxima_cita }}" class="form-control" type="text" placeholder="" readonly="readonly">
                             </div>  --}}
                             <div class="col">
-                                <label style="font-weight: bold; color: #7b7e8c; font-size: 17px;" for="otros">Otros</label>
+                                <label style="font-weight: bold; color: #313131; font-size: 17px;" for="otros">Otros</label>
                                 <textarea id="otros" name="otros" type="text" class="form-control" placeholder="">{{ $user->otros }}</textarea>
                             </div>
                         </div>
@@ -486,7 +486,10 @@
                 RegisterHistoriaEvents();
 
                 let f1 = flatpickr(document.getElementById('created_at'), {
-                    maxDate: GetTodayDate()
+                    maxDate: GetTodayDate(1),
+                    enableTime: true,
+                    minuteIncrement: 1,
+                    defaultDate: '{{ $user->created_at }}'
                 });
 
                 // var f2 = flatpickr(document.getElementById('proxima_cita_pac'), {

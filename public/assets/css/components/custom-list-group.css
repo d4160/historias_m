@@ -74,7 +74,7 @@
 
 .new-control.new-checkbox {
   cursor: pointer;
-  color: #3b3f5c;
+  color: #212121;
   margin-bottom: 0; }
   .new-control.new-checkbox .new-control-indicator {
     position: absolute;
@@ -94,7 +94,7 @@
     background-size: 50% 50%;
     border-radius: 2px; }
   .new-control.new-checkbox > input:checked ~ span.new-control-indicator {
-    background: #888ea8; }
+    background: #313131; }
     .new-control.new-checkbox > input:checked ~ span.new-control-indicator:after {
       display: block; }
   .new-control.new-checkbox span.new-control-indicator:after {
@@ -126,7 +126,7 @@
   padding: 10px 12px; }
   .list-group-item.active {
     color: #fff;
-    background-color: #888ea8;
+    background-color: #313131;
     border-color: transparent;
     box-shadow: 0 1px 15px 1px rgba(52, 40, 104, 0.15); }
 
@@ -140,7 +140,7 @@ code {
   color: #EE8903; }
 
 .list-group-item-action:hover {
-  color: #3b3f5c;
+  color: #212121;
   background-color: #f1f2f3;
   box-shadow: 0px 0px 12px 1px rgba(113, 106, 202, 0.08); }
 
@@ -149,7 +149,7 @@ code {
     Icons Meta
 */
 .list-group.list-group-icons-meta .list-group-item.active {
-  background-color: #888ea8; }
+  background-color: #313131; }
   .list-group.list-group-icons-meta .list-group-item.active .media svg {
     font-size: 27px;
     color: #fff; }
@@ -163,20 +163,20 @@ code {
   height: 20px; }
 
 .list-group.list-group-icons-meta .list-group-item .media .media-body h6 {
-  color: #3b3f5c;
+  color: #212121;
   font-weight: 700;
   margin-bottom: 0;
   font-size: 15px;
   letter-spacing: 1px; }
 
 .list-group.list-group-icons-meta .list-group-item .media .media-body p {
-  color: #3b3f5c;
+  color: #212121;
   margin-bottom: 0;
   font-size: 12px;
   font-weight: 600; }
 
 .list-group.list-group-media .list-group-item.active {
-  background-color: #888ea8; }
+  background-color: #313131; }
   .list-group.list-group-media .list-group-item.active .media .media-body h6, .list-group.list-group-media .list-group-item.active .media .media-body p {
     color: #fff;
     font-weight: 500; }
@@ -189,19 +189,19 @@ code {
 .list-group.list-group-media .list-group-item .media .media-body {
   align-self: center; }
   .list-group.list-group-media .list-group-item .media .media-body h6 {
-    color: #3b3f5c;
+    color: #212121;
     font-weight: 700;
     margin-bottom: 0;
     font-size: 16px;
     letter-spacing: 1px; }
   .list-group.list-group-media .list-group-item .media .media-body p {
-    color: #3b3f5c;
+    color: #212121;
     margin-bottom: 0;
     font-size: 12px;
     font-weight: 600; }
 
 .list-group.task-list-group .list-group-item-action.active {
-  background-color: #888ea8;
+  background-color: #313131;
   color: #fff; }
   .list-group.task-list-group .list-group-item-action.active .new-control.new-checkbox {
     color: #fff;

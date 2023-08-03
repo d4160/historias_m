@@ -13,7 +13,7 @@
         <form method="POST" id="form" class="mt-0" action="">
             @csrf
 
-            <span style="font-weight: bold; color: #7b7e8c; font-size: 17px;">Datos de Paciente</span>
+            <span style="font-weight: bold; color: #313131; font-size: 17px;">Datos de Paciente</span>
 
             <div class="mt-2 form-group">
                 <div class="row">
@@ -60,7 +60,7 @@
                 </div>
             </div>
 
-            <span style="font-weight: bold; color: #7b7e8c; font-size: 17px;">Datos de Cita</span>
+            <span style="font-weight: bold; color: #313131; font-size: 17px;">Datos de Cita</span>
 
             <div class="mt-2 form-group">
                 <div class="row">

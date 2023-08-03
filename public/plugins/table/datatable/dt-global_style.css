@@ -75,7 +75,7 @@ table.dataTable {
 
 .table > tbody > tr > td {
   border: none;
-  color: #888ea8;
+  color: #313131;
   font-size: 15px;
   letter-spacing: 1px; }
 
@@ -149,7 +149,7 @@ div.dataTables_wrapper div.dataTables_paginate {
   padding: 8px 12px;
   background: rgba(0, 23, 55, 0.08);
   border: none;
-  color: #888ea8; }
+  color: #313131; }
   .page-link:focus {
     box-shadow: none; }
 
@@ -159,7 +159,7 @@ div.dataTables_wrapper div.dataTables_paginate ul.pagination {
 .page-item.disabled .page-link {
   background: #f1f2f3; }
   .page-item.disabled .page-link svg {
-    color: #595b69; }
+    color: #050505; }
 
 .page-item:first-child .page-link, .page-item:last-child .page-link {
   border-radius: 50%;
@@ -178,7 +178,7 @@ div.dataTables_wrapper div.dataTables_paginate ul.pagination {
   width: 17px; }
 
 .table-cancel {
-  color: #888ea8;
+  color: #313131;
   margin-right: 6px;
   vertical-align: middle;
   fill: rgba(0, 23, 55, 0.08);

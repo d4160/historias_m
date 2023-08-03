@@ -26,14 +26,14 @@ body {
     border-color: #EE8903; }
 
 .help-block, .help-inline {
-  color: #888ea8; }
+  color: #313131; }
 
 .input-group-addon {
   background-color: #ebedf2;
-  color: #3b3f5c; }
+  color: #212121; }
 
 .dropdown-toggle:after {
-  color: #3b3f5c; }
+  color: #212121; }
 
 .has-warning .control-label, .has-warning .help-block {
   color: #ffbb44; }
@@ -58,7 +58,7 @@ body {
   color: #d3d3d3; }
 
 .form-horizontal .radio, .form-horizontal .radio-inline {
-  color: #888ea8;
+  color: #313131;
   font-weight: normal; }
 
 div.tagsinput {
@@ -69,12 +69,12 @@ div.tagsinput {
 
 .select2-container .select2-choice {
   border: 1px solid #ebedf2;
-  color: #888ea8;
+  color: #313131;
   font-size: 13px;
   font-weight: normal; }
 
 .select2-default {
-  color: #888ea8 !important;
+  color: #313131 !important;
   font-size: 13px !important;
   font-weight: normal; }
 
@@ -86,7 +86,7 @@ div.tagsinput {
   border: 1px solid #ebedf2; }
   .select2-container-multi .select2-choices .select2-search-choice {
     border: 1px solid #f1f2f3;
-    color: #888ea8;
+    color: #313131;
     font-weight: normal;
     font-size: 13px; }
 

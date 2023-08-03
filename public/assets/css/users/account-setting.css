@@ -30,7 +30,7 @@
     font-size: 20px; }
 
 .general-info .info h6, .about .info h5, .work-platforms .info h5, .contact .info h5, .social .info h5, .skill .info h5, .edu-experience .info h5, .work-experience .info h5 {
-  color: #3b3f5c;
+  color: #212121;
   margin: 4px 8px 40px 8px;
   font-weight: 700;
   font-size: 16px;
@@ -57,7 +57,7 @@
         color: #2762AB;
         vertical-align: middle; }
   .general-info .info label {
-    color: #888ea8;
+    color: #313131;
     font-size: 13px;
     letter-spacing: 1px; }
   .general-info .info .dropify-wrapper {
@@ -114,7 +114,7 @@
   .about .info, .about .save-info {
     padding: 20px; }
   .about .info label {
-    color: #888ea8;
+    color: #313131;
     font-size: 13px;
     letter-spacing: 1px; }
 
@@ -142,7 +142,7 @@
   .contact .info, .contact .save-info {
     padding: 20px; }
   .contact .info label {
-    color: #888ea8;
+    color: #313131;
     font-size: 13px;
     letter-spacing: 1px; }
 
@@ -197,7 +197,7 @@
     margin-top: 15px; }
   .skill .range-count {
     font-weight: 700;
-    color: #3b3f5c; }
+    color: #212121; }
     .skill .range-count .range-count-number {
       display: inline-block;
       background: #ffffff;
@@ -249,7 +249,7 @@
   .edu-experience .info, .edu-experience .save-info {
     padding: 20px; }
   .edu-experience .info label {
-    color: #888ea8;
+    color: #313131;
     font-size: 13px;
     letter-spacing: 1px; }
 
@@ -268,7 +268,7 @@
   .work-experience .info, .work-experience .save-info {
     padding: 20px; }
   .work-experience .info label {
-    color: #888ea8;
+    color: #313131;
     font-size: 13px;
     letter-spacing: 1px; }
 

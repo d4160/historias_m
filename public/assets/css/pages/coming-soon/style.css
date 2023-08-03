@@ -51,7 +51,7 @@ body {
     text-shadow: 0px 5px 4px rgba(31, 45, 61, 0.101961); }
   .coming-soon-cont .coming-soon-content > p:not(.terms-conditions) {
     font-size: 16px;
-    color: #888ea8;
+    color: #313131;
     font-weight: 700;
     margin-bottom: 50px; }
   .coming-soon-cont #timer {
@@ -137,7 +137,7 @@ body {
   .coming-soon-cont .terms-conditions {
     max-width: 480px;
     margin: 0 auto;
-    color: #3b3f5c;
+    color: #212121;
     font-weight: 600;
     margin-top: 70px; }
     .coming-soon-cont .terms-conditions a {

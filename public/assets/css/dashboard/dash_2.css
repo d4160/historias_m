@@ -147,7 +147,7 @@
     align-self: center;
 }
 .widget.widget-chart-three .widget-heading .dropdown a svg {
-    color: #888ea8;
+    color: #313131;
     width: 19px;
     height: 19px;
 }
@@ -233,8 +233,8 @@
     box-shadow: 0 10px 20px -10px #e2a03f;
 }
 .widget-activity-three .timeline-line .item-timeline .t-dot div.t-dark {
-    background-color: #3b3f5c;
-    box-shadow: 0 10px 20px -10px #3b3f5c;
+    background-color: #212121;
+    box-shadow: 0 10px 20px -10px #212121;
 }
 .widget-activity-three .timeline-line .item-timeline .t-dot svg {
     color: #fff;
@@ -261,16 +261,16 @@
     margin-bottom: 0;
     font-size: 11px;
     font-weight: 500;
-    color: #888ea8;
+    color: #313131;
 }
 .widget-activity-three .timeline-line .item-timeline .t-content p {
     margin-bottom: 8px;
     font-size: 13px;
     font-weight: 500;
-    color: #888ea8;
+    color: #313131;
 }
 .widget-activity-three .timeline-line .item-timeline .t-content div.tags {
-    
+
 }
 .widget-activity-three .timeline-line .item-timeline .t-content div.tags .badge {
     padding: 2px 4px;
@@ -281,7 +281,7 @@
 .widget-activity-three .timeline-line .item-timeline .t-content div.tags .badge-primary {
     background-color: #c2d5ff;
     color: #2762AB;
-    
+
 }
 
 .widget-activity-three .timeline-line .item-timeline .t-content div.tags .badge-success {
@@ -292,7 +292,7 @@
 .widget-activity-three .timeline-line .item-timeline .t-content div.tags .badge-warning {
     background-color: #ffeccb;
     color: #e2a03f;
-    
+
 }
 .widget-activity-three .timeline-line .item-timeline .t-dot:after {
     content: '';
@@ -465,7 +465,7 @@
     letter-spacing: 1px;
     margin-bottom: 0;
     font-weight: 600;
-    color: #888ea8;
+    color: #313131;
     padding: 0;
 }
 .widget-card-one .widget-content p {
@@ -568,13 +568,13 @@
     font-size: 13px;
     font-weight: 600;
     margin-bottom: 0;
-    color: #888ea8;
+    color: #313131;
 }
 .widget-four .widget-content .w-browser-info p {
     font-size: 12px;
     font-weight: 600;
     margin-bottom: 0;
-    color: #888ea8;
+    color: #313131;
 }
 .widget-four .widget-content .w-browser-stats .progress {
     margin-bottom: 0;
@@ -633,7 +633,7 @@
 .widget-card-two .media .media-body p {
     margin-bottom: 0;
     font-weight: 600;
-    color: #888ea8;
+    color: #313131;
 }
 .widget-card-two .card-bottom-section {
     text-align: center;
@@ -651,7 +651,7 @@
     border: 2px solid #e0e6ed;
 }
 .widget-card-two .card-bottom-section .img-group img:not(:last-child) {
-    margin-right: 5px;    
+    margin-right: 5px;
 }
 .widget-card-two .card-bottom-section a {
     display: block;
@@ -701,7 +701,7 @@
 .widget-five .widget-content .header-body p {
     margin-bottom: 0;
     font-weight: 600;
-    color: #888ea8;
+    color: #313131;
     padding: 0;
 }
 .widget-five .widget-content .task-action {
@@ -711,7 +711,7 @@
     align-self: center;
 }
 .widget-five .widget-content .task-action .dropdown.custom-dropdown a.dropdown-toggle svg {
-    color: #888ea8;
+    color: #313131;
 }
 .widget-five .widget-content .task-action .dropdown.custom-dropdown .dropdown-menu {
     padding: 8px 8px;
@@ -748,7 +748,7 @@
     color: #009688;
 }
 .widget-five .w-content div .task-hight-priority {
-    color: #595b69;
+    color: #050505;
     font-weight: 500;
     margin-bottom: 0;
 }

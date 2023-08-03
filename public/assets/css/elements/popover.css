@@ -9,7 +9,7 @@
 	===============================
 */
 .popovers-section h6 {
-  color: #3b3f5c;
+  color: #212121;
   font-size: 0.875rem;
   margin-top: 25px;
   margin-bottom: 20px; }
@@ -40,7 +40,7 @@
   border-color: #dccff7; }
 
 .popover-dark {
-  border-color: #595b69; }
+  border-color: #050505; }
 
 /* 		popover Arrow 	*/
 .popover-primary .arrow:after, .popover-primary .arrow:before {
@@ -62,7 +62,7 @@
   border-top-color: #dccff7; }
 
 .popover-dark .arrow:after, .popover-dark .arrow:before {
-  border-top-color: #595b69; }
+  border-top-color: #050505; }
 
 /* 		popover Header 		*/
 .popover-primary .popover-header {
@@ -96,9 +96,9 @@
   color: #EE8903; }
 
 .popover-dark .popover-header {
-  background-color: #595b69;
+  background-color: #050505;
   border: none;
-  color: #3b3f5c; }
+  color: #212121; }
 
 /*  	Popover Body 	*/
 .popover-primary .popover-body {
@@ -126,5 +126,5 @@
   color: #EE8903; }
 
 .popover-dark .popover-body {
-  background-color: #595b69;
-  color: #3b3f5c; }
+  background-color: #050505;
+  color: #212121; }

@@ -34,13 +34,13 @@
 .group-section {
   font-weight: 600;
   font-size: 15px;
-  color: #3b3f5c;
+  color: #212121;
   letter-spacing: 1px;
   margin-top: 25px;
   margin-bottom: 13px;
   padding: 9px 20px; }
   .group-section svg {
-    color: #888ea8;
+    color: #313131;
     margin-right: 6px;
     vertical-align: text-top;
     width: 20px;
@@ -52,7 +52,7 @@
   position: absolute;
   width: 100%;
   height: 100%;
-  background: #3b3f5c !important;
+  background: #212121 !important;
   z-index: 4 !important;
   opacity: 0;
   transition: all 0.5s ease-in-out; }
@@ -77,7 +77,7 @@
 
 .tab-title .nav-pills .nav-link.active, .tab-title .nav-pills .show > .nav-link {
   background-color: #bfc9d4;
-  color: #3b3f5c;
+  color: #212121;
   font-weight: 700; }
 
 .tab-title .nav-pills a.nav-link {
@@ -109,7 +109,7 @@
   font-size: 14px;
   font-weight: 700;
   padding: 9px 15px 9px 50px;
-  color: #3b3f5c;
+  color: #212121;
   letter-spacing: 1px; }
   .tab-title .nav-pills.group-list .nav-item a[class*="g-dot-"]:before {
     position: absolute;
@@ -203,7 +203,7 @@
       .note-container.note-grid .note-item .note-inner-content .note-title {
         font-size: 19px;
         font-weight: 600;
-        color: #3b3f5c;
+        color: #212121;
         margin-bottom: 11px;
         letter-spacing: 0px; }
       .note-container.note-grid .note-item .note-inner-content .meta-time {
@@ -247,7 +247,7 @@
           content: '';
           background: transparent;
           border-radius: 50%;
-          border: 2px solid #595b69;
+          border: 2px solid #050505;
           display: inline-block;
           height: 11px;
           width: 11px;
@@ -276,7 +276,7 @@
           padding: 3px 35px;
           font-weight: 600;
           letter-spacing: 0px;
-          color: #3b3f5c; }
+          color: #212121; }
         .note-container.note-grid .note-item .note-inner-content .note-footer .tags-selector .dropdown-menu .dropdown-item.active, .note-container.note-grid .note-item .note-inner-content .note-footer .tags-selector .dropdown-menu .dropdown-item:active {
           background: transparent; }
         .note-container.note-grid .note-item .note-inner-content .note-footer .tags-selector .dropdown-menu [class*="g-dot-"]:before {
@@ -314,7 +314,7 @@
     .note-container.note-grid .note-item.note-personal .note-inner-content .note-footer .nav-link .feather-more-vertical, .note-container.note-grid .note-item.note-work .note-inner-content .note-footer .nav-link .feather-more-vertical, .note-container.note-grid .note-item.note-social .note-inner-content .note-footer .nav-link .feather-more-vertical, .note-container.note-grid .note-item.note-important .note-inner-content .note-footer .nav-link .feather-more-vertical {
       display: none; }
 
-/* 
+/*
     Note Container
 */
 /*
@@ -363,7 +363,7 @@
   box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.2);
   cursor: pointer;
   transition: .600s;
-  color: #3b3f5c; }
+  color: #212121; }
 
 .notes-box .notes-content form .note-title {
   padding-top: 20px; }

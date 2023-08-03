@@ -54,7 +54,7 @@ body.swal2-iosfix {
   .swal2-modal.swal2-loading {
     overflow-y: hidden; }
   .swal2-modal .swal2-title {
-    color: #3b3f5c !important;
+    color: #212121 !important;
     font-size: 24px !important;
     text-align: center;
     font-weight: normal;
@@ -102,7 +102,7 @@ body.swal2-iosfix {
       vertical-align: -1px;
       height: 15px;
       width: 15px;
-      border: 3px solid #888ea8;
+      border: 3px solid #313131;
       -webkit-box-shadow: 1px 1px 1px #fff;
       box-shadow: 1px 1px 1px #fff;
       border-right-color: transparent;
@@ -190,7 +190,7 @@ body.swal2-iosfix {
 
 .swal2-modal .swal2-input:focus, .swal2-modal .swal2-textarea:focus {
   outline: none;
-  border: 1px solid #3b3f5c;
+  border: 1px solid #212121;
   -webkit-box-shadow: 0 0 3px #c4e6f5;
   box-shadow: 0 0 3px #c4e6f5; }
 
@@ -263,7 +263,7 @@ body.swal2-iosfix {
   transition: border-color box-shadow .3s; }
 
 .swal2-modal .swal2-select {
-  color: #888ea8;
+  color: #313131;
   font-size: inherit;
   padding: 5px 10px;
   min-width: 40%;
@@ -292,7 +292,7 @@ body.swal2-iosfix {
   margin: 0 -20px;
   overflow: hidden;
   padding: 10px;
-  color: #888ea8;
+  color: #313131;
   font-size: 15px;
   font-weight: 300;
   display: none; }

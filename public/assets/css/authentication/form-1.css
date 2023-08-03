@@ -56,14 +56,14 @@ body {
       align-self: center; }
     .form-form .form-form-wrap .user-meta p {
       font-size: 31px;
-      color: #3b3f5c;
+      color: #212121;
       margin-bottom: 0; }
   .form-form .form-form-wrap h1 .brand-name {
     color: #2762AB;
     font-weight: 600; }
   .form-form .form-form-wrap p.signup-link {
     font-size: 14px;
-    color: #3b3f5c;
+    color: #212121;
     font-weight: 700;
     margin-bottom: 50px; }
     .form-form .form-form-wrap p.signup-link a {
@@ -77,11 +77,11 @@ body {
       border: 1px solid #000; }
   .form-form .form-form-wrap form .field-wrapper.toggle-pass p {
     font-weight: 600;
-    color: #3b3f5c;
+    color: #212121;
     margin-bottom: 0; }
   .form-form .form-form-wrap form .field-wrapper .logged-in-user-name {
     font-size: 37px;
-    color: #3b3f5c; }
+    color: #212121; }
   .form-form .form-form-wrap form .field-wrapper svg {
     position: absolute;
     top: 16px;
@@ -91,7 +91,7 @@ body {
     margin-bottom: 20px; }
     .form-form .form-form-wrap form .field-wrapper.terms_condition label {
       font-size: 14px;
-      color: #888ea8;
+      color: #313131;
       padding-left: 31px;
       font-weight: 100; }
     .form-form .form-form-wrap form .field-wrapper.terms_condition a {
@@ -108,7 +108,7 @@ body {
     border: none;
     -ms-transition: all 0.2s ease-in-out 0s;
     transition: all 0.2s ease-in-out 0s;
-    color: #3b3f5c;
+    color: #212121;
     font-weight: 700;
     font-size: 16px;
     border-bottom: 1px solid #e0e6ed;
@@ -147,13 +147,13 @@ body {
     margin-top: 60px; }
     .form-form .form-form-wrap form .field-wrapper.keep-logged-in label {
       font-size: 14px;
-      color: #888ea8;
+      color: #313131;
       padding-left: 31px;
       font-weight: 100; }
   .form-form .terms-conditions {
     max-width: 480px;
     margin: 0 auto;
-    color: #3b3f5c;
+    color: #212121;
     font-weight: 600;
     margin-top: 90px; }
     .form-form .terms-conditions a {
