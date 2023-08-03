@@ -24,9 +24,16 @@ class KardexController extends Controller
             $historia->save();
         }
         $patient = $historia->paciente;
+        $user = $patient->user;
+        if (!$user->procedencia_dep || !$user->procedencia_prov) {
+            $user->procedencia_dep = '12';
+            $user->procedencia_prov = '1201';
+            $user->procedencia_dis = '120101';
+            $user->save();
+        }
 
         return view('kardex.all', ['kardex' => $kardex, 'historia' => $historia,
-            'user' => $patient->user, 'patient_id' => $patient->id
+            'user' => $user, 'patient_id' => $patient->id
         ]);
     }
 

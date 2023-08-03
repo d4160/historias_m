@@ -11,7 +11,7 @@
         Livewire.emit('numDocFocusout', $('#num_document').val(), $('#num_document').attr('p_id'));
     } );
 
-    Livewire.on('numDocAlreadyExists', () => {
+    Livewire.on('numDocAlreadyExists', (route) => {
         Snackbar.show({
             text: 'DNI o CE ya esta registrado',
             actionTextColor: '#fff',
@@ -20,6 +20,8 @@
         });
 
         $('#num_document').focus();
+
+        window.open(route, '_blank');
     });
 
 </script>
