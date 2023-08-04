@@ -40,10 +40,10 @@
                 <tr>
                     <th class="checkbox-column"> Id </th>
                     <th>Fecha Registro</th>
-                    <th>Fecha Cita</th>
                     <th>Paciente</th>
                     <th class="text-center">Motivo</th>
                     <th class="text-center">Consultorio</th>
+                    <th>Fecha Cita</th>
                     <th class="text-center">Médico Tratante</th>
                     <th class="text-center">Estado</th>
                     <th class="text-center">Obs.</th>
@@ -57,10 +57,10 @@
                     {{-- class="checkbox-column" --}}
                     <td>{{ $cita->id }}</td>
                     <td>{{ $cita->created_at }}</td>
-                    <td>{{ substr($cita->fecha_hora, 0, 16) }}</td>
                     <td>{{ $cita->paciente->user->full_name }}</td>
                     <td class="text-center">{{ $cita->tipo == 'Otros' ? $cita->tipo_otros : $cita->tipo }}</td>
                     <td class="text-center">{{ $cita->consultorio }}</td>
+                    <td>{{ substr($cita->fecha_hora, 0, 16) }}</td>
                     <td class="text-center">{{ $cita->medico }}</td>
                     <td class="text-center">
                         {{-- {{ $cita->estado_enum }} --}}

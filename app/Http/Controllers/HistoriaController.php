@@ -292,7 +292,7 @@ class HistoriaController extends Controller
         $examenesAuxiliares = $historia->examenesAuxiliares('asc')->get();
         $examsString = '';
         foreach ($examenesAuxiliares as $exam) {
-            $examsString .= '' . ($exam->descripcion ? ('<b>' . $exam->titulo . '</b>: ' . $exam->descripcion) : ('<b>' . $exam->titulo . '</b>')) . '; ';
+            $examsString .= '' . ($exam->descripcion ? ('<b>' . $exam->titulo . '</b>: ' . $exam->descripcion) : ('<b>' . $exam->titulo . '</b>')) . ' - ' . substr($exam->created_at, 0, 16) . '; ';
         }
 
         $tratamientos = $historia->tratamientos('asc')->get();
