@@ -14,9 +14,9 @@ class CitaController extends Controller
     //
     public function index()
     {
-        $citas = Cita::where('estado_enum', '!=', 'Atendido')->with(['paciente' => fn ($query) => $query->with('user') ])->orderBy('created_at', 'desc')->get();
+        //$citas = Cita::where('estado_enum', '!=', 'Atendido')->with(['paciente' => fn ($query) => $query->with('user') ])->orderBy('created_at', 'desc')->get();
 
-        return view('citas.all', ['citas' => $citas]);
+        return view('citas.all', ['citas' => []]);
     }
 
     public function store(Request $request, $id = 0, $user_id = 0)
