@@ -57,7 +57,7 @@
             <a href="javascript:void(0);" class="sidebarCollapse" data-placement="bottom"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></a>
 
             <div class="nav-logo align-self-center">
-                <a href="/" class="navbar-brand href="/"><img style="width: auto!important; height: 80px;" alt="logo" src="{{ asset('assets/img/logo.png') }}"></a>
+                <a href="/" class="navbar-brand"><img style="width: auto!important; height: 80px;" alt="logo" src="{{ asset('assets/img/logo.png') }}"></a>
                     {{--  <span class="navbar-brand-name">Yabaja</span>  --}}
             </div>
 
@@ -121,19 +121,19 @@
             <nav id="topbar">
                 <ul class="flex-row text-center navbar-nav theme-brand">
                     <li class="nav-item theme-logo">
-                        <a href="index.html">
-                            <img src="assets/img/90x90.jpg" class="navbar-logo" alt="logo">
+                        <a href="/">
+                            <img style="width: auto!important; height: 60px;" src="{{ asset('assets/img/logo.png') }}" class="navbar-logo" alt="logo" width="">
                         </a>
                     </li>
-                    <li class="nav-item theme-text">
+                    {{-- <li class="nav-item theme-text">
                         <a href="/" class="nav-link"> Yabaja </a>
-                    </li>
+                    </li> --}}
                 </ul>
 
                 <ul class="list-unstyled menu-categories" id="topAccordion">
                     @if ($user->user_role_id === 1)
-                    <li class="menu single-menu active">
-                        <a href="#menu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle autodroprown">
+                        <li class="menu single-menu {{ request()->is('admins*') ? 'active' : '' }}">
+                        <a href="#admins" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle autodroprown">
                             <div class="">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user-check">
@@ -145,7 +145,7 @@
                             </div>
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
                         </a>
-                        <ul class="collapse submenu list-unstyled" id="menu1" data-parent="#topAccordion">
+                        <ul class="collapse submenu list-unstyled" id="admins" data-parent="#topAccordion">
                             <li>
                                 <a href="{{ route('admins.all') }}"> Lista de Administradores </a>
                             </li>
@@ -157,8 +157,8 @@
                     @endif
 
                     @if ($user->user_role_id > 0 && $user->user_role_id < 5)
-                    <li class="menu single-menu active">
-                        <a href="#menu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle autodroprown">
+                    <li class="menu single-menu {{ request()->is('pacientes*') ? 'active' : '' }}">
+                        <a href="#pacientes" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle autodroprown">
                             <div class="">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user">
@@ -169,7 +169,7 @@
                             </div>
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
                         </a>
-                        <ul class="collapse submenu list-unstyled" id="menu1" data-parent="#topAccordion">
+                        <ul class="collapse submenu list-unstyled" id="pacientes" data-parent="#topAccordion">
                             <li>
                                 <a href="{{ route('patients.all') }}"> Lista de Pacientes </a>
                             </li>
@@ -179,8 +179,8 @@
                         </ul>
                     </li>
 
-                    <li class="menu single-menu active">
-                        <a href="#menu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle autodroprown">
+                    <li class="menu single-menu {{ request()->is('citas*') ? 'active' : '' }}">
+                        <a href="#citas" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle autodroprown">
                             <div class="">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar">
@@ -197,7 +197,7 @@
                                 <polyline points="6 9 12 15 18 9"></polyline>
                             </svg>
                         </a>
-                        <ul class="collapse submenu list-unstyled" id="menu1" data-parent="#topAccordion">
+                        <ul class="collapse submenu list-unstyled" id="citas" data-parent="#topAccordion">
                             <li>
                                 <a href="{{ route('citas.all') }}"> Agenda de Citas </a>
                             </li>
@@ -208,15 +208,15 @@
                     </li>
 
                     @elseif ($user->user_role_id === 5)
-                    <li class="menu single-menu active">
-                        <a href="#menu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle autodroprown">
+                    <li class="menu single-menu {{ request()->is('resultados*') ? 'active' : '' }}">
+                        <a href="#exams" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle autodroprown">
                             <div class="">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-box"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
                                 <span>Resultados en Línea</span>
                             </div>
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-down"><polyline points="6 9 12 15 18 9"></polyline></svg>
                         </a>
-                        <ul class="collapse submenu list-unstyled" id="menu2" data-parent="#topAccordion">
+                        <ul class="collapse submenu list-unstyled" id="exams" data-parent="#topAccordion">
                             <li>
                                 <a href="{{ route('results.all') }}"> Mis Exámenes Auxiliares </a>
                             </li>
@@ -268,6 +268,7 @@
             App.init();
         });
     </script>
+    <script src="{{ asset('plugins/highlight/highlight.pack.js') }}"></script>
     <script src="{{ asset('assets/js/custom.js') }}"></script>
     {{-- <!-- END GLOBAL MANDATORY SCRIPTS --> --}}
 

@@ -58,10 +58,10 @@
                     <td>{{ $cita->id }}</td>
                     <td>{{ $cita->created_at }}</td>
                     <td>{{ $cita->paciente->user->full_name }}</td>
-                    <td class="text-center">{{ $cita->tipo == 'Otros' ? $cita->tipo_otros : $cita->tipo }}</td>
+                    <td class="text-center">{{ $cita->tipo }}</td>
                     <td class="text-center">{{ $cita->consultorio }}</td>
                     <td>{{ substr($cita->fecha_hora, 0, 16) }}</td>
-                    <td class="text-center">{{ $cita->medico }}</td>
+                    <td class="text-center">{{ $cita->medico == 'Otro' ? $cita->medico_otro : $cita->medico }}</td>
                     <td class="text-center">
                         {{-- {{ $cita->estado_enum }} --}}
                         @switch($cita->estado_enum)

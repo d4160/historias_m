@@ -25,7 +25,7 @@
                         @enderror
                     </div>
                     <div class="col-7">
-                        <label for="nombres">Nombres</label>
+                        <label for="nombres">Nombres *</label>
                         <input id="nombres" name="nombres" type="text" class="mb-2 form-control" placeholder=""
                             value="{{ old('nombres') }}" required>
                         @error('nombres') <div class="invalid-feedback" style="display: block;">{{ $message }}</div>
@@ -37,7 +37,7 @@
             <div class="form-group">
                 <div class="row">
                     <div class="col">
-                        <label for="last_name1">Apellido Paterno</label>
+                        <label for="last_name1">Apellido Paterno *</label>
                         <input id="last_name1" name="last_name1" type="text" class="mb-2 form-control" placeholder=""
                             value="{{ old('last_name1') }}" required>
                         @error('last_name1') <div class="invalid-feedback" style="display: block;">{{ $message }}</div>
@@ -71,20 +71,18 @@
                         @enderror
                     </div>
                     <div class="col">
-                        <label for="consultorio">Consultorio</label>
-                        {{ Form::select('consultorio', ['Consultorio 1' => 'Consultorio 1', 'Consultorio 2' => 'Consultorio 2', 'Tópico' =>
-                        'Tópico'], old('consultorio'), ['id' =>
-                        'consultorio', 'class' => 'form-control', 'required' => 'required']) }}
-                        @error('consultorio') <div class="invalid-feedback" style="display: block;">{{ $message }}</div>
-                        @enderror
-                    </div>
-                    <div class="col">
                         <label for="medico">Médico Tratante</label>
                         {{ Form::select('medico', ['Yamil Cabrera' => 'Yamil Cabrera', 'Daysy Mechan' => 'Daysy Mechan', 'Rodolfo Cairo' =>
-                        'Rodolfo Cairo'],
+                        'Rodolfo Cairo', 'Otro' => 'Otro'],
                         old('medico'), ['id' =>
                         'medico', 'class' => 'form-control', 'required' => 'required']) }}
                         @error('medico') <div class="invalid-feedback" style="display: block;">{{ $message }}</div>
+                        @enderror
+                    </div>
+                    <div class="d-none col-5" id="medico_otro_parent">
+                        <label for="medico_otro">Médico Otro</label>
+                        <input id="medico_otro" name="medico_otro" type="text" class="mb-2 form-control" placeholder="" value="{{ old('medico_otro') }}">
+                        @error('medico_otro') <div class="invalid-feedback" style="display: block;">{{ $message }}</div>
                         @enderror
                     </div>
                 </div>
@@ -93,13 +91,21 @@
             <div class="mt-2 form-group">
                 <div class="row">
                     <div class="col">
+                        <label for="consultorio">Consultorio</label>
+                        {{ Form::select('consultorio', ['Consultorio 1' => 'Consultorio 1', 'Consultorio 2' => 'Consultorio 2', 'Tópico' =>
+                        'Tópico'], old('consultorio'), ['id' =>
+                        'consultorio', 'class' => 'form-control', 'required' => 'required']) }}
+                        @error('consultorio') <div class="invalid-feedback" style="display: block;">{{ $message }}</div>
+                        @enderror
+                    </div>
+                    <div class="col">
                         <label for="fecha_hora">Fecha y hora</label>
                         <input id="fecha_hora" name="fecha_hora" type="text" class="mb-2 form-control" placeholder=""
                             value="{{ old('fecha_hora') }}" required>
                         @error('fecha_hora') <div class="invalid-feedback" style="display: block;">{{ $message }}</div>
                         @enderror
                     </div>
-                    <div class="col-7" id="tipo_otros_parent">
+                    <div class="col-5" id="tipo_otros_parent">
                         {{-- d-none --}}
                         <label for="tipo">Motivo</label>
                         <input id="tipo" name="tipo" type="text" class="mb-2 form-control" placeholder="" value="{{ old('tipo') }}">
@@ -158,14 +164,14 @@
         }
     });
 
-    // $('#tipo').change(() => {
-    //     if($('#tipo').val() == 'Otros') {
-    //         $('#tipo_otros_parent').removeClass('d-none');
-    //     }
-    //     else {
-    //         $('#tipo_otros_parent').addClass('d-none');
-    //     }
-    // });
+    $('#medico').change(() => {
+        if($('#medico').val() == 'Otro') {
+            $('#medico_otro_parent').removeClass('d-none');
+        }
+        else {
+            $('#medico_otro_parent').addClass('d-none');
+        }
+    });
 
     function CreateCitaModal() {
         $('#form').get(0).reset();
@@ -187,10 +193,10 @@
             $('#celular').val(user.celular);
             $('#origen').val(cita.origen);
             $('#tipo').val(cita.tipo);
-            // if (cita.tipo == 'Otros') {
-            //     $('#tipo_otros_parent').removeClass('d-none');
-            //     $('#tipo_otros').val(cita.tipo_otros);
-            // }
+            if (cita.medico == 'Otro') {
+                $('#medico_otro_parent').removeClass('d-none');
+                $('#medico_otro').val(cita.medico_otro);
+            }
             $('#consultorio').val(cita.consultorio);
             $('#medico').val(cita.medico);
             $('#estado').val(cita.estado);
