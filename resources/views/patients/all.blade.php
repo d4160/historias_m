@@ -95,9 +95,9 @@
                                                 <form method="POST" id="delete_{{ $patient->id }}_form" action="{{ route('patients.destroy', $patient->id) }}" style="display: inline-block">
                                                     @csrf
                                                     <a href="javascript:void(0);" class="bs-tooltip patient_remove confirm"
-                                                                            form_id="delete_{{ $patient->id }}_form"
-                                                                            patient_full_name="{{ $patient->full_name }}"
-                                                                            data-container="body" data-html="true" data-toggle="tooltip" data-placement="top" title="" data-original-title="Eliminar">
+                                                                            {{-- form_id="delete_{{ $patient->id }}_form"
+                                                                            patient_full_name="{{ $patient->full_name }}" --}}
+                                                                            data-container="body" data-html="true" data-toggle="tooltip" data-placement="top" title="" data-original-title="Eliminar" onclick="ConfirmDeletePac('delete_{{ $patient->id }}_form', '{{ $patient->full_name }}')">
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="p-1 mb-1 feather feather-trash br-6"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
                                                     </a>
                                                 </form>
@@ -149,23 +149,39 @@
 
             multiCheck(c2);
 
-            function RegisterDeletePatientEvents() {
-                $('.patient_remove.confirm').on('click', function () {
-                    let form_id = $(this).attr('form_id');
-                    let patient_full_name = $(this).attr('patient_full_name');
-                    swal({
-                        title: `¿Está seguro de eliminar al paciente '${patient_full_name}' del registro del sistema?`,
-                        type: 'warning',
-                        showCancelButton: true,
-                        cancelButtonText: "Cancelar",
-                        confirmButtonText: 'Eliminar',
-                        padding: '2em'
-                    }).then(function(result) {
-                        if (result.value) {
-                            let form = $(`#${form_id}`);
-                            form.submit();
-                        }
-                    });
+            // function RegisterDeletePatientEvents() {
+            //     $('.patient_remove.confirm').on('click', function () {
+            //         let form_id = $(this).attr('form_id');
+            //         let patient_full_name = $(this).attr('patient_full_name');
+            //         swal({
+            //             title: `¿Está seguro de eliminar al paciente '${patient_full_name}' del registro del sistema?`,
+            //             type: 'warning',
+            //             showCancelButton: true,
+            //             cancelButtonText: "Cancelar",
+            //             confirmButtonText: 'Eliminar',
+            //             padding: '2em'
+            //         }).then(function(result) {
+            //             if (result.value) {
+            //                 let form = $(`#${form_id}`);
+            //                 form.submit();
+            //             }
+            //         });
+            //     });
+            // }
+
+            function ConfirmDeletePac(form_id, patient_full_name) {
+                swal({
+                    title: `¿Está seguro de eliminar al paciente '${patient_full_name}' del registro del sistema?`,
+                    type: 'warning',
+                    showCancelButton: true,
+                    cancelButtonText: "Cancelar",
+                    confirmButtonText: 'Eliminar',
+                    padding: '2em'
+                }).then(function(result) {
+                    if (result.value) {
+                        let form = $(`#${form_id}`);
+                        form.submit();
+                    }
                 });
             }
 
