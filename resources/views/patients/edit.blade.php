@@ -31,10 +31,10 @@
                         <div>{{ $errors }}</div>
                     @endif
 
-                    <form class="m-3 mt-4 mb-4" method="POST" action="{{ route('patients.update', $patient->id) }}">
+                    <form class="m-3 mt-4 mb-4 darkForm" method="POST" action="{{ route('patients.update', $patient->id) }}">
                         @csrf
 
-                        <span style="font-weight: bold; color: #313131; font-size: 17px;">Datos Personales</span>
+                        <span style="font-weight: bold; color: #030303; font-size: 17px;">Datos Personales</span>
 
                         <div class="mt-2 mb-4 row">
                             <div class="col">
@@ -79,7 +79,7 @@
 
                         <livewire:procedencia :patient="$user"/>
 
-                        <span style="font-weight: bold; color: #313131; font-size: 17px;">Otros Datos</span>
+                        <span style="font-weight: bold; color: #030303; font-size: 17px;">Otros Datos</span>
 
                         <div class="mt-2 mb-4 row">
                             <div class="col">
@@ -96,7 +96,7 @@
                                 <input id="proxima_cita_pac" name="proxima_cita_pac" value="{{ $patient->proxima_cita }}" class="form-control" type="text" placeholder="" readonly="readonly">
                             </div>  --}}
                             <div class="col">
-                                <label style="font-weight: bold; color: #313131; font-size: 17px;" for="otros">Otros</label>
+                                <label style="font-weight: bold; color: #030303; font-size: 17px;" for="otros">Otros</label>
                                 <textarea id="otros" name="otros" type="text" class="form-control" placeholder="">{{ $user->otros }}</textarea>
                             </div>
                         </div>
@@ -111,14 +111,14 @@
 
     <div class="page-header">
         <div class="page-title">
-            <h3 id="hc_label">Historia Clínica</h3>
+            <h3 id="hc_label">Atenciones</h3>
         </div>
         <form method="POST" id="historia_nuevo_form" action="{{ route('historias.store', $patient->id) }}" style="display: inline-block">
             @csrf
             <a href="javascript:void(0);" class="ml-3 btn btn-success historia_nuevo confirm"
                                     form_id="historia_nuevo_form"
                                     patient_full_name="{{ $user->full_name }}">
-                Nueva Historia
+                Nueva Atención
             </a>
         </form>
         </a>
@@ -134,7 +134,7 @@
                             <thead>
                                 <tr>
                                     <th class="checkbox-column">Id</th>
-                                    <th>Nro. de H.C.</th>
+                                    <th>Motivo</th>
                                     <th>Fecha y Hora</th>
                                     <th>Exámenes y Otros</th>
                                     <th>Proxima Cita</th>
@@ -144,10 +144,11 @@
                             </thead>
                             <tbody>
                                 @foreach ($historias as $historia)
+                                <div style="display: none;" id="historia_{{ $historia->id }}_id">@php(printf("%06d", $historia->id))</div>
                                 <tr>
                                     <td class="checkbox-column"> {{ $historia->id }} </td>
-                                    <td id="historia_{{ $historia->id }}_id">@php(printf("%06d", $historia->id))</td>
-                                    <td>{{ $historia->created_at }}</td>
+                                    <td>{{ $historia->motivo }}</td>
+                                    <td>{{ substr($historia->created_at, 0, 16) }}</td>
                                     <td>
                                         <ul class="table-controls">
 
@@ -446,7 +447,7 @@
 
                                              {{-- <li><span><a class="bs-tooltip" target="_blank" data-toggle="tooltip" data-placement="top" title="" data-original-title="Descargar PDF" href="{{ route('historias.pdf', $historia->id)}}"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-download"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg></a></li> --}}
 
-                                            <li><span data-toggle="modal" data-target="#historiaModal"><a class="bs-tooltip" data-toggle="tooltip" data-placement="top" title="" data-original-title="Editar" onclick="OpenHCModal(historia_{{ $historia->id }}_id, '{{ $historia->id }}', '{{ route('historias.update', $historia->id) }}', '{{ $historia->proxima_cita }}', '{{ $historia->estado }}')"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="p-1 mb-1 feather feather-edit-2 br-6"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></a></span></li>
+                                            <li><span data-toggle="modal" data-target="#historiaModal"><a class="bs-tooltip" data-toggle="tooltip" data-placement="top" title="" data-original-title="Editar" onclick="OpenHCModal(historia_{{ $historia->id }}_id, '{{ $historia->id }}', '{{ route('historias.update', $historia->id) }}', '{{ $historia->proxima_cita }}', '{{ $historia->estado }}', '{{ substr($historia->created_at, 0, 16) }}', '{{ $historia->created_at }}', '{{ $historia->motivo }}')"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="p-1 mb-1 feather feather-edit-2 br-6"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></a></span></li>
 
                                             <li>
                                                 <form method="POST" id="delete_{{ $historia->id }}_form" action="{{ route('historias.destroy', $historia->id) }}" style="display: inline-block">
@@ -565,7 +566,7 @@
                     let form_id = $(this).attr('form_id');
                     let patient_full_name = $(this).attr('patient_full_name');
                     swal({
-                        title: `¿Está seguro(a) de agregar una nueva historia al paciente ${patient_full_name} ?`,
+                        title: `¿Está seguro(a) de agregar una nueva atención al paciente ${patient_full_name} ?`,
                         type: 'warning',
                         showCancelButton: 1,
                         cancelButtonText: "Cancelar",
@@ -583,7 +584,7 @@
                     let form_id = $(this).attr('form_id');
                     let hc_number = $(this).attr('hc_number');
                     swal({
-                        title: `¿Está seguro(a) de eliminar la Historia Clínica ${hc_number} ?`,
+                        title: `¿Está seguro(a) de eliminar la atención ${hc_number} ?`,
                         type: 'warning',
                         showCancelButton: 1,
                         cancelButtonText: "Cancelar",
@@ -646,7 +647,7 @@
                 }
             }
 
-            function OpenHCModal(historiaTdNumber, id, route, proximaCita, estado) {
+            function OpenHCModal(historiaTdNumber, id, route, proximaCita, estado, sub_created_at, created_at, motivo) {
                 let hcFormatted = historiaTdNumber.innerText;
                 $('#hc_number').html(hcFormatted);
 
@@ -655,6 +656,12 @@
                 window.f1.setDate(proximaCita);
                 $('#proxima_cita').val(proximaCita);
                 $('#estado').val(estado);
+
+                $('#created_at_edit').val(sub_created_at);
+                window.createdHCEdit.setDate(created_at);
+
+                $('#motivo').val(motivo);
+
             }
         </script>
 

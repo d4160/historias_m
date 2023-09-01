@@ -267,6 +267,46 @@
                                         <p class="inv-customer-name font-weight-bold">TRATAMIENTO</p>
                                         <p class="inv-street-addr">{!! $tratsString !!} {{ $tratsString ? '' : '___' }}
                                         </p>
+
+                                        @if ($kardex)
+                                        <div class="my-4 row inv--product-table-section">
+                                            <div class="col-12">
+                                                <div class="table-responsive">
+                                                    <table class="table">
+                                                        <thead class="">
+                                                            <tr>
+                                                                <th scope="col" class="text-center">Nº</th>
+                                                                <th scope="col" class="text-center">Fecha</th>
+                                                                <th scope="col" class="text-center">Medicamento</th>
+                                                                <th scope="col" class="text-center">Dosis</th>
+                                                                <th scope="col" class="text-center">Vía</th>
+                                                                <th scope="col" class="text-center">Frecuencia</th>
+                                                                <th scope="col" class="text-center">Día 1</th>
+                                                                <th scope="col" class="text-center">Día 2</th>
+                                                                <th scope="col" class="text-center">Día 3</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            @foreach ($kardex->detalles as $det)
+                                                            <tr>
+                                                                {{-- class="checkbox-column" --}}
+                                                                <td class="text-center">{{ $loop->index + 1 }}</td>
+                                                                <td class="text-center">{{ $det->fecha }}</td>
+                                                                <td class="text-center">{{ $det->medicamento }}</td>
+                                                                <td class="text-center">{{ $det->dosis }}</td>
+                                                                <td class="text-center">{{ $det->via }}</td>
+                                                                <td class="text-center">{{ $det->frecuencia }}</td>
+                                                                <td class="text-center">{{ $det->dia1 }}</td>
+                                                                <td class="text-center">{{ $det->dia2 }}</td>
+                                                                <td class="text-center">{{ $det->dia3 }}</td>
+                                                            </tr>
+                                                            @endforeach
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        @endif
                                     </div>
                                 </div>
 

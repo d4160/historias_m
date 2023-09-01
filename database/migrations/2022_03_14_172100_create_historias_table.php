@@ -23,6 +23,7 @@ class CreateHistoriasTable extends Migration
             $table->unsignedBigInteger('impresion_diagnostica_id')->nullable();
             $table->unsignedBigInteger('kardex_id')->nullable();
             $table->date('proxima_cita')->nullable();
+            $table->string('motivo', 100)->nullable();
             $table->enum('estado', array('Atendido','Evaluación', 'Pendiente'))->default('Pendiente');
             // nuevo campo, sede de atencion
             $table->timestamps();

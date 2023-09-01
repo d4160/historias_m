@@ -140,7 +140,7 @@
                     <form class="m-3 mt-4 mb-4" method="POST" id="formKardex" action="{{ route('kardex.update', $kardex->id) }}">
                         @csrf
 
-                        <span style="font-weight: bold; color: #313131; font-size: 17px;">Otros Datos de Kardex</span>
+                        <span style="font-weight: bold; color: #030303; font-size: 17px;">Otros Datos de Kardex</span>
 
                         <div class="mt-4 mb-4 row">
                             <div class="col">

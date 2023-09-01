@@ -9,11 +9,11 @@
                 <line x1="6" y1="6" x2="18" y2="18"></line>
             </svg></button>
     </div>
-    <div class="modal-body">
+    <div class="modal-body darkForm">
         <form method="POST" id="form" class="mt-0" action="">
             @csrf
 
-            <span style="font-weight: bold; color: #313131; font-size: 17px;">Datos de Paciente</span>
+            <span style="font-weight: bold; color: #030303; font-size: 17px;">Datos de Paciente</span>
 
             <div class="mt-2 form-group">
                 <div class="row">
@@ -60,7 +60,7 @@
                 </div>
             </div>
 
-            <span style="font-weight: bold; color: #313131; font-size: 17px;">Datos de Cita</span>
+            <span style="font-weight: bold; color: #030303; font-size: 17px;">Datos de Cita</span>
 
             <div class="mt-2 form-group">
                 <div class="row">
@@ -93,7 +93,7 @@
                     <div class="col">
                         <label for="consultorio">Consultorio</label>
                         {{ Form::select('consultorio', ['Consultorio 1' => 'Consultorio 1', 'Consultorio 2' => 'Consultorio 2', 'Tópico' =>
-                        'Tópico'], old('consultorio'), ['id' =>
+                        'Tópico', 'Rayos X' => 'Rayos X', 'Laboratorio' => 'Laboratorio', 'Tomografía' => 'Tomografía'], old('consultorio'), ['id' =>
                         'consultorio', 'class' => 'form-control', 'required' => 'required']) }}
                         @error('consultorio') <div class="invalid-feedback" style="display: block;">{{ $message }}</div>
                         @enderror

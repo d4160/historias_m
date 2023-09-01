@@ -78,6 +78,7 @@ class HistoriaController extends Controller
         $historia->examen_clinico_id = $examenClinico->id;
         $historia->examen_regional_id = $examenRegional->id;
         $historia->impresion_diagnostica_id = $impresionDiagnostica->id;
+
         $historia->save();
 
         $paciente = Paciente::find($id);
@@ -129,6 +130,11 @@ class HistoriaController extends Controller
 
         $historia->proxima_cita = $request->proxima_cita;
         $historia->estado = $request->estado;
+        $historia->motivo = $request->motivo;
+
+        if ($request->created_at_edit) {
+            $historia->created_at = $request->created_at_edit;
+        }
 
         $paciente = $historia->paciente;
         $paciente->proxima_cita = $request->proxima_cita;
@@ -306,7 +312,8 @@ class HistoriaController extends Controller
             'user' => $historia->paciente->user,
             'examenClinico' => $historia->examenClinico,
             'examsString' => $examsString,
-            'tratsString' => $tratsString
+            'tratsString' => $tratsString,
+            'kardex' => $historia->kardex
         ]);
     }
 

@@ -29,6 +29,16 @@
             min-height: calc(100vh - 184px)!important;
         }
 
+        .darkForm label {
+
+            font-weight: 600;
+        }
+
+        .darkForm :is(input, select) {
+
+            font-weight: 500;
+        }
+
     </style>
 
     {{  $styles ?? '' }}

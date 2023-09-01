@@ -144,6 +144,6 @@ $('.snackbar-bg-dark').click(function() {
     Snackbar.show({
         text: 'Dark',
         actionTextColor: '#fff',
-        backgroundColor: '#212121'
+        backgroundColor: '#020202'
     });
 });

@@ -32,7 +32,7 @@ $(function(){
 
 	$('#europe-map').vectorMap({
 	  map: 'europe_mill',
-		  backgroundColor: '#212121',
+		  backgroundColor: '#020202',
 		  regionStyle: {
 			  initial: {
 				  fill: '#fff'

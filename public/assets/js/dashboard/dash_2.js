@@ -247,7 +247,7 @@ try {
               top: 1,
               left: 1,
               blur: 2,
-              color: '#050505',
+              color: '#000000',
               opacity: 0.7,
           }
       },

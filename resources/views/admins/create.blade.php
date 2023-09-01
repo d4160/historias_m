@@ -21,7 +21,7 @@
                     <form class="m-3 mt-4 mb-4" method="POST" action="{{ route('admins.store') }}">
                         @csrf
 
-                        <span style="font-weight: bold; color: #313131; font-size: 17px;">Datos Personales</span>
+                        <span style="font-weight: bold; color: #030303; font-size: 17px;">Datos Personales</span>
 
                         <div class="mb-4 row">
                             <div class="col">

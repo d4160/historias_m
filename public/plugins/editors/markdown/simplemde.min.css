@@ -36,14 +36,14 @@
   padding: 0 3px 0 5px;
   min-width: 20px;
   text-align: right;
-  color: #313131;
+  color: #030303;
   white-space: nowrap; }
 
 .CodeMirror-guttermarker {
   color: #000; }
 
 .CodeMirror-guttermarker-subtle {
-  color: #313131; }
+  color: #030303; }
 
 .CodeMirror-cursor {
   border-left: 1px solid #000;
@@ -156,7 +156,7 @@
   color: #00c; }
 
 .cm-s-default .cm-hr {
-  color: #313131; }
+  color: #030303; }
 
 .cm-s-default .cm-link {
   color: #00c; }

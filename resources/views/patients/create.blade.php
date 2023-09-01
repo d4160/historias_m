@@ -19,12 +19,12 @@
                     <!-- Validation Errors -->
                     <x-auth-validation-errors class="m-4" :errors="$errors" />
 
-                    <form class="m-3 mt-4 mb-4" method="POST" action="{{ route('patients.store') }}">
+                    <form class="m-3 mt-4 mb-4 darkForm" method="POST" action="{{ route('patients.store') }}">
                         @csrf
 
-                        <span style="font-weight: bold; color: #313131; font-size: 17px;">Datos Personales</span>
+                        <span style="font-weight: bold; color: #030303; font-size: 17px;">Datos Personales</span>
 
-                        <div class="mb-4 mt-2 row">
+                        <div class="mt-2 mb-4 row">
                             <div class="col">
                                 <label for="created_at">Fecha de registro *</label>
                                 <input id="created_at" name="created_at" value="{{ old('created_at') }}" class="form-control" type="text" placeholder="" required>
@@ -68,9 +68,9 @@
 
                         <livewire:procedencia />
 
-                        <span style="font-weight: bold; color: #313131; font-size: 17px;">Otros Datos</span>
+                        <span style="font-weight: bold; color: #030303; font-size: 17px;">Otros Datos</span>
 
-                        <div class="mb-4 mt-2 row">
+                        <div class="mt-2 mb-4 row">
                             <div class="col">
                                 <label for="celular">Celular</label>
                                 <input id="celular" name="celular" value="{{ old('celular') }}" class="form-control" type="text" placeholder="">

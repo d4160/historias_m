@@ -15,6 +15,7 @@ class Cita extends Model
         'consultorio',
         'medico',
         'estado',
+        'estado_enum',
         'origen',
         'paciente_id',
         'tipo_otros'

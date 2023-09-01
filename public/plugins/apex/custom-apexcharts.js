@@ -55,7 +55,7 @@ var sLineArea = {
           show: false,
         }
     },
-    // colors: ['#2762AB', '#313131'],
+    // colors: ['#2762AB', '#030303'],
     dataLabels: {
         enabled: false
     },
@@ -105,7 +105,7 @@ var sCol = {
             endingShape: 'rounded'
         },
     },
-    // colors: ['#313131', '#2762AB'],
+    // colors: ['#030303', '#2762AB'],
     dataLabels: {
         enabled: false
     },
@@ -161,7 +161,7 @@ var sColStacked = {
           show: false,
         }
     },
-    // colors: ['#2762AB', '#313131', '#050505', '#d3d3d3'],
+    // colors: ['#2762AB', '#030303', '#000000', '#d3d3d3'],
     responsive: [{
         breakpoint: 480,
         options: {
@@ -255,7 +255,7 @@ var options = {
       show: false,
     }
   },
-  // colors: ['#2762AB', '#313131'],
+  // colors: ['#2762AB', '#030303'],
   series: [{
     name: 'Website Blog',
     type: 'column',
@@ -308,7 +308,7 @@ var donutChart = {
           show: false,
         }
     },
-    // colors: ['#2762AB', '#313131', '#050505', '#d3d3d3'],
+    // colors: ['#2762AB', '#030303', '#000000', '#d3d3d3'],
     series: [44, 55, 41, 17],
     responsive: [{
         breakpoint: 480,
@@ -341,7 +341,7 @@ var radialChart = {
           show: false,
         }
     },
-    // colors: ['#2762AB', '#313131', '#050505', '#d3d3d3'],
+    // colors: ['#2762AB', '#030303', '#000000', '#d3d3d3'],
     plotOptions: {
         radialBar: {
             dataLabels: {

@@ -228,7 +228,7 @@ try {
               top: 1,
               left: 1,
               blur: 2,
-              color: '#050505',
+              color: '#000000',
               opacity: 0.7,
           }
       },
@@ -784,7 +784,7 @@ var options1 = {
     floating: false,
     style: {
       fontSize: '14px',
-      color:  '#313131'
+      color:  '#030303'
     }
   },
   title: {
@@ -974,7 +974,7 @@ var options = {
               show: true,
               showAlways: true,
               label: 'Total',
-              color: '#313131',
+              color: '#030303',
               formatter: function (w) {
                 return w.globals.seriesTotals.reduce( function(a, b) {
                   return a + b

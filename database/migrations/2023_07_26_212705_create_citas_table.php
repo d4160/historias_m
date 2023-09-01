@@ -20,7 +20,7 @@ class CreateCitasTable extends Migration
             //$table->enum('tipo', array('Consulta Médica', 'Tomografía','Rayos X', 'Laboratorio', 'Ecografía','Resonancia Magnética', 'Otros'))->default('Consulta Médica');
             $table->string('tipo', 200)->nullable();
             //$table->string('tipo_otros', 150)->nullable();
-            $table->enum('consultorio', array('Consultorio 1', 'Consultorio 2', 'Tópico'))->default('Consultorio 1');
+            $table->enum('consultorio', array('Consultorio 1', 'Consultorio 2', 'Tópico', 'Rayos X', 'Laboratorio', 'Tomografía'))->default('Consultorio 1');
             $table->enum('medico', array('Yamil Cabrera', 'Daysy Mechan', 'Rodolfo Cairo', 'Otro'))->default('Daysy Mechan');
             $table->string('estado', 150)->nullable();
             $table->string('medico_otro', 150)->nullable();

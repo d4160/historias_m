@@ -30,7 +30,7 @@ final class Color implements Extension\ColorExtension
         'Blue', 'BlueViolet', 'Brown', 'BurlyWood', 'CadetBlue',
         'Chartreuse', 'Chocolate', 'Coral', 'CornflowerBlue',
         'Cornsilk', 'Crimson', 'Cyan', 'DarkBlue', 'DarkCyan',
-        'DarkGoldenRod', '#313131', 'DarkGreen', 'DarkKhaki',
+        'DarkGoldenRod', '#030303', 'DarkGreen', 'DarkKhaki',
         'DarkMagenta', 'DarkOliveGreen', 'Darkorange', 'DarkOrchid',
         'DarkRed', 'DarkSalmon', 'DarkSeaGreen', 'DarkSlateBlue',
         'DarkSlateGray', 'DarkTurquoise', 'DarkViolet', 'DeepPink',
