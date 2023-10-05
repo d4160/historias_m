@@ -1,0 +1,30 @@
+2023/10/05
+
+  - Upgrading symfony/var-dumper (v6.3.4 => v6.3.5): Extracting archive
+  - Upgrading symfony/routing (v6.3.3 => v6.3.5): Extracting archive
+  - Upgrading symfony/mime (v6.3.3 => v6.3.5): Extracting archive
+  - Upgrading symfony/mailer (v6.3.0 => v6.3.5): Extracting archive
+  - Upgrading symfony/http-foundation (v6.3.4 => v6.3.5): Extracting archive
+  - Upgrading symfony/error-handler (v6.3.2 => v6.3.5): Extracting archive
+  - Upgrading symfony/http-kernel (v6.3.4 => v6.3.5): Extracting archive
+  - Upgrading symfony/finder (v6.3.3 => v6.3.5): Extracting archive
+  - Upgrading symfony/string (v6.3.2 => v6.3.5): Extracting archive
+  - Upgrading nesbot/carbon (2.69.0 => 2.71.0): Extracting archive
+  - Upgrading league/flysystem (3.15.1 => 3.16.0): Extracting archive
+  - Upgrading league/flysystem-local (3.15.0 => 3.16.0): Extracting archive
+  - Upgrading nette/utils (v4.0.1 => v4.0.2): Extracting archive
+  - Upgrading laravel/framework (v10.21.1 => v10.26.2): Extracting archive
+  - Upgrading laravel/prompts (v0.1.6 => v0.1.11): Extracting archive
+  - Upgrading setasign/fpdi (v2.4.1 => v2.5.0): Extracting archive
+  - Upgrading mpdf/psr-http-message-shim (2.0.0 => v2.0.1): Extracting archive
+  - Upgrading psr/http-client (1.0.2 => 1.0.3): Extracting archive
+  - Upgrading laravel/breeze (v1.23.1 => v1.24.1): Extracting archive
+  - Upgrading laravel/sail (v1.24.0 => v1.25.0): Extracting archive
+  - Upgrading laravel/sanctum (v3.3.0 => v3.3.1): Extracting archive
+  - Upgrading psy/psysh (v0.11.20 => v0.11.21): Extracting archive
+  - Upgrading nunomaduro/collision (v7.8.1 => v7.9.0): Extracting archive
+  - Upgrading sebastian/exporter (5.0.0 => 5.1.1): Extracting archive
+  - Upgrading sebastian/complexity (3.0.1 => 3.1.0): Extracting archive
+  - Upgrading phpunit/php-code-coverage (10.1.4 => 10.1.7): Extracting archive
+  - Upgrading phpunit/phpunit (10.3.2 => 10.3.5): Extracting archive
+  - Upgrading spatie/ignition (1.10.1 => 1.11.2): Extracting archive

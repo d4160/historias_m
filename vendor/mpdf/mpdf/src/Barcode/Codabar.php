@@ -45,7 +45,7 @@ class Codabar extends \Mpdf\Barcode\AbstractBarcode implements \Mpdf\Barcode\Bar
 			'$' => '11221111',
 			':' => '21112121',
 			'/' => '21211121',
-			'.' => '05050511',
+			'.' => '21212111',
 			'+' => '11222221',
 			'A' => '11221211',
 			'B' => '12121121',

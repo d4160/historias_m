@@ -453,9 +453,9 @@
                                                 <form method="POST" id="delete_{{ $historia->id }}_form" action="{{ route('historias.destroy', $historia->id) }}" style="display: inline-block">
                                                     @csrf
                                                     <a href="javascript:void(0);" class="bs-tooltip historia_remove confirm"
-                                                            form_id="delete_{{ $historia->id }}_form"
+                                                            form_id="delete_{{ $historia->id }}_form" id="btn_delete_{{ $historia->id }}"
                                                             hc_number="@php(printf("%06d", $historia->id))"
-                                                            data-container="body" data-html="true" data-toggle="tooltip" data-placement="top" title="" data-original-title="Eliminar">
+                                                            data-container="body" data-html="true" data-toggle="tooltip" data-placement="top" title="" data-original-title="Eliminar" onclick="ConfirmeDelete('delete_{{ $historia->id }}_form','btn_delete_{{ $historia->id }}')">
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="p-1 mb-1 feather feather-trash br-6"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
                                                     </a>
                                                 </form>
@@ -597,6 +597,26 @@
                         }
                     });
                 });
+            }
+
+            function ConfirmeDelete(form_id, id){
+                // $('.historia_remove.confirm').on('click', function () {
+                //let form_id = $(this).attr('form_id');
+                let hc_number = $(`#${id}`).attr('hc_number');
+                swal({
+                    title: `¿Está seguro(a) de eliminar la atención ${hc_number}?`,
+                    type: 'warning',
+                    showCancelButton: 1,
+                    cancelButtonText: "Cancelar",
+                    confirmButtonText: 'Eliminar',
+                    padding: '2em'
+                }).then(function(result) {
+                    if (result.value) {
+                        let form = $(`#${form_id}`);
+                        form.submit();
+                    }
+                });
+                // });
             }
 
             function OpenAnamnesisModal(historiaTdId, anamnesisId) {
