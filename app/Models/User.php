@@ -68,6 +68,10 @@ class User extends Authenticatable
         return $this->belongsTo('App\Models\Paciente', 'specific_role_id', 'id');
     }
 
+    public function medico() {
+        return $this->belongsTo('App\Models\Medico', 'specific_role_id', 'id');
+    }
+
     public function historias() {
         return $this->belongsTo('App\Models\Historia', 'specific_role_id', 'paciente_id');
     }

@@ -22,11 +22,15 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::group(['middleware' => 'auth:sanctum'], function(){
     //All secure URL's
-    Route::get('data/{id?}', [YabajaAPI::class, 'getData']);
-    Route::post('upload', [YabajaAPI::class, 'uploadFile']);
-    Route::post('uploadBin', [YabajaAPI::class, 'uploadBin']);
+    //Route::get('data/{id?}', [YabajaAPI::class, 'getData']);
+    Route::post('upload/exam/report', [YabajaAPI::class, 'uploadPdfReport']);
+    Route::post('upload/exam/report/{id}', [YabajaAPI::class, 'uploadPdfReport2']);
+    Route::get('search/exams/{dni}', [YabajaAPI::class, 'searchExams']);
+    Route::get('search/attentions/{dni}', [YabajaAPI::class, 'searchAttentions']);
+    Route::post('save/dicom', [YabajaAPI::class, 'saveDICOM']);
 });
 
+//Route::get('data2/{id?}', [YabajaAPI::class, 'getData']);
 //Route::middleware('auth:sanctum')->get('/data/{id?}', [YabajaAPI::class, 'getData']);
 
 Route::post("login",[UserController::class,'index']);
