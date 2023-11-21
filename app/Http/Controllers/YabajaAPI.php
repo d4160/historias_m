@@ -307,6 +307,14 @@ class YabajaAPI extends Controller
             $a->anamnesis_id = $anamnesis->id;
             $a->antecedente_id = $antecedente->id;
 
+            Auditoria::create([
+                'tabla' => 'historias',
+                'accion' => 'create',
+                'user_id' => 1,
+                'tabla_id' => $a->id,
+                'detalles' => "Asistente:api; paciente:$u->num_document | $u->full_name"
+            ]);
+
             $a->save();
         }
 
@@ -316,7 +324,8 @@ class YabajaAPI extends Controller
         if (!$e) {
             $et = ExamenAuxiliar::where([
 					['titulo', '=', $examen['tipo']],
-					['created_at', '=', $examen['fecha_hora']]
+					['created_at', '=', $examen['fecha_hora']],
+                    ['descripcion', '=', $examen['descripcion']]
 				])->first();
 
             if ($et && $et->historia->paciente->user->num_document == $paciente['dni']) {
@@ -332,6 +341,14 @@ class YabajaAPI extends Controller
                 'viewer_url' => $examen['url_visor'],
                 'download_url' => $examen['url_descarga'],
                 'url' => $examen['url_informe']
+            ]);
+
+            Auditoria::create([
+                'tabla' => 'examenes_auxiliares',
+                'accion' => 'create',
+                'user_id' => 1,
+                'tabla_id' => $e->id,
+                'detalles' => "Asistente:api; titulo: $e->titulo, descripcion: $e->descripcion, paciente:$u->num_document | $u->full_name"
             ]);
         }
         else {
