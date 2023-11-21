@@ -69,7 +69,27 @@
                                     <td class="text-center">
                                         <ul class="table-controls">
                                             @if($exam->url)
-                                            <li><a href="{{ Storage::url($exam->url) }}" target="_blank" class="bs-tooltip" data-toggle="tooltip" data-placement="top" title="" data-original-title="Descargar"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-download"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg></a></li>
+                                            <li><a href="{{ Str::startsWith($exam->url, 'http') ? $exam->url : Storage::url($exam->url) }}" target="_blank" class="bs-tooltip" data-toggle="tooltip" data-placement="top" title="" data-original-title="Descargar Informe"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-download"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg></a></li>
+                                            @endif
+
+                                            @if($exam->viewer_url)
+                                            <li><a href="{{ $exam->viewer_url }}" target="_blank" class="bs-tooltip" data-toggle="tooltip"
+                                                    data-placement="top" title="" data-original-title="Abrir Visor de Imagen"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-image">
+                                                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                                        <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                                                        <polyline points="21 15 16 10 5 21"></polyline>
+                                                    </svg></a></li>
+                                            @endif
+
+                                            @if($exam->download_url)
+                                            <li><a href="{{ $exam->download_url }}" target="_blank" class="bs-tooltip" data-toggle="tooltip"
+                                                    data-placement="top" title="" data-original-title="Descargar Imagen"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-download-cloud">
+                                                        <polyline points="8 17 12 21 16 17"></polyline>
+                                                        <line x1="12" y1="12" x2="12" y2="21"></line>
+                                                        <path d="M20.88 18.09A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.29"></path>
+                                                    </svg></a></li>
                                             @endif
 
                                             <li><span data-toggle="modal" data-target="#examEditModal"><a href="javascript:void(0);" class="bs-tooltip" data-toggle="tooltip" data-placement="top" title="" data-original-title="Editar" onclick="$('#exam_edit_form').attr('action', '{{ route('examen_auxiliares.update', $exam->id) }}'); $('#exam_edit_id').val('{{ $exam->id }}'); $('#exam_edit_titulo').text('{{ addslashes($exam->titulo) }}'); $('#edit_titulo').val('{{ addslashes($exam->titulo) }}'); $('#edit_descripcion').val(`{{ old('edit_descripcion', addslashes($exam->descripcion)) }}`); $('#edit_form').prop('action', '{{ route('examen_auxiliares.update', $exam->id) }}'); $('#edit_file_url').text('{{ addslashes(substr($exam->url, 31)) }}'); $('#edit_file_download').attr('href', '{{ Storage::url(addslashes($exam->url)) }}');if('{{ addslashes($exam->url) }}' == ''){ $('#replace_file').hide();$('#put_file').show(); }else{ $('#replace_file').show();$('#put_file').hide(); } $('#created_at_edit').val('{{ substr($exam->created_at, 0, 16) }}'); window.createdExamEdit.setDate('{{ $exam->created_at }}');"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="p-1 mb-1 feather feather-edit-2 br-6"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></a></li>

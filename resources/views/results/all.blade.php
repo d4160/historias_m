@@ -53,8 +53,41 @@
                                     @endif
                                     <td class="text-center">
                                         <ul class="table-controls">
-                                            @if ($result['url'])
+                                            {{-- @if ($result['url'])
                                             <li><a href="{{ URL::to('/') . '/storage/' . $result['url'] }}" target="_blank" class="bs-tooltip" data-toggle="tooltip" data-placement="top" title="" data-original-title="Descargar"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-download"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg></a></li>
+                                            @endif --}}
+                                            @if($result['url'])
+                                            <li><a href="{{ Str::startsWith($result['url'], 'http') ? $result['url'] : Storage::url($result['url']) }}" target="_blank"
+                                                    class="bs-tooltip" data-toggle="tooltip" data-placement="top" title=""
+                                                    data-original-title="Descargar Informe"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                                        stroke-linejoin="round" class="feather feather-download">
+                                                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                                        <polyline points="7 10 12 15 17 10"></polyline>
+                                                        <line x1="12" y1="15" x2="12" y2="3"></line>
+                                                    </svg></a></li>
+                                            @endif
+
+                                            @if($result['viewer_url'])
+                                            <li><a href="{{ $result['viewer_url'] }}" target="_blank" class="bs-tooltip" data-toggle="tooltip" data-placement="top"
+                                                    title="" data-original-title="Abrir Visor de Imagen"><svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                                        height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                                        stroke-linejoin="round" class="feather feather-image">
+                                                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                                        <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                                                        <polyline points="21 15 16 10 5 21"></polyline>
+                                                    </svg></a></li>
+                                            @endif
+
+                                            @if($result['download_url'])
+                                            <li><a href="{{ $result['download_url'] }}" target="_blank" class="bs-tooltip" data-toggle="tooltip" data-placement="top"
+                                                    title="" data-original-title="Descargar Imagen"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                                        stroke-linejoin="round" class="feather feather-download-cloud">
+                                                        <polyline points="8 17 12 21 16 17"></polyline>
+                                                        <line x1="12" y1="12" x2="12" y2="21"></line>
+                                                        <path d="M20.88 18.09A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.29"></path>
+                                                    </svg></a></li>
                                             @endif
                                         </ul>
                                     </td>

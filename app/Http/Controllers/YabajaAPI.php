@@ -61,7 +61,7 @@ class YabajaAPI extends Controller
         }
         else {
             $status = 404;
-            $message = 'Id de examen no encontrado';
+            $message = 'ID de examen no encontrado';
         }
 
         $response = [
@@ -142,8 +142,8 @@ class YabajaAPI extends Controller
                 'tipo' => $e->titulo,
                 'descripcion' => $e->descripcion,
                 'report_url' => Storage::url($e->url),
-                'viewer_url' => $e->viewer_url ? Storage::url($e->viewer_url) : NULL,
-                'dicom_download_url' => $e->download_url ? Storage::url($e->download_url) : NULL,
+                'viewer_url' => $e->viewer_url,
+                'dicom_download_url' => $e->download_url,
                 'created_at' => \Carbon\Carbon::parse($e->created_at)
                                         ->timezone(config('app.timezone'))
                                         ->toDateTimeString(),
@@ -191,8 +191,8 @@ class YabajaAPI extends Controller
                     'tipo' => $e->titulo,
                     'descripcion' => $e->descripcion,
                     'report_url' => Storage::url($e->url),
-                    'viewer_url' => $e->viewer_url ? Storage::url($e->viewer_url) : NULL,
-                    'dicom_download_url' => $e->download_url ? Storage::url($e->download_url) : NULL,
+                    'viewer_url' => $e->viewer_url,
+                    'dicom_download_url' => $e->download_url,
                     'created_at' => \Carbon\Carbon::parse($e->created_at)
                                          ->timezone(config('app.timezone'))
                                          ->toDateTimeString(),
@@ -314,26 +314,41 @@ class YabajaAPI extends Controller
         $e = ExamenAuxiliar::find($examen['id']);
 
         if (!$e) {
+            $et = ExamenAuxiliar::where([
+					['titulo', '=', $examen['tipo']],
+					['created_at', '=', $examen['fecha_hora']]
+				])->first();
+
+            if ($et && $et->historia->paciente->user->num_document == $paciente['dni']) {
+                $e = $et;
+            }
+        }
+
+        if (!$e) {
             $e = ExamenAuxiliar::create([
                 'historia_id' => $a->id,
                 'titulo' => $examen['tipo'],
                 'descripcion' => $examen['descripcion'],
                 'viewer_url' => $examen['url_visor'],
-                'download_url' => $examen['url_descarga']
+                'download_url' => $examen['url_descarga'],
+                'url' => $examen['url_informe']
             ]);
         }
         else {
             $e->viewer_url = $examen['url_visor'];
             $e->download_url = $examen['url_descarga'];
+            $e->url = $examen['url_informe'];
             $e->save();
         }
 
         $medicos = $req->input('medicos');;
 
+        // Referente
         if ($medicos[0]) {
-            $m = User::has('medico')->where('num_document', '=', $medicos[0]['dni'])->first();
+            $dni = $medicos[0]['dni'];
+            $m = User::has('medico')->where('num_document', '=', $dni)->first();
 
-            if (!$m) {
+            if (!$m && $dni) {
                 $u = User::create([
                     'user_role_id' => 3,
                     'num_document' => $medicos[0]['dni'],
@@ -356,6 +371,7 @@ class YabajaAPI extends Controller
             $e->medico_1_id = $m->id;
         }
 
+        // Radiologo
         if ($medicos[1]) {
             $m = User::has('medico')->where('num_document', '=', $medicos[1]['dni'])->first();
 
@@ -382,6 +398,7 @@ class YabajaAPI extends Controller
             $e->medico_2_id = $m->id;
         }
 
+        // Tecnico
         if ($medicos[2]) {
             $m = User::has('medico')->where('num_document', '=', $medicos[2]['dni'])->first();
 
