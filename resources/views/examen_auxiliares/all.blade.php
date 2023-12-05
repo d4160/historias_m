@@ -15,7 +15,7 @@
             <div class="statbox widget box box-shadow">
                 <div class="widget-header">
 
-                    <div class="m-3 row mt-4">
+                    <div class="m-3 mt-4 row">
                         <div class="col">
                             <label for="paciente" class="font-weight-bold">Paciente {{ $patient->num_document }}</label>
                             <input id="paciente" name="paciente" type="text" class="form-control" placeholder="" value="{{ $patient->full_name }}" disabled>
@@ -30,7 +30,7 @@
                         </div>
                     </div>
 
-                    <div class="row mx-1">
+                    <div class="mx-1 row">
                         <div class="col">
                             <a href="{{ route('patients.edit', $patient_id) }}" class="mt-3 ml-3 btn btn-info">Regresar a la página del paciente</a>
                         </div>
@@ -69,7 +69,27 @@
                                     <td class="text-center">
                                         <ul class="table-controls">
                                             @if($exam->url)
-                                            <li><a href="{{ Storage::url($exam->url) }}" target="_blank" class="bs-tooltip" data-toggle="tooltip" data-placement="top" title="" data-original-title="Descargar"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-download"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg></a></li>
+                                            <li><a href="{{ Str::startsWith($exam->url, 'http') ? $exam->url : Storage::url($exam->url) }}" target="_blank" class="bs-tooltip" data-toggle="tooltip" data-placement="top" title="" data-original-title="Descargar Informe"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-download"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg></a></li>
+                                            @endif
+
+                                            @if($exam->viewer_url)
+                                            <li><a href="{{ $exam->viewer_url }}" target="_blank" class="bs-tooltip" data-toggle="tooltip"
+                                                    data-placement="top" title="" data-original-title="Abrir Visor de Imagen"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-image">
+                                                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                                        <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                                                        <polyline points="21 15 16 10 5 21"></polyline>
+                                                    </svg></a></li>
+                                            @endif
+
+                                            @if($exam->download_url)
+                                            <li><a href="{{ $exam->download_url }}" target="_blank" class="bs-tooltip" data-toggle="tooltip"
+                                                    data-placement="top" title="" data-original-title="Descargar Imagen"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-download-cloud">
+                                                        <polyline points="8 17 12 21 16 17"></polyline>
+                                                        <line x1="12" y1="12" x2="12" y2="21"></line>
+                                                        <path d="M20.88 18.09A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.29"></path>
+                                                    </svg></a></li>
                                             @endif
 
                                             <li><span data-toggle="modal" data-target="#examEditModal"><a href="javascript:void(0);" class="bs-tooltip" data-toggle="tooltip" data-placement="top" title="" data-original-title="Editar" onclick="$('#exam_edit_form').attr('action', '{{ route('examen_auxiliares.update', $exam->id) }}'); $('#exam_edit_id').val('{{ $exam->id }}'); $('#exam_edit_titulo').text('{{ addslashes($exam->titulo) }}'); $('#edit_titulo').val('{{ addslashes($exam->titulo) }}'); $('#edit_descripcion').val(`{{ old('edit_descripcion', addslashes($exam->descripcion)) }}`); $('#edit_form').prop('action', '{{ route('examen_auxiliares.update', $exam->id) }}'); $('#edit_file_url').text('{{ addslashes(substr($exam->url, 31)) }}'); $('#edit_file_download').attr('href', '{{ Storage::url(addslashes($exam->url)) }}');if('{{ addslashes($exam->url) }}' == ''){ $('#replace_file').hide();$('#put_file').show(); }else{ $('#replace_file').show();$('#put_file').hide(); } $('#created_at_edit').val('{{ substr($exam->created_at, 0, 16) }}'); window.createdExamEdit.setDate('{{ $exam->created_at }}');"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="p-1 mb-1 feather feather-edit-2 br-6"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></a></li>
@@ -77,9 +97,9 @@
                                             <li><form id="delete_exam_{{ $exam->id }}_form" method="POST" action="{{ route('examen_auxiliares.destroy', $exam->id) }}" style="display: inline-block">
                                                 @csrf
                                                 <a href="javascript:void(0);" class="bs-tooltip exam_remove confirm"
-                                                                        form_id="delete_exam_{{ $exam->id }}_form"
-                                                                        exam_aux_title="{{ addslashes($exam->titulo) }}"
-                                                                        data-container="body" data-html="true" data-toggle="tooltip" data-placement="top" title="" data-original-title="Eliminar">
+                                                                        {{-- form_id="delete_exam_{{ $exam->id }}_form" --}}
+                                                                        {{-- exam_aux_title="" --}}
+                                                                        data-container="body" data-html="true" data-toggle="tooltip" data-placement="top" title="" data-original-title="Eliminar" onclick="ConfirmDeleteExam('delete_exam_{{ $exam->id }}_form', '{{ addslashes($exam->titulo) }}')">
                                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="p-1 mb-1 feather feather-trash br-6"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
                                                 </a>
                                             </form></li>
@@ -132,23 +152,39 @@
 
             multiCheck(c2);
 
-            function RegisterDeleteExamEvents() {
-                $('.exam_remove.confirm').on('click', function () {
-                    let form_id = $(this).attr('form_id');
-                    let exam_aux_title = $(this).attr('exam_aux_title');
-                    swal({
-                        title: `¿Está seguro de eliminar el examen auxiliar '${exam_aux_title}' del registro del sistema?`,
-                        type: 'warning',
-                        showCancelButton: true,
-                        cancelButtonText: "Cancelar",
-                        confirmButtonText: 'Eliminar',
-                        padding: '2em'
-                    }).then(function(result) {
-                        if (result.value) {
-                            let form = $(`#${form_id}`);
-                            form.submit();
-                        }
-                    });
+            // function RegisterDeleteExamEvents() {
+            //     $('.exam_remove.confirm').on('click', function () {
+            //         let form_id = $(this).attr('form_id');
+            //         let exam_aux_title = $(this).attr('exam_aux_title');
+            //         swal({
+            //             title: `¿Está seguro de eliminar el examen auxiliar '${exam_aux_title}' del registro del sistema?`,
+            //             type: 'warning',
+            //             showCancelButton: true,
+            //             cancelButtonText: "Cancelar",
+            //             confirmButtonText: 'Eliminar',
+            //             padding: '2em'
+            //         }).then(function(result) {
+            //             if (result.value) {
+            //                 let form = $(`#${form_id}`);
+            //                 form.submit();
+            //             }
+            //         });
+            //     });
+            // }
+
+            function ConfirmDeleteExam(form_id, exam_aux_title) {
+                swal({
+                    title: `¿Está seguro de eliminar el examen auxiliar '${exam_aux_title}' del registro del sistema?`,
+                    type: 'warning',
+                    showCancelButton: true,
+                    cancelButtonText: "Cancelar",
+                    confirmButtonText: 'Eliminar',
+                    padding: '2em'
+                }).then(function(result) {
+                    if (result.value) {
+                        let form = $(`#${form_id}`);
+                        form.submit();
+                    }
                 });
             }
         </script>

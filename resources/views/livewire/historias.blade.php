@@ -32,7 +32,7 @@
                     <ul class="table-controls">
                         <li><a target="_blank" href="{{ route('patients.edit', $his->paciente->id) }}" class="bs-tooltip" data-toggle="tooltip" data-placement="top" title="" data-original-title="Ver"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit-2 text-primary"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></a></li>
 
-                        <li><span><a class="bs-tooltip" target="_blank" data-toggle="tooltip" data-placement="top" title="" data-original-title="Imprimir" href="{{ route('citas.print', $his->id)}}"><svg version="1.0" xmlns="http://www.w3.org/2000/svg"
+                        <li><span><a class="bs-tooltip" target="_blank" data-toggle="tooltip" data-placement="top" title="" data-original-title="Imprimir" href="{{ route('historias.print', $his->id)}}"><svg version="1.0" xmlns="http://www.w3.org/2000/svg"
                         width="20" height="20" viewBox="0 0 64.000000 64.000000"
                         preserveAspectRatio="xMidYMid meet" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit-2 text-primary">
 
@@ -61,7 +61,7 @@
 
 @push('scripts')
 <script>
-    
+
     $('#historias_modal_id').change(() => {
 
         Livewire.emit('onHcChanged', $('#historias_modal_id').val());

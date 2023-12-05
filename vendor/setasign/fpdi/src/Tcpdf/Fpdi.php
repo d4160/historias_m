@@ -46,7 +46,7 @@ class Fpdi extends \TCPDF
      *
      * @string
      */
-    const VERSION = '2.4.0';
+    const VERSION = '2.5.0';
 
     /**
      * A counter for template ids.
@@ -251,7 +251,7 @@ class Fpdi extends \TCPDF
         if ($value instanceof PdfString) {
             $string = PdfString::unescape($value->value);
             $string = $this->_encrypt_data($this->currentObjectNumber, $string);
-            $value->value = \TCPDF_STATIC::_escape($string);
+            $value->value = PdfString::escape($string);
         } elseif ($value instanceof PdfHexString) {
             $filter = new AsciiHex();
             $string = $filter->decode($value->value);
@@ -284,7 +284,7 @@ class Fpdi extends \TCPDF
      * @param float|int $yPt
      * @param float|int $newHeightPt
      * @param float|int $scaleY
-     * @param $importedPage
+     * @param array $importedPage
      * @return void
      */
     protected function adjustLastLink($externalLink, $xPt, $scaleX, $yPt, $newHeightPt, $scaleY, $importedPage)

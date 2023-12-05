@@ -15,10 +15,15 @@ class ExamenAuxiliar extends Model
         'historia_id',
         'titulo',
         'descripcion',
-        'url'
+        'url',
+        'viewer_url',
+        'download_url',
+        'medico_1_id',
+        'medico_2_id',
+        'medico_3_id'
     ];
 
     public function historia() {
-        $this->belongsTo('App\Models\Historia');
+        return $this->belongsTo('App\Models\Historia');
     }
 }

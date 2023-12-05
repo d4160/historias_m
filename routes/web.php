@@ -4,8 +4,9 @@ use App\Http\Controllers\AntecedenteController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PatientController;
 use App\Http\Controllers\AdminController;
-use App\Http\Controllers\ClinicStoryController;
 use App\Http\Controllers\CitaController;
+use App\Http\Controllers\ClinicStoryController;
+use App\Http\Controllers\HistoriaController;
 use App\Http\Controllers\DiagnosticoController;
 use App\Http\Controllers\EnfermedadActualController;
 use App\Http\Controllers\ExamenAuxiliarController;
@@ -77,44 +78,50 @@ Route::post('admins/importar', [AdminController::class, 'import'])
 Route::post('antecedentes/guardar/{id}', [AntecedenteController::class, 'save'])
     ->middleware(['auth', 'role'])->name('antecedentes.save');
 
-Route::get('citas/nuevo/{id}', [CitaController::class, 'create'])
-    ->middleware(['auth', 'role'])->name('citas.create');
+Route::get('historias/nuevo/{id}', [HistoriaController::class, 'create'])
+    ->middleware(['auth', 'role'])->name('historias.create');
 
-Route::post('citas/guardar/{id}', [CitaController::class, 'store'])
-    ->middleware(['auth', 'role'])->name('citas.store');
+Route::post('historias/guardar/{id}', [HistoriaController::class, 'store'])
+    ->middleware(['auth', 'role'])->name('historias.store');
 
-Route::get('citas/{id}', [CitaController::class, 'edit'])
-    ->middleware(['auth', 'role'])->name('citas.edit');
+Route::get('historias/{id}', [HistoriaController::class, 'edit'])
+    ->middleware(['auth', 'role'])->name('historias.edit');
 
-Route::post('citas/update/{id}', [CitaController::class, 'update'])
-    ->middleware(['auth', 'role'])->name('citas.update');
+Route::post('historias/update/{id}', [HistoriaController::class, 'update'])
+    ->middleware(['auth', 'role'])->name('historias.update');
 
-Route::post('citas/destroy/{id}', [CitaController::class, 'destroy'])
-    ->middleware(['auth', 'role'])->name('citas.destroy');
+Route::post('historias/destroy/{id}', [HistoriaController::class, 'destroy'])
+    ->middleware(['auth', 'role'])->name('historias.destroy');
 
-Route::post('citas/updateAnamnesis', [CitaController::class, 'updateAnamnesis'])
-    ->middleware(['auth', 'role'])->name('citas.update_anamnesis');
+Route::post('historias/updateAnamnesis', [HistoriaController::class, 'updateAnamnesis'])
+    ->middleware(['auth', 'role'])->name('historias.update_anamnesis');
 
-Route::post('citas/updateAntecedentes', [CitaController::class, 'updateAntecedentes'])
-    ->middleware(['auth', 'role'])->name('citas.update_antecedentes');
+Route::post('historias/updateAntecedentes', [HistoriaController::class, 'updateAntecedentes'])
+    ->middleware(['auth', 'role'])->name('historias.update_antecedentes');
 
-Route::post('citas/updateExamenClinico', [CitaController::class, 'updateExamenClinico'])
-    ->middleware(['auth', 'role'])->name('citas.update_examen_clinico');
+Route::post('historias/updateExamenClinico', [HistoriaController::class, 'updateExamenClinico'])
+    ->middleware(['auth', 'role'])->name('historias.update_examen_clinico');
 
-Route::post('citas/updateExamenRegional', [CitaController::class, 'updateExamenRegional'])
-    ->middleware(['auth', 'role'])->name('citas.update_examen_regional');
+Route::post('historias/updateExamenRegional', [HistoriaController::class, 'updateExamenRegional'])
+    ->middleware(['auth', 'role'])->name('historias.update_examen_regional');
 
-Route::post('citas/updateImpresionDiagnostica', [CitaController::class, 'updateImpresionDiagnostica'])
-    ->middleware(['auth', 'role'])->name('citas.update_impresion_diagnostica');
+Route::post('historias/updateImpresionDiagnostica', [HistoriaController::class, 'updateImpresionDiagnostica'])
+    ->middleware(['auth', 'role'])->name('historias.update_impresion_diagnostica');
 
-Route::post('citas/updateTratamiento', [CitaController::class, 'updateTratamiento'])
-    ->middleware(['auth', 'role'])->name('citas.update_tratamiento');
+Route::post('historias/updateTratamiento', [HistoriaController::class, 'updateTratamiento'])
+    ->middleware(['auth', 'role'])->name('historias.update_tratamiento');
 
-Route::get('historia/imprimir/{id}', [CitaController::class, 'print'])
-    ->middleware(['auth', 'role'])->name('citas.print');
+Route::get('historia/imprimir/{id}', [HistoriaController::class, 'print'])
+    ->middleware(['auth', 'role'])->name('historias.print');
 
-Route::get('historia/pdf/{id}', [CitaController::class, 'download'])
-    ->middleware(['auth', 'role'])->name('citas.pdf');
+Route::get('historia/imprimir2/{id}', [HistoriaController::class, 'print2'])
+    ->middleware(['auth', 'role'])->name('historias.print2');
+
+Route::get('historia/pdf/{id}', [HistoriaController::class, 'download'])
+    ->middleware(['auth', 'role'])->name('historias.pdf');
+
+Route::get('historia/pdf2/{id}', [HistoriaController::class, 'download2'])
+    ->middleware(['auth', 'role'])->name('historias.pdf2');
 
 Route::get('examenesAuxiliares/{historia_id}', [ExamenAuxiliarController::class, 'index'])
     ->middleware(['auth', 'role'])->name('examenes_auxiliares.index');
@@ -172,6 +179,18 @@ Route::post('kardex/detalles/actualizar/{id}', [KardexController::class, 'detall
 
 Route::post('kardex/detalles/eliminar/{id}', [KardexController::class, 'detalleDestroy'])
     ->middleware(['auth', 'role'])->name('kardex.destroy');
+
+Route::get('kardex/imprimir/{id}', [KardexController::class, 'print'])
+    ->middleware(['auth', 'role'])->name('kardex.print');
+
+Route::get('citas', [CitaController::class, 'index'])
+    ->middleware(['auth', 'role'])->name('citas.all');
+
+Route::post('citas/guardar/{id?}/{user_id?}', [CitaController::class, 'store'])
+    ->middleware(['auth', 'role'])->name('citas.store');
+
+Route::post('citas/eliminar/{id}', [CitaController::class, 'destroy'])
+    ->middleware(['auth', 'role'])->name('citas.destroy');
 
 Route::get('/', function () {
     return view('dashboard');

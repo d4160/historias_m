@@ -115,7 +115,7 @@
 
     $(() => {
         window.createdExam = flatpickr(document.getElementById('fecha'), {
-            minDate: GetTodayDate(),
+            //minDate: GetTodayDate(),
             minuteIncrement: 1,
             defaultDate: GetTodayDate()
             //locale: 'es'

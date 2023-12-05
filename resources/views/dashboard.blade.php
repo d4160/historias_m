@@ -13,14 +13,20 @@
         @endphp
         @if ($user->user_role_id > 1 && $user->user_role_id < 5)
             <p><strong>Rol</strong>: Administrador</p>
-            <a type="button" class="ml-3 btn btn-primary" href="{{ route('patients.all') }}">Buscar paciente</a>
-            <a type="button" class="ml-3 btn btn-secondary" href="{{ route('patients.create') }}">Nuevo paciente</a>
-        @elseif ($user->user_role_id === 1)
-            <p><strong>Rol</strong>: Súper Usuario</p>
-            <a type="button" class="ml-3 btn btn-primary" href="{{ route('patients.all') }}">Buscar paciente</a>
+            <a type="button" class="ml-3 btn btn-primary" href="{{ route('patients.all') }}">Lista de pacientes</a>
             <a type="button" class="ml-3 btn btn-secondary" href="{{ route('patients.create') }}">Nuevo paciente</a>
             <br><br>
-            <a type="button" class="ml-3 btn btn-primary" href="{{ route('admins.all') }}">Buscar Administrador</a>
+            <a type="button" class="ml-3 btn btn-primary" href="{{ route('citas.all') }}">Agenda de citas</a>
+            {{-- <a type="button" class="ml-3 btn btn-secondary" href="{{ route('patients.create') }}">Nueva cita</a> --}}
+        @elseif ($user->user_role_id === 1)
+            <p><strong>Rol</strong>: Súper Usuario</p>
+            <a type="button" class="ml-3 btn btn-primary" href="{{ route('patients.all') }}">Lista de pacientes</a>
+            <a type="button" class="ml-3 btn btn-secondary" href="{{ route('patients.create') }}">Nuevo paciente</a>
+            <br><br>
+            <a type="button" class="ml-3 btn btn-primary" href="{{ route('citas.all') }}">Agenda de citas</a>
+            {{-- <a type="button" class="ml-3 btn btn-secondary" href="{{ route('patients.create') }}">Nueva cita</a> --}}
+            <br><br>
+            <a type="button" class="ml-3 btn btn-primary" href="{{ route('admins.all') }}">Lista de administradores</a>
             <a type="button" class="ml-3 btn btn-secondary" href="{{ route('admins.create') }}">Nuevo administrador</a>
         @elseif ($user->user_role_id === 5)
             <p><strong>Rol</strong>: Paciente</p>

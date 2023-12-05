@@ -38,8 +38,8 @@
                                     <th>Nª documento</th>
                                     <th>Nombres</th>
                                     <th>Apellidos</th>
-                                    <th class="text-center">Nº Historias</th>
-                                    <th class="text-center">Fecha de Registro</th>
+                                    <th class="text-center">Nº Atenciones</th>
+                                    <th class="text-center">Fecha y Hora de Registro</th>
                                     <th class="text-center">Próxima Cita</th>
                                     <th class="text-center">Estado</th>
                                     <th class="text-center" style="min-width:174px!important;">Acción</th>
@@ -56,16 +56,16 @@
                                     <td>{{ $patient->first_names }}</td>
                                     <td>{{ $patient->last_names }}</td>
                                     @php
-                                    $count = $patient->patient()->historias()->count();
-                                    $estado = $patient->patient()->estado;
+                                    $count = $patient->historias_count;
+                                    $estado = $patient->paciente->estado;
                                     @endphp
                                     <td class="text-center"><span class="shadow-none badge badge-primary" style="font-size: 17px; font-weight: normal;">{{ $count }}</span>
                                     @if ($count > 0)
-                                    <span data-toggle="modal" data-target="#historiasModal"><a class="bs-tooltip" style="cursor: pointer;" data-toggle="tooltip" data-placement="top" title="" data-original-title="Ver Historias" onclick="OpenHistoriasModal('{{ $patient->full_name }}', '{{ $patient->patientId() }}');"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="p-1 mb-1 feather feather-file-text br-6"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg></a></span>
+                                    <span data-toggle="modal" data-target="#historiasModal"><a class="bs-tooltip" style="cursor: pointer;" data-toggle="tooltip" data-placement="top" title="" data-original-title="Ver Atenciones" onclick="OpenHistoriasModal('{{ $patient->full_name }}', '{{ $patient->paciente->id }}');"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="p-1 mb-1 feather feather-file-text br-6"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg></a></span>
                                     @endif
                                     </td>
-                                    <td class="text-center">{{ explode(' ', $patient->created_at)[0] }}</td>
-                                    <td class="text-center">{{ $patient->patient()->proxima_cita }}</td>
+                                    <td class="text-center">{{ substr($patient->created_at, 0, 16) }}</td>
+                                    <td class="text-center">{{ $patient->paciente->proxima_cita }}</td>
                                     <td class="text-center">
                                     @if ($count > 0)
                                     @switch($estado)
@@ -86,18 +86,18 @@
                                     {{--  {{ $patient->results()->count() }}  --}}
                                     <td class="text-center">
                                         <ul class="table-controls">
-                                            <li><a href="{{ route('patients.edit', $patient->patientId()) }}" class="bs-tooltip" data-toggle="tooltip" data-placement="top" title="" data-original-title="Ver"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="p-1 mb-1 feather feather-edit-2 br-6"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></a></li>
+                                            <li><a href="{{ route('patients.edit', $patient->paciente->id) }}" class="bs-tooltip" data-toggle="tooltip" data-placement="top" title="" data-original-title="Ver"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="p-1 mb-1 feather feather-edit-2 br-6"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></a></li>
 
                                             @if ($count > 0)
-                                            <li><span data-toggle="modal" data-target="#historiaModal"><a class="bs-tooltip" data-toggle="tooltip" data-placement="top" title="" data-original-title="Editar" onclick="OpenPacienteModal('{{ $patient->full_name }}', '{{ $patient->patientId() }}', '{{ route('patients.update2', $patient->patientId()) }}', '{{ $patient->patient()->proxima_cita }}', '{{ $patient->patient()->estado }}')"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="p-1 mb-1 feather feather-edit-2 br-6"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></a></span></li>
+                                            <li><span data-toggle="modal" data-target="#historiaModal"><a class="bs-tooltip" data-toggle="tooltip" data-placement="top" title="" data-original-title="Editar" onclick="OpenPacienteModal('{{ $patient->full_name }}', '{{ $patient->paciente->id }}', '{{ route('patients.update2', $patient->paciente->id) }}', '{{ $patient->paciente->proxima_cita }}', '{{ $patient->paciente->estado }}')"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="p-1 mb-1 feather feather-edit-2 br-6"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg></a></span></li>
                                             @endif
                                             <li>
                                                 <form method="POST" id="delete_{{ $patient->id }}_form" action="{{ route('patients.destroy', $patient->id) }}" style="display: inline-block">
                                                     @csrf
                                                     <a href="javascript:void(0);" class="bs-tooltip patient_remove confirm"
-                                                                            form_id="delete_{{ $patient->id }}_form"
-                                                                            patient_full_name="{{ $patient->full_name }}"
-                                                                            data-container="body" data-html="true" data-toggle="tooltip" data-placement="top" title="" data-original-title="Eliminar">
+                                                                            {{-- form_id="delete_{{ $patient->id }}_form"
+                                                                            patient_full_name="{{ $patient->full_name }}" --}}
+                                                                            data-container="body" data-html="true" data-toggle="tooltip" data-placement="top" title="" data-original-title="Eliminar" onclick="ConfirmDeletePac('delete_{{ $patient->id }}_form', '{{ $patient->full_name }}')">
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="p-1 mb-1 feather feather-trash br-6"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
                                                     </a>
                                                 </form>
@@ -149,23 +149,39 @@
 
             multiCheck(c2);
 
-            function RegisterDeletePatientEvents() {
-                $('.patient_remove.confirm').on('click', function () {
-                    let form_id = $(this).attr('form_id');
-                    let patient_full_name = $(this).attr('patient_full_name');
-                    swal({
-                        title: `¿Está seguro de eliminar al paciente '${patient_full_name}' del registro del sistema?`,
-                        type: 'warning',
-                        showCancelButton: true,
-                        cancelButtonText: "Cancelar",
-                        confirmButtonText: 'Eliminar',
-                        padding: '2em'
-                    }).then(function(result) {
-                        if (result.value) {
-                            let form = $(`#${form_id}`);
-                            form.submit();
-                        }
-                    });
+            // function RegisterDeletePatientEvents() {
+            //     $('.patient_remove.confirm').on('click', function () {
+            //         let form_id = $(this).attr('form_id');
+            //         let patient_full_name = $(this).attr('patient_full_name');
+            //         swal({
+            //             title: `¿Está seguro de eliminar al paciente '${patient_full_name}' del registro del sistema?`,
+            //             type: 'warning',
+            //             showCancelButton: true,
+            //             cancelButtonText: "Cancelar",
+            //             confirmButtonText: 'Eliminar',
+            //             padding: '2em'
+            //         }).then(function(result) {
+            //             if (result.value) {
+            //                 let form = $(`#${form_id}`);
+            //                 form.submit();
+            //             }
+            //         });
+            //     });
+            // }
+
+            function ConfirmDeletePac(form_id, patient_full_name) {
+                swal({
+                    title: `¿Está seguro de eliminar al paciente '${patient_full_name}' del registro del sistema?`,
+                    type: 'warning',
+                    showCancelButton: true,
+                    cancelButtonText: "Cancelar",
+                    confirmButtonText: 'Eliminar',
+                    padding: '2em'
+                }).then(function(result) {
+                    if (result.value) {
+                        let form = $(`#${form_id}`);
+                        form.submit();
+                    }
                 });
             }
 

@@ -37,7 +37,7 @@ class DiagnosticoController extends Controller
             $c->save();
         }
 
-        return redirect(route('citas.edit', $id));
+        return redirect(route('historias.edit', $id));
     }
 
     public function saveD(Request $request, $id){
@@ -61,6 +61,6 @@ class DiagnosticoController extends Controller
             $c->save();
         }
 
-        return redirect(route('citas.edit', $id));
+        return redirect(route('historias.edit', $id));
     }
 }

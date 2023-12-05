@@ -35,6 +35,6 @@ class EnfermedadActualController extends Controller
             $c->save();
         }
 
-        return redirect(route('citas.edit', $id));
+        return redirect(route('historias.edit', $id));
     }
 }

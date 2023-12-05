@@ -20,11 +20,13 @@ class Procedencia extends Component
     public $seldis;
 
     public function mount(){
-        if ($this->patient) {
+        if ($this->patient)
+        {
             $this->seldep = $this->patient->procedencia_dep;
             $this->selprov = $this->patient->procedencia_prov;
             $this->seldis = $this->patient->procedencia_dis;
 
+            if (!$this->seldep) $this->seldep = '12';
             if (!$this->selprov) $this->selprov = '1201';
             if (!$this->seldis) $this->seldis = '120101';
         }

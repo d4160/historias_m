@@ -30,7 +30,7 @@ try {
         ======================================
     */
 
-    
+
     // Total Visits
 
     var spark1 = {
@@ -227,7 +227,7 @@ try {
         }
         ]
     }
-    
+
 
     /*
         ===================================
@@ -247,7 +247,7 @@ try {
               top: 1,
               left: 1,
               blur: 2,
-              color: '#595b69',
+              color: '#000000',
               opacity: 0.7,
           }
       },
@@ -256,7 +256,7 @@ try {
           bar: {
               horizontal: false,
               columnWidth: '55%',
-              endingShape: 'rounded'  
+              endingShape: 'rounded'
           },
       },
       dataLabels: {
@@ -446,7 +446,7 @@ try {
       },
     }
 
-    
+
 
 
     /*

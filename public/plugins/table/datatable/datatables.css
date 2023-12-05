@@ -40,7 +40,7 @@ div.dataTables_wrapper div.dataTables_length label {
   font-weight: normal;
   text-align: left;
   white-space: nowrap;
-  color: #888ea8;
+  color: #030303;
   font-weight: 600; }
 
 div.dataTables_wrapper div.dataTables_length select {
@@ -53,7 +53,7 @@ div.dataTables_wrapper div.dataTables_filter {
     font-weight: normal;
     white-space: nowrap;
     text-align: left;
-    color: #888ea8;
+    color: #030303;
     font-weight: 600; }
   div.dataTables_wrapper div.dataTables_filter input {
     margin-left: 0.5em;
@@ -61,10 +61,10 @@ div.dataTables_wrapper div.dataTables_filter {
     width: auto; }
 
 table.dataTable .form-control {
-  color: #888ea8;
+  color: #030303;
   font-size: 0.875rem; }
   table.dataTable .form-control::-webkit-input-placeholder, table.dataTable .form-control::-ms-input-placeholder, table.dataTable .form-control::-moz-placeholder {
-    color: #888ea8;
+    color: #030303;
     font-size: 0.875rem; }
 
 div.dataTables_wrapper div.dataTables_info {

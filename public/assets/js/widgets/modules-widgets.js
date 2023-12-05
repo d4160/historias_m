@@ -110,7 +110,7 @@ try {
         }
         ]
     }
-    
+
     // Paid Visits
 
     var spark2 = {
@@ -228,7 +228,7 @@ try {
               top: 1,
               left: 1,
               blur: 2,
-              color: '#595b69',
+              color: '#000000',
               opacity: 0.7,
           }
       },
@@ -237,7 +237,7 @@ try {
           bar: {
               horizontal: false,
               columnWidth: '55%',
-              endingShape: 'rounded'  
+              endingShape: 'rounded'
           },
       },
       dataLabels: {
@@ -320,7 +320,7 @@ try {
               horizontal: 0,
               vertical: 8
             }
-        },        
+        },
         series: [20, 80],
         labels: ['Direct', 'Organic'],
         responsive: [{
@@ -473,7 +473,7 @@ try {
       },
     }
 
-    
+
 
 
     /*
@@ -632,7 +632,7 @@ var d_2options1 = {
           right: 0,
           bottom: -40,
           left: 0
-        }, 
+        },
     },
 }
 
@@ -672,7 +672,7 @@ var d_2options2 = {
       right: 0,
       bottom: 36,
       left: 0
-    }, 
+    },
   },
   fill: {
       type:"gradient",
@@ -784,7 +784,7 @@ var options1 = {
     floating: false,
     style: {
       fontSize: '14px',
-      color:  '#888ea8'
+      color:  '#030303'
     }
   },
   title: {
@@ -854,7 +854,7 @@ var options1 = {
         lines: {
             show: true
         }
-    },   
+    },
     yaxis: {
         lines: {
             show: false,
@@ -865,8 +865,8 @@ var options1 = {
       right: 0,
       bottom: 0,
       left: -10
-    }, 
-  }, 
+    },
+  },
   legend: {
     position: 'top',
     horizontalAlign: 'right',
@@ -883,7 +883,7 @@ var options1 = {
       onClick: undefined,
       offsetX: 0,
       offsetY: 0
-    },    
+    },
     itemMargin: {
       horizontal: 0,
       vertical: 20
@@ -974,7 +974,7 @@ var options = {
               show: true,
               showAlways: true,
               label: 'Total',
-              color: '#888ea8',
+              color: '#030303',
               formatter: function (w) {
                 return w.globals.seriesTotals.reduce( function(a, b) {
                   return a + b

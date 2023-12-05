@@ -19,9 +19,15 @@ class Documento extends Component
     }
 
     public function numDocFocusout($value, $id){
-        $user = User::where('num_document', '=', $value)->first(); 
-        
+        $user = User::where('num_document', '=', $value)->first();
+
         if ($user && $user->id != $id)
-            $this->emit('numDocAlreadyExists');
+        {
+            $paciente = $user->paciente;
+            $paciente->tipo = 1;
+            $paciente->save();
+
+            $this->emit('numDocAlreadyExists', route('patients.edit', $paciente->id));
+        }
     }
 }
