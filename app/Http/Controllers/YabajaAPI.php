@@ -14,6 +14,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
+//use Illuminate\Support\Facades\Log;
 
 class YabajaAPI extends Controller
 {
@@ -328,8 +329,13 @@ class YabajaAPI extends Controller
                     ['descripcion', '=', $examen['descripcion']]
 				])->first();
 
-            if ($et && $et->historia->paciente->user->num_document == $paciente['dni']) {
-                $e = $et;
+
+            if ($et) {
+                //Log::info($et->historia->paciente->user->num_document);
+                //Log::info($paciente['dni']);
+
+                if ($et->historia->paciente->user->num_document == $paciente['dni'])
+                    $e = $et;
             }
         }
 
@@ -350,6 +356,9 @@ class YabajaAPI extends Controller
                 'tabla_id' => $e->id,
                 'detalles' => "Asistente:api; titulo: $e->titulo, descripcion: $e->descripcion, paciente:$u->num_document | $u->full_name"
             ]);
+
+            $e->created_at = $examen['fecha_hora'];
+            $e->save();
         }
         else {
             $e->viewer_url = $examen['url_visor'];
@@ -363,9 +372,9 @@ class YabajaAPI extends Controller
         // Referente
         if ($medicos[0]) {
             $dni = $medicos[0]['dni'];
-            $m = User::has('medico')->where('num_document', '=', $dni)->first();
+            $u = User::has('medico')->where('num_document', '=', $dni)->first();
 
-            if (!$m && $dni) {
+            if (!$u && $dni) {
                 $u = User::create([
                     'user_role_id' => 3,
                     'num_document' => $medicos[0]['dni'],
@@ -384,15 +393,18 @@ class YabajaAPI extends Controller
                 $u->specific_role_id = $m->id;
                 $u->save();
             }
+            else {
+                $m = $u->medico;
+            }
 
             $e->medico_1_id = $m->id;
         }
 
         // Radiologo
         if ($medicos[1]) {
-            $m = User::has('medico')->where('num_document', '=', $medicos[1]['dni'])->first();
+            $u = User::has('medico')->where('num_document', '=', $medicos[1]['dni'])->first();
 
-            if (!$m) {
+            if (!$u) {
                 $u = User::create([
                     'user_role_id' => 3,
                     'num_document' => $medicos[1]['dni'],
@@ -411,15 +423,18 @@ class YabajaAPI extends Controller
                 $u->specific_role_id = $m->id;
                 $u->save();
             }
+            else {
+                $m = $u->medico;
+            }
 
             $e->medico_2_id = $m->id;
         }
 
         // Tecnico
         if ($medicos[2]) {
-            $m = User::has('medico')->where('num_document', '=', $medicos[2]['dni'])->first();
+            $u = User::has('medico')->where('num_document', '=', $medicos[2]['dni'])->first();
 
-            if (!$m) {
+            if (!$u) {
                 $u = User::create([
                     'user_role_id' => 3,
                     'num_document' => $medicos[2]['dni'],
@@ -437,6 +452,9 @@ class YabajaAPI extends Controller
 
                 $u->specific_role_id = $m->id;
                 $u->save();
+            }
+            else {
+                $m = $u->medico;
             }
 
             $e->medico_3_id = $m->id;
