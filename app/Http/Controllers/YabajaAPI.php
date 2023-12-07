@@ -285,7 +285,23 @@ class YabajaAPI extends Controller
 
 
         $atencion = $req->input('atencion');
+        $examen = $req->input('examen');
+
         $a = Historia::find($atencion['id']);
+
+        if (!$a) {
+            $at = Historia::where([
+					['created_at', '=', $examen['fecha_hora']]
+				])->first();
+
+            if ($at) {
+                //Log::info($et->historia->paciente->user->num_document);
+                //Log::info($paciente['dni']);
+
+                if ($at->paciente->user->num_document == $paciente['dni'])
+                    $a = $at;
+            }
+        }
 
         if (!$a) {
             $a = Historia::create([
@@ -307,6 +323,8 @@ class YabajaAPI extends Controller
 
             $a->anamnesis_id = $anamnesis->id;
             $a->antecedente_id = $antecedente->id;
+            $a->created_at = $examen['fecha_hora'];
+            $a->updated_at = $examen['fecha_hora'];
 
             Auditoria::create([
                 'tabla' => 'historias',
@@ -319,7 +337,6 @@ class YabajaAPI extends Controller
             $a->save();
         }
 
-        $examen = $req->input('examen');
         $e = ExamenAuxiliar::find($examen['id']);
 
         if (!$e) {
@@ -358,6 +375,7 @@ class YabajaAPI extends Controller
             ]);
 
             $e->created_at = $examen['fecha_hora'];
+            $e->updated_at = $examen['fecha_hora'];
             $e->save();
         }
         else {
