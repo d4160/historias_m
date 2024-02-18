@@ -7,6 +7,16 @@
         <link href="{{ asset('plugins/flatpickr/flatpickr.css') }}" rel="stylesheet" type="text/css">
         <link href="{{ asset('assets/css/tables/table-basic.css') }}" rel="stylesheet" type="text/css">
 
+        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+        <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+        
+        <style>
+            [x-cloak] {
+                display: none;
+            }
+        </style>
+        
         @livewireStyles
     </x-slot>
 
@@ -19,7 +29,7 @@
             <div class="statbox widget box box-shadow">
                 <div class="widget-header">
                     <div class="row">
-                        <div class="col">
+                        <div class="col mb-4">
                             <a href="{{ route('patients.create') }}" class="mt-3 ml-3 btn btn-success">Registrar Nuevo Paciente</a>
                         </div>
                         {{--  <div class="col-2">
@@ -29,7 +39,7 @@
 
                     </div>
                 </div>
-                <div class="widget-content widget-content-area">
+                {{-- <div class="widget-content widget-content-area">
                     <div class="mb-4 table-responsive">
                         <table id="style-2" class="table style-3 table-hover">
                             <thead>
@@ -83,7 +93,7 @@
                                     @endswitch
                                     @endif
                                     </td>
-                                    {{--  {{ $patient->results()->count() }}  --}}
+                                     $patient->results()->count()
                                     <td class="text-center">
                                         <ul class="table-controls">
                                             <li><a href="{{ route('patients.edit', $patient->paciente->id) }}" class="bs-tooltip" data-toggle="tooltip" data-placement="top" title="" data-original-title="Ver"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="p-1 mb-1 feather feather-edit-2 br-6"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg></a></li>
@@ -96,7 +106,7 @@
                                                     @csrf
                                                     <a href="javascript:void(0);" class="bs-tooltip patient_remove confirm"
                                                                             {{-- form_id="delete_{{ $patient->id }}_form"
-                                                                            patient_full_name="{{ $patient->full_name }}" --}}
+                                                                            patient_full_name="{{ $patient->full_name }}"
                                                                             data-container="body" data-html="true" data-toggle="tooltip" data-placement="top" title="" data-original-title="Eliminar" onclick="ConfirmDeletePac('delete_{{ $patient->id }}_form', '{{ $patient->full_name }}')">
                                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="p-1 mb-1 feather feather-trash br-6"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
                                                     </a>
@@ -110,6 +120,10 @@
                         </table>
                     </div>
                 </div>
+
+                <livewire:datatable model="App\Models\User" name="all-users" /> --}}
+
+                <livewire:tables.patients />
             </div>
         </div>
     </div>

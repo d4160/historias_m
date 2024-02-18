@@ -15,6 +15,7 @@
     <link href="{{ asset('bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('assets/css/plugins.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('assets/css/structure.css') }}" rel="stylesheet" type="text/css" class="structure" />
+    
     {{-- <!-- END GLOBAL MANDATORY STYLES --> --}}
 
     {{-- <!-- BEGIN PAGE LEVEL PLUGINS/CUSTOM STYLES --> --}}
@@ -144,7 +145,7 @@
                     @if ($user->user_role_id === 1)
                         <li class="menu single-menu {{ request()->is('admins*') ? 'active' : '' }}">
                         <a href="#admins" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle autodroprown">
-                            <div class="">
+                            <div class="flex space-x-1 justify-center">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user-check">
                                     <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
@@ -169,7 +170,7 @@
                     @if ($user->user_role_id > 0 && $user->user_role_id < 5)
                     <li class="menu single-menu {{ request()->is('pacientes*') ? 'active' : '' }}">
                         <a href="#pacientes" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle autodroprown">
-                            <div class="">
+                            <div class="flex space-x-1 justify-center">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-user">
                                     <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
@@ -191,7 +192,7 @@
 
                     <li class="menu single-menu {{ request()->is('citas*') ? 'active' : '' }}">
                         <a href="#citas" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle autodroprown">
-                            <div class="">
+                            <div class="flex space-x-1 justify-center">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar">
                                     <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>

@@ -10,6 +10,7 @@ return [
     |
     */
 
-    'users' => 'Usuarios'
+    'users' => 'Usuarios',
+    'Search in' => 'Buscar por'
 
 ];

@@ -16,7 +16,7 @@ class Color extends Base
         'Blue', 'BlueViolet', 'Brown', 'BurlyWood', 'CadetBlue',
         'Chartreuse', 'Chocolate', 'Coral', 'CornflowerBlue',
         'Cornsilk', 'Crimson', 'Cyan', 'DarkBlue', 'DarkCyan',
-        'DarkGoldenRod', '#030303', 'DarkGreen', 'DarkKhaki',
+        'DarkGoldenRod', 'DarkGray', 'DarkGreen', 'DarkKhaki',
         'DarkMagenta', 'DarkOliveGreen', 'Darkorange', 'DarkOrchid',
         'DarkRed', 'DarkSalmon', 'DarkSeaGreen', 'DarkSlateBlue',
         'DarkSlateGray', 'DarkTurquoise', 'DarkViolet', 'DeepPink',
