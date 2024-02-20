@@ -126,7 +126,7 @@
                                     </div>
                                     <div class="align-self-center col-sm-3">
                                         <p class="inv-customer-name font-weight-bold">PROCEDENCIA</p>
-                                        <p class="inv-street-addr">{{ $user->provincia->nombre_prov }}</p>
+                                        <p class="inv-street-addr">{{ $user->provincia?->nombre_prov }}</p>
                                     </div>
                                     <div class="align-self-center col-sm-3">
                                         <p class="inv-customer-name font-weight-bold">ESTADO CIVIL</p>
@@ -156,7 +156,7 @@
                                 <div class="pt-2 row inv--detail-section" style="border: ridge; border-top: none;">
                                     <div class="col-sm-12 align-self-center">
                                         <p class="inv-customer-name font-weight-bold">ANAMNESIS</p>
-                                        <p class="inv-street-addr">{{ $historia->anamnesis->anamnesis ?? '___' }}</p>
+                                        <p class="inv-street-addr">{!! nl2br($historia->anamnesis->anamnesis) ?? '___' !!}</p>
                                     </div>
                                 </div>
 
