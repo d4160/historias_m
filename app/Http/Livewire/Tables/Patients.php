@@ -12,6 +12,8 @@ use Mediconesystems\LivewireDatatables\NumberColumn;
 
 class Patients extends LivewireDatatable
 {
+    public $exportable = true;
+
     public function builder()
     {
         return User::query()
@@ -57,22 +59,28 @@ class Patients extends LivewireDatatable
                 //return $id . ' ' . $num;
                 return view('tables.historias_count', ['historias_count' => $historias_count, 'paciente_id' => $paciente_id, 'paciente_full_name' => $paciente_full_name]);
             })
-            ->label('Nº Atenciones'),
+            ->label('Nº Atenciones')
+            ->exportCallback(function ($historias_count, $paciente_id, $paciente_full_name) {
+                return $historias_count;
+            }),
 
             DatetimeColumn::name('created_at')
                 ->label('Fecha y hora de registro')
                 //->searchable()
                 ->filterable()
-                ->sortable(),
+                ->sortable()
+                ->filterView('date')
+                ->maxWidth(175),
             //->defaultSort('desc'),
 
             DatetimeColumn::name('updated_at')
                 ->defaultSort('desc')
-                ->hide(),
+                ->hide()
+                ->excludeFromExport(),
 
-            DatetimeColumn::name('paciente.proxima_cita')
+            DateColumn::name('paciente.proxima_cita')
                 ->label('Proxima cita')
-                //->filterable()
+                ->filterable()
                 ->sortable(),
             //->defaultSort('desc'),
 
@@ -92,15 +100,19 @@ class Patients extends LivewireDatatable
 
                     switch ($estado) {
                         case 'Atendido':
-                            return '<span class="badge badge-danger" style="background-color:#8dbf42;border-color:#8dbf42;">'.$estado.'</span>';
+                            return '<span class="badge badge-success" style="background-color:#8dbf42;border-color:#8dbf42;">'.$estado.'</span>';
                         case 'Pendiente':
                             return '<span class="badge badge-danger" style="background-color: #e7515a;border-color:#e7515a;">'.$estado.'</span>';
                         default:
                             return '<span class="badge badge-warning">'.$estado.'</span>';
                     }
             })
-            ->label('Estado'),
-            //->filterable(),
+            ->label('Estado')
+            ->filterOn(['pacientes.estado'])
+            ->filterable(['Atendido','Evaluación','Pendiente'])
+            ->exportCallback(function ($estado, $historias_count) {
+                return $estado;
+            }),
 
             Column::callback(['RAW (
                 SELECT
@@ -117,7 +129,8 @@ class Patients extends LivewireDatatable
                 return view('tables.paciente_actions', ['historias_count' => $historias_count, 'paciente_id' => $paciente_id, 'paciente_full_name' => $paciente_full_name, 'paciente_proxima_cita' => $paciente_proxima_cita, 'paciente_estado' => $paciente_estado]);
             })
             ->label('Acciones')
-            ->unsortable(),
+            ->unsortable()
+            ->excludeFromExport(),
         ];
     }
 }

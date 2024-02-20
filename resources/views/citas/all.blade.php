@@ -9,6 +9,16 @@
         <link href="{{ asset('plugins/notification/snackbar/snackbar.min.css') }}" rel="stylesheet" type="text/css" />
         <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/forms/switches.css') }}">
 
+        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+        <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+        
+        <style>
+            [x-cloak] {
+                display: none;
+            }
+        </style>
+
         @livewireStyles
     </x-slot>
 
@@ -19,12 +29,14 @@
             <div class="statbox widget box box-shadow">
                 <div class="widget-header">
                     <div class="row">
-                        <div class="col">
+                        <div class="col mb-3">
                             <a data-toggle="modal" data-target="#citaModal"                                style="margin-bottom: 10px;" onclick="CreateCitaModal()" class="mt-3 ml-3 btn btn-success">Registrar Nueva Cita</a>
                         </div>
                     </div>
                 </div>
-                <livewire:citas :citas="$citas" />
+                {{-- <livewire:citas :citas="$citas" /> --}}
+
+                <livewire:tables.citas />
             </div>
         </div>
     </div>

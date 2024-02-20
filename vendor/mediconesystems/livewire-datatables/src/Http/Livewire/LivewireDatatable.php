@@ -282,6 +282,13 @@ class LivewireDatatable extends Component
         if (isset($this->pinnedRecords)) {
             $this->initialisePinnedRecords();
         }
+
+        $this->onMounted();
+    }
+
+    public function onMounted()
+    {
+
     }
 
     // save settings
@@ -919,6 +926,21 @@ class LivewireDatatable extends Component
 
     public function doSelectFilter($index, $value)
     {
+        if(isset($this->activeSelectFilters[$index])) 
+        {
+            $exists = false;
+
+            foreach ($this->activeSelectFilters[$index] as $key => $val) {
+                if ($val === $value) {
+                    $exists = true;
+                    break;
+                }
+            }
+
+            if ($exists)
+                return;
+        }
+
         $this->activeSelectFilters[$index][] = $value;
         $this->setVisibleSelected();
         $this->setPage(1);
@@ -1010,8 +1032,28 @@ class LivewireDatatable extends Component
         $this->setSessionStoredFilters();
     }
 
-    public function removeSelectFilter($column, $key = null)
+    public function removeSelectFilter($column, $key = null, $val = null)
     {
+        if(!isset($this->activeSelectFilters[$column])) 
+        {
+            return;
+        }
+
+        if ($val) {
+            $exists = false;
+
+            foreach ($this->activeSelectFilters[$column] as $index => $value) {
+                if ($value === $val) {
+                    $exists = true;
+                    $key = $index;
+                    break;
+                }
+            }
+
+            if (!$exists)
+                return;
+        }
+
         unset($this->activeSelectFilters[$column][$key]);
         $this->visibleSelected = $this->selected;
         if (count($this->activeSelectFilters[$column]) < 1) {

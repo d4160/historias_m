@@ -42,7 +42,7 @@
                         </div>
                         <div class="col">
                             <label for="paciente" class="font-weight-bold">Diagnóstico</label>
-                            <input id="paciente" name="paciente" type="text" class="form-control" placeholder="" value="{{ $historia->impresionDiagnostica->impresion_diagnostica }}" disabled>
+                            <input id="paciente" name="paciente" type="text" class="form-control" placeholder="" value="{{ $historia->impresionDiagnostica?->impresion_diagnostica }}" disabled>
                         </div>
                     </div>
 

@@ -66,7 +66,7 @@
                         {{-- {{ $cita->estado_enum }} --}}
                         @switch($cita->estado_enum)
                             @case('Atendido')
-                                <span class="badge badge-danger" style="color:#8dbf42;border-color:#8dbf42;"> Atendido </span>
+                                <span class="badge badge-success" style="color:#8dbf42;border-color:#8dbf42;"> Atendido </span>
                             @break
 
                             @case('No atendido')
