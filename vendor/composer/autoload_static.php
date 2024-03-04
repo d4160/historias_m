@@ -695,6 +695,8 @@ class ComposerStaticInita53d28b6617615b10b113b3892e4c587
         'App\\Http\\Livewire\\ImpresionDiagnostica' => __DIR__ . '/../..' . '/app/Http/Livewire/ImpresionDiagnostica.php',
         'App\\Http\\Livewire\\Kardex' => __DIR__ . '/../..' . '/app/Http/Livewire/Kardex.php',
         'App\\Http\\Livewire\\Procedencia' => __DIR__ . '/../..' . '/app/Http/Livewire/Procedencia.php',
+        'App\\Http\\Livewire\\Tables\\Citas' => __DIR__ . '/../..' . '/app/Http/Livewire/Tables/Citas.php',
+        'App\\Http\\Livewire\\Tables\\Patients' => __DIR__ . '/../..' . '/app/Http/Livewire/Tables/Patients.php',
         'App\\Http\\Livewire\\Tratamiento' => __DIR__ . '/../..' . '/app/Http/Livewire/Tratamiento.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',

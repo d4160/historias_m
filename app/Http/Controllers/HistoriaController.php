@@ -229,6 +229,17 @@ class HistoriaController extends Controller
         $request->validate([
         ]);
 
+        if (!$instance)
+        {
+            $instance = ExamenClinico::create([
+                'historia_id' => $request->ec_historia_id 
+            ]);
+
+            $historia = Historia::find($request->ec_historia_id);
+            $historia->examen_clinico_id = $instance->id;
+            $historia->save();  
+        }
+
         $instance->fc = $request->fc;
         $instance->fr = $request->fr;
         $instance->sat = $request->sat;
@@ -254,6 +265,17 @@ class HistoriaController extends Controller
         $request->validate([
         ]);
 
+        if (!$instance)
+        {
+            $instance = ExamenRegional::create([
+                'historia_id' => $request->er_historia_id 
+            ]);
+
+            $historia = Historia::find($request->er_historia_id);
+            $historia->examen_regional_id = $instance->id;
+            $historia->save();  
+        }
+
         $instance->examen_regional = $request->examen_regional;
 
         $instance->save();
@@ -268,6 +290,17 @@ class HistoriaController extends Controller
 
         $request->validate([
         ]);
+
+        if (!$instance)
+        {
+            $instance = ImpresionDiagnostica::create([
+                'historia_id' => $request->id_historia_id 
+            ]);
+
+            $historia = Historia::find($request->id_historia_id);
+            $historia->impresion_diagnostica_id = $instance->id;
+            $historia->save();  
+        }
 
         $instance->impresion_diagnostica = $request->impresion_diagnostica;
 

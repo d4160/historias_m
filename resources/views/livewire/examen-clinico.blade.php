@@ -1,6 +1,8 @@
 <div>
     <input type="hidden" id="examen_clinico_modal_id" name="examen_clinico_id" value="{{ old('examen_clinico_id') }}">
 
+    <input type="hidden" id="ec_historia_id" name="ec_historia_id" value="{{ old('ec_historia_id') }}">
+
     <span style="font-weight: bold; color: #030303; font-size: 17px;">Funciones Vitales</span>
 
     <div class="mt-2 form-group">

@@ -638,6 +638,7 @@
             function OpenExamenClinicoModal(historiaTdId, id) {
                 let hcid = historiaTdId.innerText;
                 $('#examen_clinico_hc').html(hcid);
+                $('#ec_historia_id').val(hcid);
                 if (id) {
                     $('#examen_clinico_modal_id').val(id).change();
                 }
@@ -646,6 +647,7 @@
             function OpenExamenRegionalModal(historiaTdId, id) {
                 let hcid = historiaTdId.innerText;
                 $('#examen_regional_hc').html(hcid);
+                $('#er_historia_id').val(hcid);
                 if (id) {
                     $('#examen_regional_modal_id').val(id).change();
                 }
@@ -654,6 +656,7 @@
             function OpenImpresionDiagnosticaModal(historiaTdId, id) {
                 let hcid = historiaTdId.innerText;
                 $('#impresion_diagnostica_hc').html(hcid);
+                $('#id_historia_id').val(hcid);
                 if (id) {
                     $('#impresion_diagnostica_modal_id').val(id).change();
                 }

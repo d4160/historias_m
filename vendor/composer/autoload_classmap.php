@@ -45,6 +45,8 @@ return array(
     'App\\Http\\Livewire\\ImpresionDiagnostica' => $baseDir . '/app/Http/Livewire/ImpresionDiagnostica.php',
     'App\\Http\\Livewire\\Kardex' => $baseDir . '/app/Http/Livewire/Kardex.php',
     'App\\Http\\Livewire\\Procedencia' => $baseDir . '/app/Http/Livewire/Procedencia.php',
+    'App\\Http\\Livewire\\Tables\\Citas' => $baseDir . '/app/Http/Livewire/Tables/Citas.php',
+    'App\\Http\\Livewire\\Tables\\Patients' => $baseDir . '/app/Http/Livewire/Tables/Patients.php',
     'App\\Http\\Livewire\\Tratamiento' => $baseDir . '/app/Http/Livewire/Tratamiento.php',
     'App\\Http\\Middleware\\Authenticate' => $baseDir . '/app/Http/Middleware/Authenticate.php',
     'App\\Http\\Middleware\\EncryptCookies' => $baseDir . '/app/Http/Middleware/EncryptCookies.php',
